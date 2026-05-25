@@ -302,7 +302,7 @@
             border-color: var(--gold);
         }
 
-        /* ── IMAGE FRAMES with fallback ── */
+        /* ── IMAGE FRAMES ── */
         .image-frame {
             width: 100%;
             height: 320px;
@@ -322,17 +322,19 @@
             position: absolute;
             top: 0; left: 0;
             transition: transform 0.5s ease;
+            z-index: 2;
         }
-        .image-frame img.img-error { opacity: 0; pointer-events: none; }
+        /* Fallback elements only visible if broken */
         .image-fallback {
-            display: none;
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 12px;
             padding: 30px;
+            position: absolute;
+            z-index: 1;
         }
-        .image-frame img.img-error ~ .image-fallback { display: flex; }
         .image-fallback-icon { font-size: 56px; line-height: 1; }
         .image-fallback-text {
             font-family: 'Cinzel', serif;
@@ -396,17 +398,18 @@
         .scenery-frame img {
             width: 100%; height: 100%;
             object-fit: cover;
+            position: absolute;
+            z-index: 2;
         }
-        .scenery-frame img.img-error { opacity: 0; pointer-events: none; }
-        .scenery-frame img.img-error ~ .scenery-fallback { display: flex; }
         .scenery-fallback {
-            display: none;
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 16px;
             position: absolute;
             inset: 0;
+            z-index: 1;
         }
         .scenery-fallback-icon { font-size: 90px; line-height: 1; }
         .scenery-fallback-text {
@@ -457,6 +460,8 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            position: relative;
+            z-index: 2;
         }
         .video-fallback {
             position: absolute;
@@ -467,12 +472,8 @@
             justify-content: center;
             gap: 14px;
             background: linear-gradient(135deg, #1C1A17 0%, #2D2A24 100%);
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s;
+            z-index: 1;
         }
-        .video-frame.video-errored .video-fallback { opacity: 1; pointer-events: all; }
-        .video-frame.video-errored video { visibility: hidden; }
         .video-fallback-icon { font-size: 64px; }
         .video-fallback-text {
             font-family: 'Cinzel', serif;
@@ -788,7 +789,7 @@
         <div class="concept-grid">
             <div class="concept-card">
                 <div class="image-frame">
-                    <img src="wattleseed.png.png" alt="Australian Roasted Wattleseed Blend" onerror="this.classList.add('img-error')">
+                    <img src="wattleseed.png" alt="Australian Roasted Wattleseed Blend">
                     <div class="image-fallback">
                         <div class="image-fallback-icon">🌾</div>
                         <div class="image-fallback-text">Roasted Wattleseed</div>
@@ -802,7 +803,7 @@
 
             <div class="concept-card">
                 <div class="image-frame">
-                    <img src="saffron.png.png" alt="Exquisite Premium Saffron Component" onerror="this.classList.add('img-error')">
+                    <img src="saffron.png" alt="Exquisite Premium Saffron Component">
                     <div class="image-fallback">
                         <div class="image-fallback-icon">🌸</div>
                         <div class="image-fallback-text">Exquisite Saffron</div>
@@ -823,7 +824,7 @@
         </div>
         <div class="scenery-container">
             <div class="scenery-frame">
-                <img src="kangaroo.png.png" alt="Pure Australian Wildlife and Heritage Brand Visual" onerror="this.classList.add('img-error')">
+                <img src="kangaroo.png" alt="Pure Australian Wildlife and Heritage Brand Visual">
                 <div class="scenery-fallback">
                     <div class="scenery-fallback-icon">🦘</div>
                     <div class="scenery-fallback-text">The Great Southern Land</div>
@@ -884,7 +885,7 @@
         <div class="pilot-container">
             <div class="video-column">
                 <div class="video-frame" id="videoFrame">
-                    <video id="heroVideo" controls autoplay muted loop playsinline preload="auto" poster="kangaroo.png.png">
+                    <video id="heroVideo" controls autoplay muted loop playsinline preload="auto" poster="kangaroo.png">
                         <source src="liqgold.mp4" type="video/mp4">
                         <source src="liqgold.mov" type="video/quicktime">
                         <source src="liqgold.webm" type="video/webm">
@@ -892,7 +893,7 @@
                     <div class="video-fallback" id="videoFallback">
                         <div class="video-fallback-icon">🥛</div>
                         <div class="video-fallback-text">Golden Latte Elixir<br>Sovereign Blend</div>
-                        <div class="video-fallback-sub">Upload liqgold.mp4 to your repo to display the video</div>
+                        <div class="video-fallback-sub">Processing video assets locally...</div>
                     </div>
                 </div>
             </div>
@@ -967,7 +968,6 @@
         const videoFrame = document.getElementById('videoFrame');
 
         if (video) {
-            // Programmatic setup to bypass aggressive mobile tracking filters
             video.removeAttribute('controls');
             video.muted = true;
             video.defaultMuted = true;
@@ -978,27 +978,13 @@
                 const playPromise = video.play();
                 if (playPromise !== undefined) {
                     playPromise.catch(() => {
-                        // Safe fallback action if gesture policy takes effect
                         video.controls = true;
                     });
                 }
             };
 
-            // Initial load hook
             window.addEventListener('DOMContentLoaded', handleVideoPlay);
             video.addEventListener('loadedmetadata', handleVideoPlay);
-
-            video.addEventListener('error', () => {
-                videoFrame.classList.add('video-errored');
-            });
-
-            video.addEventListener('stalled', () => {
-                setTimeout(() => {
-                    if (video.readyState === 0) {
-                        videoFrame.classList.add('video-errored');
-                    }
-                }, 3500);
-            });
         }
 
         // ── NAVBAR SCROLL SYSTEM ──
