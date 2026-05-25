@@ -15,6 +15,8 @@
             --text-dark: #1C1A17;
             --text-muted: #7A746D;
             --border-light: rgba(179,143,67,0.18);
+            --au-blue: #00008B;
+            --au-red: #CC0001;
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,6 +40,7 @@
             opacity: 0.6;
         }
 
+        /* ── NAVBAR ── */
         nav {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -45,10 +48,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 60px;
-            background: rgba(250, 250, 250, 0.95);
-            backdrop-filter: blur(8px);
+            padding: 18px 60px;
+            background: rgba(250, 250, 250, 0.97);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-light);
+            height: 73px;
         }
         .nav-logo {
             font-family: 'Cinzel Decorative', serif;
@@ -57,6 +61,9 @@
             color: var(--text-dark);
             letter-spacing: 3px;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .nav-links {
             display: flex;
@@ -88,8 +95,44 @@
         }
         .nav-order-btn:hover { background: var(--gold); transform: translateY(-1px); }
 
+        /* ── AUSTRALIAN FLAG BANNER ── */
+        .au-banner {
+            position: fixed;
+            top: 73px;
+            left: 0; right: 0;
+            z-index: 99;
+            background: var(--au-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 7px 20px;
+            border-bottom: 2px solid var(--au-red);
+            height: 38px;
+        }
+        .au-flag-svg {
+            width: 36px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+        .au-banner-text {
+            font-family: 'Cinzel', serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+        }
+        .au-stars {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+        .au-star { color: #FFD700; font-size: 10px; }
+
+        /* ── HERO ── */
         #hero {
-            min-height: 95vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -103,6 +146,7 @@
             position: relative;
             z-index: 2;
             max-width: 900px;
+            margin-top: 20px;
         }
         .hero-pre {
             font-family: 'Cinzel', serif;
@@ -112,18 +156,21 @@
             text-transform: uppercase;
             margin-bottom: 25px;
         }
-        
+
+        /* ── KANGAROO CROWN LOGO ── */
         .mascot-container {
-            width: 140px;
-            height: 140px;
+            width: 160px;
+            height: 160px;
             margin: 0 auto 25px;
+            filter: drop-shadow(0 6px 18px rgba(179,143,67,0.28));
+            animation: floatLogo 4s ease-in-out infinite;
         }
-        .mascot-logo {
-            width: 100%;
-            height: 100%;
-            filter: drop-shadow(0 4px 12px rgba(179,143,67,0.2));
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-8px); }
         }
-        
+        .mascot-logo { width: 100%; height: 100%; }
+
         .hero-title {
             font-family: 'Cinzel Decorative', serif;
             font-weight: 700;
@@ -150,16 +197,11 @@
             margin: 25px auto;
         }
         .hero-divider-line {
-            width: 100px;
-            height: 1px;
+            width: 100px; height: 1px;
             background: linear-gradient(90deg, transparent, var(--gold));
         }
         .hero-divider-line.right { background: linear-gradient(90deg, var(--gold), transparent); }
-        .hero-diamond {
-            width: 6px; height: 6px;
-            background: var(--gold);
-            transform: rotate(45deg);
-        }
+        .hero-diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); }
         .hero-tagline {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
@@ -169,7 +211,6 @@
             max-width: 780px;
             margin: 0 auto 35px;
         }
-        
         .heritage-badge {
             font-family: 'Lato', sans-serif;
             font-size: 13px;
@@ -186,6 +227,33 @@
             line-height: 1.6;
         }
 
+        /* ── AUSTRALIAN ORIGIN STRIP ── */
+        .au-origin-strip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .au-origin-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--au-blue);
+            background: rgba(0,0,139,0.04);
+            padding: 8px 18px;
+            border-radius: 30px;
+        }
+        .au-origin-pill span {
+            font-family: 'Cinzel', serif;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--au-blue);
+        }
+
+        /* ── SECTION HEADERS ── */
         .section-header {
             text-align: center;
             margin-bottom: 60px;
@@ -204,6 +272,7 @@
             color: var(--text-muted);
         }
 
+        /* ── CONCEPT CARDS ── */
         #concept {
             padding: 100px 40px;
             background: #FFFFFF;
@@ -229,14 +298,15 @@
         }
         .concept-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
             border-color: var(--gold);
         }
-        
+
+        /* ── IMAGE FRAMES with fallback ── */
         .image-frame {
             width: 100%;
             height: 320px;
-            background: #FFFFFF;
+            background: linear-gradient(135deg, #F9F6EE 0%, #EDE8DA 100%);
             border: 1px solid var(--border-light);
             margin-bottom: 25px;
             overflow: hidden;
@@ -253,9 +323,25 @@
             top: 0; left: 0;
             transition: transform 0.5s ease;
         }
-        .image-frame:hover img {
-            transform: scale(1.05);
+        .image-frame img.img-error { opacity: 0; pointer-events: none; }
+        .image-fallback {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 30px;
         }
+        .image-frame img.img-error ~ .image-fallback { display: flex; }
+        .image-fallback-icon { font-size: 56px; line-height: 1; }
+        .image-fallback-text {
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+        .image-frame:hover img { transform: scale(1.05); }
 
         .ingredient-title {
             font-family: 'Cinzel', serif;
@@ -279,10 +365,9 @@
             color: var(--text-muted);
             line-height: 1.7;
             text-align: justify;
-            text-justify: inter-word;
         }
 
-        /* AUSTRALIAN LANDSCAPE SECTION */
+        /* ── HERITAGE SCENERY ── */
         #heritage-scenery {
             padding: 100px 40px;
             background: var(--gold-pale);
@@ -302,11 +387,33 @@
             height: 450px;
             overflow: hidden;
             margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #E8F4F0 0%, #D4EDE4 50%, #C8E6DC 100%);
+            position: relative;
         }
         .scenery-frame img {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             object-fit: cover;
+        }
+        .scenery-frame img.img-error { opacity: 0; pointer-events: none; }
+        .scenery-frame img.img-error ~ .scenery-fallback { display: flex; }
+        .scenery-fallback {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            position: absolute;
+            inset: 0;
+        }
+        .scenery-fallback-icon { font-size: 90px; line-height: 1; }
+        .scenery-fallback-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 20px;
+            color: #2D6A4F;
         }
         .scenery-text {
             font-family: 'Cormorant Garamond', serif;
@@ -317,6 +424,7 @@
             padding: 10px 20px;
         }
 
+        /* ── PILOT RUN / VIDEO SECTION ── */
         #pilot-run {
             padding: 100px 40px;
             background: var(--bg-bright);
@@ -331,7 +439,7 @@
             flex-wrap: wrap;
         }
         .video-column { flex: 1; min-width: 340px; }
-        
+
         .video-frame {
             width: 100%;
             aspect-ratio: 16/9;
@@ -342,14 +450,46 @@
             overflow: hidden;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
         }
         .video-frame video {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
-        
+        .video-fallback {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            background: linear-gradient(135deg, #1C1A17 0%, #2D2A24 100%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .video-frame.video-errored .video-fallback { opacity: 1; pointer-events: all; }
+        .video-frame.video-errored video { visibility: hidden; }
+        .video-fallback-icon { font-size: 64px; }
+        .video-fallback-text {
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-align: center;
+            max-width: 280px;
+            line-height: 1.6;
+        }
+        .video-fallback-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+        }
+
         .text-column { flex: 1; min-width: 340px; }
         .feature-list {
             list-style: none;
@@ -371,6 +511,7 @@
             line-height: 1.6;
         }
 
+        /* ── CONTACT / FOOTER ── */
         #contact {
             background: #FFFFFF;
             border-top: 1px solid var(--border-light);
@@ -399,7 +540,6 @@
             font-style: normal;
             font-weight: 600;
         }
-
         .cta-email-btn {
             display: inline-block;
             font-family: 'Cinzel', serif;
@@ -422,7 +562,6 @@
             transform: translateY(-2px);
             box-shadow: 0 12px 30px rgba(179,143,67,0.25);
         }
-        
         .social-icons {
             display: flex;
             justify-content: center;
@@ -447,7 +586,6 @@
             border-color: var(--gold);
             background: var(--gold-pale);
         }
-        
         .origin-tag {
             font-family: 'Cinzel', serif;
             font-size: 11px;
@@ -466,10 +604,29 @@
             margin: 0 auto;
         }
 
+        .made-in-au {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: 1.5px solid var(--au-blue);
+            padding: 10px 20px;
+            border-radius: 6px;
+            background: rgba(0,0,139,0.03);
+            margin-top: 30px;
+        }
+        .made-in-au-text {
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--au-blue);
+        }
+
         @media (max-width: 900px) {
-            nav { padding: 20px 30px; }
+            nav { padding: 16px 24px; }
             .nav-links { display: none; }
             #hero { padding: 140px 24px 60px; }
+            .au-banner { top: 73px; }
             .concept-grid { flex-direction: column; align-items: center; }
             .scenery-frame { height: 280px; }
             .pilot-container { flex-direction: column; gap: 40px; }
@@ -490,45 +647,102 @@
         <a href="#contact" class="nav-order-btn">Inquire Now</a>
     </nav>
 
+    <div class="au-banner">
+        <svg class="au-flag-svg" viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
+            <rect width="900" height="450" fill="#00008B"/>
+            <rect width="450" height="225" fill="#00008B"/>
+            <polygon points="0,0 450,225 0,225" fill="white"/>
+            <polygon points="0,0 450,0 0,225" fill="white"/>
+            <polygon points="450,0 450,225 0,0" fill="white"/>
+            <polygon points="0,0 300,150 0,150" fill="#CC0001"/>
+            <polygon points="150,0 450,150 450,0" fill="#CC0001"/>
+            <polygon points="0,75 375,225 450,225 0,150" fill="#CC0001"/>
+            <rect x="0" y="90" width="450" height="45" fill="white"/>
+            <rect x="202.5" y="0" width="45" height="225" fill="white"/>
+            <rect x="0" y="97.5" width="450" height="30" fill="#CC0001"/>
+            <rect x="210" y="0" width="30" height="225" fill="#CC0001"/>
+            <polygon points="67,250 72,270 92,270 76,282 82,302 67,290 52,302 58,282 42,270 62,270" fill="white"/>
+            <polygon points="750,80 755,95 770,95 758,104 763,120 750,110 737,120 742,104 730,95 745,95" fill="white"/>
+            <polygon points="810,170 814,182 826,182 817,189 820,202 810,195 800,202 803,189 794,182 806,182" fill="white"/>
+            <polygon points="690,200 694,212 706,212 697,219 700,232 690,225 680,232 683,219 674,212 686,212" fill="white"/>
+            <polygon points="760,270 764,282 776,282 767,289 770,302 760,295 750,302 753,289 744,282 756,282" fill="white"/>
+            <polygon points="830,120 833,130 843,130 835,136 838,146 830,140 822,146 825,136 817,130 827,130" fill="white"/>
+        </svg>
+        <div class="au-stars"><span class="au-star">✦</span><span class="au-star">✦</span><span class="au-star">✦</span></div>
+        <span class="au-banner-text">Proudly Formulated &amp; Crafted in Australia · Premium Native Botanicals</span>
+        <div class="au-stars"><span class="au-star">✦</span><span class="au-star">✦</span><span class="au-star">✦</span></div>
+        <svg class="au-flag-svg" viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
+            <rect width="900" height="450" fill="#00008B"/>
+            <rect width="450" height="225" fill="#00008B"/>
+            <polygon points="0,0 450,225 0,225" fill="white"/>
+            <polygon points="0,0 450,0 0,225" fill="white"/>
+            <polygon points="450,0 450,225 0,0" fill="white"/>
+            <polygon points="0,0 300,150 0,150" fill="#CC0001"/>
+            <polygon points="150,0 450,150 450,0" fill="#CC0001"/>
+            <polygon points="0,75 375,225 450,225 0,150" fill="#CC0001"/>
+            <rect x="0" y="90" width="450" height="45" fill="white"/>
+            <rect x="202.5" y="0" width="45" height="225" fill="white"/>
+            <rect x="0" y="97.5" width="450" height="30" fill="#CC0001"/>
+            <rect x="210" y="0" width="30" height="225" fill="#CC0001"/>
+            <polygon points="67,250 72,270 92,270 76,282 82,302 67,290 52,302 58,282 42,270 62,270" fill="white"/>
+            <polygon points="750,80 755,95 770,95 758,104 763,120 750,110 737,120 742,104 730,95 745,95" fill="white"/>
+            <polygon points="810,170 814,182 826,182 817,189 820,202 810,195 800,202 803,189 794,182 806,182" fill="white"/>
+            <polygon points="690,200 694,212 706,212 697,219 700,232 690,225 680,232 683,219 674,212 686,212" fill="white"/>
+            <polygon points="760,270 764,282 776,282 767,289 770,302 760,295 750,302 753,289 744,282 756,282" fill="white"/>
+            <polygon points="830,120 833,130 843,130 835,136 838,146 830,140 822,146 825,136 817,130 827,130" fill="white"/>
+        </svg>
+    </div>
+
     <section id="hero">
         <div class="hero-content">
             <p class="hero-pre">Designed in Australia · Global Luxury Edition</p>
-            
+
             <div class="mascot-container">
-                <svg class="mascot-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="100" cy="100" r="92" fill="none" stroke="#B38F43" stroke-width="1.5" stroke-dasharray="5 5"/>
-                    <circle cx="100" cy="100" r="84" fill="none" stroke="#B38F43" stroke-width="0.5" opacity="0.5"/>
-                    
-                    <path d="M55 70 C40 30, 68 15, 78 45 C72 55, 62 62, 55 70 Z" fill="#B38F43" stroke="#B38F43" stroke-width="1"/>
-                    <path d="M59 65 C48 35, 68 25, 74 48" fill="#F9F6EE" opacity="0.8"/>
-                    
-                    <path d="M145 70 C160 30, 132 15, 122 45 C128 55, 138 62, 145 70 Z" fill="#B38F43" stroke="#B38F43" stroke-width="1"/>
-                    <path d="M141 65 C152 35, 132 25, 126 48" fill="#F9F6EE" opacity="0.8"/>
-                    
-                    <path d="M68 85 C62 105, 75 135, 88 150 C94 157, 106 157, 112 150 C125 135, 138 105, 132 85 C126 72, 74 72, 68 85 Z" fill="#B38F43"/>
-                    
-                    <path d="M88 72 L92 62 L100 68 L108 62 L112 72 Z" fill="#C9A65A"/>
-                    
-                    <path d="M84 125 C88 145, 92 162, 100 162 C108 162, 112 145, 116 125 C110 115, 90 115, 84 125 Z" fill="#C9A65A"/>
-                    <path d="M92 152 C96 158, 104 158, 108 152 L100 156 Z" fill="#1C1A17"/>
-                    
-                    <ellipse cx="82" cy="98" rx="5" ry="2.5" fill="#1C1A17" transform="rotate(-5, 82, 98)"/>
-                    <circle cx="83" cy="97" r="1.2" fill="#FFFFFF"/>
-                    
-                    <ellipse cx="118" cy="98" rx="5" ry="2.5" fill="#1C1A17" transform="rotate(5, 118, 98)"/>
-                    <circle cx="117" cy="97" r="1.2" fill="#FFFFFF"/>
-                    
-                    <path d="M100 85 L100 108" stroke="#F9F6EE" stroke-width="1.5" opacity="0.7"/>
-                    <path d="M78 112 C82 114, 86 114, 88 112" fill="none" stroke="#F9F6EE" stroke-width="1"/>
-                    <path d="M122 112 C118 114, 114 114, 112 112" fill="none" stroke="#F9F6EE" stroke-width="1"/>
-                    
-                    <polygon points="100,176 102,180 106,180 103,183 104,187 100,185 96,187 97,183 94,180 98,180" fill="#B38F43"/>
+                <svg class="mascot-logo" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="115" r="88" fill="none" stroke="#B38F43" stroke-width="1.2" stroke-dasharray="4 5" opacity="0.7"/>
+                    <circle cx="100" cy="115" r="80" fill="none" stroke="#B38F43" stroke-width="0.4" opacity="0.4"/>
+                    <rect x="62" y="34" width="76" height="16" rx="3" fill="#B38F43"/>
+                    <polygon points="62,34 72,10 82,34" fill="#B38F43"/>
+                    <polygon points="82,34 90,18 98,34" fill="#B38F43"/>
+                    <polygon points="98,34 100,12 102,34" fill="#C9A65A"/>
+                    <polygon points="102,34 110,18 118,34" fill="#B38F43"/>
+                    <polygon points="118,34 128,10 138,34" fill="#B38F43"/>
+                    <circle cx="72" cy="38" r="4" fill="#FFD700" stroke="#8B6914" stroke-width="0.8"/>
+                    <circle cx="100" cy="37" r="5" fill="#FF4444" stroke="#8B0000" stroke-width="0.8"/>
+                    <circle cx="128" cy="38" r="4" fill="#4488FF" stroke="#003399" stroke-width="0.8"/>
+                    <circle cx="86" cy="37" r="2.5" fill="#FFD700"/>
+                    <circle cx="114" cy="37" r="2.5" fill="#FFD700"/>
+                    <rect x="64" y="36" width="72" height="4" rx="2" fill="rgba(255,255,255,0.25)"/>
+                    <ellipse cx="100" cy="135" rx="32" ry="38" fill="#C8A882" transform="rotate(-8, 100, 135)"/>
+                    <ellipse cx="97" cy="140" rx="18" ry="26" fill="#E0C9A6" transform="rotate(-5, 97, 140)"/>
+                    <ellipse cx="115" cy="95" rx="20" ry="24" fill="#C8A882" transform="rotate(15, 115, 95)"/>
+                    <ellipse cx="126" cy="103" rx="10" ry="8" fill="#B89060" transform="rotate(10, 126, 103)"/>
+                    <ellipse cx="130" cy="101" rx="4" ry="3" fill="#7A5535"/>
+                    <circle cx="129" cy="100" r="1.2" fill="#4A3020"/>
+                    <ellipse cx="118" cy="91" rx="5" ry="5.5" fill="#2C1A0A"/>
+                    <circle cx="119.5" cy="89.5" r="1.8" fill="white"/>
+                    <circle cx="120.2" cy="89.2" r="0.8" fill="#FFD700" opacity="0.6"/>
+                    <ellipse cx="108" cy="75" rx="7" ry="12" fill="#C8A882" transform="rotate(-10, 108, 75)"/>
+                    <ellipse cx="108" cy="75" rx="4" ry="8" fill="#E8A0A0" transform="rotate(-10, 108, 75)" opacity="0.7"/>
+                    <ellipse cx="122" cy="72" rx="6" ry="10" fill="#B8987A" transform="rotate(8, 122, 72)"/>
+                    <ellipse cx="122" cy="72" rx="3.5" ry="7" fill="#E8A0A0" transform="rotate(8, 122, 72)" opacity="0.5"/>
+                    <path d="M75 162 C55 175, 45 188, 50 200 C53 208, 60 205, 65 198 C70 188, 75 175, 82 165 Z" fill="#B89060"/>
+                    <path d="M78 163 C60 176, 52 188, 56 198 C58 204, 62 203, 66 197 C70 188, 76 175, 82 165 Z" fill="#C8A882"/>
+                    <path d="M85 162 C80 175, 76 185, 70 193 C66 198, 62 200, 65 205 C68 210, 75 207, 80 200 C88 188, 92 172, 92 162 Z" fill="#C8A882"/>
+                    <ellipse cx="72" cy="205" rx="12" ry="5" fill="#A07848" transform="rotate(-15, 72, 205)"/>
+                    <path d="M108 128 C116 138, 120 148, 118 158 C116 165, 110 168, 106 162 C102 156, 104 145, 104 135 Z" fill="#C8A882"/>
+                    <ellipse cx="112" cy="163" rx="7" ry="4" fill="#A07848" transform="rotate(20, 112, 163)"/>
+                    <path d="M88 148 C84 158, 85 168, 90 172 C95 176, 100 172, 101 162 C102 155, 98 148, 92 146 Z" fill="#B89060" opacity="0.6"/>
+                    <path d="M95 120 Q100 118 105 122" stroke="#A07848" stroke-width="0.8" fill="none" opacity="0.5"/>
+                    <path d="M93 130 Q98 128 103 132" stroke="#A07848" stroke-width="0.8" fill="none" opacity="0.5"/>
+                    <ellipse cx="100" cy="53" rx="36" ry="4" fill="rgba(0,0,0,0.08)"/>
+                    <polygon points="100,2 102,8 108,8 103,12 105,18 100,14 95,18 97,12 92,8 98,8" fill="#FFD700" opacity="0.9"/>
                 </svg>
             </div>
-            
+
             <h1 class="hero-title">Wise King</h1>
             <h2 class="hero-subtitle">Enterprise</h2>
-            
+
             <div class="hero-divider">
                 <div class="hero-divider-line"></div>
                 <div class="hero-diamond"></div>
@@ -536,13 +750,32 @@
                 <div class="hero-diamond"></div>
                 <div class="hero-divider-line right"></div>
             </div>
-            
-            <p class="hero-tagline">
-                The Elite Coffee Alternative. Crafted for Global Connoisseurs.
-            </p>
-            
+
+            <p class="hero-tagline">The Elite Coffee Alternative. Crafted for Global Connoisseurs.</p>
+
             <div class="heritage-badge">
                 🇦🇺 Formulated with premium native elements and uncompromised sovereign quality standards, our pure, caffeine-free formulations are proudly curated and prepared in Australia for luxury food platforms across London, New York, Zurich, Dubai, and Singapore.
+            </div>
+
+            <div class="au-origin-strip">
+                <div class="au-origin-pill">
+                    <svg width="22" height="14" viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="900" height="450" fill="#00008B"/>
+                        <rect width="450" height="225" fill="#00008B"/>
+                        <polygon points="0,0 450,225 0,225" fill="white"/>
+                        <polygon points="0,0 450,0 0,225" fill="white"/>
+                        <polygon points="0,0 300,150 0,150" fill="#CC0001"/>
+                        <polygon points="150,0 450,150 450,0" fill="#CC0001"/>
+                        <rect x="0" y="90" width="450" height="45" fill="white"/>
+                        <rect x="202.5" y="0" width="45" height="225" fill="white"/>
+                        <rect x="0" y="97.5" width="450" height="30" fill="#CC0001"/>
+                        <rect x="210" y="0" width="30" height="225" fill="#CC0001"/>
+                    </svg>
+                    <span>Made in Australia</span>
+                </div>
+                <div class="au-origin-pill"><span style="font-size:14px">🌿</span><span>Native Botanicals</span></div>
+                <div class="au-origin-pill"><span style="font-size:14px">✦</span><span>Caffeine Free</span></div>
+                <div class="au-origin-pill"><span style="font-size:14px">🌍</span><span>Global Luxury</span></div>
             </div>
         </div>
     </section>
@@ -553,25 +786,33 @@
             <p class="section-subtitle">Bridging wild Australian wilderness with ancient royal luxury</p>
         </div>
         <div class="concept-grid">
-            
             <div class="concept-card">
                 <div class="image-frame">
-                    <img src="wattleseed.png.png" alt="Australian Roasted Wattleseed Blend">
+                    <img src="wattleseed.png.png" alt="Australian Roasted Wattleseed Blend" onerror="this.classList.add('img-error')">
+                    <div class="image-fallback">
+                        <div class="image-fallback-icon">🌾</div>
+                        <div class="image-fallback-text">Roasted Wattleseed</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--text-muted);margin-top:6px;">Wild Harvested · Australia</div>
+                    </div>
                 </div>
                 <h3 class="ingredient-title">Roasted Wattleseed</h3>
-                <p class="ingredient-origin">Wild Harvested • Australia</p>
-                <p class="ingredient-desc">Sustainably hand-harvested from the pristine Australian Wattle tree, our premium seeds are slow-roasted to absolute perfection. This complex native botanical releases a deep, alluring profile of roasted hazelnut, dark cacao, and espresso-like richness—acting as the ultimate natural bridge for dedicated coffee lovers seeking a caffeine-free alternative.</p>
+                <p class="ingredient-origin">Wild Harvested · Australia</p>
+                <p class="ingredient-desc">Sustainably hand-harvested from the pristine Australian Wattle tree, our premium seeds are slow-roasted to perfection. This complex native botanical releases a deep, alluring profile of roasted hazelnut, dark cacao, and espresso-like richness—acting as the ultimate natural bridge for dedicated coffee lovers seeking a caffeine-free alternative.</p>
             </div>
 
             <div class="concept-card">
                 <div class="image-frame">
-                    <img src="saffron.png.png" alt="Exquisite Premium Saffron Component">
+                    <img src="saffron.png.png" alt="Exquisite Premium Saffron Component" onerror="this.classList.add('img-error')">
+                    <div class="image-fallback">
+                        <div class="image-fallback-icon">🌸</div>
+                        <div class="image-fallback-text">Exquisite Saffron</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--text-muted);margin-top:6px;">Sovereign Grade · Ultra-Premium</div>
+                    </div>
                 </div>
                 <h3 class="ingredient-title">Exquisite Saffron</h3>
-                <p class="ingredient-origin">Sovereign Grade • Ultra-Premium</p>
+                <p class="ingredient-origin">Sovereign Grade · Ultra-Premium</p>
                 <p class="ingredient-desc">Meticulously integrated into our signature elixir, our select-grade crimson saffron strands bring a delicate honeyed floral sweetness and an iconic regal warmth to the blend. Renowned across centuries for supporting neural cellular defense, stabilizing mood baselines, and reducing daily oxidative stress, it transforms our golden blend into an active wellness ritual.</p>
             </div>
-
         </div>
     </section>
 
@@ -582,11 +823,56 @@
         </div>
         <div class="scenery-container">
             <div class="scenery-frame">
-                <img src="kangaroo.png.png" alt="Pure Australian Wildlife and Heritage Brand Visual">
+                <img src="kangaroo.png.png" alt="Pure Australian Wildlife and Heritage Brand Visual" onerror="this.classList.add('img-error')">
+                <div class="scenery-fallback">
+                    <div class="scenery-fallback-icon">🦘</div>
+                    <div class="scenery-fallback-text">The Great Southern Land</div>
+                </div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:center;gap:16px;padding:12px 20px 0;border-top:1px solid var(--border-light);">
+                <svg width="48" height="28" viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="900" height="450" fill="#00008B"/>
+                    <rect width="450" height="225" fill="#00008B"/>
+                    <polygon points="0,0 450,225 0,225" fill="white"/>
+                    <polygon points="0,0 450,0 0,225" fill="white"/>
+                    <polygon points="450,0 450,225 0,0" fill="white"/>
+                    <polygon points="0,0 300,150 0,150" fill="#CC0001"/>
+                    <polygon points="150,0 450,150 450,0" fill="#CC0001"/>
+                    <polygon points="0,75 375,225 450,225 0,150" fill="#CC0001"/>
+                    <rect x="0" y="90" width="450" height="45" fill="white"/>
+                    <rect x="202.5" y="0" width="45" height="225" fill="white"/>
+                    <rect x="0" y="97.5" width="450" height="30" fill="#CC0001"/>
+                    <rect x="210" y="0" width="30" height="225" fill="#CC0001"/>
+                    <polygon points="67,250 72,270 92,270 76,282 82,302 67,290 52,302 58,282 42,270 62,270" fill="white"/>
+                    <polygon points="750,80 755,95 770,95 758,104 763,120 750,110 737,120 742,104 730,95 745,95" fill="white"/>
+                    <polygon points="810,170 814,182 826,182 817,189 820,202 810,195 800,202 803,189 794,182 806,182" fill="white"/>
+                    <polygon points="690,200 694,212 706,212 697,219 700,232 690,225 680,232 683,219 674,212 686,212" fill="white"/>
+                    <polygon points="760,270 764,282 776,282 767,289 770,302 760,295 750,302 753,289 744,282 756,282" fill="white"/>
+                </svg>
+                <span style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--au-blue);">Australia · The Origin</span>
             </div>
             <p class="scenery-text">
                 "Our signature elixirs represent an authentic, exotic story that no standard wellness brand can tell. Deeply connected to the raw, clean terrains of Australia where native ingredients thrive under uncompromised sunshine."
             </p>
+        </div>
+        <div style="text-align:center;margin-top:30px;">
+            <div class="made-in-au">
+                <svg width="32" height="20" viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="900" height="450" fill="#00008B"/>
+                    <rect width="450" height="225" fill="#00008B"/>
+                    <polygon points="0,0 450,225 0,225" fill="white"/>
+                    <polygon points="0,0 450,0 0,225" fill="white"/>
+                    <polygon points="450,0 450,225 0,0" fill="white"/>
+                    <polygon points="0,0 300,150 0,150" fill="#CC0001"/>
+                    <polygon points="150,0 450,150 450,0" fill="#CC0001"/>
+                    <polygon points="0,75 375,225 450,225 0,150" fill="#CC0001"/>
+                    <rect x="0" y="90" width="450" height="45" fill="white"/>
+                    <rect x="202.5" y="0" width="45" height="225" fill="white"/>
+                    <rect x="0" y="97.5" width="450" height="30" fill="#CC0001"/>
+                    <rect x="210" y="0" width="30" height="225" fill="#CC0001"/>
+                </svg>
+                <span class="made-in-au-text">100% Conceived, Formulated &amp; Crafted in Australia</span>
+            </div>
         </div>
     </section>
 
@@ -597,14 +883,17 @@
         </div>
         <div class="pilot-container">
             <div class="video-column">
-                <div class="video-frame">
-                    <video controls autoplay muted loop playsinline>
+                <div class="video-frame" id="videoFrame">
+                    <video id="heroVideo" controls autoplay muted loop playsinline preload="auto" poster="kangaroo.png.png">
                         <source src="liqgold.mp4" type="video/mp4">
-                        <source src="liqgold.mp4.mp4" type="video/mp4">
                         <source src="liqgold.mov" type="video/quicktime">
-                        <source src="liqgold" type="video/mp4">
-                        Your browser does not support playing live video frames.
+                        <source src="liqgold.webm" type="video/webm">
                     </video>
+                    <div class="video-fallback" id="videoFallback">
+                        <div class="video-fallback-icon">🥛</div>
+                        <div class="video-fallback-text">Golden Latte Elixir<br>Sovereign Blend</div>
+                        <div class="video-fallback-sub">Upload liqgold.mp4 to your repo to display the video</div>
+                    </div>
                 </div>
             </div>
             <div class="text-column">
@@ -632,20 +921,95 @@
             We are currently running exclusive corporate sample programs for international cafe chains, premium specialty roasters, and luxury wellness distributors worldwide.<br><br>
             To lock in custom wholesale allocations or review pilot batch analysis profiles, please click below to connect with our logistics panel.
         </p>
-        
+
         <a href="mailto:budhrajapiyush07@gmail.com?subject=Wise%20King%20Enterprise%20-%20Global%20Wholesale%20Inquiry" class="cta-email-btn">
             Contact Executive Panel
         </a>
-        
+
         <div class="social-icons">
             <a href="https://www.instagram.com/jbj_life07" target="_blank" class="social-link">Instagram</a>
             <a href="https://www.tiktok.com/@jbj_life" target="_blank" class="social-link">TikTok</a>
             <a href="https://www.youtube.com/@jbj_life" target="_blank" class="social-link">YouTube</a>
         </div>
 
-        <p class="origin-tag">Australia · Global Fulfillment</p>
+        <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:20px;flex-wrap:wrap;">
+            <svg width="36" height="22" viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
+                <rect width="900" height="450" fill="#00008B"/>
+                <rect width="450" height="225" fill="#00008B"/>
+                <polygon points="0,0 450,225 0,225" fill="white"/>
+                <polygon points="0,0 450,0 0,225" fill="white"/>
+                <polygon points="450,0 450,225 0,0" fill="white"/>
+                <polygon points="0,0 300,150 0,150" fill="#CC0001"/>
+                <polygon points="150,0 450,150 450,0" fill="#CC0001"/>
+                <rect x="0" y="90" width="450" height="45" fill="white"/>
+                <rect x="202.5" y="0" width="45" height="225" fill="white"/>
+            </svg>
+            <p class="origin-tag" style="margin:0;">Australia · Global Fulfillment</p>
+            <svg width="36" height="22" viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
+                <rect width="900" height="450" fill="#00008B"/>
+                <rect width="450" height="225" fill="#00008B"/>
+                <polygon points="0,0 450,225 0,225" fill="white"/>
+                <polygon points="0,0 450,0 0,225" fill="white"/>
+                <polygon points="450,0 450,225 0,0" fill="white"/>
+                <polygon points="0,0 300,150 0,150" fill="#CC0001"/>
+                <polygon points="150,0 450,150 450,0" fill="#CC0001"/>
+                <rect x="0" y="90" width="450" height="45" fill="white"/>
+                <rect x="202.5" y="0" width="45" height="225" fill="white"/>
+            </svg>
+        </div>
+
         <p class="copyright">&copy; 2026 The Wise King Enterprise. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        // ── ROBUST VIDEO CONTROLLER ──
+        const video = document.getElementById('heroVideo');
+        const videoFrame = document.getElementById('videoFrame');
+
+        if (video) {
+            // Programmatic setup to bypass aggressive mobile tracking filters
+            video.removeAttribute('controls');
+            video.muted = true;
+            video.defaultMuted = true;
+            video.loop = true;
+            video.playsInline = true;
+
+            const handleVideoPlay = () => {
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => {
+                        // Safe fallback action if gesture policy takes effect
+                        video.controls = true;
+                    });
+                }
+            };
+
+            // Initial load hook
+            window.addEventListener('DOMContentLoaded', handleVideoPlay);
+            video.addEventListener('loadedmetadata', handleVideoPlay);
+
+            video.addEventListener('error', () => {
+                videoFrame.classList.add('video-errored');
+            });
+
+            video.addEventListener('stalled', () => {
+                setTimeout(() => {
+                    if (video.readyState === 0) {
+                        videoFrame.classList.add('video-errored');
+                    }
+                }, 3500);
+            });
+        }
+
+        // ── NAVBAR SCROLL SYSTEM ──
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
