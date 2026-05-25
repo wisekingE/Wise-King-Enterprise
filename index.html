@@ -10,22 +10,19 @@
 
   <style>
     :root {
-      --gold:        #C9A84C;
-      --gold-light:  #E8C97A;
-      --gold-pale:   #F5E9C8;
-      --gold-deep:   #8B6914;
-      --cream:       #FDFAF4;
-      --warm-white:  #FFFEF9;
-      --ink:         #1A1208;
-      --ink-soft:    #3D2E10;
-      --muted:       #8C7A5A;
-      --border:      rgba(201,168,76,0.22);
+      --gold:       #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-pale:  #F5E9C8;
+      --gold-deep:  #8B6914;
+      --cream:      #FDFAF4;
+      --warm-white: #FFFEF9;
+      --ink:        #1A1208;
+      --ink-soft:   #3D2E10;
+      --muted:      #8C7A5A;
+      --border:     rgba(201,168,76,0.22);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--warm-white);
       color: var(--ink);
@@ -38,8 +35,8 @@
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
-      opacity: .55;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      opacity: .5;
     }
 
     /* ── TOPBAR ── */
@@ -47,14 +44,13 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: center; gap: 10px;
       padding: 11px 24px;
-      background: rgba(253,250,244,0.88);
-      backdrop-filter: blur(14px);
+      background: rgba(253,250,244,0.92);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      font-family: 'Jost', sans-serif;
-      font-size: 11px; letter-spacing: .18em;
+      font-size: 10.5px; letter-spacing: .2em;
       text-transform: uppercase; color: var(--gold-deep);
     }
-    .topbar img { height: 18px; }
+    .topbar img { height: 18px; border-radius: 2px; }
     .topbar span { color: var(--muted); }
 
     /* ── HERO ── */
@@ -62,228 +58,329 @@
       position: relative; min-height: 100svh;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      padding: 120px 24px 80px;
+      padding: 110px 24px 70px;
       overflow: hidden;
       background: linear-gradient(160deg, #fffef9 0%, #fdf4e0 55%, #f7e8c0 100%);
     }
-
-    /* Gold radial glow */
     .hero::after {
       content: '';
       position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
       width: 700px; height: 700px;
-      background: radial-gradient(ellipse, rgba(201,168,76,0.13) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(201,168,76,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
 
     .hero-eyebrow {
-      font-family: 'Jost', sans-serif;
       font-size: 10.5px; letter-spacing: .3em;
       text-transform: uppercase; color: var(--gold);
-      margin-bottom: 28px;
+      margin-bottom: 22px;
       opacity: 0; animation: fadeUp .9s .1s ease forwards;
     }
 
-    .hero-logo {
-      width: min(220px, 55vw);
-      margin-bottom: 28px;
-      filter: drop-shadow(0 8px 32px rgba(201,168,76,0.28));
-      opacity: 0; animation: fadeUp .9s .25s ease forwards;
+    /* KANGAROO HERO IMAGE */
+    .hero-king {
+      width: min(520px, 88vw);
+      border-radius: 20px;
+      margin-bottom: 36px;
+      box-shadow: 0 24px 80px rgba(139,105,20,0.25), 0 4px 20px rgba(139,105,20,0.12);
+      border: 1.5px solid rgba(201,168,76,0.35);
+      opacity: 0; animation: fadeUp 1s .2s ease forwards;
+      object-fit: cover;
     }
 
     .hero h1 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      font-weight: 700;
-      line-height: 1.08;
-      text-align: center;
-      color: var(--ink);
+      font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+      font-weight: 700; line-height: 1.08;
+      text-align: center; color: var(--ink);
       letter-spacing: .04em;
       opacity: 0; animation: fadeUp .9s .4s ease forwards;
     }
     .hero h1 em {
       font-style: italic;
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      color: var(--gold);
+      font-weight: 300; color: var(--gold);
       letter-spacing: .06em;
     }
-
     .hero-sub {
-      margin-top: 20px;
+      margin-top: 18px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.15rem, 2.5vw, 1.45rem);
-      font-style: italic;
-      color: var(--ink-soft);
-      text-align: center; max-width: 560px;
-      opacity: 0; animation: fadeUp .9s .55s ease forwards;
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-style: italic; color: var(--ink-soft);
+      text-align: center; max-width: 540px;
+      opacity: 0; animation: fadeUp .9s .52s ease forwards;
     }
-
     .divider-gold {
       display: flex; align-items: center; gap: 14px;
-      margin: 30px auto;
-      opacity: 0; animation: fadeUp .9s .65s ease forwards;
+      margin: 26px auto;
+      opacity: 0; animation: fadeUp .9s .62s ease forwards;
     }
     .divider-gold span { display: block; width: 60px; height: 1px; background: var(--gold); }
-    .divider-gold svg { width: 18px; fill: var(--gold); }
+    .divider-gold svg { width: 17px; fill: var(--gold); }
 
-    /* ── VIDEO SECTION ── */
+    /* ── VIDEO ── */
+    .video-section {
+      position: relative; z-index: 1;
+      padding: 20px 24px 80px;
+      background: linear-gradient(180deg, #f7e8c0 0%, #fdf4e0 100%);
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .video-label {
+      font-size: 10px; letter-spacing: .3em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 22px;
+    }
     .video-wrap {
       position: relative;
-      width: min(480px, 90vw);
-      border-radius: 24px;
+      width: min(560px, 92vw);
+      border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 24px 80px rgba(139,105,20,0.22), 0 4px 16px rgba(139,105,20,0.1);
-      margin: 10px auto 0;
-      opacity: 0; animation: fadeUp 1s .75s ease forwards;
+      box-shadow: 0 28px 80px rgba(139,105,20,0.24), 0 4px 18px rgba(139,105,20,0.1);
     }
     .video-wrap::before {
       content: '';
       position: absolute; inset: 0; z-index: 1; pointer-events: none;
-      border-radius: 24px;
-      border: 1.5px solid rgba(201,168,76,0.45);
+      border-radius: 22px;
+      border: 1.5px solid rgba(201,168,76,0.5);
     }
-    .video-wrap video {
-      width: 100%; display: block;
-      border-radius: 24px;
-    }
+    .video-wrap video { width: 100%; display: block; border-radius: 22px; }
 
-    /* ── SECTION BASE ── */
-    section {
+    /* ── INGREDIENT SHOWCASE (below hero) ── */
+    .spice-showcase {
       position: relative; z-index: 1;
-      padding: 100px 24px;
+      padding: 60px 24px;
+      background: var(--warm-white);
     }
-    .section-inner { max-width: 1060px; margin: 0 auto; }
-
-    .section-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 10px; letter-spacing: .32em;
+    .spice-showcase .inner { max-width: 1060px; margin: 0 auto; text-align: center; }
+    .spice-showcase-label {
+      font-size: 10px; letter-spacing: .3em;
       text-transform: uppercase; color: var(--gold);
-      margin-bottom: 16px; display: block;
+      margin-bottom: 12px; display: block;
     }
-    .section-title {
+    .spice-showcase h2 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 600; color: var(--ink);
-      line-height: 1.14;
-      margin-bottom: 18px;
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      color: var(--ink); margin-bottom: 10px;
     }
-    .section-body {
+    .spice-showcase p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 2.2vw, 1.3rem);
-      color: var(--ink-soft); line-height: 1.72;
-      max-width: 660px;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      color: var(--ink-soft); max-width: 580px; margin: 0 auto 44px;
+      line-height: 1.7;
+    }
+    /* Six ingredient pill cards */
+    .spice-row {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      justify-content: center; margin-bottom: 44px;
+    }
+    .spice-pill {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 22px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      background: var(--cream);
+      transition: background .3s, border-color .3s, transform .25s;
+    }
+    .spice-pill:hover {
+      background: var(--gold-pale);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .spice-pill .icon { font-size: 1.3rem; }
+    .spice-pill .name {
+      font-family: 'Cinzel', serif;
+      font-size: .82rem; letter-spacing: .1em;
+      color: var(--ink-soft);
+    }
+    .spice-pill .benefit {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .9rem; font-style: italic;
+      color: var(--muted);
     }
 
     /* ── UNIQUENESS BAND ── */
     .band {
       background: linear-gradient(135deg, #1A1208 0%, #2E1F07 60%, #1A1208 100%);
       color: var(--gold-pale);
-      padding: 72px 24px;
+      padding: 72px 24px; position: relative; z-index: 1;
     }
-    .band .section-inner { text-align: center; }
-    .band .section-label { color: var(--gold-light); }
-    .band .section-title { color: var(--gold-light); }
+    .band .inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+    .band-label {
+      font-size: 10px; letter-spacing: .32em;
+      text-transform: uppercase; color: var(--gold-light);
+      margin-bottom: 14px; display: block;
+    }
+    .band h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+      color: var(--gold-light); margin-bottom: 18px;
+    }
     .band p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
       color: rgba(245,233,200,0.78);
-      line-height: 1.75; max-width: 700px; margin: 0 auto;
+      line-height: 1.78; max-width: 700px; margin: 0 auto;
     }
     .band-stat {
-      margin-top: 52px;
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 32px;
+      margin-top: 48px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 28px;
     }
     .stat-item {
-      border: 1px solid rgba(201,168,76,0.25);
-      border-radius: 14px; padding: 28px 20px;
-      text-align: center;
+      border: 1px solid rgba(201,168,76,0.22);
+      border-radius: 14px; padding: 26px 18px;
       background: rgba(201,168,76,0.06);
       transition: background .3s, border-color .3s;
     }
-    .stat-item:hover {
-      background: rgba(201,168,76,0.13);
-      border-color: rgba(201,168,76,0.5);
-    }
+    .stat-item:hover { background: rgba(201,168,76,0.13); border-color: rgba(201,168,76,0.48); }
     .stat-item .num {
       font-family: 'Cinzel', serif;
-      font-size: 2.2rem; color: var(--gold);
+      font-size: 2.1rem; color: var(--gold);
       display: block; margin-bottom: 6px;
     }
-    .stat-item p {
-      font-size: .95rem; color: rgba(245,233,200,0.65);
-      letter-spacing: .08em; max-width: none;
+    .stat-item p { font-size: .9rem; color: rgba(245,233,200,0.62); letter-spacing: .08em; max-width: none; }
+
+    /* ── INGREDIENTS SECTION ── */
+    .ingredients {
+      position: relative; z-index: 1;
+      padding: 100px 24px;
+      background: var(--cream);
+    }
+    .ingredients .inner { max-width: 1060px; margin: 0 auto; }
+    .section-label {
+      font-size: 10px; letter-spacing: .32em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 14px; display: block;
+    }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 600; color: var(--ink);
+      line-height: 1.14; margin-bottom: 16px;
+    }
+    .section-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--ink-soft); line-height: 1.72;
+      max-width: 640px; margin-bottom: 52px;
     }
 
-    /* ── INGREDIENTS ── */
-    .ingredients-grid {
+    .ing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2px;
-      margin-top: 60px;
       border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
+      border-radius: 20px; overflow: hidden;
     }
     .ing-card {
-      padding: 44px 36px;
-      background: var(--cream);
+      padding: 40px 32px;
+      background: var(--warm-white);
       border-right: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       transition: background .3s;
       position: relative; overflow: hidden;
     }
-    .ing-card:last-child { border-right: none; }
     .ing-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; width: 3px; height: 0;
-      background: var(--gold);
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 0; background: var(--gold);
       transition: height .4s ease;
     }
     .ing-card:hover::before { height: 100%; }
     .ing-card:hover { background: #fffbf0; }
+
     .ing-photo {
-      width: 100%; height: 200px; object-fit: cover;
-      border-radius: 12px; margin-bottom: 24px;
-      filter: saturate(1.1);
+      width: 100%; height: 210px; object-fit: cover;
+      border-radius: 12px; margin-bottom: 22px;
+      filter: saturate(1.08) contrast(1.02);
     }
+
+    /* Sacred Symphony — illustrated card */
+    .symphony-card {
+      background: linear-gradient(150deg, #1a1208 0%, #2e1f07 100%);
+      padding: 36px 28px;
+      border-radius: 0;
+      position: relative; overflow: hidden;
+    }
+    .symphony-scene {
+      width: 100%; border-radius: 12px; margin-bottom: 22px;
+      background: linear-gradient(135deg, #2e1a06, #4a2e0a, #2e1a06);
+      min-height: 210px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 20px; gap: 8px;
+      position: relative; overflow: hidden;
+    }
+    /* Animated shimmer on symphony card */
+    .symphony-scene::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(201,168,76,0.18) 0%, transparent 65%);
+    }
+    .symphony-animals {
+      display: flex; gap: 14px; font-size: 2.6rem;
+      position: relative; z-index: 1;
+      filter: drop-shadow(0 2px 8px rgba(201,168,76,0.4));
+    }
+    .symphony-spices {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      justify-content: center; position: relative; z-index: 1;
+      margin-top: 8px;
+    }
+    .ss-tag {
+      padding: 5px 13px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 50px;
+      font-size: 11px; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--gold-light);
+      font-family: 'Jost', sans-serif;
+    }
+    .symphony-caption {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-size: .92rem;
+      color: rgba(201,168,76,0.6); text-align: center;
+      margin-top: 10px; position: relative; z-index: 1;
+    }
+
     .ing-card h3 {
       font-family: 'Cinzel', serif;
-      font-size: 1.15rem; font-weight: 600;
+      font-size: 1.1rem; font-weight: 600;
       color: var(--ink); margin-bottom: 10px;
       letter-spacing: .05em;
     }
+    .symphony-card h3 { color: var(--gold-light); }
     .ing-card p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem; color: var(--ink-soft);
-      line-height: 1.65;
+      font-size: 1.05rem; color: var(--ink-soft); line-height: 1.65;
     }
+    .symphony-card p { color: rgba(245,233,200,0.72); }
     .ing-badge {
-      display: inline-block;
-      margin-top: 14px;
+      display: inline-block; margin-top: 14px;
       padding: 4px 12px;
       border: 1px solid var(--gold);
       border-radius: 50px;
       font-size: 10px; letter-spacing: .2em;
       text-transform: uppercase; color: var(--gold-deep);
-      font-family: 'Jost', sans-serif;
     }
+    .symphony-card .ing-badge { color: var(--gold-light); border-color: rgba(201,168,76,0.45); }
 
-    /* ── WELLNESS SECTION ── */
+    /* ── WELLNESS ── */
     .wellness {
+      position: relative; z-index: 1;
+      padding: 100px 24px;
       background: linear-gradient(180deg, var(--warm-white) 0%, #fdf4e0 100%);
     }
+    .wellness .inner { max-width: 1060px; margin: 0 auto; }
     .wellness-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px; margin-top: 52px;
+      gap: 22px; margin-top: 50px;
     }
     .well-item {
-      padding: 36px 28px;
+      padding: 34px 26px;
       border: 1px solid var(--border);
       border-radius: 18px;
-      background: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.75);
       backdrop-filter: blur(6px);
       transition: transform .3s, box-shadow .3s;
     }
@@ -292,369 +389,426 @@
       box-shadow: 0 16px 48px rgba(139,105,20,0.10);
     }
     .well-icon {
-      width: 48px; height: 48px;
+      width: 46px; height: 46px;
       background: linear-gradient(135deg, var(--gold-pale), var(--gold-light));
       border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
-      margin-bottom: 18px;
-      font-size: 22px;
+      margin-bottom: 16px; font-size: 21px;
     }
     .well-item h4 {
       font-family: 'Cinzel', serif;
-      font-size: 1rem; font-weight: 600;
-      color: var(--ink); margin-bottom: 10px;
+      font-size: .98rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 9px;
     }
     .well-item p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem; color: var(--ink-soft); line-height: 1.65;
+      font-size: 1.03rem; color: var(--ink-soft); line-height: 1.65;
     }
 
-    /* ── FREE SAMPLE CTA ── */
+    /* ── CTA ── */
     .cta-section {
+      position: relative; z-index: 1;
       background: linear-gradient(135deg, #fdf4e0 0%, #f5e3a8 50%, #fdf4e0 100%);
-      text-align: center;
-      padding: 100px 24px;
+      text-align: center; padding: 100px 24px;
     }
-    .cta-section .section-title { margin: 0 auto 16px; }
+    .cta-section .section-title { margin: 0 auto 14px; }
     .cta-section p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 2.2vw, 1.3rem);
-      color: var(--ink-soft); max-width: 580px; margin: 0 auto 36px;
-      line-height: 1.7;
+      font-size: clamp(1.08rem, 2.1vw, 1.28rem);
+      color: var(--ink-soft); max-width: 560px; margin: 0 auto 34px;
+      line-height: 1.72;
     }
     .btn-gold {
-      display: inline-block;
-      padding: 16px 44px;
+      display: inline-block; padding: 16px 42px;
       background: linear-gradient(135deg, var(--gold-deep), var(--gold));
-      color: #fff;
-      font-family: 'Cinzel', serif;
-      font-size: .92rem; letter-spacing: .16em;
-      text-transform: uppercase;
-      text-decoration: none;
+      color: #fff; font-family: 'Cinzel', serif;
+      font-size: .9rem; letter-spacing: .16em;
+      text-transform: uppercase; text-decoration: none;
       border-radius: 50px;
       box-shadow: 0 8px 32px rgba(139,105,20,0.30);
       transition: box-shadow .3s, transform .3s;
     }
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 44px rgba(139,105,20,0.42);
-    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(139,105,20,0.42); }
     .btn-outline {
-      display: inline-block;
-      padding: 16px 44px;
-      border: 1.5px solid var(--gold);
-      color: var(--gold-deep);
+      display: inline-block; padding: 16px 42px;
+      border: 1.5px solid var(--gold); color: var(--gold-deep);
       font-family: 'Cinzel', serif;
-      font-size: .92rem; letter-spacing: .16em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 50px;
-      margin-left: 12px;
+      font-size: .9rem; letter-spacing: .16em;
+      text-transform: uppercase; text-decoration: none;
+      border-radius: 50px; margin-left: 12px;
       transition: background .3s, color .3s;
     }
     .btn-outline:hover { background: var(--gold); color: #fff; }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--ink);
-      color: rgba(245,233,200,0.55);
-      padding: 60px 24px 36px;
-      text-align: center;
+      position: relative; z-index: 1;
+      background: var(--ink); color: rgba(245,233,200,0.5);
+      padding: 60px 24px 36px; text-align: center;
     }
-    .footer-logo {
-      width: 80px; margin: 0 auto 20px;
-      filter: brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(5deg) opacity(.7);
+    .footer-king {
+      width: 100px; height: 100px; object-fit: cover;
+      border-radius: 50%; margin: 0 auto 18px;
+      border: 2px solid rgba(201,168,76,0.45);
+      filter: brightness(0.9);
     }
     .footer-brand {
       font-family: 'Cinzel', serif;
-      font-size: 1.1rem; color: var(--gold-light);
-      letter-spacing: .2em; margin-bottom: 6px;
+      font-size: 1.05rem; color: var(--gold-light);
+      letter-spacing: .22em; margin-bottom: 5px;
     }
     .footer-tagline {
       font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-size: 1rem;
-      color: rgba(245,233,200,0.45); margin-bottom: 28px;
+      font-style: italic; font-size: .95rem;
+      color: rgba(245,233,200,0.4); margin-bottom: 28px;
     }
     .social-row {
-      display: flex; gap: 20px; justify-content: center;
-      margin-bottom: 32px; flex-wrap: wrap;
+      display: flex; gap: 16px; justify-content: center;
+      margin-bottom: 30px; flex-wrap: wrap;
     }
     .social-link {
       display: flex; align-items: center; gap: 8px;
-      padding: 10px 22px;
-      border: 1px solid rgba(201,168,76,0.25);
-      border-radius: 50px;
-      color: var(--gold-light);
-      text-decoration: none;
-      font-family: 'Jost', sans-serif;
-      font-size: .85rem; letter-spacing: .1em;
+      padding: 10px 20px;
+      border: 1px solid rgba(201,168,76,0.22);
+      border-radius: 50px; color: var(--gold-light);
+      text-decoration: none; font-size: .84rem; letter-spacing: .1em;
       transition: border-color .3s, background .3s;
     }
-    .social-link:hover {
-      border-color: var(--gold);
-      background: rgba(201,168,76,0.1);
-    }
-    .footer-copy {
-      font-size: .8rem; letter-spacing: .08em;
-      color: rgba(245,233,200,0.3);
-    }
-    .footer-flag {
-      height: 16px; vertical-align: middle; margin-right: 6px;
-      border-radius: 2px;
-    }
+    .social-link:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+    .footer-copy { font-size: .78rem; letter-spacing: .08em; color: rgba(245,233,200,0.28); }
+    .footer-flag { height: 15px; vertical-align: middle; margin-right: 6px; border-radius: 2px; }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
+      from { opacity: 0; transform: translateY(26px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
 
-    .reveal {
-      opacity: 0; transform: translateY(32px);
-      transition: opacity .75s ease, transform .75s ease;
-    }
-    .reveal.visible {
-      opacity: 1; transform: none;
-    }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
       .btn-outline { margin-left: 0; margin-top: 12px; display: block; }
-      .ing-card { padding: 28px 22px; }
       .band-stat { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia.svg" alt="Australian Flag" />
-    <span>100% Australian Crafted</span>
-    &nbsp;·&nbsp;
-    <span>Ultra-Premium Wellness</span>
-    &nbsp;·&nbsp;
-    <span>Globally Uncontested</span>
+<!-- TOPBAR -->
+<div class="topbar">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia.svg" alt="Australian Flag" />
+  <span>100% Australian Crafted</span>
+  &nbsp;·&nbsp;
+  <span>Ultra-Premium Wellness</span>
+  &nbsp;·&nbsp;
+  <span>Globally Uncontested</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Wise King Enterprise &nbsp;·&nbsp; Est. Australia</p>
+
+  <!-- YOUR KANGAROO KING IMAGE — fixed filename -->
+  <img class="hero-king"
+       src="kangaroo-crown.png.PNG"
+       alt="Wise King — The Royal Kangaroo"
+       onerror="this.style.display='none'" />
+
+  <h1>The <em>Golden</em><br/>Latte Alchemy</h1>
+  <p class="hero-sub">
+    A masterwork of ancient botanical wisdom,<br/>
+    refined for the modern connoisseur.
+  </p>
+  <div class="divider-gold">
+    <span></span>
+    <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+    <span></span>
   </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <p class="hero-eyebrow">Wise King Enterprise &nbsp;·&nbsp; Est. Australia</p>
+<!-- VIDEO SECTION -->
+<div class="video-section">
+  <p class="video-label">Experience the Ritual</p>
+  <!-- YOUR VIDEO — fixed filename -->
+  <div class="video-wrap">
+    <video autoplay muted loop playsinline>
+      <source src="liqgold.mp4.MP4" type="video/mp4" />
+    </video>
+  </div>
+</div>
 
-    <!-- REPLACE src with your kangaroo crown image filename, e.g. kangaroo-crown.png -->
-    <img class="hero-logo" src="kangaroo-crown.png" alt="Wise King — Crowned Kangaroo" />
+<!-- SPICE SHOWCASE — fills the blank space under hero -->
+<section class="spice-showcase">
+  <div class="inner">
+    <span class="spice-showcase-label reveal">The Sacred Six</span>
+    <h2 class="reveal">Six Botanicals. One Extraordinary Cup.</h2>
+    <p class="reveal">
+      Every ingredient is selected for its therapeutic potency, provenance, and
+      flavour complexity. Nothing is here by accident — each element elevates the next.
+    </p>
+    <div class="spice-row reveal">
+      <div class="spice-pill">
+        <span class="icon">🌸</span>
+        <div>
+          <div class="name">Saffron</div>
+          <div class="benefit">Mood · Cognition · Antioxidant</div>
+        </div>
+      </div>
+      <div class="spice-pill">
+        <span class="icon">🌿</span>
+        <div>
+          <div class="name">Turmeric</div>
+          <div class="benefit">Anti-Inflammatory · Cellular Repair</div>
+        </div>
+      </div>
+      <div class="spice-pill">
+        <span class="icon">🪨</span>
+        <div>
+          <div class="name">Wattleseed</div>
+          <div class="benefit">Native Australian · Protein-Rich</div>
+        </div>
+      </div>
+      <div class="spice-pill">
+        <span class="icon">🫚</span>
+        <div>
+          <div class="name">Ginger</div>
+          <div class="benefit">Digestive · Warming · Circulation</div>
+        </div>
+      </div>
+      <div class="spice-pill">
+        <span class="icon">🌱</span>
+        <div>
+          <div class="name">Green Cardamom</div>
+          <div class="benefit">Aromatic · Gut Health · Clarity</div>
+        </div>
+      </div>
+      <div class="spice-pill">
+        <span class="icon">🌶️</span>
+        <div>
+          <div class="name">Black Pepper</div>
+          <div class="benefit">Bioavailability Amplifier</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h1>The <em>Golden</em><br/>Latte Alchemy</h1>
+<!-- UNIQUENESS BAND -->
+<div class="band">
+  <div class="inner">
+    <span class="band-label">A World First</span>
+    <h2>No One Else Does This</h2>
+    <p>
+      Wise King is the world's only premium blend unifying high-potency Saffron,
+      Native Australian Roasted Wattleseed, Green Cardamom, and Organic Turmeric
+      in a single, ceremonial golden latte. Not found on any shelf. Not replicated by any brand.
+      This is the beginning of something entirely new.
+    </p>
+    <div class="band-stat">
+      <div class="stat-item">
+        <span class="num">6+</span>
+        <p>Rare Botanicals</p>
+      </div>
+      <div class="stat-item">
+        <span class="num">0</span>
+        <p>Competitors Worldwide</p>
+      </div>
+      <div class="stat-item">
+        <span class="num">100%</span>
+        <p>Australian Made</p>
+      </div>
+      <div class="stat-item">
+        <span class="num">∞</span>
+        <p>Wellness Benefits</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <p class="hero-sub">
-      A masterwork of ancient botanical wisdom,<br/>
-      refined for the modern connoisseur.
+<!-- INGREDIENTS SECTION -->
+<section class="ingredients">
+  <div class="inner">
+    <span class="section-label reveal">The Foundation</span>
+    <h2 class="section-title reveal">Our Signature Blend</h2>
+    <p class="section-body reveal">
+      Every element is hand-selected for potency and provenance.
+      This is not a commodity product — it is a crafted ritual in a cup.
     </p>
 
-    <div class="divider-gold">
-      <span></span>
-      <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
-      <span></span>
-    </div>
+    <div class="ing-grid">
 
-    <!-- YOUR 5-SECOND VIDEO — make sure golden-latte.mp4 is in the same folder -->
-    <div class="video-wrap">
-      <video autoplay muted loop playsinline>
-        <source src="golden-latte.mp4" type="video/mp4" />
-      </video>
-    </div>
-  </section>
+      <!-- SAFFRON — fixed filename -->
+      <div class="ing-card reveal">
+        <img class="ing-photo"
+             src="saffron.png.JPG"
+             alt="Premium Saffron"
+             onerror="this.style.background='linear-gradient(135deg,#7a3a8c,#c971d0)';this.style.minHeight='210px';" />
+        <h3>Saffron</h3>
+        <p>
+          The world's most precious spice. Rich in crocin and safranal,
+          saffron is revered for lifting mood, sharpening cognition,
+          and delivering powerful antioxidant protection at the cellular level.
+          Clinically recognised for supporting serotonin pathways.
+        </p>
+        <span class="ing-badge">Rare · World's Most Precious Spice</span>
+      </div>
 
-  <!-- UNIQUENESS BAND -->
-  <div class="band">
-    <div class="section-inner">
-      <span class="section-label">A World First</span>
-      <h2 class="section-title">No One Else Does This</h2>
-      <p>
-        Wise King is the world's only premium blend unifying high-potency Persian Saffron,
-        Native Australian Roasted Wattleseed, Green Cardamom, and Organic Turmeric
-        in a single, ceremonial golden latte. Not found on any shelf. Not replicated by any brand.
-      </p>
-      <div class="band-stat">
-        <div class="stat-item">
-          <span class="num">6+</span>
-          <p>Rare Botanicals</p>
+      <!-- WATTLESEED — fixed filename -->
+      <div class="ing-card reveal">
+        <img class="ing-photo"
+             src="wattleseed.png.JPG"
+             alt="Roasted Australian Wattleseed"
+             onerror="this.style.background='linear-gradient(135deg,#3d2007,#7a4a15)';this.style.minHeight='210px';" />
+        <h3>Native Australian Wattleseed</h3>
+        <p>
+          An Indigenous Australian treasure, slow-roasted to unlock a deep, nutty,
+          espresso-like complexity. High in protein, potassium and calcium —
+          it transforms your cup into a nourishing culinary experience
+          found nowhere else in the world.
+        </p>
+        <span class="ing-badge">Native Australian · Exclusively Ours</span>
+      </div>
+
+      <!-- THE SACRED SYMPHONY — illustrated -->
+      <div class="ing-card symphony-card reveal">
+        <div class="symphony-scene">
+          <!-- Australian animal scientists creating the blend -->
+          <div class="symphony-animals">
+            <span title="Kangaroo — The Master Blender">🦘</span>
+            <span title="Koala — The Botanist">🐨</span>
+            <span title="Emu — The Keeper of Wattleseed">🦤</span>
+            <span title="Cockatoo — The Saffron Specialist">🦜</span>
+          </div>
+          <p style="color:rgba(245,233,200,0.55);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;margin-top:8px;position:relative;z-index:1;">
+            Australia's finest botanical scientists at work
+          </p>
+          <div class="symphony-spices">
+            <span class="ss-tag">Turmeric</span>
+            <span class="ss-tag">Ginger</span>
+            <span class="ss-tag">Wattleseed</span>
+            <span class="ss-tag">Clove</span>
+            <span class="ss-tag">Black Pepper</span>
+            <span class="ss-tag">Saffron</span>
+            <span class="ss-tag">Cardamom</span>
+          </div>
+          <p class="symphony-caption">Seven botanicals. One vision. Zero compromise.</p>
         </div>
-        <div class="stat-item">
-          <span class="num">0</span>
-          <p>Competitors Worldwide</p>
-        </div>
-        <div class="stat-item">
-          <span class="num">100%</span>
-          <p>Australian Made</p>
-        </div>
-        <div class="stat-item">
-          <span class="num">∞</span>
-          <p>Wellness Benefits</p>
-        </div>
+        <h3>The Sacred Symphony</h3>
+        <p>
+          Organic Turmeric anchors the blend with curcumin — nature's most studied
+          anti-inflammatory compound. Green Cardamom adds aromatic elegance. Ginger
+          and Clove warm from within. Black Pepper unlocks the bioavailability of every
+          ingredient. Together, they do not just blend — they perform alchemy.
+        </p>
+        <span class="ing-badge">7 Botanicals · One Cup · Zero Compromise</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WELLNESS -->
+<section class="wellness">
+  <div class="inner">
+    <span class="section-label reveal">Why It Matters</span>
+    <h2 class="section-title reveal">Health Is the Real Luxury</h2>
+    <p class="section-body reveal">
+      Each sip delivers a synergistic cascade of benefits — ancient remedies, validated
+      by modern science. This is your daily ritual of radical self-investment.
+    </p>
+    <div class="wellness-grid">
+      <div class="well-item reveal">
+        <div class="well-icon">🧠</div>
+        <h4>Cognitive Clarity</h4>
+        <p>Saffron and turmeric together support memory, focus, and neuroprotection — your mind at its sharpest, every single morning.</p>
+      </div>
+      <div class="well-item reveal">
+        <div class="well-icon">🔥</div>
+        <h4>Deep Anti-Inflammation</h4>
+        <p>Curcumin, amplified by black pepper's piperine, combats systemic inflammation at the cellular level. Daily protection, compounded.</p>
+      </div>
+      <div class="well-item reveal">
+        <div class="well-icon">✨</div>
+        <h4>Antioxidant Shield</h4>
+        <p>Saffron, clove, and cardamom deliver one of the highest antioxidant densities found in any daily wellness beverage.</p>
+      </div>
+      <div class="well-item reveal">
+        <div class="well-icon">🫀</div>
+        <h4>Gut & Metabolic Health</h4>
+        <p>Ginger and wattleseed support digestion, balanced blood sugar, and sustained natural energy — no crash, no compromise.</p>
+      </div>
+      <div class="well-item reveal">
+        <div class="well-icon">😌</div>
+        <h4>Mood Elevation</h4>
+        <p>Saffron is clinically recognised for supporting serotonin pathways, promoting calm confidence and inner emotional wellbeing.</p>
+      </div>
+      <div class="well-item reveal">
+        <div class="well-icon">🌿</div>
+        <h4>100% Natural · Zero Fillers</h4>
+        <p>Pure, premium botanical powder — nothing artificial, nothing hidden. What you see is exactly what you get.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- INGREDIENTS -->
-  <section>
-    <div class="section-inner">
-      <span class="section-label reveal">The Foundation</span>
-      <h2 class="section-title reveal">Our Signature Blend</h2>
-      <p class="section-body reveal">
-        Every element is hand-selected for potency and provenance.
-        This is not a commodity product — it is a crafted ritual in a cup.
-      </p>
-
-      <div class="ingredients-grid">
-
-        <!-- SAFFRON CARD -->
-        <!-- Replace src with your actual saffron image filename, e.g. saffron.jpg -->
-        <div class="ing-card reveal">
-          <img class="ing-photo" src="saffron.jpg" alt="Premium Persian Saffron Threads" />
-          <h3>Persian Saffron</h3>
-          <p>
-            The world's most precious spice. Rich in crocin and safranal,
-            saffron has been revered for millennia for lifting mood, sharpening cognition,
-            and delivering powerful antioxidant protection at the cellular level.
-          </p>
-          <span class="ing-badge">Rare · 1% of Blend</span>
-        </div>
-
-        <!-- WATTLESEED CARD -->
-        <!-- Replace src with your actual wattleseed image filename, e.g. wattleseed.jpg -->
-        <div class="ing-card reveal">
-          <img class="ing-photo" src="wattleseed.jpg" alt="Roasted Australian Wattleseed" />
-          <h3>Roasted Wattleseed</h3>
-          <p>
-            An Indigenous Australian treasure, slow-roasted to unlock a deep, nutty, espresso-like
-            complexity. High in protein, potassium and calcium — it transforms your cup
-            into a nourishing, culinary experience unlike anything else.
-          </p>
-          <span class="ing-badge">Native Australian · Exclusive</span>
-        </div>
-
-        <!-- TURMERIC + BLEND CARD -->
-        <div class="ing-card reveal" style="background:linear-gradient(160deg,#fffbf0,#fdf4e0);">
-          <div style="width:100%;height:200px;border-radius:12px;margin-bottom:24px;
-               background:linear-gradient(135deg,#e8a020,#c9843c,#a05010);
-               display:flex;align-items:center;justify-content:center;
-               font-size:4rem;">🌿</div>
-          <h3>The Sacred Symphony</h3>
-          <p>
-            Organic Turmeric anchors the blend with curcumin — nature's most studied
-            anti-inflammatory. Green Cardamom adds aromatic elegance. Ginger and Clove
-            warm from within. Black Pepper unlocks bioavailability of every ingredient.
-            Together, they perform alchemy.
-          </p>
-          <span class="ing-badge">6 Botanicals · One Cup</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- WELLNESS -->
-  <section class="wellness">
-    <div class="section-inner">
-      <span class="section-label reveal">Why It Matters</span>
-      <h2 class="section-title reveal">Health Is the Real Luxury</h2>
-      <p class="section-body reveal">
-        Each sip delivers a synergistic cascade of benefits — ancient remedies, validated
-        by modern science. This is your daily ritual of radical self-investment.
-      </p>
-
-      <div class="wellness-grid">
-        <div class="well-item reveal">
-          <div class="well-icon">🧠</div>
-          <h4>Cognitive Clarity</h4>
-          <p>Saffron and turmeric together support memory, focus, and neuroprotection — your mind at its sharpest.</p>
-        </div>
-        <div class="well-item reveal">
-          <div class="well-icon">🔥</div>
-          <h4>Deep Anti-Inflammation</h4>
-          <p>Curcumin, amplified by black pepper's piperine, combats systemic inflammation at the cellular level.</p>
-        </div>
-        <div class="well-item reveal">
-          <div class="well-icon">✨</div>
-          <h4>Antioxidant Shield</h4>
-          <p>Saffron, clove, and cardamom deliver one of the highest antioxidant densities found in any daily beverage.</p>
-        </div>
-        <div class="well-item reveal">
-          <div class="well-icon">🫀</div>
-          <h4>Gut & Metabolic Health</h4>
-          <p>Ginger and wattleseed support digestion, balanced blood sugar, and sustained natural energy throughout the day.</p>
-        </div>
-        <div class="well-item reveal">
-          <div class="well-icon">😌</div>
-          <h4>Mood Elevation</h4>
-          <p>Saffron is clinically recognised for supporting serotonin pathways, promoting calm confidence and inner wellbeing.</p>
-        </div>
-        <div class="well-item reveal">
-          <div class="well-icon">🌿</div>
-          <h4>100% Natural · No Fillers</h4>
-          <p>Zero artificial additives, zero fillers. Pure, premium botanical powder — nothing hidden, nothing wasted.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FREE SAMPLE CTA -->
-  <section class="cta-section">
-    <div class="section-inner">
-      <span class="section-label">Experience It First</span>
-      <h2 class="section-title reveal">Taste the Difference.<br/>Risk Nothing.</h2>
-      <p class="reveal">
-        We are offering complimentary taste-test samples for a limited time.
-        Try Australia's most premium golden latte before you commit — because
-        we are certain you will never go back.
-      </p>
-      <div class="reveal">
-        <a class="btn-gold" href="mailto:budhrajapiyush07@gmail.com?subject=Free%20Sample%20Request%20-%20Wise%20King%20Golden%20Latte">
-          Request Your Free Sample
-        </a>
-        <a class="btn-outline" href="https://www.tiktok.com/@jbj_life" target="_blank" rel="noopener">
-          Watch on TikTok
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <!-- Replace src with your kangaroo crown image -->
-    <img class="footer-logo" src="kangaroo-crown.png" alt="Wise King Enterprise" />
-    <p class="footer-brand">WISE KING ENTERPRISE</p>
-    <p class="footer-tagline">"The Pinnacle of Golden Latte Alchemy"</p>
-    <div class="social-row">
-      <a class="social-link" href="https://www.tiktok.com/@jbj_life" target="_blank" rel="noopener">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.19 8.19 0 004.79 1.52V6.79a4.85 4.85 0 01-1.02-.1z"/></svg>
-        @jbj_life
-      </a>
-      <a class="social-link" href="mailto:budhrajapiyush07@gmail.com">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-        budhrajapiyush07@gmail.com
-      </a>
-    </div>
-    <p class="footer-copy">
-      <img class="footer-flag" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia.svg" alt="Australia" />
-      © 2026 Wise King Enterprise. Crafted Intentionally in Australia. All Rights Reserved.
+<!-- FREE SAMPLE CTA -->
+<section class="cta-section">
+  <div style="max-width:900px;margin:0 auto;">
+    <span class="section-label" style="display:block;margin-bottom:14px;">Experience It First</span>
+    <h2 class="section-title reveal">Taste the Difference.<br/>Risk Nothing.</h2>
+    <p class="reveal">
+      We are offering complimentary taste-test samples for a limited time.
+      Try Australia's most premium golden latte before you commit —
+      because we are certain once you do, you will never look back.
     </p>
-  </footer>
+    <div class="reveal">
+      <a class="btn-gold"
+         href="mailto:budhrajapiyush07@gmail.com?subject=Free%20Sample%20Request%20–%20Wise%20King%20Golden%20Latte">
+        Request Your Free Sample
+      </a>
+      <a class="btn-outline"
+         href="https://www.tiktok.com/@jbj_life"
+         target="_blank" rel="noopener">
+        Watch on TikTok
+      </a>
+    </div>
+  </div>
+</section>
 
-  <script>
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
-  </script>
+<!-- FOOTER -->
+<footer>
+  <img class="footer-king"
+       src="kangaroo-crown.png.PNG"
+       alt="Wise King Enterprise"
+       onerror="this.style.display='none'" />
+  <p class="footer-brand">WISE KING ENTERPRISE</p>
+  <p class="footer-tagline">"The Pinnacle of Golden Latte Alchemy"</p>
+  <div class="social-row">
+    <a class="social-link" href="https://www.tiktok.com/@jbj_life" target="_blank" rel="noopener">
+      <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.19 8.19 0 004.79 1.52V6.79a4.85 4.85 0 01-1.02-.1z"/></svg>
+      @jbj_life
+    </a>
+    <a class="social-link" href="mailto:budhrajapiyush07@gmail.com">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      budhrajapiyush07@gmail.com
+    </a>
+  </div>
+  <p class="footer-copy">
+    <img class="footer-flag"
+         src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia.svg"
+         alt="Australia" />
+    © 2026 Wise King Enterprise. Crafted Intentionally in Australia. All Rights Reserved.
+  </p>
+</footer>
 
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
