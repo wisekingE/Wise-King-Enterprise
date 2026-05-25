@@ -6,23 +6,27 @@
   <title>Wise King Enterprise | Ultra-Premium Golden Latte</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --gold:       #C9A84C;
-      --gold-light: #E8C97A;
-      --gold-pale:  #F5E9C8;
-      --gold-deep:  #8B6914;
-      --cream:      #FDFAF4;
-      --warm-white: #FFFEF9;
-      --ink:        #1A1208;
-      --ink-soft:   #3D2E10;
-      --muted:      #8C7A5A;
-      --border:     rgba(201,168,76,0.22);
+      --gold:        #C9A84C;
+      --gold-light:  #E8C97A;
+      --gold-pale:   #F5E9C8;
+      --gold-deep:   #7A5C0E;
+      --gold-rich:   #A67C1E;
+      --cream:       #FDFAF3;
+      --warm-white:  #FFFEF9;
+      --ink:         #14100A;
+      --ink-soft:    #3A2C0E;
+      --muted:       #8C7A5A;
+      --border:      rgba(201,168,76,0.20);
+      --border-dark: rgba(201,168,76,0.35);
     }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
     body {
       background: var(--warm-white);
       color: var(--ink);
@@ -31,674 +35,943 @@
       overflow-x: hidden;
     }
 
-    /* ── GRAIN OVERLAY ── */
-    body::before {
+    /* ─── SUBTLE GRAIN ─── */
+    body::after {
       content: '';
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-      opacity: .5;
+      position: fixed; inset: 0; z-index: 999; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: .028;
     }
 
-    /* ── TOPBAR ── */
+    /* ─── TOPBAR ─── */
     .topbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 11px 24px;
-      background: rgba(253,250,244,0.92);
-      backdrop-filter: blur(16px);
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; padding: 12px 24px;
+      background: rgba(255,254,249,0.93);
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
       border-bottom: 1px solid var(--border);
-      font-size: 10.5px; letter-spacing: .2em;
-      text-transform: uppercase; color: var(--gold-deep);
     }
-    .topbar img { height: 18px; border-radius: 2px; }
-    .topbar span { color: var(--muted); }
+    .topbar-text {
+      font-size: 9.5px; letter-spacing: .28em;
+      text-transform: uppercase; color: var(--gold-rich);
+      font-weight: 400;
+    }
+    .topbar-dot { color: var(--border-dark); font-size: 8px; }
+    /* Use CSS flag instead of broken img */
+    .au-flag {
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .au-flag-svg {
+      height: 14px; width: 22px;
+      background: #00008B;
+      border-radius: 2px;
+      display: inline-block;
+      position: relative; overflow: hidden;
+      flex-shrink: 0;
+    }
+    /* Simplified Australian flag via SVG data */
 
-    /* ── HERO ── */
+    /* ─── HERO ─── */
     .hero {
       position: relative; min-height: 100svh;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      padding: 110px 24px 70px;
+      padding: 120px 24px 80px;
+      background: linear-gradient(168deg,
+        #fffef9 0%,
+        #fdf7ec 35%,
+        #faf0d4 65%,
+        #f5e5b8 100%);
       overflow: hidden;
-      background: linear-gradient(160deg, #fffef9 0%, #fdf4e0 55%, #f7e8c0 100%);
     }
-    .hero::after {
-      content: '';
-      position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
-      width: 700px; height: 700px;
-      background: radial-gradient(ellipse, rgba(201,168,76,0.12) 0%, transparent 70%);
-      pointer-events: none;
+    /* Warm glow behind hero */
+    .hero-glow {
+      position: absolute; top: 5%; left: 50%;
+      transform: translateX(-50%);
+      width: 900px; height: 600px; pointer-events: none;
+      background: radial-gradient(ellipse at center,
+        rgba(201,168,76,0.11) 0%,
+        rgba(201,168,76,0.04) 45%,
+        transparent 70%);
     }
 
     .hero-eyebrow {
-      font-size: 10.5px; letter-spacing: .3em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 22px;
-      opacity: 0; animation: fadeUp .9s .1s ease forwards;
+      position: relative; z-index: 1;
+      font-size: 9.5px; letter-spacing: .38em;
+      text-transform: uppercase; color: var(--gold-rich);
+      font-weight: 400; margin-bottom: 30px;
+      opacity: 0; animation: fadeUp .8s .1s ease forwards;
     }
 
-    /* KANGAROO HERO IMAGE */
-    .hero-king {
-      width: min(520px, 88vw);
-      border-radius: 20px;
-      margin-bottom: 36px;
-      box-shadow: 0 24px 80px rgba(139,105,20,0.25), 0 4px 20px rgba(139,105,20,0.12);
-      border: 1.5px solid rgba(201,168,76,0.35);
+    .hero-king-wrap {
+      position: relative; z-index: 1;
+      width: min(500px, 86vw);
+      margin-bottom: 40px;
       opacity: 0; animation: fadeUp 1s .2s ease forwards;
-      object-fit: cover;
+    }
+    .hero-king-wrap::before {
+      content: '';
+      position: absolute; inset: -12px; z-index: -1;
+      border-radius: 28px;
+      background: radial-gradient(ellipse,
+        rgba(201,168,76,0.18) 0%, transparent 70%);
+    }
+    .hero-king {
+      width: 100%; border-radius: 20px;
+      box-shadow:
+        0 32px 90px rgba(100,65,5,0.22),
+        0 8px 28px rgba(100,65,5,0.12),
+        0 0 0 1.5px rgba(201,168,76,0.30);
+      display: block;
+    }
+    /* Gold frame line around hero image */
+    .hero-king-wrap::after {
+      content: '';
+      position: absolute; inset: 6px;
+      border-radius: 16px;
+      border: 1px solid rgba(201,168,76,0.18);
+      pointer-events: none;
     }
 
     .hero h1 {
+      position: relative; z-index: 1;
       font-family: 'Cinzel', serif;
-      font-size: clamp(2.4rem, 5.5vw, 4.6rem);
-      font-weight: 700; line-height: 1.08;
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+      font-weight: 700; line-height: 1.06;
       text-align: center; color: var(--ink);
-      letter-spacing: .04em;
+      letter-spacing: .03em;
       opacity: 0; animation: fadeUp .9s .4s ease forwards;
     }
     .hero h1 em {
       font-style: italic;
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300; color: var(--gold);
-      letter-spacing: .06em;
+      letter-spacing: .07em; font-size: 1.06em;
     }
+
     .hero-sub {
-      margin-top: 18px;
+      position: relative; z-index: 1;
+      margin-top: 20px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-size: clamp(1.12rem, 2.3vw, 1.45rem);
       font-style: italic; color: var(--ink-soft);
-      text-align: center; max-width: 540px;
+      text-align: center; max-width: 520px;
+      line-height: 1.65;
       opacity: 0; animation: fadeUp .9s .52s ease forwards;
     }
-    .divider-gold {
-      display: flex; align-items: center; gap: 14px;
-      margin: 26px auto;
+
+    .hero-rule {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; gap: 16px;
+      margin: 28px auto 0;
       opacity: 0; animation: fadeUp .9s .62s ease forwards;
     }
-    .divider-gold span { display: block; width: 60px; height: 1px; background: var(--gold); }
-    .divider-gold svg { width: 17px; fill: var(--gold); }
+    .hero-rule span { display: block; width: 55px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+    .hero-rule span:last-child { background: linear-gradient(270deg, transparent, var(--gold)); }
+    .hero-rule-diamond {
+      width: 8px; height: 8px;
+      background: var(--gold); transform: rotate(45deg);
+      box-shadow: 0 0 12px rgba(201,168,76,0.6);
+    }
 
-    /* ── VIDEO ── */
+    /* ─── SCROLL HINT ─── */
+    .scroll-hint {
+      position: absolute; bottom: 36px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      opacity: 0; animation: fadeUp .8s 1.2s ease forwards;
+    }
+    .scroll-hint span {
+      font-size: 9px; letter-spacing: .3em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .scroll-chevron {
+      width: 20px; height: 20px; border-right: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      transform: rotate(45deg);
+      animation: bounce 1.8s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50%       { transform: rotate(45deg) translateY(5px); }
+    }
+
+    /* ─── VIDEO ─── */
     .video-section {
       position: relative; z-index: 1;
-      padding: 20px 24px 80px;
-      background: linear-gradient(180deg, #f7e8c0 0%, #fdf4e0 100%);
-      display: flex; flex-direction: column; align-items: center;
+      padding: 72px 24px 90px;
+      background: linear-gradient(180deg,
+        #f5e5b8 0%, #fdf4e0 40%, #fdfaf3 100%);
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
     }
-    .video-label {
-      font-size: 10px; letter-spacing: .3em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 22px;
+    .section-label {
+      font-size: 9.5px; letter-spacing: .34em;
+      text-transform: uppercase; color: var(--gold-rich);
+      font-weight: 400; margin-bottom: 14px; display: block;
     }
-    .video-wrap {
-      position: relative;
-      width: min(560px, 92vw);
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 28px 80px rgba(139,105,20,0.24), 0 4px 18px rgba(139,105,20,0.1);
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.6rem, 3.8vw, 2.9rem);
+      font-weight: 600; color: var(--ink);
+      line-height: 1.12; margin-bottom: 14px;
     }
-    .video-wrap::before {
-      content: '';
-      position: absolute; inset: 0; z-index: 1; pointer-events: none;
-      border-radius: 22px;
-      border: 1.5px solid rgba(201,168,76,0.5);
+    .section-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.06rem, 2vw, 1.26rem);
+      color: var(--ink-soft); line-height: 1.74;
+      max-width: 600px;
     }
-    .video-wrap video { width: 100%; display: block; border-radius: 22px; }
+    .video-intro { max-width: 600px; margin: 0 auto 44px; }
 
-    /* ── INGREDIENT SHOWCASE (below hero) ── */
-    .spice-showcase {
+    .video-frame {
+      position: relative;
+      width: min(580px, 92vw);
+    }
+    /* Decorative corner marks */
+    .video-frame::before,
+    .video-frame::after {
+      content: '';
+      position: absolute; width: 24px; height: 24px; z-index: 2;
+    }
+    .video-frame::before {
+      top: -6px; left: -6px;
+      border-top: 1.5px solid var(--gold);
+      border-left: 1.5px solid var(--gold);
+    }
+    .video-frame::after {
+      bottom: -6px; right: -6px;
+      border-bottom: 1.5px solid var(--gold);
+      border-right: 1.5px solid var(--gold);
+    }
+    .video-inner {
+      border-radius: 18px; overflow: hidden;
+      box-shadow:
+        0 32px 80px rgba(100,65,5,0.20),
+        0 6px 24px rgba(100,65,5,0.10),
+        0 0 0 1px rgba(201,168,76,0.28);
+    }
+    .video-inner video { width: 100%; display: block; }
+
+    /* ─── SPICE PILLS ─── */
+    .spice-section {
       position: relative; z-index: 1;
-      padding: 60px 24px;
+      padding: 80px 24px 80px;
       background: var(--warm-white);
     }
-    .spice-showcase .inner { max-width: 1060px; margin: 0 auto; text-align: center; }
-    .spice-showcase-label {
-      font-size: 10px; letter-spacing: .3em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 12px; display: block;
+    .spice-section .inner {
+      max-width: 960px; margin: 0 auto; text-align: center;
     }
-    .spice-showcase h2 {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-      color: var(--ink); margin-bottom: 10px;
+    .spice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px; margin-top: 48px;
     }
-    .spice-showcase p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.05rem, 2vw, 1.2rem);
-      color: var(--ink-soft); max-width: 580px; margin: 0 auto 44px;
-      line-height: 1.7;
-    }
-    /* Six ingredient pill cards */
-    .spice-row {
-      display: flex; flex-wrap: wrap; gap: 14px;
-      justify-content: center; margin-bottom: 44px;
-    }
-    .spice-pill {
-      display: flex; align-items: center; gap: 10px;
-      padding: 14px 22px;
+    .spice-tile {
+      padding: 28px 24px;
       border: 1px solid var(--border);
-      border-radius: 50px;
+      border-radius: 16px;
       background: var(--cream);
-      transition: background .3s, border-color .3s, transform .25s;
+      text-align: left;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
+      position: relative; overflow: hidden;
     }
-    .spice-pill:hover {
-      background: var(--gold-pale);
-      border-color: var(--gold);
-      transform: translateY(-2px);
+    .spice-tile::before {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform: scaleX(0); transition: transform .4s ease;
     }
-    .spice-pill .icon { font-size: 1.3rem; }
-    .spice-pill .name {
+    .spice-tile:hover {
+      border-color: var(--border-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(120,80,10,0.09);
+    }
+    .spice-tile:hover::before { transform: scaleX(1); }
+    .spice-icon {
+      font-size: 1.5rem; margin-bottom: 12px;
+      display: block; line-height: 1;
+    }
+    .spice-name {
       font-family: 'Cinzel', serif;
-      font-size: .82rem; letter-spacing: .1em;
-      color: var(--ink-soft);
+      font-size: .85rem; font-weight: 600;
+      letter-spacing: .1em; color: var(--ink);
+      margin-bottom: 6px;
     }
-    .spice-pill .benefit {
+    .spice-desc {
       font-family: 'Cormorant Garamond', serif;
-      font-size: .9rem; font-style: italic;
-      color: var(--muted);
+      font-size: 1rem; color: var(--muted);
+      line-height: 1.55; font-style: italic;
+    }
+    .spice-origin {
+      display: inline-block; margin-top: 12px;
+      font-size: 9px; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--gold-deep);
+      border: 1px solid rgba(201,168,76,0.35);
+      padding: 3px 10px; border-radius: 50px;
     }
 
-    /* ── UNIQUENESS BAND ── */
+    /* ─── DARK BAND ─── */
     .band {
-      background: linear-gradient(135deg, #1A1208 0%, #2E1F07 60%, #1A1208 100%);
-      color: var(--gold-pale);
-      padding: 72px 24px; position: relative; z-index: 1;
+      position: relative; z-index: 1;
+      background: linear-gradient(148deg,
+        #120e06 0%, #1e1509 50%, #120e06 100%);
+      padding: 80px 24px;
+      overflow: hidden;
     }
-    .band .inner { max-width: 1000px; margin: 0 auto; text-align: center; }
-    .band-label {
-      font-size: 10px; letter-spacing: .32em;
-      text-transform: uppercase; color: var(--gold-light);
-      margin-bottom: 14px; display: block;
+    .band-shimmer {
+      position: absolute; top: -50%; left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 400px; pointer-events: none;
+      background: radial-gradient(ellipse,
+        rgba(201,168,76,0.08) 0%, transparent 65%);
     }
-    .band h2 {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(1.7rem, 3.5vw, 2.8rem);
-      color: var(--gold-light); margin-bottom: 18px;
+    .band .inner {
+      max-width: 1000px; margin: 0 auto;
+      text-align: center; position: relative; z-index: 1;
     }
-    .band p {
+    .band .section-label { color: var(--gold-light); }
+    .band .section-title { color: var(--gold-light); margin-bottom: 16px; }
+    .band-body {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1.05rem, 2vw, 1.22rem);
-      color: rgba(245,233,200,0.78);
-      line-height: 1.78; max-width: 700px; margin: 0 auto;
+      color: rgba(245,233,200,0.72);
+      line-height: 1.80; max-width: 680px; margin: 0 auto 52px;
     }
     .band-stat {
-      margin-top: 48px;
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 24px;
     }
     .stat-item {
-      border: 1px solid rgba(201,168,76,0.22);
-      border-radius: 14px; padding: 26px 18px;
-      background: rgba(201,168,76,0.06);
-      transition: background .3s, border-color .3s;
+      border: 1px solid rgba(201,168,76,0.18);
+      border-radius: 14px; padding: 28px 16px;
+      background: rgba(201,168,76,0.04);
+      transition: background .35s, border-color .35s;
     }
-    .stat-item:hover { background: rgba(201,168,76,0.13); border-color: rgba(201,168,76,0.48); }
-    .stat-item .num {
+    .stat-item:hover {
+      background: rgba(201,168,76,0.11);
+      border-color: rgba(201,168,76,0.42);
+    }
+    .stat-num {
       font-family: 'Cinzel', serif;
-      font-size: 2.1rem; color: var(--gold);
-      display: block; margin-bottom: 6px;
+      font-size: 2.2rem; color: var(--gold);
+      display: block; margin-bottom: 7px;
+      line-height: 1;
     }
-    .stat-item p { font-size: .9rem; color: rgba(245,233,200,0.62); letter-spacing: .08em; max-width: none; }
+    .stat-label {
+      font-size: .82rem; letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(245,233,200,0.50);
+    }
 
-    /* ── INGREDIENTS SECTION ── */
+    /* ─── INGREDIENTS ─── */
     .ingredients {
       position: relative; z-index: 1;
       padding: 100px 24px;
       background: var(--cream);
     }
-    .ingredients .inner { max-width: 1060px; margin: 0 auto; }
-    .section-label {
-      font-size: 10px; letter-spacing: .32em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 14px; display: block;
-    }
-    .section-title {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
-      font-weight: 600; color: var(--ink);
-      line-height: 1.14; margin-bottom: 16px;
-    }
-    .section-body {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      color: var(--ink-soft); line-height: 1.72;
-      max-width: 640px; margin-bottom: 52px;
-    }
-
+    .ingredients .inner { max-width: 1080px; margin: 0 auto; }
     .ing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2px;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 0;
       border: 1px solid var(--border);
-      border-radius: 20px; overflow: hidden;
+      border-radius: 22px; overflow: hidden;
+      margin-top: 52px;
+      box-shadow: 0 16px 60px rgba(100,65,5,0.07);
     }
     .ing-card {
-      padding: 40px 32px;
+      padding: 42px 34px;
       background: var(--warm-white);
       border-right: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      transition: background .3s;
       position: relative; overflow: hidden;
+      transition: background .3s;
     }
-    .ing-card::before {
-      content: ''; position: absolute; top: 0; left: 0;
-      width: 3px; height: 0; background: var(--gold);
-      transition: height .4s ease;
-    }
-    .ing-card:hover::before { height: 100%; }
+    .ing-card:last-child { border-right: none; }
     .ing-card:hover { background: #fffbf0; }
+    .ing-card::after {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform: scaleX(0); transition: transform .45s ease;
+    }
+    .ing-card:hover::after { transform: scaleX(1); }
 
     .ing-photo {
-      width: 100%; height: 210px; object-fit: cover;
-      border-radius: 12px; margin-bottom: 22px;
-      filter: saturate(1.08) contrast(1.02);
+      width: 100%; height: 220px; object-fit: cover;
+      border-radius: 12px; margin-bottom: 24px;
+      filter: saturate(1.1) contrast(1.02);
+      box-shadow: 0 4px 20px rgba(100,65,5,0.12);
+    }
+    .ing-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.08rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 12px;
+      letter-spacing: .06em;
+    }
+    .ing-card p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.06rem; color: var(--ink-soft); line-height: 1.68;
+    }
+    .ing-badge {
+      display: inline-block; margin-top: 16px;
+      padding: 5px 14px;
+      border: 1px solid rgba(201,168,76,0.45);
+      border-radius: 50px;
+      font-size: 9.5px; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--gold-deep);
     }
 
-    /* Sacred Symphony — illustrated card */
+    /* Sacred Symphony card */
     .symphony-card {
-      background: linear-gradient(150deg, #1a1208 0%, #2e1f07 100%);
-      padding: 36px 28px;
-      border-radius: 0;
-      position: relative; overflow: hidden;
+      background: linear-gradient(155deg, #17110A 0%, #2a1e0c 100%);
     }
-    .symphony-scene {
-      width: 100%; border-radius: 12px; margin-bottom: 22px;
-      background: linear-gradient(135deg, #2e1a06, #4a2e0a, #2e1a06);
-      min-height: 210px;
+    .symphony-card:hover { background: linear-gradient(155deg, #1e1610 0%, #33250f 100%); }
+    .symphony-card h3 { color: var(--gold-light); }
+    .symphony-card p { color: rgba(245,233,200,0.72); }
+    .symphony-card .ing-badge {
+      color: rgba(201,168,76,0.80);
+      border-color: rgba(201,168,76,0.30);
+    }
+    .symphony-visual {
+      width: 100%; min-height: 220px;
+      border-radius: 12px; margin-bottom: 24px;
+      background: linear-gradient(135deg, #2a1a06, #4a2e0a, #2a1a06);
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      padding: 20px; gap: 8px;
+      padding: 28px 20px; gap: 16px;
       position: relative; overflow: hidden;
     }
-    /* Animated shimmer on symphony card */
-    .symphony-scene::before {
+    .symphony-visual::before {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 30%, rgba(201,168,76,0.18) 0%, transparent 65%);
+      background: radial-gradient(ellipse at 50% 35%,
+        rgba(201,168,76,0.16) 0%, transparent 60%);
     }
-    .symphony-animals {
-      display: flex; gap: 14px; font-size: 2.6rem;
-      position: relative; z-index: 1;
-      filter: drop-shadow(0 2px 8px rgba(201,168,76,0.4));
+    /* Decorative botanical line */
+    .symphony-visual::after {
+      content: '';
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 80%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+    }
+    .symphony-title-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-size: 1rem;
+      color: rgba(201,168,76,0.65);
+      text-align: center; position: relative; z-index: 1;
+      letter-spacing: .06em;
     }
     .symphony-spices {
       display: flex; flex-wrap: wrap; gap: 8px;
       justify-content: center; position: relative; z-index: 1;
-      margin-top: 8px;
     }
     .ss-tag {
-      padding: 5px 13px;
-      background: rgba(201,168,76,0.15);
-      border: 1px solid rgba(201,168,76,0.35);
+      padding: 6px 14px;
+      background: rgba(201,168,76,0.10);
+      border: 1px solid rgba(201,168,76,0.30);
       border-radius: 50px;
-      font-size: 11px; letter-spacing: .15em;
+      font-size: 10.5px; letter-spacing: .18em;
       text-transform: uppercase; color: var(--gold-light);
-      font-family: 'Jost', sans-serif;
+      font-family: 'Jost', sans-serif; font-weight: 300;
+      transition: background .25s;
     }
-    .symphony-caption {
+    .ss-tag:hover { background: rgba(201,168,76,0.22); }
+    .symphony-footer {
       font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-size: .92rem;
-      color: rgba(201,168,76,0.6); text-align: center;
-      margin-top: 10px; position: relative; z-index: 1;
+      font-style: italic; font-size: .88rem;
+      color: rgba(201,168,76,0.45);
+      text-align: center; position: relative; z-index: 1;
     }
 
-    .ing-card h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem; font-weight: 600;
-      color: var(--ink); margin-bottom: 10px;
-      letter-spacing: .05em;
-    }
-    .symphony-card h3 { color: var(--gold-light); }
-    .ing-card p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem; color: var(--ink-soft); line-height: 1.65;
-    }
-    .symphony-card p { color: rgba(245,233,200,0.72); }
-    .ing-badge {
-      display: inline-block; margin-top: 14px;
-      padding: 4px 12px;
-      border: 1px solid var(--gold);
-      border-radius: 50px;
-      font-size: 10px; letter-spacing: .2em;
-      text-transform: uppercase; color: var(--gold-deep);
-    }
-    .symphony-card .ing-badge { color: var(--gold-light); border-color: rgba(201,168,76,0.45); }
-
-    /* ── WELLNESS ── */
+    /* ─── WELLNESS ─── */
     .wellness {
       position: relative; z-index: 1;
       padding: 100px 24px;
-      background: linear-gradient(180deg, var(--warm-white) 0%, #fdf4e0 100%);
+      background: linear-gradient(180deg,
+        var(--warm-white) 0%, #fdf6e3 100%);
     }
-    .wellness .inner { max-width: 1060px; margin: 0 auto; }
+    .wellness .inner { max-width: 1080px; margin: 0 auto; }
     .wellness-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px; margin-top: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px; margin-top: 52px;
     }
     .well-item {
-      padding: 34px 26px;
+      padding: 34px 28px;
       border: 1px solid var(--border);
       border-radius: 18px;
-      background: rgba(255,255,255,0.75);
-      backdrop-filter: blur(6px);
-      transition: transform .3s, box-shadow .3s;
+      background: rgba(255,255,255,0.80);
+      transition: transform .3s, box-shadow .3s, border-color .3s;
     }
     .well-item:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(139,105,20,0.10);
+      box-shadow: 0 18px 50px rgba(120,80,10,0.10);
+      border-color: var(--border-dark);
     }
-    .well-icon {
-      width: 46px; height: 46px;
-      background: linear-gradient(135deg, var(--gold-pale), var(--gold-light));
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 16px; font-size: 21px;
+    .well-number {
+      font-family: 'Cinzel', serif;
+      font-size: .78rem; letter-spacing: .2em;
+      color: var(--gold); margin-bottom: 14px; display: block;
     }
     .well-item h4 {
       font-family: 'Cinzel', serif;
-      font-size: .98rem; font-weight: 600;
-      color: var(--ink); margin-bottom: 9px;
+      font-size: .96rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 10px; letter-spacing: .04em;
     }
     .well-item p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.03rem; color: var(--ink-soft); line-height: 1.65;
+      font-size: 1.04rem; color: var(--ink-soft); line-height: 1.66;
     }
 
-    /* ── CTA ── */
+    /* ─── PROVENANCE STRIP ─── */
+    .provenance {
+      position: relative; z-index: 1;
+      padding: 64px 24px;
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .provenance-inner { max-width: 780px; margin: 0 auto; }
+    .provenance h3 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.2rem, 2.8vw, 1.9rem);
+      color: var(--ink); margin-bottom: 14px;
+    }
+    .provenance p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      color: var(--ink-soft); line-height: 1.72;
+    }
+    .prov-tags {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      justify-content: center; margin-top: 28px;
+    }
+    .prov-tag {
+      padding: 8px 20px;
+      border: 1px solid var(--border-dark);
+      border-radius: 50px;
+      font-size: 10px; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--gold-deep);
+      background: var(--gold-pale);
+    }
+
+    /* ─── CTA ─── */
     .cta-section {
       position: relative; z-index: 1;
-      background: linear-gradient(135deg, #fdf4e0 0%, #f5e3a8 50%, #fdf4e0 100%);
-      text-align: center; padding: 100px 24px;
+      padding: 100px 24px;
+      background: linear-gradient(148deg,
+        #f7e8c0 0%, #eedea0 50%, #f7e8c0 100%);
+      text-align: center; overflow: hidden;
     }
-    .cta-section .section-title { margin: 0 auto 14px; }
-    .cta-section p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.08rem, 2.1vw, 1.28rem);
-      color: var(--ink-soft); max-width: 560px; margin: 0 auto 34px;
-      line-height: 1.72;
+    .cta-glow {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 400px; pointer-events: none;
+      background: radial-gradient(ellipse,
+        rgba(255,255,255,0.55) 0%, transparent 65%);
     }
+    .cta-section .inner {
+      max-width: 760px; margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+    .cta-section .section-label { margin-bottom: 16px; }
+    .cta-section .section-title { margin-bottom: 16px; }
+    .cta-section .section-body { margin: 0 auto 40px; }
+    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
     .btn-gold {
-      display: inline-block; padding: 16px 42px;
-      background: linear-gradient(135deg, var(--gold-deep), var(--gold));
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 16px 44px;
+      background: linear-gradient(135deg, var(--gold-deep), var(--gold), var(--gold-deep));
+      background-size: 200% auto;
       color: #fff; font-family: 'Cinzel', serif;
-      font-size: .9rem; letter-spacing: .16em;
+      font-size: .88rem; letter-spacing: .18em;
       text-transform: uppercase; text-decoration: none;
       border-radius: 50px;
-      box-shadow: 0 8px 32px rgba(139,105,20,0.30);
-      transition: box-shadow .3s, transform .3s;
+      box-shadow: 0 8px 30px rgba(100,65,5,0.28);
+      transition: background-position .4s, box-shadow .3s, transform .3s;
     }
-    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(139,105,20,0.42); }
+    .btn-gold:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 44px rgba(100,65,5,0.36);
+    }
     .btn-outline {
-      display: inline-block; padding: 16px 42px;
-      border: 1.5px solid var(--gold); color: var(--gold-deep);
-      font-family: 'Cinzel', serif;
-      font-size: .9rem; letter-spacing: .16em;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 16px 40px;
+      border: 1.5px solid var(--gold-rich);
+      color: var(--gold-deep); font-family: 'Cinzel', serif;
+      font-size: .88rem; letter-spacing: .18em;
       text-transform: uppercase; text-decoration: none;
-      border-radius: 50px; margin-left: 12px;
-      transition: background .3s, color .3s;
+      border-radius: 50px; background: transparent;
+      transition: background .3s, color .3s, border-color .3s;
     }
-    .btn-outline:hover { background: var(--gold); color: #fff; }
+    .btn-outline:hover {
+      background: var(--gold); color: #fff; border-color: var(--gold);
+    }
 
-    /* ── FOOTER ── */
+    /* ─── FOOTER ─── */
     footer {
       position: relative; z-index: 1;
-      background: var(--ink); color: rgba(245,233,200,0.5);
-      padding: 60px 24px 36px; text-align: center;
+      background: linear-gradient(168deg,
+        #100c06 0%, #1c1509 60%, #100c06 100%);
+      padding: 70px 24px 40px; text-align: center;
+      overflow: hidden;
     }
-    .footer-king {
-      width: 100px; height: 100px; object-fit: cover;
-      border-radius: 50%; margin: 0 auto 18px;
-      border: 2px solid rgba(201,168,76,0.45);
-      filter: brightness(0.9);
+    .footer-shimmer {
+      position: absolute; top: -20%; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 300px; pointer-events: none;
+      background: radial-gradient(ellipse,
+        rgba(201,168,76,0.06) 0%, transparent 65%);
     }
+    .footer-inner { position: relative; z-index: 1; }
+
+    /* crown.png goes here — circular, premium */
+    .footer-crown {
+      width: 96px; height: 96px; object-fit: cover;
+      border-radius: 50%; margin: 0 auto 22px; display: block;
+      border: 1.5px solid rgba(201,168,76,0.40);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4),
+                  0 0 0 6px rgba(201,168,76,0.06);
+    }
+    /* Fallback gold circle if crown.png not loaded yet */
+    .footer-crown-fallback {
+      width: 96px; height: 96px; border-radius: 50%;
+      margin: 0 auto 22px; display: none;
+      background: radial-gradient(135deg, var(--gold-deep), var(--gold));
+      border: 1.5px solid rgba(201,168,76,0.4);
+      align-items: center; justify-content: center;
+      font-size: 2.4rem;
+    }
+
+    .footer-divider {
+      display: flex; align-items: center; gap: 14px;
+      margin: 0 auto 22px; justify-content: center; max-width: 300px;
+    }
+    .footer-divider span { height: 1px; flex: 1; background: rgba(201,168,76,0.2); }
+    .footer-divider-diamond {
+      width: 6px; height: 6px;
+      background: var(--gold); transform: rotate(45deg); opacity: .6;
+    }
+
     .footer-brand {
       font-family: 'Cinzel', serif;
-      font-size: 1.05rem; color: var(--gold-light);
-      letter-spacing: .22em; margin-bottom: 5px;
+      font-size: 1.08rem; color: var(--gold-light);
+      letter-spacing: .28em; margin-bottom: 6px;
     }
     .footer-tagline {
       font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-size: .95rem;
-      color: rgba(245,233,200,0.4); margin-bottom: 28px;
+      font-style: italic; font-size: .96rem;
+      color: rgba(245,233,200,0.38); margin-bottom: 36px;
     }
+
     .social-row {
-      display: flex; gap: 16px; justify-content: center;
-      margin-bottom: 30px; flex-wrap: wrap;
+      display: flex; gap: 14px; justify-content: center;
+      margin-bottom: 36px; flex-wrap: wrap;
     }
     .social-link {
-      display: flex; align-items: center; gap: 8px;
-      padding: 10px 20px;
-      border: 1px solid rgba(201,168,76,0.22);
-      border-radius: 50px; color: var(--gold-light);
-      text-decoration: none; font-size: .84rem; letter-spacing: .1em;
-      transition: border-color .3s, background .3s;
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 11px 22px;
+      border: 1px solid rgba(201,168,76,0.20);
+      border-radius: 50px; color: rgba(232,201,122,0.80);
+      text-decoration: none; font-size: .82rem; letter-spacing: .12em;
+      font-family: 'Jost', sans-serif;
+      transition: border-color .3s, background .3s, color .3s;
     }
-    .social-link:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); }
-    .footer-copy { font-size: .78rem; letter-spacing: .08em; color: rgba(245,233,200,0.28); }
-    .footer-flag { height: 15px; vertical-align: middle; margin-right: 6px; border-radius: 2px; }
+    .social-link:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.10);
+      color: var(--gold-light);
+    }
 
-    /* ── ANIMATIONS ── */
+    .footer-rule {
+      height: 1px; max-width: 500px; margin: 0 auto 22px;
+      background: linear-gradient(90deg,
+        transparent, rgba(201,168,76,0.2), transparent);
+    }
+    .footer-copy {
+      font-size: .76rem; letter-spacing: .1em;
+      color: rgba(245,233,200,0.25);
+      line-height: 1.8;
+    }
+    .footer-flag-svg {
+      height: 13px; width: 20px;
+      display: inline-block; vertical-align: middle;
+      margin-right: 6px; border-radius: 2px;
+      overflow: hidden; position: relative;
+    }
+
+    /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(26px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: none; }
     }
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .72s ease, transform .72s ease;
+    }
     .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
 
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 640px) {
-      .btn-outline { margin-left: 0; margin-top: 12px; display: block; }
-      .band-stat { grid-template-columns: 1fr 1fr; }
+      .topbar-dot:nth-child(4),
+      .topbar-dot:nth-child(5),
+      .topbar-text:last-of-type { display: none; }
     }
   </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
+<!-- ═══ TOPBAR ═══ -->
 <div class="topbar">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia.svg" alt="Australian Flag" />
-  <span>100% Australian Crafted</span>
-  &nbsp;·&nbsp;
-  <span>Ultra-Premium Wellness</span>
-  &nbsp;·&nbsp;
-  <span>Globally Uncontested</span>
+  <!-- Inline SVG flag — no external load, never breaks -->
+  <svg width="22" height="14" viewBox="0 0 22 14" style="border-radius:2px;flex-shrink:0;">
+    <rect width="22" height="14" fill="#00247D"/>
+    <!-- Union Jack simplified -->
+    <line x1="0" y1="0" x2="11" y2="7" stroke="white" stroke-width="2.5"/>
+    <line x1="11" y1="7" x2="0" y2="14" stroke="white" stroke-width="2.5"/>
+    <line x1="0" y1="0" x2="11" y2="7" stroke="#CF142B" stroke-width="1.2"/>
+    <line x1="11" y1="7" x2="0" y2="14" stroke="#CF142B" stroke-width="1.2"/>
+    <line x1="0" y1="7" x2="11" y2="7" stroke="white" stroke-width="2.5"/>
+    <line x1="5.5" y1="0" x2="5.5" y2="14" stroke="white" stroke-width="2.5"/>
+    <line x1="0" y1="7" x2="11" y2="7" stroke="#CF142B" stroke-width="1.2"/>
+    <line x1="5.5" y1="0" x2="5.5" y2="14" stroke="#CF142B" stroke-width="1.2"/>
+    <!-- Stars (simplified Southern Cross) -->
+    <text x="13.5" y="5.5" font-size="3.5" fill="white" text-anchor="middle">✦</text>
+    <text x="19" y="4" font-size="2.5" fill="white" text-anchor="middle">✦</text>
+    <text x="20" y="8" font-size="2" fill="white" text-anchor="middle">✦</text>
+    <text x="17" y="11" font-size="2.5" fill="white" text-anchor="middle">✦</text>
+    <text x="13.5" y="10" font-size="2" fill="white" text-anchor="middle">✦</text>
+  </svg>
+  <span class="topbar-text">Crafted in Australia</span>
+  <span class="topbar-dot">·</span>
+  <span class="topbar-text">Ultra-Premium Wellness</span>
+  <span class="topbar-dot">·</span>
+  <span class="topbar-text">Globally Uncontested</span>
 </div>
 
-<!-- HERO -->
+<!-- ═══ HERO ═══ -->
 <section class="hero">
-  <p class="hero-eyebrow">Wise King Enterprise &nbsp;·&nbsp; Est. Australia</p>
+  <div class="hero-glow"></div>
+  <p class="hero-eyebrow">Wise King Enterprise &nbsp;·&nbsp; Victoria, Australia</p>
 
-  <!-- YOUR KANGAROO KING IMAGE — fixed filename -->
-  <img class="hero-king"
-       src="kangaroo-crown.png.PNG"
-       alt="Wise King — The Royal Kangaroo"
-       onerror="this.style.display='none'" />
+  <div class="hero-king-wrap">
+    <img class="hero-king"
+         src="kangaroo-crown.png.PNG"
+         alt="Wise King — The Royal Kangaroo"
+         onerror="this.style.display='none'" />
+  </div>
 
   <h1>The <em>Golden</em><br/>Latte Alchemy</h1>
   <p class="hero-sub">
     A masterwork of ancient botanical wisdom,<br/>
-    refined for the modern connoisseur.
+    refined for the discerning connoisseur.
   </p>
-  <div class="divider-gold">
+  <div class="hero-rule">
     <span></span>
-    <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+    <div class="hero-rule-diamond"></div>
     <span></span>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Discover</span>
+    <div class="scroll-chevron"></div>
   </div>
 </section>
 
-<!-- VIDEO SECTION -->
-<div class="video-section">
-  <p class="video-label">Experience the Ritual</p>
-  <!-- YOUR VIDEO — fixed filename -->
-  <div class="video-wrap">
-    <video autoplay muted loop playsinline>
-      <source src="liqgold.mp4.MP4" type="video/mp4" />
-    </video>
-  </div>
-</div>
-
-<!-- SPICE SHOWCASE — fills the blank space under hero -->
-<section class="spice-showcase">
-  <div class="inner">
-    <span class="spice-showcase-label reveal">The Sacred Six</span>
-    <h2 class="reveal">Six Botanicals. One Extraordinary Cup.</h2>
-    <p class="reveal">
-      Every ingredient is selected for its therapeutic potency, provenance, and
-      flavour complexity. Nothing is here by accident — each element elevates the next.
+<!-- ═══ VIDEO ═══ -->
+<section class="video-section">
+  <div class="video-intro reveal">
+    <span class="section-label">Experience the Ritual</span>
+    <h2 class="section-title">Liquid Gold in Motion</h2>
+    <p class="section-body">
+      Watch the alchemy unfold — six rare botanicals dissolving into
+      a single, luminous cup of extraordinary depth and warmth.
     </p>
-    <div class="spice-row reveal">
-      <div class="spice-pill">
-        <span class="icon">🌸</span>
-        <div>
-          <div class="name">Saffron</div>
-          <div class="benefit">Mood · Cognition · Antioxidant</div>
-        </div>
-      </div>
-      <div class="spice-pill">
-        <span class="icon">🌿</span>
-        <div>
-          <div class="name">Turmeric</div>
-          <div class="benefit">Anti-Inflammatory · Cellular Repair</div>
-        </div>
-      </div>
-      <div class="spice-pill">
-        <span class="icon">🪨</span>
-        <div>
-          <div class="name">Wattleseed</div>
-          <div class="benefit">Native Australian · Protein-Rich</div>
-        </div>
-      </div>
-      <div class="spice-pill">
-        <span class="icon">🫚</span>
-        <div>
-          <div class="name">Ginger</div>
-          <div class="benefit">Digestive · Warming · Circulation</div>
-        </div>
-      </div>
-      <div class="spice-pill">
-        <span class="icon">🌱</span>
-        <div>
-          <div class="name">Green Cardamom</div>
-          <div class="benefit">Aromatic · Gut Health · Clarity</div>
-        </div>
-      </div>
-      <div class="spice-pill">
-        <span class="icon">🌶️</span>
-        <div>
-          <div class="name">Black Pepper</div>
-          <div class="benefit">Bioavailability Amplifier</div>
-        </div>
-      </div>
+  </div>
+  <div class="video-frame reveal">
+    <div class="video-inner">
+      <video autoplay muted loop playsinline>
+        <source src="liqgold.mp4.MP4" type="video/mp4" />
+      </video>
     </div>
   </div>
 </section>
 
-<!-- UNIQUENESS BAND -->
-<div class="band">
+<!-- ═══ SPICE TILES ═══ -->
+<section class="spice-section">
   <div class="inner">
-    <span class="band-label">A World First</span>
-    <h2>No One Else Does This</h2>
-    <p>
+    <span class="section-label reveal">The Sacred Seven</span>
+    <h2 class="section-title reveal">Seven Botanicals. One Vision.</h2>
+    <p class="section-body reveal" style="margin:0 auto;">
+      Every ingredient is chosen for potency, provenance, and the role it plays
+      in this precise, purposeful blend. Nothing is here by accident.
+    </p>
+
+    <div class="spice-grid">
+
+      <div class="spice-tile reveal reveal-delay-1">
+        <span class="spice-icon">🌸</span>
+        <div class="spice-name">Saffron</div>
+        <div class="spice-desc">Lifts mood, sharpens cognition, and delivers profound antioxidant power at the cellular level. The world's most precious spice.</div>
+        <span class="spice-origin">Rare · World's Most Precious Spice</span>
+      </div>
+
+      <div class="spice-tile reveal reveal-delay-2">
+        <span class="spice-icon">🌿</span>
+        <div class="spice-name">Turmeric</div>
+        <div class="spice-desc">Anchors the blend with curcumin — nature's most studied anti-inflammatory compound. Deep cellular repair with every sip.</div>
+        <span class="spice-origin">Premium Grade</span>
+      </div>
+
+      <div class="spice-tile reveal reveal-delay-3">
+        <span class="spice-icon">🪨</span>
+        <div class="spice-name">Roasted Wattleseed</div>
+        <div class="spice-desc">An Indigenous Australian treasure. Slow-roasted for a rich, nutty depth. Protein-rich, mineral-dense, and found nowhere else in the world of premium lattes.</div>
+        <span class="spice-origin">Native Australian</span>
+      </div>
+
+      <div class="spice-tile reveal reveal-delay-1">
+        <span class="spice-icon">🫚</span>
+        <div class="spice-name">Ginger</div>
+        <div class="spice-desc">Ignites circulation, soothes digestion, and adds a warming complexity that transforms the experience from beverage to ritual.</div>
+        <span class="spice-origin">Premium Grade</span>
+      </div>
+
+      <div class="spice-tile reveal reveal-delay-2">
+        <span class="spice-icon">🌱</span>
+        <div class="spice-name">Green Cardamom</div>
+        <div class="spice-desc">Adds ethereal floral-spice elegance, supports gut health, and elevates every other ingredient it touches. The perfumer's choice.</div>
+        <span class="spice-origin">Premium Grade</span>
+      </div>
+
+      <div class="spice-tile reveal reveal-delay-3">
+        <span class="spice-icon">🫙</span>
+        <div class="spice-name">Black Pepper</div>
+        <div class="spice-desc">The bioavailability amplifier. Piperine dramatically increases the absorption of curcumin and every other botanical in this blend.</div>
+        <span class="spice-origin">Functional Synergist</span>
+      </div>
+
+      <div class="spice-tile reveal reveal-delay-1" style="grid-column: span 1;">
+        <span class="spice-icon">🌰</span>
+        <div class="spice-name">Clove</div>
+        <div class="spice-desc">Among the highest antioxidant densities of any spice on earth. Adds warmth, depth, and extraordinary protective power.</div>
+        <span class="spice-origin">High-Potency</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DARK BAND ═══ -->
+<div class="band">
+  <div class="band-shimmer"></div>
+  <div class="inner">
+    <span class="band-label section-label">A World First</span>
+    <h2 class="section-title reveal">No One Else Does This</h2>
+    <p class="band-body reveal">
       Wise King is the world's only premium blend unifying high-potency Saffron,
-      Native Australian Roasted Wattleseed, Green Cardamom, and Organic Turmeric
-      in a single, ceremonial golden latte. Not found on any shelf. Not replicated by any brand.
-      This is the beginning of something entirely new.
+      Native Australian Roasted Wattleseed, Green Cardamom, and Turmeric
+      in a single ceremonial golden latte. Not found on any shelf.
+      Not replicated by any brand. This is the beginning of something entirely new.
     </p>
     <div class="band-stat">
-      <div class="stat-item">
-        <span class="num">6+</span>
-        <p>Rare Botanicals</p>
+      <div class="stat-item reveal reveal-delay-1">
+        <span class="stat-num">7</span>
+        <div class="stat-label">Rare Botanicals</div>
       </div>
-      <div class="stat-item">
-        <span class="num">0</span>
-        <p>Competitors Worldwide</p>
+      <div class="stat-item reveal reveal-delay-2">
+        <span class="stat-num">0</span>
+        <div class="stat-label">Global Competitors</div>
       </div>
-      <div class="stat-item">
-        <span class="num">100%</span>
-        <p>Australian Made</p>
+      <div class="stat-item reveal reveal-delay-3">
+        <span class="stat-num">100%</span>
+        <div class="stat-label">Crafted in Australia</div>
       </div>
-      <div class="stat-item">
-        <span class="num">∞</span>
-        <p>Wellness Benefits</p>
+      <div class="stat-item reveal reveal-delay-1">
+        <span class="stat-num">∞</span>
+        <div class="stat-label">Wellness Returns</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- INGREDIENTS SECTION -->
+<!-- ═══ INGREDIENT CARDS ═══ -->
 <section class="ingredients">
   <div class="inner">
     <span class="section-label reveal">The Foundation</span>
-    <h2 class="section-title reveal">Our Signature Blend</h2>
+    <h2 class="section-title reveal">Our Signature Ingredients</h2>
     <p class="section-body reveal">
-      Every element is hand-selected for potency and provenance.
-      This is not a commodity product — it is a crafted ritual in a cup.
+      The two most rare and precious elements in our blend,
+      elevated to the prominence they deserve.
     </p>
 
     <div class="ing-grid">
 
-      <!-- SAFFRON — fixed filename -->
+      <!-- SAFFRON -->
       <div class="ing-card reveal">
         <img class="ing-photo"
              src="saffron.png.JPG"
-             alt="Premium Saffron"
-             onerror="this.style.background='linear-gradient(135deg,#7a3a8c,#c971d0)';this.style.minHeight='210px';" />
+             alt="Saffron"
+             onerror="this.style.display='none'" />
         <h3>Saffron</h3>
         <p>
-          The world's most precious spice. Rich in crocin and safranal,
-          saffron is revered for lifting mood, sharpening cognition,
-          and delivering powerful antioxidant protection at the cellular level.
-          Clinically recognised for supporting serotonin pathways.
+          Harvested from the Crocus sativus flower — it takes over 150 blooms
+          to produce a single gram. Rich in crocin and safranal, saffron is
+          clinically recognised for supporting mood, cognition, and antioxidant
+          protection. It is the crown jewel of this blend.
         </p>
-        <span class="ing-badge">Rare · World's Most Precious Spice</span>
+        <span class="ing-badge">The Crown Jewel · Rarest Spice on Earth</span>
       </div>
 
-      <!-- WATTLESEED — fixed filename -->
+      <!-- WATTLESEED -->
       <div class="ing-card reveal">
         <img class="ing-photo"
              src="wattleseed.png.JPG"
              alt="Roasted Australian Wattleseed"
-             onerror="this.style.background='linear-gradient(135deg,#3d2007,#7a4a15)';this.style.minHeight='210px';" />
+             onerror="this.style.display='none'" />
         <h3>Native Australian Wattleseed</h3>
         <p>
-          An Indigenous Australian treasure, slow-roasted to unlock a deep, nutty,
-          espresso-like complexity. High in protein, potassium and calcium —
-          it transforms your cup into a nourishing culinary experience
-          found nowhere else in the world.
+          Slow-roasted to develop a deep, nutty complexity with notes of
+          coffee and chocolate. A sacred Indigenous Australian food,
+          high in protein, potassium, and calcium. No other premium latte
+          in the world uses this ingredient. It is ours alone.
         </p>
-        <span class="ing-badge">Native Australian · Exclusively Ours</span>
+        <span class="ing-badge">Native Australian · Our Exclusive Edge</span>
       </div>
 
-      <!-- THE SACRED SYMPHONY — illustrated -->
+      <!-- SACRED SYMPHONY — NO EMOJIS, pure design -->
       <div class="ing-card symphony-card reveal">
-        <div class="symphony-scene">
-          <!-- Australian animal scientists creating the blend -->
-          <div class="symphony-animals">
-            <span title="Kangaroo — The Master Blender">🦘</span>
-            <span title="Koala — The Botanist">🐨</span>
-            <span title="Emu — The Keeper of Wattleseed">🦤</span>
-            <span title="Cockatoo — The Saffron Specialist">🦜</span>
-          </div>
-          <p style="color:rgba(245,233,200,0.55);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;margin-top:8px;position:relative;z-index:1;">
-            Australia's finest botanical scientists at work
-          </p>
+        <div class="symphony-visual">
+          <p class="symphony-title-line">The complete botanical composition</p>
           <div class="symphony-spices">
             <span class="ss-tag">Turmeric</span>
-            <span class="ss-tag">Ginger</span>
+            <span class="ss-tag">Saffron</span>
             <span class="ss-tag">Wattleseed</span>
+            <span class="ss-tag">Ginger</span>
+            <span class="ss-tag">Cardamom</span>
             <span class="ss-tag">Clove</span>
             <span class="ss-tag">Black Pepper</span>
-            <span class="ss-tag">Saffron</span>
-            <span class="ss-tag">Cardamom</span>
           </div>
-          <p class="symphony-caption">Seven botanicals. One vision. Zero compromise.</p>
+          <p class="symphony-footer">Seven botanicals. One vision. Zero compromise.</p>
         </div>
         <h3>The Sacred Symphony</h3>
         <p>
-          Organic Turmeric anchors the blend with curcumin — nature's most studied
-          anti-inflammatory compound. Green Cardamom adds aromatic elegance. Ginger
-          and Clove warm from within. Black Pepper unlocks the bioavailability of every
-          ingredient. Together, they do not just blend — they perform alchemy.
+          Turmeric anchors the blend with curcumin. Green Cardamom adds aromatic
+          elegance. Ginger and Clove warm from within. Black Pepper unlocks the
+          bioavailability of every ingredient. Saffron crowns it all.
+          Together, they do not merely blend — they perform alchemy.
         </p>
         <span class="ing-badge">7 Botanicals · One Cup · Zero Compromise</span>
       </div>
@@ -707,61 +980,84 @@
   </div>
 </section>
 
-<!-- WELLNESS -->
+<!-- ═══ WELLNESS ═══ -->
 <section class="wellness">
   <div class="inner">
     <span class="section-label reveal">Why It Matters</span>
     <h2 class="section-title reveal">Health Is the Real Luxury</h2>
     <p class="section-body reveal">
-      Each sip delivers a synergistic cascade of benefits — ancient remedies, validated
-      by modern science. This is your daily ritual of radical self-investment.
+      Each sip delivers a synergistic cascade of benefits —
+      ancient botanical wisdom, now validated by modern science.
+      This is your daily ritual of radical self-investment.
     </p>
     <div class="wellness-grid">
-      <div class="well-item reveal">
-        <div class="well-icon">🧠</div>
+      <div class="well-item reveal reveal-delay-1">
+        <span class="well-number">01</span>
         <h4>Cognitive Clarity</h4>
-        <p>Saffron and turmeric together support memory, focus, and neuroprotection — your mind at its sharpest, every single morning.</p>
+        <p>Saffron and turmeric together support memory, focus, and neuroprotection. Your mind performing at its sharpest, every single morning.</p>
       </div>
-      <div class="well-item reveal">
-        <div class="well-icon">🔥</div>
+      <div class="well-item reveal reveal-delay-2">
+        <span class="well-number">02</span>
         <h4>Deep Anti-Inflammation</h4>
-        <p>Curcumin, amplified by black pepper's piperine, combats systemic inflammation at the cellular level. Daily protection, compounded.</p>
+        <p>Curcumin, amplified by black pepper's piperine, combats systemic inflammation at the cellular level. Daily protection, compounded over time.</p>
       </div>
-      <div class="well-item reveal">
-        <div class="well-icon">✨</div>
+      <div class="well-item reveal reveal-delay-3">
+        <span class="well-number">03</span>
         <h4>Antioxidant Shield</h4>
-        <p>Saffron, clove, and cardamom deliver one of the highest antioxidant densities found in any daily wellness beverage.</p>
+        <p>Saffron, clove, and cardamom deliver one of the highest antioxidant densities found in any daily wellness beverage on the market.</p>
       </div>
-      <div class="well-item reveal">
-        <div class="well-icon">🫀</div>
+      <div class="well-item reveal reveal-delay-1">
+        <span class="well-number">04</span>
         <h4>Gut & Metabolic Health</h4>
-        <p>Ginger and wattleseed support digestion, balanced blood sugar, and sustained natural energy — no crash, no compromise.</p>
+        <p>Ginger and wattleseed support digestion, balanced blood sugar, and sustained natural energy — no crash, no compromise, no stimulants.</p>
       </div>
-      <div class="well-item reveal">
-        <div class="well-icon">😌</div>
+      <div class="well-item reveal reveal-delay-2">
+        <span class="well-number">05</span>
         <h4>Mood Elevation</h4>
-        <p>Saffron is clinically recognised for supporting serotonin pathways, promoting calm confidence and inner emotional wellbeing.</p>
+        <p>Saffron is clinically recognised for supporting serotonin pathways — promoting calm confidence and genuine inner emotional wellbeing.</p>
       </div>
-      <div class="well-item reveal">
-        <div class="well-icon">🌿</div>
-        <h4>100% Natural · Zero Fillers</h4>
-        <p>Pure, premium botanical powder — nothing artificial, nothing hidden. What you see is exactly what you get.</p>
+      <div class="well-item reveal reveal-delay-3">
+        <span class="well-number">06</span>
+        <h4>Zero Fillers. Zero Compromise.</h4>
+        <p>Pure, premium botanical powder. Nothing artificial. Nothing hidden. Every gram of this blend earns its place.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FREE SAMPLE CTA -->
+<!-- ═══ PROVENANCE ═══ -->
+<section class="provenance reveal">
+  <div class="provenance-inner">
+    <span class="section-label" style="display:block;margin-bottom:12px;">Sourced with Intention</span>
+    <h3>The World's Best Ingredients,<br/>Crafted in Australia</h3>
+    <p style="margin-top:14px;">
+      Our wattleseed is proudly native Australian. Our remaining botanicals are
+      sourced from the world's most reputed growing regions — selected for
+      therapeutic potency, not price. Every ingredient is then carefully blended
+      and crafted right here in Victoria, Australia.
+    </p>
+    <div class="prov-tags">
+      <span class="prov-tag">Crafted in Victoria, Australia</span>
+      <span class="prov-tag">Native Wattleseed</span>
+      <span class="prov-tag">Globally Sourced Botanicals</span>
+      <span class="prov-tag">No Artificial Additives</span>
+      <span class="prov-tag">Small-Batch Precision</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
 <section class="cta-section">
-  <div style="max-width:900px;margin:0 auto;">
-    <span class="section-label" style="display:block;margin-bottom:14px;">Experience It First</span>
+  <div class="cta-glow"></div>
+  <div class="inner">
+    <span class="section-label">Experience It First</span>
     <h2 class="section-title reveal">Taste the Difference.<br/>Risk Nothing.</h2>
-    <p class="reveal">
+    <p class="section-body reveal">
       We are offering complimentary taste-test samples for a limited time.
       Try Australia's most premium golden latte before you commit —
-      because we are certain once you do, you will never look back.
+      because we are certain that once you do, you will never look back.
     </p>
-    <div class="reveal">
+    <div class="btn-row reveal">
       <a class="btn-gold"
          href="mailto:budhrajapiyush07@gmail.com?subject=Free%20Sample%20Request%20–%20Wise%20King%20Golden%20Latte">
         Request Your Free Sample
@@ -775,40 +1071,79 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ═══ FOOTER ═══ -->
 <footer>
-  <img class="footer-king"
-       src="kangaroo-crown.png.PNG"
-       alt="Wise King Enterprise"
-       onerror="this.style.display='none'" />
-  <p class="footer-brand">WISE KING ENTERPRISE</p>
-  <p class="footer-tagline">"The Pinnacle of Golden Latte Alchemy"</p>
-  <div class="social-row">
-    <a class="social-link" href="https://www.tiktok.com/@jbj_life" target="_blank" rel="noopener">
-      <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.19 8.19 0 004.79 1.52V6.79a4.85 4.85 0 01-1.02-.1z"/></svg>
-      @jbj_life
-    </a>
-    <a class="social-link" href="mailto:budhrajapiyush07@gmail.com">
-      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-      budhrajapiyush07@gmail.com
-    </a>
+  <div class="footer-shimmer"></div>
+  <div class="footer-inner">
+
+    <!-- NEW IMAGE: crown.png -->
+    <img class="footer-crown"
+         src="crown.png"
+         alt="Wise King Enterprise"
+         onerror="this.style.display='none'; document.querySelector('.footer-crown-fallback').style.display='flex';" />
+    <div class="footer-crown-fallback">👑</div>
+
+    <div class="footer-divider">
+      <span></span>
+      <div class="footer-divider-diamond"></div>
+      <span></span>
+    </div>
+
+    <p class="footer-brand">WISE KING ENTERPRISE</p>
+    <p class="footer-tagline">"The Pinnacle of Golden Latte Alchemy"</p>
+
+    <div class="social-row">
+      <a class="social-link"
+         href="https://www.tiktok.com/@jbj_life"
+         target="_blank" rel="noopener">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 106.34 6.34V8.75a8.19 8.19 0 004.79 1.52V6.79a4.85 4.85 0 01-1.02-.1z"/>
+        </svg>
+        @jbj_life
+      </a>
+      <a class="social-link"
+         href="mailto:budhrajapiyush07@gmail.com">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M2 7l10 7 10-7"/>
+        </svg>
+        budhrajapiyush07@gmail.com
+      </a>
+    </div>
+
+    <div class="footer-rule"></div>
+    <p class="footer-copy">
+      <svg width="20" height="13" viewBox="0 0 22 14" style="vertical-align:middle;margin-right:6px;border-radius:2px;">
+        <rect width="22" height="14" fill="#00247D"/>
+        <line x1="0" y1="0" x2="11" y2="7" stroke="white" stroke-width="2"/>
+        <line x1="11" y1="7" x2="0" y2="14" stroke="white" stroke-width="2"/>
+        <line x1="0" y1="7" x2="11" y2="7" stroke="white" stroke-width="2"/>
+        <line x1="5.5" y1="0" x2="5.5" y2="14" stroke="white" stroke-width="2"/>
+        <line x1="0" y1="0" x2="11" y2="7" stroke="#CF142B" stroke-width="1"/>
+        <line x1="11" y1="7" x2="0" y2="14" stroke="#CF142B" stroke-width="1"/>
+        <line x1="0" y1="7" x2="11" y2="7" stroke="#CF142B" stroke-width="1"/>
+        <line x1="5.5" y1="0" x2="5.5" y2="14" stroke="#CF142B" stroke-width="1"/>
+        <text x="14" y="5.5" font-size="3" fill="white" text-anchor="middle">✦</text>
+        <text x="19" y="4" font-size="2.2" fill="white" text-anchor="middle">✦</text>
+        <text x="20" y="8.5" font-size="1.8" fill="white" text-anchor="middle">✦</text>
+        <text x="17" y="11.5" font-size="2.2" fill="white" text-anchor="middle">✦</text>
+      </svg>
+      © 2026 Wise King Enterprise. Crafted Intentionally in Victoria, Australia. All Rights Reserved.
+    </p>
   </div>
-  <p class="footer-copy">
-    <img class="footer-flag"
-         src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia.svg"
-         alt="Australia" />
-    © 2026 Wise King Enterprise. Crafted Intentionally in Australia. All Rights Reserved.
-  </p>
 </footer>
 
 <script>
-  const reveals = document.querySelectorAll('.reveal');
+  const els = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
     });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => obs.observe(el));
+  }, { threshold: 0.09 });
+  els.forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
