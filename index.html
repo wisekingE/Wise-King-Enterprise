@@ -282,6 +282,41 @@
             text-justify: inter-word;
         }
 
+        /* NEW AUSTRALIAN LANDSCAPE SECTION */
+        #heritage-scenery {
+            padding: 100px 40px;
+            background: var(--gold-pale);
+            border-top: 1px solid var(--border-light);
+            text-align: center;
+        }
+        .scenery-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid var(--border-light);
+            background: #FFFFFF;
+            padding: 20px;
+            box-shadow: 0 15px 35px rgba(179,143,67,0.1);
+        }
+        .scenery-frame {
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+        .scenery-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .scenery-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 24px;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 10px 20px;
+        }
+
         #pilot-run {
             padding: 100px 40px;
             background: var(--bg-bright);
@@ -422,6 +457,7 @@
             .nav-links { display: none; }
             #hero { padding: 140px 24px 60px; }
             .concept-grid { flex-direction: column; align-items: center; }
+            .scenery-frame { height: 280px; }
             .pilot-container { flex-direction: column; gap: 40px; }
         }
     </style>
@@ -433,6 +469,7 @@
         <ul class="nav-links">
             <li><a href="#hero">Home</a></li>
             <li><a href="#concept">The Components</a></li>
+            <li><a href="#heritage-scenery">Our Origin</a></li>
             <li><a href="#pilot-run">Sovereign Standards</a></li>
             <li><a href="#contact">Global Portals</a></li>
         </ul>
@@ -488,7 +525,7 @@
             
             <div class="concept-card">
                 <div class="image-frame">
-                    <img src="wattleseed.jpg" alt="Australian Roasted Wattleseed Blend">
+                    <img src="wattleseed.png" alt="Australian Roasted Wattleseed Blend" onerror="this.src='wattleseed.jpg'">
                 </div>
                 <h3 class="ingredient-title">Roasted Wattleseed</h3>
                 <p class="ingredient-origin">Wild Harvested • Australia</p>
@@ -497,13 +534,28 @@
 
             <div class="concept-card">
                 <div class="image-frame">
-                    <img src="saffron.jpg" alt="Exquisite Premium Saffron Component">
+                    <img src="saffron.png" alt="Exquisite Premium Saffron Component" onerror="this.src='saffron.jpg'">
                 </div>
                 <h3 class="ingredient-title">Exquisite Saffron</h3>
                 <p class="ingredient-origin">Sovereign Grade • Ultra-Premium</p>
                 <p class="ingredient-desc">Meticulously integrated into our signature elixir, our select-grade crimson saffron strands bring a delicate honeyed floral sweetness and an iconic regal warmth to the blend. Renowned across centuries for supporting neural cellular defense, stabilizing mood baselines, and reducing daily oxidative stress, it transforms our golden blend into an active wellness ritual.</p>
             </div>
 
+        </div>
+    </section>
+
+    <section id="heritage-scenery">
+        <div class="section-header">
+            <h2 class="section-title">Born In Australia</h2>
+            <p class="section-subtitle">Inspired by the untouched spirit of the Great Southern Land</p>
+        </div>
+        <div class="scenery-container">
+            <div class="scenery-frame">
+                <img src="kangaroo.png" alt="Pure Australian Wildlife and Heritage Brand Visual">
+            </div>
+            <p class="scenery-text">
+                "Our signature elixirs represent an authentic, exotic story that no standard wellness brand can tell. Deeply connected to the raw, clean terrains of Australia where native ingredients thrive under uncompromised sunshine."
+            </p>
         </div>
     </section>
 
