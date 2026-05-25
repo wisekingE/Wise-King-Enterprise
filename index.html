@@ -28,7 +28,6 @@
             position: relative;
         }
 
-        /* HIGH-END EUROPEAN MINIMALIST GRAIN OVERLAY */
         body::before {
             content: "";
             position: fixed;
@@ -39,7 +38,6 @@
             opacity: 0.6;
         }
 
-        /* NAVIGATION BAR */
         nav {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -90,7 +88,6 @@
         }
         .nav-order-btn:hover { background: var(--gold); transform: translateY(-1px); }
 
-        /* HERO MAIN SECTION */
         #hero {
             min-height: 95vh;
             display: flex;
@@ -189,7 +186,6 @@
             line-height: 1.6;
         }
 
-        /* SECTION HEADER STANDARD */
         .section-header {
             text-align: center;
             margin-bottom: 60px;
@@ -208,7 +204,6 @@
             color: var(--text-muted);
         }
 
-        /* THE PRODUCT ARCHITECTURE (SAFFRON & WATTLESEED FOCUS) */
         #concept {
             padding: 100px 40px;
             background: #FFFFFF;
@@ -238,10 +233,9 @@
             border-color: var(--gold);
         }
         
-        /* IMAGE STYLING WITH EASY DYNAMIC FALLBACKS */
         .image-frame {
             width: 100%;
-            height: 280px;
+            height: 320px;
             background: #FFFFFF;
             border: 1px solid var(--border-light);
             margin-bottom: 25px;
@@ -260,14 +254,7 @@
             transition: transform 0.5s ease;
         }
         .image-frame:hover img {
-            transform: scale(1.04);
-        }
-        .placeholder-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            color: var(--text-muted);
-            z-index: 1;
-            padding: 20px;
+            transform: scale(1.05);
         }
 
         .ingredient-title {
@@ -295,7 +282,6 @@
             text-justify: inter-word;
         }
 
-        /* HIGH-VOLUME LOGISTICS DISPLAY FOR PILOT RUNS */
         #pilot-run {
             padding: 100px 40px;
             background: var(--bg-bright);
@@ -311,7 +297,6 @@
         }
         .video-column { flex: 1; min-width: 340px; }
         
-        /* VIDEO DISPLAY FRAME — READY FOR SAMPLE VIDEOS */
         .video-frame {
             width: 100%;
             aspect-ratio: 16/9;
@@ -330,6 +315,13 @@
             object-fit: cover;
             position: absolute;
             top: 0; left: 0;
+        }
+        .placeholder-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: var(--text-muted);
+            z-index: 1;
+            padding: 20px;
         }
         
         .text-column { flex: 1; min-width: 340px; }
@@ -353,7 +345,6 @@
             line-height: 1.6;
         }
 
-        /* INTERNATIONAL BRAND FOOTER */
         footer {
             background: #FFFFFF;
             border-top: 1px solid var(--border-light);
@@ -497,8 +488,7 @@
             
             <div class="concept-card">
                 <div class="image-frame">
-                    <img src="wattleseed.jpg" alt="Australian Roasted Wattleseed Component" onerror="this.style.display='none'">
-                    <span class="placeholder-text">✦ Premium Roasted Wattleseed Media Slot ✦</span>
+                    <img src="wattleseed.jpg" alt="Australian Roasted Wattleseed Blend">
                 </div>
                 <h3 class="ingredient-title">Roasted Wattleseed</h3>
                 <p class="ingredient-origin">Wild Harvested • Australia</p>
@@ -507,8 +497,7 @@
 
             <div class="concept-card">
                 <div class="image-frame">
-                    <img src="saffron.jpg" alt="Exquisite Premium Saffron Component" onerror="this.style.display='none'">
-                    <span class="placeholder-text">✦ Elite Saffron Threads Media Slot ✦</span>
+                    <img src="saffron.jpg" alt="Exquisite Premium Saffron Component">
                 </div>
                 <h3 class="ingredient-title">Exquisite Saffron</h3>
                 <p class="ingredient-origin">Sovereign Grade • Ultra-Premium</p>
