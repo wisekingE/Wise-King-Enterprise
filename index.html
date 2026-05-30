@@ -369,6 +369,31 @@
 </head>
 <body>
 
+<!-- ═══ SEARCH BAR ═══ -->
+<div class="search-wrapper">
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="siteSearch" class="search-input" placeholder="Search golden latte, ingredients, how to prepare...">
+    <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+/* ═══ SEARCH BAR ═══ */
+.search-wrapper { position: sticky; top: 0; z-index: 200; background: rgba(255,254,249,0.97); padding: 10px 20px; backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.search-box { display: flex; align-items: center; background: #fff; border: 1.5px solid #e2cfa0; border-radius: 50px; padding: 10px 20px; gap: 10px; box-shadow: 0 4px 20px rgba(120,80,0,0.08); max-width: 620px; margin: 0 auto; }
+.search-input { flex: 1; border: none; outline: none; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #3d2b00; background: transparent; }
+.search-input::placeholder { color: #b8a070; }
+.search-clear { background: none; border: none; cursor: pointer; color: #b8a070; font-size: 1rem; display: none; }
+.search-results { position: absolute; top: 100%; left: 20px; right: 20px; background: #fff; border: 1px solid #e2cfa0; border-radius: 14px; box-shadow: 0 8px 32px rgba(120,80,0,0.12); overflow: hidden; z-index: 999; max-width: 620px; margin: 0 auto; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); }
+.search-result-item { padding: 14px 20px; border-bottom: 1px solid #f5ead0; cursor: pointer; display: flex; align-items: flex-start; gap: 12px; transition: background 0.15s; }
+.search-result-item:last-child { border-bottom: none; }
+.search-result-item:hover { background: #fdf8f0; }
+.search-result-emoji { font-size: 1.2rem; margin-top: 2px; }
+.search-result-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: #3d2b00; margin-bottom: 3px; }
+.search-result-desc { font-size: 0.8rem; color: #a08050; line-height: 1.4; }
+.search-no-result { padding: 20px; text-align: center; color: #a08050; font-size: 0.9rem; }
+
 <!-- ─── TOPBAR ─── -->
 <div class="topbar">
   <span class="topbar-text">
@@ -868,6 +893,66 @@
     &copy; 2026 Wise King Enterprise. Crafted Intentionally in Victoria, Australia. All Rights Reserved.
 </p>
 </footer>
+
+<script>
+const searchData = [
+  { emoji: "☀️", title: "How to Make a Golden Latte", desc: "Whisk 6g golden powder with 20mL hot water, add 230mL hot milk.", section: "prepare-section" },
+  { emoji: "🧊", title: "How to Make an Iced Golden Latte", desc: "Whisk 6g golden powder with 20mL hot water, add cold milk and ice.", section: "prepare-section" },
+  { emoji: "☕", title: "Golden Cappuccino", desc: "Equal parts golden base, steamed milk and foam. Bold and frothy.", section: "serve-section" },
+  { emoji: "💛", title: "Golden Macchiato", desc: "Strong and concentrated golden base with a touch of foam.", section: "serve-section" },
+  { emoji: "🌟", title: "Saffron — World's Most Precious Spice", desc: "Lifts mood, sharpens cognition, delivers antioxidant power.", section: "spice-grid" },
+  { emoji: "🌿", title: "Turmeric — Anti-Inflammatory", desc: "Anchors the blend with curcumin, nature's most studied compound.", section: "spice-grid" },
+  { emoji: "🌱", title: "Wattleseed — Native Australian", desc: "Indigenous Australian treasure. Rich, nutty depth. High in protein.", section: "spice-grid" },
+  { emoji: "🫚", title: "Ginger — Premium Grade", desc: "Ignites circulation, soothes digestion, warming complexity.", section: "spice-grid" },
+  { emoji: "🌿", title: "Green Cardamom", desc: "Supports gut health and elevates every ingredient it touches.", section: "spice-grid" },
+  { emoji: "⚫", title: "Black Pepper — Bioavailability Amplifier", desc: "Piperine dramatically increases absorption of curcumin.", section: "spice-grid" },
+  { emoji: "🔴", title: "Clove — High Potency Antioxidant", desc: "Among the highest antioxidant densities of any spice on earth.", section: "spice-grid" },
+  { emoji: "🌹", title: "Coming Soon — Rose Petal Golden Latte", desc: "Hand-dried rose petals meets our golden blend. Floral and calming.", section: "coming-section" },
+  { emoji: "🍦", title: "Coming Soon — Vanilla Golden Latte", desc: "Rich Madagascan vanilla meets our signature golden blend.", section: "coming-section" },
+  { emoji: "🔥", title: "Coming Soon — Aus Spice Rub", desc: "100% Australian botanicals for camping, road trips and the wild.", section: "coming-section" },
+  { emoji: "📦", title: "Free Sample — Try Before You Commit", desc: "3 servings for just $5 postage. Delivered anywhere in Australia.", section: "sample-banner" },
+  { emoji: "✉️", title: "Send Feedback", desc: "Share your thoughts about our golden latte.", section: "survey-section" },
+];
+
+const input = document.getElementById("siteSearch");
+const results = document.getElementById("searchResults");
+const clearBtn = document.getElementById("searchClear");
+
+input.addEventListener("input", function () {
+  const q = this.value.trim().toLowerCase();
+  clearBtn.style.display = q ? "block" : "none";
+  if (!q) { results.innerHTML = ""; results.style.display = "none"; return; }
+  const filtered = searchData.filter(item => item.title.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q));
+  results.style.display = "block";
+  results.innerHTML = "";
+  if (filtered.length === 0) {
+    results.innerHTML = `<div class="search-no-result">No results. Try "latte", "saffron" or "how to prepare".</div>`;
+    return;
+  }
+  filtered.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "search-result-item";
+    div.innerHTML = `<div class="search-result-emoji">${item.emoji}</div><div><div class="search-result-title">${item.title}</div><div class="search-result-desc">${item.desc}</div></div>`;
+    div.onclick = () => {
+      const target = document.querySelector(`.${item.section}`);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      results.style.display = "none";
+      input.value = "";
+      clearBtn.style.display = "none";
+    };
+    results.appendChild(div);
+  });
+});
+document.addEventListener("click", function(e) {
+  if (!e.target.closest(".search-wrapper")) results.style.display = "none";
+});
+function clearSearch() {
+  input.value = "";
+  results.innerHTML = "";
+  results.style.display = "none";
+  clearBtn.style.display = "none";
+}
+</script>
 
 <script>
   const els = document.querySelectorAll('.reveal');
