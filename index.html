@@ -287,6 +287,23 @@
 .prepare-steps li { margin-bottom: 10px; padding-left: 4px; }
 .prepare-steps li:last-child { margin-bottom: 0; }
 
+/* ═══ SERVE IT YOUR WAY ═══ */
+.serve-section { padding: 80px 20px; background: #fff; text-align: center; }
+.serve-heading { font-family: 'Playfair Display', serif; font-size: 2rem; color: #7a5c1e; margin-bottom: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+.serve-subheading { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: #888; margin-bottom: 48px; }
+.serve-grid { display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; max-width: 1000px; margin: 0 auto; }
+.serve-card { background: #fdf8f0; border: 1px solid #e2cfa0; border-radius: 14px; padding: 32px 24px; width: 210px; text-align: center; box-shadow: 0 4px 20px rgba(120,80,0,0.07); transition: transform 0.2s ease; }
+.serve-card:hover { transform: translateY(-4px); }
+.serve-emoji { font-size: 2rem; margin-bottom: 10px; }
+.serve-name { font-family: 'Playfair Display', serif; font-size: 1rem; color: #3d2b00; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px; }
+.serve-ratio { display: flex; flex-direction: column; align-items: stretch; border-radius: 8px; overflow: hidden; margin-bottom: 16px; border: 1px solid #e2cfa0; }
+.serve-bar { display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #fff; }
+.serve-bar.golden { background: #b8860b; }
+.serve-bar.milk { background: #d4a843; color: #fff; }
+.serve-bar.foam { background: #e8d5a0; color: #7a5c1e; }
+.serve-bar.ice { background: #a8d8ea; color: #2c5f6e; }
+.serve-note { font-size: 0.85rem; color: #777; line-height: 1.6; margin: 0; }
+
     /* ─── CTA ─── */
     .cta-section { position: relative; z-index: 1; padding: 100px 24px; background: linear-gradient(148deg, #f7e8c0 0%, #eedea0 50%, #f7e8c0 100%); text-align: center; overflow: hidden; }
     .cta-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 400px; pointer-events: none; background: radial-gradient(ellipse, rgba(255,255,255,0.55) 0%, transparent 65%); }
@@ -454,6 +471,57 @@
       </ol>
     </div>
 </div>
+</section>
+
+<!-- ═══ SERVE IT YOUR WAY ═══ -->
+<section class="serve-section">
+  <h2 class="serve-heading">Serve It Your Way</h2>
+  <p class="serve-subheading">Use your golden powder as the base — then build your drink like a barista.</p>
+  <div class="serve-grid">
+
+    <div class="serve-card">
+      <div class="serve-emoji">☕</div>
+      <h3 class="serve-name">Golden Latte</h3>
+      <div class="serve-ratio">
+        <div class="serve-bar milk" style="height:70px"><span>Steamed Milk</span></div>
+        <div class="serve-bar golden" style="height:30px"><span>Golden Base</span></div>
+      </div>
+      <p class="serve-note">Smooth and creamy. The classic way to enjoy it.</p>
+    </div>
+
+    <div class="serve-card">
+      <div class="serve-emoji">🥛</div>
+      <h3 class="serve-name">Golden Cappuccino</h3>
+      <div class="serve-ratio">
+        <div class="serve-bar foam" style="height:30px"><span>Milk Foam</span></div>
+        <div class="serve-bar milk" style="height:40px"><span>Steamed Milk</span></div>
+        <div class="serve-bar golden" style="height:30px"><span>Golden Base</span></div>
+      </div>
+      <p class="serve-note">Equal parts base, milk and foam. Bold and frothy.</p>
+    </div>
+
+    <div class="serve-card">
+      <div class="serve-emoji">🧊</div>
+      <h3 class="serve-name">Iced Golden Latte</h3>
+      <div class="serve-ratio">
+        <div class="serve-bar ice" style="height:25px"><span>Ice</span></div>
+        <div class="serve-bar milk" style="height:60px"><span>Cold Milk</span></div>
+        <div class="serve-bar golden" style="height:30px"><span>Golden Base</span></div>
+      </div>
+      <p class="serve-note">Refreshing and rich. Perfect for warm days.</p>
+    </div>
+
+    <div class="serve-card">
+      <div class="serve-emoji">💛</div>
+      <h3 class="serve-name">Golden Macchiato</h3>
+      <div class="serve-ratio">
+        <div class="serve-bar foam" style="height:20px"><span>Foam</span></div>
+        <div class="serve-bar golden" style="height:60px"><span>Golden Base</span></div>
+      </div>
+      <p class="serve-note">Strong and concentrated. For those who love intensity.</p>
+    </div>
+
+  </div>
 </section>
 
 <!-- GOLDEN LATTE FEEDBACK FORM -->
