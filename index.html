@@ -361,11 +361,26 @@
     .reveal-d2 { transition-delay: .2s; }
     .reveal-d3 { transition-delay: .3s; }
 
-    @media (max-width: 640px) {
-      .topbar-dot:nth-child(4), .topbar-dot:nth-child(5), .topbar-text:last-of-type { display: none; }
-      .modal-box { padding: 36px 24px; }
+        @media (max-width: 640px) {
+        .topbar-dot:nth-child(4), .topbar-dot:nth-child(5), .topbar-text:last-of-type { display: none; }
+        .modal-box { padding: 36px 24px; }
     }
-  </style>
+
+    /* ═══════ SEARCH BAR ═══════ */
+    .search-wrapper { position: sticky; top: 0; z-index: 200; background: rgba(255,254,249,0.97); padding: 10px 20px; backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .search-box { display: flex; align-items: center; background: #fff; border: 1.5px solid #e2cfa0; border-radius: 50px; padding: 10px 20px; gap: 10px; box-shadow: 0 4px 20px rgba(120,80,0,0.08); max-width: 620px; margin: 0 auto; }
+    .search-input { flex: 1; border: none; outline: none; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #3d2b00; background: transparent; }
+    .search-input::placeholder { color: #b8a070; }
+    .search-clear { background: none; border: none; cursor: pointer; color: #b8a070; font-size: 1rem; display: none; }
+    .search-results { position: absolute; top: 100%; left: 20px; right: 20px; background: #fff; border: 1px solid #e2cfa0; border-radius: 14px; box-shadow: 0 8px 32px rgba(120,80,0,0.12); overflow: hidden; z-index: 999; max-width: 620px; margin: 0 auto; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); }
+    .search-result-item { padding: 14px 20px; border-bottom: 1px solid #f5ead0; cursor: pointer; display: flex; align-items: flex-start; gap: 12px; transition: background 0.15s; }
+    .search-result-item:last-child { border-bottom: none; }
+    .search-result-item:hover { background: #fdf8f0; }
+    .search-result-emoji { font-size: 1.2rem; margin-top: 2px; }
+    .search-result-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: #3d2b00; margin-bottom: 3px; }
+    .search-result-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; color: #a08050; line-height: 1.4; }
+    .search-no-result { padding: 20px; text-align: center; color: #a08050; font-size: 0.9rem; }
+</style>
 </head>
 <body>
 
@@ -378,21 +393,6 @@
   </div>
   <div class="search-results" id="searchResults"></div>
 </div>
-
-/* ═══ SEARCH BAR ═══ */
-.search-wrapper { position: sticky; top: 0; z-index: 200; background: rgba(255,254,249,0.97); padding: 10px 20px; backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-.search-box { display: flex; align-items: center; background: #fff; border: 1.5px solid #e2cfa0; border-radius: 50px; padding: 10px 20px; gap: 10px; box-shadow: 0 4px 20px rgba(120,80,0,0.08); max-width: 620px; margin: 0 auto; }
-.search-input { flex: 1; border: none; outline: none; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #3d2b00; background: transparent; }
-.search-input::placeholder { color: #b8a070; }
-.search-clear { background: none; border: none; cursor: pointer; color: #b8a070; font-size: 1rem; display: none; }
-.search-results { position: absolute; top: 100%; left: 20px; right: 20px; background: #fff; border: 1px solid #e2cfa0; border-radius: 14px; box-shadow: 0 8px 32px rgba(120,80,0,0.12); overflow: hidden; z-index: 999; max-width: 620px; margin: 0 auto; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); }
-.search-result-item { padding: 14px 20px; border-bottom: 1px solid #f5ead0; cursor: pointer; display: flex; align-items: flex-start; gap: 12px; transition: background 0.15s; }
-.search-result-item:last-child { border-bottom: none; }
-.search-result-item:hover { background: #fdf8f0; }
-.search-result-emoji { font-size: 1.2rem; margin-top: 2px; }
-.search-result-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: #3d2b00; margin-bottom: 3px; }
-.search-result-desc { font-size: 0.8rem; color: #a08050; line-height: 1.4; }
-.search-no-result { padding: 20px; text-align: center; color: #a08050; font-size: 0.9rem; }
 
 <!-- ─── TOPBAR ─── -->
 <div class="topbar">
