@@ -366,44 +366,48 @@
         .modal-box { padding: 36px 24px; }
     }
 
-        /* ═══════ ROYAL COMPACT HEADER & OVERLAY MENU ═══════ */
+      </style>
+</head>
+<body>
+
+<style>
     .sticky-header {
         position: sticky;
         top: 0;
         z-index: 2000;
-        background: rgba(255, 254, 249, 0.97);
+        background: rgba(255, 254, 249, 0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border-bottom: 1px solid #e2cfa0;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 15px 40px;
+        padding: 15px 30px;
     }
 
     .brand-logo {
         font-family: 'Playfair Display', serif;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         font-weight: bold;
         color: #3d2b00;
         letter-spacing: 0.15em;
         text-decoration: none;
     }
 
+    /* Luxury 3-Line Mobile Toggle Button */
     .menu-toggle {
         background: none;
         border: none;
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 1.1rem;
+        font-size: 1.8rem;
         color: #3d2b00;
         cursor: pointer;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
+        padding: 5px;
         display: flex;
         align-items: center;
-        gap: 8px;
+        justify-content: center;
     }
 
+    /* Elegant Full Screen Overlay Slide Out */
     .menu-overlay {
         position: fixed;
         top: 0;
@@ -411,37 +415,39 @@
         width: 100%;
         height: 100%;
         background: #fffef9;
-        z-index: 3000;
-        display: none;
+        z-index: 9999;
+        display: none; /* Safely toggled by user touch */
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 40px;
+        padding: 40px 20px;
         box-sizing: border-box;
     }
 
     .close-menu {
         position: absolute;
         top: 20px;
-        right: 40px;
+        right: 30px;
         background: none;
         border: none;
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         color: #3d2b00;
         cursor: pointer;
+        line-height: 1;
     }
 
     .overlay-links {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 24px;
-        margin-bottom: 40px;
+        gap: 22px;
+        margin-bottom: 35px;
+        text-align: center;
     }
 
     .overlay-links a {
         font-family: 'Playfair Display', serif;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         color: #3d2b00;
         text-decoration: none;
         letter-spacing: 0.05em;
@@ -452,10 +458,11 @@
         color: #a08050;
     }
 
+    /* Embedded Interactive Search Engine Bar Container */
     .menu-search-wrapper {
         position: relative;
         width: 100%;
-        max-width: 420px;
+        max-width: 380px;
     }
 
     .search-box {
@@ -464,58 +471,78 @@
         background: #fff;
         border: 1.5px solid #e2cfa0;
         border-radius: 50px;
-        padding: 10px 20px;
+        padding: 10px 18px;
         gap: 10px;
-        box-shadow: 0 4px 20px rgba(120,80,0,0.05);
+        box-shadow: 0 4px 20px rgba(120,80,0,0.04);
     }
 
     .search-input { flex: 1; border: none; outline: none; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #3d2b00; background: transparent; }
     .search-input::placeholder { color: #b8a070; }
-    .search-clear { background: none; border: none; cursor: pointer; color: #b8a070; font-size: 1rem; display: none; }
+    .search-clear { background: none; border: none; cursor: pointer; color: #b8a070; font-size: 1.2rem; display: none; }
     
     .search-results { 
         position: absolute; 
-        top: 100%; 
+        top: 105%; 
         left: 0;
         right: 0;
         background: #fff; 
         border: 1px solid #e2cfa0; 
         border-radius: 14px; 
         box-shadow: 0 8px 32px rgba(120,80,0,0.12); 
-        overflow: hidden; 
-        z-index: 9999; 
+        overflow-y: auto; 
+        max-height: 220px;
+        z-index: 10000; 
         display: none;
     }
-    .search-result-item { padding: 14px 20px; border-bottom: 1px solid #f5ead0; cursor: pointer; display: flex; align-items: flex-start; gap: 12px; transition: background 0.15s; }
+    .search-result-item { padding: 12px 16px; border-bottom: 1px solid #f5ead0; cursor: pointer; display: flex; align-items: flex-start; gap: 10px; text-align: left; }
     .search-result-item:last-child { border-bottom: none; }
     .search-result-item:hover { background: #fdf8f0; }
-    .search-result-emoji { font-size: 1.2rem; margin-top: 2px; }
-    .search-result-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: #3d2b00; margin-bottom: 3px; }
-    .search-result-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; color: #a08050; line-height: 1.4; }
-    .search-no-result { padding: 20px; text-align: center; color: #a08050; font-size: 0.9rem; }
+    .search-result-emoji { font-size: 1.1rem; }
+    .search-result-title { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: #3d2b00; margin-bottom: 2px; font-weight: bold; }
+    .search-result-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; color: #a08050; line-height: 1.3; }
+    .search-no-result { padding: 15px; text-align: center; color: #a08050; font-size: 0.85rem; }
 
     @media (max-width: 640px) {
-        .sticky-header { padding: 15px 20px; }
-        .overlay-links a { font-size: 1.3rem; }
+        .sticky-header { padding: 12px 20px; }
+        .brand-logo { font-size: 1.2rem; }
+        .overlay-links a { font-size: 1.25rem; gap: 18px; }
     }
+</style>
 
-   <header class="sticky-header">
+<header class="sticky-header">
     <a href="/" class="brand-logo">WISE KING</a>
-    <button class="menu-toggle" onclick="toggleMenu(true)">Menu ☰</button>
+    <button class="menu-toggle" onclick="toggleMenu(true)">☰</button>
 </header>
 
 <div class="menu-overlay" id="menuOverlay">
     <button class="close-menu" onclick="toggleMenu(false)">×</button>
     
     <nav class="overlay-links">
-        <a href="#products" onclick="toggleMenu(false)">Products</a>
-        <a href="#upcoming" onclick="toggleMenu(false)">Upcoming Products</a>
-        <a href="#serve" onclick="toggleMenu(false)">How to Make / Serve</a>
-        <a href="#sample" onclick="toggleMenu(false)">Free Sample</a>
         <a href="#feedback" onclick="toggleMenu(false)">Feedback</a>
+        <a href="#products" onclick="toggleMenu(false)">Products</a>
+        <a href="#upcoming" onclick="toggleMenu(false)">Future Product</a>
+        <a href="#serve" onclick="toggleMenu(false)">How to Make or Serve</a>
+        <a href="#sample" onclick="toggleMenu(false)">Get Free Sample</a>
         <a href="#contact" onclick="toggleMenu(false)">Contact</a>
-        <a href="https://www.youtube.com/@JourneyBeyondJourneys" target="_blank" style="color: #c41a1a; font-weight: bold;" onclick="toggleMenu(false)">Behind The Story 🎬</a>
+        <a href="https://www.youtube.com/@JourneyBeyondJourneys" target="_blank" style="color: #c41a1a; font-weight: bold;" onclick="toggleMenu(false)">Behind the Scene Story 🎬</a>
     </nav>
+
+    <div class="menu-search-wrapper">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="siteSearch" class="search-input" placeholder="Search formulas, keys, ingredients...">
+            <button class="search-clear" id="searchClear" onclick="clearSearch()">×</button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+</div>
+
+<script>
+    function toggleMenu(show) {
+        document.getElementById("menuOverlay").style.display = show ? "flex" : "none";
+    }
+</script>
+
 
     <div class="menu-search-wrapper">
         <div class="search-box">
