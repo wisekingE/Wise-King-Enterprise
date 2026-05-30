@@ -275,13 +275,17 @@
     .prov-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px; }
     .prov-tag { padding: 8px 20px; border: 1px solid var(--border-dk); border-radius: 50px; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-deep); background: var(--gold-pale); }
 
-    /* ─── HOW TO PREPARE ─── */
-    .prepare-section { position: relative; z-index: 1; padding: 80px 24px; background: var(--warm-white); }
-    .prepare-section .inner { max-width: 780px; margin: 0 auto; text-align: center; }
-    .prepare-steps { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 44px; justify-content: center; }
-    .prep-step { flex: 1; min-width: 160px; max-width: 200px; padding: 28px 18px; border: 1px solid var(--border); border-radius: 18px; background: var(--cream); text-align: center; }
-    .prep-num { font-family: "Cinzel", serif; font-size: 1.5rem; color: var(--gold); display: block; margin-bottom: 10px; }
-    .prep-text { font-family: "Cormorant Garamond", serif; font-size: 1rem; color: var(--ink-soft); line-height: 1.55; }
+    /* ═══ HOW TO PREPARE ═══ */
+.prepare-section { padding: 80px 20px; background: #fdf8f0; text-align: center; }
+.prepare-heading { font-family: 'Playfair Display', serif; font-size: 2rem; color: #7a5c1e; margin-bottom: 48px; letter-spacing: 0.12em; text-transform: uppercase; }
+.prepare-grid { display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; max-width: 860px; margin: 0 auto; }
+.prepare-card { background: #ffffff; border: 1px solid #e2cfa0; border-top: 4px solid #b8860b; border-radius: 14px; padding: 40px 36px; width: 360px; text-align: left; box-shadow: 0 6px 28px rgba(120,80,0,0.08); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.prepare-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(120,80,0,0.14); }
+.prepare-icon { font-size: 2.4rem; margin-bottom: 14px; display: block; }
+.prepare-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #3d2b00; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #e2cfa0; }
+.prepare-steps { padding-left: 18px; color: #555; line-height: 2; font-size: 0.95rem; margin: 0; }
+.prepare-steps li { margin-bottom: 10px; padding-left: 4px; }
+.prepare-steps li:last-child { margin-bottom: 0; }
 
     /* ─── CTA ─── */
     .cta-section { position: relative; z-index: 1; padding: 100px 24px; background: linear-gradient(148deg, #f7e8c0 0%, #eedea0 50%, #f7e8c0 100%); text-align: center; overflow: hidden; }
