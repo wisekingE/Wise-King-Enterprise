@@ -366,7 +366,24 @@
         .modal-box { padding: 36px 24px; }
     }
 
-          /* ═══════ MINIMALIST SEARCH BAR & HEADER ═══════ */
+          </style>
+</head>
+<body>
+
+<header class="sticky-header">
+    <a href="/" class="brand-logo">WISE KING</a>
+    
+    <div class="search-wrapper">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="siteSearch" class="search-input" placeholder="Search formulas, keys, ingredients...">
+            <button class="search-clear" id="searchClear" onclick="clearSearch()">×</button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+</header>
+
+<style>
     .sticky-header {
         position: sticky;
         top: 0;
@@ -454,75 +471,6 @@
     .search-result-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; color: #a08050; line-height: 1.3; }
     .search-no-result { padding: 15px; text-align: center; color: #a08050; font-size: 0.85rem; }
 </style>
-</head>
-<body>
-
-<header class="sticky-header">
-    <a href="/" class="brand-logo">WISE KING</a>
-    
-    <div class="search-wrapper">
-        <div class="search-box">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="siteSearch" class="search-input" placeholder="Search formulas, keys, ingredients...">
-            <button class="search-clear" id="searchClear" onclick="clearSearch()">×</button>
-        </div>
-        <div class="search-results" id="searchResults"></div>
-    </div>
-</header>
-
-<div class="menu-overlay" id="menuOverlay">
-    <button class="close-menu" onclick="toggleMenu(false)">×</button>
-    
-    <nav class="overlay-links">
-        <a href="#feedback" onclick="toggleMenu(false)">Feedback</a>
-        <a href="#products" onclick="toggleMenu(false)">Product</a>
-        <a href="#upcoming" onclick="toggleMenu(false)">Future Product</a>
-        <a href="#serve" onclick="toggleMenu(false)">How to Make or Serve</a>
-        <a href="#sample" onclick="toggleMenu(false)">Get Free Sample</a>
-        <a href="#contact" onclick="toggleMenu(false)">Contact</a>
-        <a href="https://www.youtube.com/@JourneyBeyondJourneys" target="_blank" style="color: #c41a1a; font-weight: bold;" onclick="toggleMenu(false)">Watch Behind the Scene Story 🎬</a>
-    </nav>
-
-    <div class="menu-search-wrapper">
-        <div class="search-box">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="siteSearch" class="search-input" placeholder="Search formulas, keys, ingredients...">
-            <button class="search-clear" id="searchClear" onclick="clearSearch()">×</button>
-        </div>
-        <div class="search-results" id="searchResults"></div>
-    </div>
-</div>
-
-<script>
-    function toggleMenu(show) {
-        document.getElementById("menuOverlay").style.display = show ? "flex" : "none";
-    }
-</script>
-
-    
-    <nav class="overlay-links">
-        <a href="#feedback" onclick="toggleMenu(false)">Feedback</a>
-        <a href="#products" onclick="toggleMenu(false)">Products</a>
-        <a href="#upcoming" onclick="toggleMenu(false)">Future Product</a>
-        <a href="#serve" onclick="toggleMenu(false)">How to Make or Serve</a>
-        <a href="#sample" onclick="toggleMenu(false)">Get Free Sample</a>
-        <a href="#contact" onclick="toggleMenu(false)">Contact</a>
-        <a href="https://www.youtube.com/@JourneyBeyondJourneys" target="_blank" style="color: #c41a1a; font-weight: bold;" onclick="toggleMenu(false)">Behind the Scene Story 🎬</a>
-    </nav>
-
-    <div class="menu-search-wrapper">
-        <div class="search-box">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="siteSearch" class="search-input" placeholder="Search formulas, keys, ingredients...">
-            <button class="search-clear" id="searchClear" onclick="clearSearch()">×</button>
-        </div>
-        <div class="search-results" id="searchResults"></div>
-    </div>
-</div>
-
-<script>
-    function toggleMenu(show) {
-        document.getElementById("menuOverlay").style.display = show ? "flex" : "none";
     }
 </script>
 
