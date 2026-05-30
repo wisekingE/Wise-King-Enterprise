@@ -393,6 +393,55 @@
     </div>
   </div>
 </section>
+<!-- GOLDEN LATTE FEEDBACK FORM -->
+<section class="survey-section" style="padding: 100px 24px; background: linear-gradient(180deg, #f8f4eb 0%, #fdfaf3 100%);">
+  <div class="inner" style="max-width: 720px; margin: 0 auto; text-align: center;">
+    <span class="section-label reveal">We Value Your Opinion</span>
+    <h2 class="section-title reveal" style="margin-bottom: 24px;">Golden Latte Feedback</h2>
+    <p class="section-body reveal" style="margin-bottom: 60px;">
+      Thank you for trying our Wise King Golden Latte. Your honest feedback will help us improve.
+    </p>
+
+    <form id="feedbackForm" action="https://formspree.io/f/xwvzzzeg" method="POST"
+          style="text-align: left; background: white; padding: 48px; border-radius: 24px; box-shadow: 0 20px 60px rgba(122,92,14,0.08); border: 1px solid var(--border);">
+
+      <div style="margin-bottom: 32px;">
+        <label style="display:block; margin-bottom: 10px; font-weight: 500;">1. How was the taste and aroma?</label>
+        <textarea name="taste_feedback" rows="3" placeholder="Please describe the flavour..." style="width:100%; padding: 16px; border: 1px solid #d4c3a0; border-radius: 12px;"></textarea>
+      </div>
+
+      <div style="margin-bottom: 32px;">
+        <label style="display:block; margin-bottom: 10px; font-weight: 500;">2. Overall rating (1-10)</label>
+        <input type="number" name="rating" min="1" max="10" placeholder="8" style="width:100%; padding: 16px; border: 1px solid #d4c3a0; border-radius: 12px;">
+      </div>
+
+      <div style="margin-bottom: 32px;">
+        <label style="display:block; margin-bottom: 12px; font-weight: 500;">3. Would you buy this again?</label>
+        <label style="margin-right:30px"><input type="radio" name="would_buy" value="Yes"> Yes</label>
+        <label style="margin-right:30px"><input type="radio" name="would_buy" value="Maybe"> Maybe</label>
+        <label><input type="radio" name="would_buy" value="No"> No</label>
+      </div>
+
+      <div style="margin-bottom: 32px;">
+        <label style="display:block; margin-bottom: 12px; font-weight: 500;">4. Would you be interested in these future flavours?</label>
+        <label style="margin-right:25px"><input type="checkbox" name="future_flavours[]" value="Rose Petal"> Rose Petal Golden Latte</label><br>
+        <label style="margin-right:25px"><input type="checkbox" name="future_flavours[]" value="Vanilla"> Vanilla Golden Latte</label>
+      </div>
+
+      <div style="margin-bottom: 40px;">
+        <label style="display:block; margin-bottom: 12px; font-weight: 500;">5. Would you be interested in a premium Native Australian BBQ/Grill Spice Blend?</label>
+        <label style="margin-right:30px"><input type="radio" name="bbq_interest" value="Yes"> Yes</label>
+        <label style="margin-right:30px"><input type="radio" name="bbq_interest" value="Maybe"> Maybe</label>
+        <label><input type="radio" name="bbq_interest" value="No"> No</label>
+      </div>
+
+      <button type="submit" 
+              style="width:100%; padding: 20px; background: linear-gradient(135deg, #7A5C0E, #C9A84C); color:white; border:none; border-radius:50px; font-size:1.1rem; font-family:'Cinzel',serif; cursor:pointer;">
+        Submit My Feedback →
+      </button>
+    </form>
+  </div>
+</section>
 
 <!-- ═══ SPICE TILES ═══ -->
 <section class="spice-section">
