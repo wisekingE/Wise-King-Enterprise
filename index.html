@@ -366,39 +366,167 @@
         .modal-box { padding: 36px 24px; }
     }
 
-    /* ═══════ STICKY NAVIGATION HEADER (OPTION B) ═══════ */
-.sticky-header {
-    position: sticky;
-    top: 0;
-    z-index: 200;
-    background: rgba(255, 254, 249, 0.97);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid #e2cfa0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 40px;
-    gap: 20px;
-}
+        /* ═══════ ROYAL COMPACT HEADER & OVERLAY MENU ═══════ */
+    .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 2000;
+        background: rgba(255, 254, 249, 0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid #e2cfa0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 40px;
+    }
 
-.brand-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    <header class="sticky-header">
+    .brand-logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #3d2b00;
+        letter-spacing: 0.15em;
+        text-decoration: none;
+    }
+
+    .menu-toggle {
+        background: none;
+        border: none;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.1rem;
+        color: #3d2b00;
+        cursor: pointer;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fffef9;
+        z-index: 3000;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        box-sizing: border-box;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        background: none;
+        border: none;
+        font-size: 2.5rem;
+        color: #3d2b00;
+        cursor: pointer;
+    }
+
+    .overlay-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    .overlay-links a {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.6rem;
+        color: #3d2b00;
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        transition: color 0.2s;
+    }
+
+    .overlay-links a:hover {
+        color: #a08050;
+    }
+
+    .menu-search-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .search-box {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border: 1.5px solid #e2cfa0;
+        border-radius: 50px;
+        padding: 10px 20px;
+        gap: 10px;
+        box-shadow: 0 4px 20px rgba(120,80,0,0.05);
+    }
+
+    .search-input { flex: 1; border: none; outline: none; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #3d2b00; background: transparent; }
+    .search-input::placeholder { color: #b8a070; }
+    .search-clear { background: none; border: none; cursor: pointer; color: #b8a070; font-size: 1rem; display: none; }
+    
+    .search-results { 
+        position: absolute; 
+        top: 100%; 
+        left: 0;
+        right: 0;
+        background: #fff; 
+        border: 1px solid #e2cfa0; 
+        border-radius: 14px; 
+        box-shadow: 0 8px 32px rgba(120,80,0,0.12); 
+        overflow: hidden; 
+        z-index: 9999; 
+        display: none;
+    }
+    .search-result-item { padding: 14px 20px; border-bottom: 1px solid #f5ead0; cursor: pointer; display: flex; align-items: flex-start; gap: 12px; transition: background 0.15s; }
+    .search-result-item:last-child { border-bottom: none; }
+    .search-result-item:hover { background: #fdf8f0; }
+    .search-result-emoji { font-size: 1.2rem; margin-top: 2px; }
+    .search-result-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: #3d2b00; margin-bottom: 3px; }
+    .search-result-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; color: #a08050; line-height: 1.4; }
+    .search-no-result { padding: 20px; text-align: center; color: #a08050; font-size: 0.9rem; }
+
+    @media (max-width: 640px) {
+        .sticky-header { padding: 15px 20px; }
+        .overlay-links a { font-size: 1.3rem; }
+    }
+
+   <header class="sticky-header">
     <a href="/" class="brand-logo">WISE KING</a>
+    <button class="menu-toggle" onclick="toggleMenu(true)">Menu ☰</button>
+</header>
 
-    <nav class="header-menu">
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+<div class="menu-overlay" id="menuOverlay">
+    <button class="close-menu" onclick="toggleMenu(false)">×</button>
+    
+    <nav class="overlay-links">
+        <a href="#products" onclick="toggleMenu(false)">Products</a>
+        <a href="#upcoming" onclick="toggleMenu(false)">Upcoming Products</a>
+        <a href="#serve" onclick="toggleMenu(false)">How to Make / Serve</a>
+        <a href="#sample" onclick="toggleMenu(false)">Free Sample</a>
+        <a href="#feedback" onclick="toggleMenu(false)">Feedback</a>
+        <a href="#contact" onclick="toggleMenu(false)">Contact</a>
+        <a href="https://www.youtube.com/@JourneyBeyondJourneys" target="_blank" style="color: #c41a1a; font-weight: bold;" onclick="toggleMenu(false)">Behind The Story 🎬</a>
     </nav>
 
-    <div class="search-box">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="siteSearch" class="search-input" placeholder="Search golden latte, ingredients, how to prepare...">
-        <button class="search-clear" id="searchClear" onclick="clearSearch()">×</button>
+    <div class="menu-search-wrapper">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="siteSearch" class="search-input" placeholder="Search ingredients, recipes, guides...">
+            <button class="search-clear" id="searchClear" onclick="clearSearch()">×</button>
+        </div>
         <div class="search-results" id="searchResults"></div>
+    </div>
+</div>
+
     </div>
 </header>
 
