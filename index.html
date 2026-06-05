@@ -743,7 +743,12 @@ footer{background:#0e0b06;border-top:1px solid rgba(212,160,23,0.25);padding:50p
     <h2 class="section-title">Share Your <em>Experience</em></h2>
     <p class="section-sub">Tried one of our products? We would love to hear what you think.</p>
 
-    <form class="feedback-form" id="feedbackForm" onsubmit="submitFeedback(event)">
+    <form class="feedback-form" id="feedbackForm" action="https://formspree.io/f/xwpblqkd" method="POST" onsubmit="submitFeedback(event)">
+
+      <!-- Formspree config -->
+      <input type="hidden" name="_subject" value="✦ New Wise King Customer Review">
+      <input type="hidden" name="_replyto" value="">
+      <input type="hidden" name="_next" value="">
 
       <div class="form-group">
         <label class="form-label">Which product(s) did you try?</label>
@@ -783,8 +788,34 @@ footer{background:#0e0b06;border-top:1px solid rgba(212,160,23,0.25);padding:50p
       </div>
 
       <div class="form-group">
-        <label class="form-label">Your name (optional)</label>
-        <input type="text" class="form-input" placeholder="First name is fine">
+        <label class="form-label">Your name</label>
+        <input type="text" class="form-input" name="name" placeholder="First name is fine" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">How can we reach you? <span style="color:rgba(212,160,23,0.5);font-size:10px;letter-spacing:1px">(at least one — so Piyush can personally thank you)</span></label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div>
+            <label style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:5px">EMAIL</label>
+            <input type="email" class="form-input" name="email" placeholder="your@email.com">
+          </div>
+          <div>
+            <label style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:5px">PHONE (optional)</label>
+            <input type="tel" class="form-input" name="phone" placeholder="04xx xxx xxx">
+          </div>
+          <div>
+            <label style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:5px">INSTAGRAM / TIKTOK HANDLE</label>
+            <input type="text" class="form-input" name="social" placeholder="@yourhandle">
+          </div>
+          <div>
+            <label style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:5px">FACEBOOK NAME (optional)</label>
+            <input type="text" class="form-input" name="facebook" placeholder="Your Facebook name">
+          </div>
+        </div>
+        <div style="margin-top:10px;background:rgba(212,160,23,0.05);border:1px solid rgba(212,160,23,0.15);border-radius:8px;padding:10px 14px">
+          <span style="font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:1.5px;color:rgba(212,160,23,0.5)">🔒 PRIVACY — </span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(255,255,255,0.35)">Your details are used only to follow up on your feedback. We never share or sell your information.</span>
+        </div>
       </div>
 
       <div class="form-group">
@@ -807,7 +838,7 @@ footer{background:#0e0b06;border-top:1px solid rgba(212,160,23,0.25);padding:50p
       </div>
 
       <button type="submit" class="form-submit">Submit My Review ✦</button>
-      <div id="form-thanks" style="display:none;text-align:center;margin-top:16px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:#7EC850">✓ Thank you — your review means everything to us.</div>
+      <div id="form-thanks" style="display:none;text-align:center;margin-top:16px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:#7EC850"></div>
     </form>
   </div>
 </section>
@@ -1028,14 +1059,47 @@ function setRating(n){
 // ── FEEDBACK FORM ──────────────────────────────────────────────────
 function submitFeedback(e){
   e.preventDefault();
-  document.getElementById('feedbackForm').style.opacity='0.5';
-  setTimeout(function(){
-    document.getElementById('feedbackForm').style.opacity='1';
-    document.getElementById('form-thanks').style.display='block';
-    e.target.reset();
+  var form = e.target;
+  var name = form.querySelector('[name="name"]') ? form.querySelector('[name="name"]').value : '';
+  var email = form.querySelector('[name="email"]') ? form.querySelector('[name="email"]').value : '';
+  var rating = currentRating;
+  var stars = '';
+  for(var i=0;i<5;i++){stars += i<rating ? '★' : '☆';}
+  var replyField = form.querySelector('[name="_replyto"]');
+  if(replyField && email) replyField.value = email;
+  var ratingField = form.querySelector('[name="star_rating"]');
+  if(!ratingField){
+    ratingField = document.createElement('input');
+    ratingField.type='hidden'; ratingField.name='star_rating';
+    form.appendChild(ratingField);
+  }
+  ratingField.value = stars + ' (' + rating + '/5)';
+  var data = new FormData(form);
+  form.style.opacity='0.5';
+  fetch(form.getAttribute('action'), {
+    method:'POST', body:data,
+    headers:{'Accept':'application/json'}
+  }).then(function(r){
+    form.style.opacity='1';
+    var thanks = document.getElementById('form-thanks');
+    if(r.ok){
+      thanks.innerHTML = '✓ Thank you' + (name ? ', '+name : '') + ' — Piyush will personally review your feedback and reach out.';
+      thanks.style.color='#7EC850';
+    } else {
+      thanks.innerHTML = 'Something went wrong — please email hello@wiseking.com.au directly.';
+      thanks.style.color='#E83000';
+    }
+    thanks.style.display='block';
+    form.reset();
     currentRating=0;
     document.querySelectorAll('.star').forEach(function(s){s.classList.remove('active')});
-  },800);
+  }).catch(function(){
+    form.style.opacity='1';
+    var thanks = document.getElementById('form-thanks');
+    thanks.innerHTML = 'Could not connect — please email hello@wiseking.com.au directly.';
+    thanks.style.color='#E83000';
+    thanks.style.display='block';
+  });
 }
 
 // ── NAV scroll hide/show ───────────────────────────────────────────
