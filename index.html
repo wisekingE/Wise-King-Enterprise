@@ -743,39 +743,38 @@ footer{background:#0e0b06;border-top:1px solid rgba(212,160,23,0.25);padding:50p
     <h2 class="section-title">Share Your <em>Experience</em></h2>
     <p class="section-sub">Tried one of our products? We would love to hear what you think.</p>
 
-    <form class="feedback-form" id="feedbackForm" action="https://formspree.io/f/xwpblqkd" method="POST" onsubmit="submitFeedback(event)">
+    <form class="feedback-form" id="feedbackForm"
+  action="https://formspree.io/f/xwvzzzeg"
+  method="POST">
 
-      <!-- Formspree config -->
-      <input type="hidden" name="_subject" value="✦ New Wise King Customer Review">
-      <input type="hidden" name="_replyto" value="">
-      <input type="hidden" name="_next" value="">
-
+      <!-- Which products tried -->
       <div class="form-group">
         <label class="form-label">Which product(s) did you try?</label>
         <div class="product-checkboxes">
           <label class="product-check-item">
-            <input type="checkbox" name="products" value="Golden Latte Blend">
+            <input type="checkbox" name="product" value="Golden Latte Blend">
             <div class="check-color-dot" style="background:#D4A017"></div>
             <span class="check-name" style="color:#D4A017">Golden Latte Blend</span>
           </label>
           <label class="product-check-item">
-            <input type="checkbox" name="products" value="Premium Matcha Powder">
+            <input type="checkbox" name="product" value="Premium Matcha Powder">
             <div class="check-color-dot" style="background:#7EC850"></div>
             <span class="check-name" style="color:#7EC850">Premium Matcha Powder</span>
           </label>
           <label class="product-check-item">
-            <input type="checkbox" name="products" value="Café Mocha Blend">
+            <input type="checkbox" name="product" value="Café Mocha Blend">
             <div class="check-color-dot" style="background:#C04080"></div>
             <span class="check-name" style="color:#C04080">Café Mocha Blend</span>
           </label>
           <label class="product-check-item">
-            <input type="checkbox" name="products" value="Curry Coast Spice Mix">
+            <input type="checkbox" name="product" value="Curry Coast Spice Mix">
             <div class="check-color-dot" style="background:#E83000"></div>
             <span class="check-name" style="color:#E83000">Curry Coast Spice Mix</span>
           </label>
         </div>
       </div>
 
+      <!-- Star rating -->
       <div class="form-group">
         <label class="form-label">Your overall rating</label>
         <div class="form-stars" id="stars">
@@ -785,47 +784,31 @@ footer{background:#0e0b06;border-top:1px solid rgba(212,160,23,0.25);padding:50p
           <span class="star" onclick="setRating(4)">★</span>
           <span class="star" onclick="setRating(5)">★</span>
         </div>
+        <input type="hidden" name="star_rating" id="star_rating_field" value="">
       </div>
 
+      <!-- Name -->
       <div class="form-group">
         <label class="form-label">Your name</label>
         <input type="text" class="form-input" name="name" placeholder="First name is fine" required>
       </div>
 
+      <!-- Email -->
       <div class="form-group">
-        <label class="form-label">How can we reach you? <span style="color:rgba(212,160,23,0.5);font-size:10px;letter-spacing:1px">(at least one — so Piyush can personally thank you)</span></label>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div>
-            <label style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:5px">EMAIL</label>
-            <input type="email" class="form-input" name="email" placeholder="your@email.com">
-          </div>
-          <div>
-            <label style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:5px">PHONE (optional)</label>
-            <input type="tel" class="form-input" name="phone" placeholder="04xx xxx xxx">
-          </div>
-          <div>
-            <label style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:5px">INSTAGRAM / TIKTOK HANDLE</label>
-            <input type="text" class="form-input" name="social" placeholder="@yourhandle">
-          </div>
-          <div>
-            <label style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:5px">FACEBOOK NAME (optional)</label>
-            <input type="text" class="form-input" name="facebook" placeholder="Your Facebook name">
-          </div>
-        </div>
-        <div style="margin-top:10px;background:rgba(212,160,23,0.05);border:1px solid rgba(212,160,23,0.15);border-radius:8px;padding:10px 14px">
-          <span style="font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:1.5px;color:rgba(212,160,23,0.5)">🔒 PRIVACY — </span>
-          <span style="font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(255,255,255,0.35)">Your details are used only to follow up on your feedback. We never share or sell your information.</span>
-        </div>
+        <label class="form-label">Your email <span style="color:rgba(212,160,23,0.5);font-size:10px;letter-spacing:1px">(so Piyush can personally thank you)</span></label>
+        <input type="email" class="form-input" name="email" placeholder="your@email.com" required>
       </div>
 
+      <!-- Review -->
       <div class="form-group">
         <label class="form-label">Your review</label>
-        <textarea class="form-textarea" rows="4" placeholder="What did you think? How did you prepare it? Would you recommend it?"></textarea>
+        <textarea class="form-textarea" name="message" rows="4" placeholder="What did you think? How did you prepare it? Would you recommend it?" required></textarea>
       </div>
 
+      <!-- How found -->
       <div class="form-group">
         <label class="form-label">How did you find us?</label>
-        <select class="form-select">
+        <select class="form-select" name="how_found">
           <option value="">Select one</option>
           <option>TikTok</option>
           <option>Instagram</option>
@@ -837,8 +820,11 @@ footer{background:#0e0b06;border-top:1px solid rgba(212,160,23,0.25);padding:50p
         </select>
       </div>
 
-      <button type="submit" class="form-submit">Submit My Review ✦</button>
-      <div id="form-thanks" style="display:none;text-align:center;margin-top:16px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:#7EC850"></div>
+      <button type="submit" class="form-submit">Send My Review ✦</button>
+      <p style="text-align:center;margin-top:10px;font-family:'Cormorant Garamond',serif;
+        font-size:12px;color:rgba(255,255,255,0.25);font-style:italic">
+        Your review goes directly to Piyush at hello@wiseking.com.au
+      </p>
     </form>
   </div>
 </section>
@@ -1054,53 +1040,16 @@ var currentRating=0;
 function setRating(n){
   currentRating=n;
   document.querySelectorAll('.star').forEach(function(s,i){s.classList.toggle('active',i<n)});
+  var f=document.getElementById('star_rating_field');
+  if(f){
+    var stars='';
+    for(var i=0;i<5;i++){stars+=i<n?'★':'☆';}
+    f.value=stars+' ('+n+'/5)';
+  }
 }
 
 // ── FEEDBACK FORM ──────────────────────────────────────────────────
-function submitFeedback(e){
-  e.preventDefault();
-  var form = e.target;
-  var name = form.querySelector('[name="name"]') ? form.querySelector('[name="name"]').value : '';
-  var email = form.querySelector('[name="email"]') ? form.querySelector('[name="email"]').value : '';
-  var rating = currentRating;
-  var stars = '';
-  for(var i=0;i<5;i++){stars += i<rating ? '★' : '☆';}
-  var replyField = form.querySelector('[name="_replyto"]');
-  if(replyField && email) replyField.value = email;
-  var ratingField = form.querySelector('[name="star_rating"]');
-  if(!ratingField){
-    ratingField = document.createElement('input');
-    ratingField.type='hidden'; ratingField.name='star_rating';
-    form.appendChild(ratingField);
-  }
-  ratingField.value = stars + ' (' + rating + '/5)';
-  var data = new FormData(form);
-  form.style.opacity='0.5';
-  fetch(form.getAttribute('action'), {
-    method:'POST', body:data,
-    headers:{'Accept':'application/json'}
-  }).then(function(r){
-    form.style.opacity='1';
-    var thanks = document.getElementById('form-thanks');
-    if(r.ok){
-      thanks.innerHTML = '✓ Thank you' + (name ? ', '+name : '') + ' — Piyush will personally review your feedback and reach out.';
-      thanks.style.color='#7EC850';
-    } else {
-      thanks.innerHTML = 'Something went wrong — please email hello@wiseking.com.au directly.';
-      thanks.style.color='#E83000';
-    }
-    thanks.style.display='block';
-    form.reset();
-    currentRating=0;
-    document.querySelectorAll('.star').forEach(function(s){s.classList.remove('active')});
-  }).catch(function(){
-    form.style.opacity='1';
-    var thanks = document.getElementById('form-thanks');
-    thanks.innerHTML = 'Could not connect — please email hello@wiseking.com.au directly.';
-    thanks.style.color='#E83000';
-    thanks.style.display='block';
-  });
-}
+// Form handled by Formspree
 
 // ── NAV scroll hide/show ───────────────────────────────────────────
 var lastScroll=0;
