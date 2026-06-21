@@ -58,6 +58,8 @@
   .crest-large{width:104px; height:104px; border-radius:50%; border:1.5px solid var(--gold); margin:0 auto 28px; display:flex; align-items:center; justify-content:center; position:relative; background:var(--paper); animation:crestIn 1s ease both; overflow:hidden;}
   .crest-large img{width:100%; height:100%; object-fit:cover;}
   .crest-large::before{content:''; position:absolute; inset:-8px; border:1px solid var(--gold-pale); border-radius:50%;}
+  .hero-crest-wide{max-width:300px; width:80%; margin:0 auto 30px; animation:crestIn 1s ease both;}
+  .hero-crest-wide img{width:100%; height:auto; display:block; margin:0 auto;}
   @keyframes crestIn{ from{opacity:0; transform:scale(0.85) translateY(10px);} to{opacity:1; transform:scale(1) translateY(0);} }
   .eyebrow{font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:22px; animation:fadeUp 1s ease 0.15s both;}
   .hero h1{font-size:clamp(36px,7vw,72px); line-height:1.1; font-weight:700; margin-bottom:24px; color:var(--ink); animation:fadeUp 1s ease 0.3s both;}
@@ -153,6 +155,7 @@
   .story-text p strong{font-weight:600; color:var(--ink);}
 
   .video-section{background:var(--cream);}
+  .video-caption{max-width:600px; margin:0 auto 36px; text-align:center; font-size:14.5px; line-height:1.85; color:var(--ink-soft); font-weight:300;}
   .video-wrap{max-width:780px; margin:0 auto; border-radius:10px; overflow:hidden; border:1px solid var(--line); box-shadow:0 20px 50px rgba(42,33,24,0.1);}
   .video-wrap video{width:100%; display:block; background:#000;}
 
@@ -175,6 +178,11 @@
   .origin-map{width:90px; height:90px; margin:0 auto 18px; object-fit:contain;}
   .origin-name{font-family:'Cinzel',serif; font-size:13px; letter-spacing:0.04em; color:var(--ink); margin-bottom:6px;}
   .origin-sub{font-size:12px; color:var(--text-dim); line-height:1.6;}
+  .origin-single{max-width:900px; margin:0 auto; background:var(--paper); border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 20px 50px rgba(42,33,24,0.08);}
+  .origin-single-img{width:100%; max-height:460px; object-fit:cover; display:block;}
+  .origin-single-list{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line);}
+  @media (max-width:700px){ .origin-single-list{grid-template-columns:1fr;} }
+  .origin-single-item{background:var(--paper); padding:26px 28px;}
 
   .invitation{background:linear-gradient(165deg, var(--cream) 0%, var(--gold-pale) 100%); position:relative;}
   .invite-box{max-width:680px; margin:0 auto; text-align:center; border:1px solid var(--gold); border-radius:8px; padding:64px 44px; background:var(--paper);}
@@ -186,8 +194,7 @@
   .invite-pill{font-size:11px; letter-spacing:0.03em; padding:8px 16px; border:1px solid var(--gold-pale); border-radius:20px; color:var(--ink-soft); background:var(--cream);}
 
   .reviews{background:var(--paper);}
-  .reviews-wrap{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
-  @media (max-width:900px){ .reviews-wrap{grid-template-columns:1fr;} }
+  .reviews-wrap{max-width:620px; margin:0 auto;}
   .review-form-box{background:var(--ivory); border:1px solid var(--line); border-radius:8px; padding:36px;}
   .review-form-box h3{font-family:'Cinzel',serif; font-size:16px; color:var(--ink); margin-bottom:8px;}
   .review-form-box p{font-size:13px; color:var(--text-dim); margin-bottom:24px; line-height:1.6;}
@@ -294,7 +301,7 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="brand-mark">
-      <img src="kangaroo-crown.png" alt="Wise King Enterprise crest" class="logo-img">
+      <img src="crown.png.PNG" alt="Wise King Enterprise crest" class="logo-img">
       <span class="brand-name">WISE KING</span>
     </a>
     <div class="nav-links">
@@ -320,7 +327,7 @@
 </nav>
 
 <header class="hero">
-  <div class="crest-large"><img src="kangaroo-crown.png" alt="Wise King Enterprise — royal kangaroo crest"></div>
+  <div class="hero-crest-wide"><img src="kangaroo-crown.png.PNG" alt="Wise King Enterprise — royal kangaroo crest"></div>
   <div class="eyebrow">Wise King Enterprise</div>
   <h1>Worthy of <em>Royalty.</em><br>Crafted by Hand.</h1>
   <p class="hero-sub">Four ultra-premium wellness blends, hand-crafted in small batches in Geelong, Australia. Real ingredients. No fillers. No shortcuts.</p>
@@ -345,7 +352,7 @@
     </div>
     <div class="products-grid">
       <div class="product-card pc-latte reveal">
-        <img src="latte.PNG" alt="Wise King Golden Saffron Latte — real product label" class="pc-img">
+        <img src="Latte.JPG" alt="Wise King Golden Saffron Latte — real product label" class="pc-img">
         <span class="pc-badge">Bestseller</span>
         <span class="pc-weight">50g</span>
         <div class="pc-body">
@@ -355,12 +362,12 @@
           <!-- ORDER-BUTTONS: swap href for Shopify/Amazon links when ready -->
           <div class="pc-actions">
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Golden%20Saffron%20Latte%20please." class="pc-btn pc-btn-fill">Order on WhatsApp</a>
-            <a href="mailto:hello@wiseking.com.au?subject=Order%20-%20Golden%20Saffron%20Latte" class="pc-btn pc-btn-outline">Email Order</a>
+            <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Golden%20Saffron%20Latte" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
         </div>
       </div>
       <div class="product-card pc-curry reveal">
-        <img src="curry.PNG" alt="Wise King Curry Coast Rub — real product label" class="pc-img">
+        <img src="Curry.JPG" alt="Wise King Curry Coast Rub — real product label" class="pc-img">
         <span class="pc-badge">Signature</span>
         <span class="pc-weight">100g</span>
         <div class="pc-body">
@@ -370,12 +377,12 @@
           <!-- ORDER-BUTTONS: swap href for Shopify/Amazon links when ready -->
           <div class="pc-actions">
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Curry%20Coast%20Rub%20please." class="pc-btn pc-btn-fill">Order on WhatsApp</a>
-            <a href="mailto:hello@wiseking.com.au?subject=Order%20-%20Curry%20Coast%20Rub" class="pc-btn pc-btn-outline">Email Order</a>
+            <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Curry%20Coast%20Rub" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
         </div>
       </div>
       <div class="product-card pc-mocha reveal">
-        <img src="mocha.PNG" alt="Wise King Café Mocha Blend — real product label" class="pc-img">
+        <img src="Mocha.JPG" alt="Wise King Café Mocha Blend — real product label" class="pc-img">
         <span class="pc-badge">New</span>
         <span class="pc-weight">100g</span>
         <div class="pc-body">
@@ -385,12 +392,12 @@
           <!-- ORDER-BUTTONS: swap href for Shopify/Amazon links when ready -->
           <div class="pc-actions">
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Cafe%20Mocha%20Blend%20please." class="pc-btn pc-btn-fill">Order on WhatsApp</a>
-            <a href="mailto:hello@wiseking.com.au?subject=Order%20-%20Cafe%20Mocha%20Blend" class="pc-btn pc-btn-outline">Email Order</a>
+            <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Cafe%20Mocha%20Blend" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
         </div>
       </div>
       <div class="product-card pc-matcha reveal">
-        <img src="matcha.PNG" alt="Wise King Ceremonial Matcha — real product label" class="pc-img">
+        <img src="Matcha.JPG" alt="Wise King Ceremonial Matcha — real product label" class="pc-img">
         <span class="pc-badge">Ceremonial Grade</span>
         <span class="pc-weight">30g</span>
         <div class="pc-body">
@@ -400,7 +407,7 @@
           <!-- ORDER-BUTTONS: swap href for Shopify/Amazon links when ready -->
           <div class="pc-actions">
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Ceremonial%20Matcha%20please." class="pc-btn pc-btn-fill">Order on WhatsApp</a>
-            <a href="mailto:hello@wiseking.com.au?subject=Order%20-%20Ceremonial%20Matcha" class="pc-btn pc-btn-outline">Email Order</a>
+            <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Ceremonial%20Matcha" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
         </div>
       </div>
@@ -520,7 +527,7 @@
 <section class="story" id="story">
   <div class="section-inner">
     <div class="story-wrap">
-      <div class="story-crest reveal"><img src="kangaroo-crown.png" alt="The Wise King — royal kangaroo crest"></div>
+      <div class="story-crest reveal"><img src="crown.png.PNG" alt="The Wise King — royal kangaroo crest"></div>
       <div class="story-text reveal">
         <div class="section-eyebrow">Our Story</div>
         <h2>Proudly Made in Geelong.<br>A Standard That Won&rsquo;t Drop.</h2>
@@ -535,12 +542,13 @@
 <section class="video-section">
   <div class="section-inner">
     <div class="section-head reveal">
-      <div class="section-eyebrow">Liquid Gold</div>
-      <h2 class="section-title">See It Poured</h2>
+      <div class="section-eyebrow">The Ritual of Focus</div>
+      <h2 class="section-title">Turn the Page. Sip the Gold.</h2>
       <div class="divider-seal"><span></span></div>
     </div>
+    <p class="video-caption reveal">Saffron — the world&rsquo;s most expensive spice — has long been linked to sharper focus and a calmer mind. So that&rsquo;s how we filmed ours: a good book in hand, a slow sip of Golden Saffron Latte, and a few minutes of uninterrupted focus.</p>
     <div class="video-wrap reveal">
-      <video controls poster="latte.PNG">
+      <video controls poster="Latte.JPG">
         <source src="liqgold.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -595,11 +603,14 @@
       <h2 class="section-title">From Origin to Cup</h2>
       <div class="divider-seal"><span></span></div>
     </div>
-    <div class="origin-grid reveal">
-      <div class="origin-card"><img src="australia-map.png" alt="Map of Australia" class="origin-map"><div class="origin-name">Golden Saffron Latte</div><div class="origin-sub">Blended &amp; packed in Geelong, Australia</div></div>
-      <div class="origin-card"><img src="australia-map.png" alt="Map of Australia" class="origin-map"><div class="origin-name">Curry Coast Rub</div><div class="origin-sub">Twelve spices, hand-blended on the Great Ocean Road coast</div></div>
-      <div class="origin-card"><img src="australia-map.png" alt="Map of Australia" class="origin-map"><div class="origin-name">Café Mocha Blend</div><div class="origin-sub">Coffee and cocoa, hand-blended in Geelong</div></div>
-      <div class="origin-card"><img src="japan-map.png" alt="Map of Japan" class="origin-map"><div class="origin-name">Ceremonial Matcha</div><div class="origin-sub">Stone-milled in Japan — the birthplace of matcha</div></div>
+    <div class="origin-single reveal">
+      <img src="Products.JPG" alt="The Wise King range — raw spices, saffron threads, and the four blends" class="origin-single-img">
+      <div class="origin-single-list">
+        <div class="origin-single-item"><div class="origin-name">Golden Saffron Latte</div><div class="origin-sub">Blended &amp; packed in Geelong, Australia</div></div>
+        <div class="origin-single-item"><div class="origin-name">Curry Coast Rub</div><div class="origin-sub">Twelve spices, hand-blended on the Great Ocean Road coast</div></div>
+        <div class="origin-single-item"><div class="origin-name">Café Mocha Blend</div><div class="origin-sub">Coffee and cocoa, hand-blended in Geelong</div></div>
+        <div class="origin-single-item"><div class="origin-name">Ceremonial Matcha</div><div class="origin-sub">Stone-milled in Japan — the birthplace of matcha</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -676,12 +687,6 @@
           <p>Your review has been received with gratitude. We read every single one.</p>
         </div>
       </div>
-      <div class="reviews-display">
-        <h3>What People Are Saying</h3>
-        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">&ldquo;The saffron threads floating in the cup is such a nice touch — you can tell it's not just powder from a packet. Worth every cent.&rdquo;</div><div class="review-meta"><strong>Sample Customer</strong><span>Golden Saffron Latte</span></div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">&ldquo;Used the rub on lamb chops and the whole kitchen smelled incredible. No salt needed at all — proper balance.&rdquo;</div><div class="review-meta"><strong>Sample Customer</strong><span>Curry Coast Rub</span></div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">&ldquo;Whisked up beautifully, no bitterness at all. You can really tell the difference from supermarket matcha.&rdquo;</div><div class="review-meta"><strong>Sample Customer</strong><span>Ceremonial Matcha</span></div></div>
-      </div>
     </div>
   </div>
 </section>
@@ -701,10 +706,13 @@
       <div class="service-card"><div class="service-icon">✉️</div><div class="service-title">Virtual Assistant — Operations</div><div class="service-desc">Supplier coordination, compliance paperwork, email management, and general business admin.</div></div>
       <div class="service-card"><div class="service-icon">📝</div><div class="service-title">Wellness &amp; Food Content</div><div class="service-desc">Product copy, taglines, and content that understands the wellness and small-batch food space.</div></div>
       <div class="service-card"><div class="service-icon">📱</div><div class="service-title">Social Media Support</div><div class="service-desc">Content planning, scheduling, and platform-specific strategy for growing small brands.</div></div>
+      <div class="service-card"><div class="service-icon">🏷️</div><div class="service-title">GS1 Barcode Assistance</div><div class="service-desc">Help registering and applying GS1 barcodes for retail, Shopify, or Amazon listings — done correctly the first time.</div></div>
+      <div class="service-card"><div class="service-icon">🧪</div><div class="service-title">Lab Testing Coordination</div><div class="service-desc">Guidance sourcing accredited labs and organising nutritional or compositional testing when a product needs it.</div></div>
+      <div class="service-card"><div class="service-icon">📋</div><div class="service-title">Nutrition Panel (FSANZ)</div><div class="service-desc">Hands-on experience calculating compliant Nutrition Information Panels using the FSANZ framework — done it for my own range.</div></div>
     </div>
     <div class="services-cta reveal">
       <p>Available 10–12 hours per week · Remote · Australian time zone</p>
-      <a href="mailto:hello@wiseking.com.au?subject=Freelance%20Work%20Enquiry" class="btn-ghost" style="border-color:var(--gold-bright); color:var(--gold-pale);">Get In Touch</a>
+      <a href="mailto:piyush@wiseking.com.au?subject=Freelance%20Work%20Enquiry" class="btn-ghost" style="border-color:var(--gold-bright); color:var(--gold-pale);">Get In Touch</a>
     </div>
   </div>
 </section>
@@ -722,14 +730,14 @@
         <p>Whether you&rsquo;re placing an order, requesting a sample, or asking about wholesale — reach out directly. A real person (Piyush) replies to every message.</p>
         <div class="contact-method"><div class="cm-icon">💬</div><div><div class="cm-label">WhatsApp — Orders &amp; Enquiries</div><div class="cm-value"><a href="https://wa.me/61470442705">0470 442 705</a></div></div></div>
         <div class="contact-method"><div class="cm-icon">📞</div><div><div class="cm-label">Call Us</div><div class="cm-value"><a href="tel:+61470442705">0470 442 705</a></div></div></div>
-        <div class="contact-method"><div class="cm-icon">✉️</div><div><div class="cm-label">Email</div><div class="cm-value"><a href="mailto:hello@wiseking.com.au">hello@wiseking.com.au</a></div></div></div>
+        <div class="contact-method"><div class="cm-icon">✉️</div><div><div class="cm-label">Email</div><div class="cm-value"><a href="mailto:piyush@wiseking.com.au">piyush@wiseking.com.au</a></div></div></div>
         <div class="contact-method"><div class="cm-icon">📍</div><div><div class="cm-label">Based In</div><div class="cm-value">Geelong, Victoria, Australia</div></div></div>
       </div>
       <div class="contact-right">
         <h4>Quick Actions</h4>
         <div class="quick-actions">
           <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27d%20like%20to%20place%20an%20order." class="qa-btn"><span class="qa-icon">🛒</span><div><div class="qa-text">Order via WhatsApp</div><div class="qa-sub">Fastest way to order</div></div></a>
-          <a href="mailto:hello@wiseking.com.au?subject=Order%20Enquiry" class="qa-btn"><span class="qa-icon">✉️</span><div><div class="qa-text">Order via Email</div><div class="qa-sub">hello@wiseking.com.au</div></div></a>
+          <a href="mailto:orders@wiseking.com.au?subject=Order%20Enquiry" class="qa-btn"><span class="qa-icon">✉️</span><div><div class="qa-text">Order via Email</div><div class="qa-sub">orders@wiseking.com.au</div></div></a>
           <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27d%20like%20to%20request%20a%20free%20sample." class="qa-btn"><span class="qa-icon">🎁</span><div><div class="qa-text">Request a Free Sample</div><div class="qa-sub">Choose any 2 — $5 postage</div></div></a>
         </div>
         <div class="payid-box" style="margin-top:28px;">
@@ -746,7 +754,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="footer-crest"><img src="kangaroo-crown.png" alt="Wise King Enterprise crest"><span class="footer-brand-name">WISE KING ENTERPRISE</span></div>
+        <div class="footer-crest"><img src="crown.png.PNG" alt="Wise King Enterprise crest"><span class="footer-brand-name">WISE KING ENTERPRISE</span></div>
         <p>Ultra-premium wellness blends, hand-crafted in small batches in Geelong, Australia. &ldquo;Not competing. Just creating.&rdquo;</p>
       </div>
       <div class="footer-cols">
@@ -761,7 +769,7 @@
         <div class="footer-col">
           <h5>Contact</h5>
           <a href="https://wa.me/61470442705">WhatsApp / Call: 0470 442 705</a>
-          <a href="mailto:hello@wiseking.com.au">hello@wiseking.com.au</a>
+          <a href="mailto:piyush@wiseking.com.au">piyush@wiseking.com.au</a>
         </div>
         <div class="footer-col">
           <h5>Business</h5>
