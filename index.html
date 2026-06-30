@@ -4,300 +4,367 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wise King Enterprise | Royal-Grade Wellness Blends — Geelong, Australia</title>
-<meta name="description" content="Ultra-premium hand-blended wellness powders from Geelong, Australia. Golden Saffron Latte, Ceremonial Matcha, Café Mocha, Curry Coast Rub. No fillers. No shortcuts.">
+<meta name="description" content="Ultra-premium hand-blended wellness powders from Geelong, Australia. Golden Saffron Latte, Ceremonial Matcha, Café Mocha, Curry Coast Rub, Velvet Curry Base. No fillers. No shortcuts.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ivory:#FBF8F2;
-    --cream:#F4EEE0;
-    --paper:#FFFFFF;
-    --line:#E6DCC4;
-    --ink:#2A2118;
-    --ink-soft:#5C5142;
-    --text-dim:#8A7D68;
-    --gold:#B5893A;
-    --gold-bright:#C9A24A;
-    --gold-pale:#E8D9B5;
-    --latte-deep:#3D2208;
-    --curry-deep:#7A2E2E;
-    --mocha-deep:#4A2C18;
-    --matcha-deep:#2D4A2D;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{font-family:'Inter',sans-serif; background:var(--ivory); color:var(--ink); overflow-x:hidden; -webkit-font-smoothing:antialiased;}
-  img{max-width:100%; display:block;}
-  a{text-decoration:none; color:inherit;}
-  ::selection{background:var(--gold-pale); color:var(--ink);}
-  .display{font-family:'Cinzel Decorative', serif;}
-  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+:root{
+  --ivory:#FBF8F2;
+  --cream:#F4EEE0;
+  --paper:#FFFFFF;
+  --line:#E6DCC4;
+  --ink:#2A2118;
+  --ink-soft:#5C5142;
+  --text-dim:#8A7D68;
+  --gold:#B5893A;
+  --gold-bright:#C9A24A;
+  --gold-pale:#E8D9B5;
+  --latte-deep:#3D2208;
+  --curry-deep:#7A2E2E;
+  --mocha-deep:#4A2C18;
+  --matcha-deep:#2D4A2D;
+  --velvet-deep:#2A1A3D;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--ivory);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+::selection{background:var(--gold-pale);color:var(--ink);}
+.display{font-family:'Cinzel Decorative',serif;}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 
-  .topbar{background:var(--ink); color:var(--gold-pale); text-align:center; font-size:11px; letter-spacing:0.1em; padding:9px 16px; font-weight:500;}
+/* ── TOPBAR ── */
+.topbar{background:var(--ink);color:var(--gold-pale);text-align:center;font-size:11px;letter-spacing:0.1em;padding:9px 16px;font-weight:500;}
 
-  nav{position:sticky; top:0; z-index:200; background:rgba(251,248,242,0.94); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
-  .nav-inner{max-width:1240px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 24px;}
-  .brand-mark{display:flex; align-items:center; gap:10px; color:var(--ink);}
-  .logo-img{width:40px; height:40px; border-radius:50%; object-fit:cover; border:1.5px solid var(--gold);}
-  .brand-name{font-family:'Cinzel',serif; font-size:15px; letter-spacing:0.12em; font-weight:600;}
-  .nav-links{display:flex; gap:28px; align-items:center;}
-  .nav-links a{font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); font-weight:500; padding:6px 0; position:relative; transition:color .25s ease;}
-  .nav-links a:hover, .nav-links a:focus-visible{color:var(--gold);}
-  .nav-links a::after{content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:var(--gold); transition:width .25s ease;}
-  .nav-links a:hover::after{width:100%;}
-  .nav-cta{font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; background:var(--ink); color:var(--gold-pale); padding:11px 22px; border-radius:2px; transition:all .25s ease;}
-  .nav-cta:hover{background:var(--gold); color:var(--ink);}
-  .burger{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:8px;}
-  .burger span{width:22px; height:1.5px; background:var(--ink);}
-  .mobile-menu{display:none; flex-direction:column; background:var(--paper); border-top:1px solid var(--line); padding:8px 24px 24px;}
-  .mobile-menu a{padding:14px 0; border-bottom:1px solid var(--line); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft);}
-  .mobile-menu.open{display:flex;}
-  @media (max-width:940px){ .nav-links{display:none;} .burger{display:flex;} }
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mark{display:flex;align-items:center;gap:10px;color:var(--ink);}
+.logo-img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold);}
+.brand-name{font-family:'Cinzel',serif;font-size:15px;letter-spacing:0.12em;font-weight:600;}
+.nav-links{display:flex;gap:22px;align-items:center;}
+.nav-links a{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;padding:6px 0;position:relative;transition:color .25s ease;}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--gold);}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--gold);transition:width .25s ease;}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:11px 22px;border-radius:2px;transition:all .25s ease;}
+.nav-cta:hover{background:var(--gold);color:var(--ink);}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;}
+.burger span{width:22px;height:1.5px;background:var(--ink);}
+.mobile-menu{display:none;flex-direction:column;background:var(--paper);border-top:1px solid var(--line);padding:8px 24px 24px;}
+.mobile-menu a{padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);}
+.mobile-menu.open{display:flex;}
+@media(max-width:940px){.nav-links{display:none;}.burger{display:flex;}}
 
-  .hero{position:relative; background:radial-gradient(ellipse 120% 70% at 50% -10%, rgba(197,162,74,0.14), transparent 60%), linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%); color:var(--ink); padding:90px 24px 100px; text-align:center; overflow:hidden;}
-  .crest-large{width:104px; height:104px; border-radius:50%; border:1.5px solid var(--gold); margin:0 auto 28px; display:flex; align-items:center; justify-content:center; position:relative; background:var(--paper); animation:crestIn 1s ease both; overflow:hidden;}
-  .crest-large img{width:100%; height:100%; object-fit:cover;}
-  .crest-large::before{content:''; position:absolute; inset:-8px; border:1px solid var(--gold-pale); border-radius:50%;}
-  .hero-crest-wide{max-width:300px; width:80%; margin:0 auto 30px; animation:crestIn 1s ease both;}
-  .hero-crest-wide img{width:100%; height:auto; display:block; margin:0 auto;}
-  @keyframes crestIn{ from{opacity:0; transform:scale(0.85) translateY(10px);} to{opacity:1; transform:scale(1) translateY(0);} }
-  .eyebrow{font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:22px; animation:fadeUp 1s ease 0.15s both;}
-  .hero h1{font-size:clamp(36px,7vw,72px); line-height:1.1; font-weight:700; margin-bottom:24px; color:var(--ink); animation:fadeUp 1s ease 0.3s both;}
-  .hero h1 em{font-style:normal; color:var(--gold); background:linear-gradient(120deg, var(--gold), var(--gold-bright), #D4B05E); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;}
-  .hero-sub{font-size:clamp(15px,2vw,18px); color:var(--ink-soft); max-width:580px; margin:0 auto 14px; line-height:1.75; font-weight:300; animation:fadeUp 1s ease 0.45s both;}
-  .hero-motto{font-family:'Cinzel',serif; font-style:italic; font-size:14px; color:var(--gold); margin-bottom:42px; animation:fadeUp 1s ease 0.55s both;}
-  @keyframes fadeUp{ from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:translateY(0);} }
-  .hero-ctas{display:flex; gap:16px; justify-content:center; flex-wrap:wrap; animation:fadeUp 1s ease 0.7s both;}
-  .btn-primary{font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; background:var(--ink); color:var(--gold-pale); padding:17px 36px; border-radius:1px; border:1px solid var(--ink); transition:all .3s ease; display:inline-block;}
-  .btn-primary:hover{background:transparent; color:var(--ink);}
-  .btn-ghost{font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; background:transparent; color:var(--ink); padding:17px 36px; border-radius:1px; border:1px solid var(--ink-soft); transition:all .3s ease; display:inline-block;}
-  .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
-  .hero-stats{display:flex; justify-content:center; gap:0; margin-top:70px; flex-wrap:wrap; animation:fadeUp 1s ease 0.85s both;}
-  .stat{padding:0 36px; text-align:center; border-right:1px solid var(--line);}
-  .stat:last-child{border-right:none;}
-  .stat-num{font-family:'Cinzel Decorative',serif; font-size:26px; color:var(--gold); margin-bottom:4px;}
-  .stat-label{font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim);}
-  @media (max-width:600px){ .stat{padding:0 18px; margin-bottom:18px;} }
+/* ── HERO ── */
+.hero{position:relative;background:radial-gradient(ellipse 120% 70% at 50% -10%,rgba(197,162,74,0.14),transparent 60%),linear-gradient(180deg,var(--cream) 0%,var(--ivory) 100%);color:var(--ink);padding:90px 24px 100px;text-align:center;overflow:hidden;}
+.hero-crest-wide{max-width:300px;width:80%;margin:0 auto 30px;animation:crestIn 1s ease both;}
+.hero-crest-wide img{width:100%;height:auto;display:block;margin:0 auto;}
+@keyframes crestIn{from{opacity:0;transform:scale(0.85) translateY(10px);}to{opacity:1;transform:scale(1) translateY(0);}}
+.eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;animation:fadeUp 1s ease 0.15s both;}
+.hero h1{font-size:clamp(36px,7vw,72px);line-height:1.1;font-weight:700;margin-bottom:24px;color:var(--ink);animation:fadeUp 1s ease 0.3s both;}
+.hero h1 em{font-style:normal;color:var(--gold);background:linear-gradient(120deg,var(--gold),var(--gold-bright),#D4B05E);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:clamp(15px,2vw,18px);color:var(--ink-soft);max-width:600px;margin:0 auto 14px;line-height:1.75;font-weight:300;animation:fadeUp 1s ease 0.45s both;}
+.hero-motto{font-family:'Cinzel',serif;font-style:italic;font-size:14px;color:var(--gold);margin-bottom:42px;animation:fadeUp 1s ease 0.55s both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeUp 1s ease 0.7s both;}
+.btn-primary{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:17px 36px;border-radius:1px;border:1px solid var(--ink);transition:all .3s ease;display:inline-block;}
+.btn-primary:hover{background:transparent;color:var(--ink);}
+.btn-ghost{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;background:transparent;color:var(--ink);padding:17px 36px;border-radius:1px;border:1px solid var(--ink-soft);transition:all .3s ease;display:inline-block;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.hero-stats{display:flex;justify-content:center;gap:0;margin-top:70px;flex-wrap:wrap;animation:fadeUp 1s ease 0.85s both;}
+.stat{padding:0 36px;text-align:center;border-right:1px solid var(--line);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Cinzel Decorative',serif;font-size:26px;color:var(--gold);margin-bottom:4px;}
+.stat-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);}
+@media(max-width:600px){.stat{padding:0 18px;margin-bottom:18px;}}
 
-  section{padding:100px 24px;}
-  .section-inner{max-width:1180px; margin:0 auto;}
-  .section-head{text-align:center; margin-bottom:60px;}
-  .section-eyebrow{font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;}
-  .section-title{font-family:'Cinzel Decorative',serif; font-size:clamp(28px,4vw,42px); color:var(--ink); font-weight:700; line-height:1.2;}
-  .divider-seal{width:40px; height:40px; margin:24px auto 0; position:relative;}
-  .divider-seal::before, .divider-seal::after{content:''; position:absolute; top:50%; width:14px; height:1px; background:var(--gold);}
-  .divider-seal::before{left:0;} .divider-seal::after{right:0;}
-  .divider-seal span{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:8px; height:8px; border:1px solid var(--gold); border-radius:50%;}
+/* ── FEEDBACK BANNER ── */
+.feedback-banner{background:linear-gradient(135deg,var(--ink) 0%,#3D2A1A 100%);padding:28px 24px;text-align:center;border-top:1px solid rgba(201,162,74,0.3);border-bottom:1px solid rgba(201,162,74,0.3);}
+.feedback-banner-inner{max-width:700px;margin:0 auto;}
+.feedback-banner p{font-family:'Cinzel',serif;font-size:13px;letter-spacing:0.08em;color:var(--gold-pale);margin-bottom:10px;}
+.feedback-banner .fb-sub{font-family:'Inter',sans-serif;font-size:12px;color:rgba(232,217,181,0.6);margin-bottom:16px;letter-spacing:0;}
+.fb-btn{display:inline-block;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--gold-bright);color:var(--ink);padding:12px 26px;border-radius:2px;transition:all .25s ease;}
+.fb-btn:hover{background:#fff;}
 
-  .products{background:var(--paper);}
-  .products-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:28px;}
-  @media (max-width:760px){ .products-grid{grid-template-columns:1fr;} }
-  .product-card{position:relative; border-radius:8px; overflow:hidden; min-height:460px; display:flex; flex-direction:column; justify-content:flex-end; padding:0; color:#fff; transition:transform .4s ease, box-shadow .4s ease;}
-  .product-card:hover{transform:translateY(-6px); box-shadow:0 24px 48px rgba(42,33,24,0.18);}
-  .pc-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;}
-  .pc-body{padding:28px 28px 30px; position:relative; z-index:2;}
-  .pc-latte .pc-body{background:linear-gradient(180deg, rgba(61,34,8,0) 0%, rgba(61,34,8,0.55) 28%, rgba(42,22,4,0.95) 65%, rgba(42,22,4,0.98) 100%);}
-  .pc-curry .pc-body{background:linear-gradient(180deg, rgba(122,46,46,0) 0%, rgba(122,46,46,0.55) 28%, rgba(92,16,16,0.95) 65%, rgba(92,16,16,0.98) 100%);}
-  .pc-mocha .pc-body{background:linear-gradient(180deg, rgba(74,44,24,0) 0%, rgba(74,44,24,0.55) 28%, rgba(54,32,15,0.95) 65%, rgba(54,32,15,0.98) 100%);}
-  .pc-matcha .pc-body{background:linear-gradient(180deg, rgba(45,74,45,0) 0%, rgba(45,74,45,0.55) 28%, rgba(22,40,15,0.95) 65%, rgba(22,40,15,0.98) 100%);}
-  .pc-badge{position:absolute; top:20px; left:16px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink); background:var(--gold-bright); padding:6px 14px; border-radius:20px; font-weight:600; z-index:3;}
-  .pc-weight{position:absolute; top:20px; right:16px; font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.08em; color:#fff; background:rgba(0,0,0,0.45); padding:6px 14px; border-radius:20px; z-index:3;}
-  .pc-name{font-family:'Cinzel Decorative',serif; font-size:25px; line-height:1.15; margin-bottom:8px;}
-  .pc-tagline{font-size:12.5px; font-style:italic; color:var(--gold-pale); opacity:0.95; margin-bottom:16px; font-weight:300;}
-  .pc-tags{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;}
-  .pc-tag{font-size:10px; letter-spacing:0.05em; text-transform:uppercase; border:1px solid rgba(255,255,255,0.28); padding:5px 11px; border-radius:20px; color:rgba(255,255,255,0.85);}
-  .pc-actions{display:flex; gap:10px; flex-wrap:wrap;}
-  .pc-btn{font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; font-weight:600; padding:13px 18px; border-radius:2px; transition:all .25s ease; flex:1; text-align:center; min-width:120px;}
-  .pc-btn-fill{background:var(--gold-bright); color:var(--ink);}
-  .pc-btn-fill:hover{background:#fff;}
-  .pc-btn-outline{background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.35);}
-  .pc-btn-outline:hover{border-color:var(--gold-bright); color:var(--gold-pale);}
+/* ── SECTIONS ── */
+section{padding:100px 24px;}
+.section-inner{max-width:1180px;margin:0 auto;}
+.section-head{text-align:center;margin-bottom:60px;}
+.section-eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.section-title{font-family:'Cinzel Decorative',serif;font-size:clamp(28px,4vw,42px);color:var(--ink);font-weight:700;line-height:1.2;}
+.divider-seal{width:40px;height:40px;margin:24px auto 0;position:relative;}
+.divider-seal::before,.divider-seal::after{content:'';position:absolute;top:50%;width:14px;height:1px;background:var(--gold);}
+.divider-seal::before{left:0;}.divider-seal::after{right:0;}
+.divider-seal span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:8px;height:8px;border:1px solid var(--gold);border-radius:50%;}
 
-  .lore{background:var(--cream);}
-  .lore-tabs{display:flex; justify-content:center; gap:10px; margin-bottom:48px; flex-wrap:wrap;}
-  .lore-tab{font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; padding:12px 20px; border:1px solid var(--line); border-radius:24px; cursor:pointer; background:var(--paper); color:var(--ink-soft); transition:all .25s ease;}
-  .lore-tab.active{background:var(--ink); color:var(--gold-pale); border-color:var(--ink);}
-  .lore-panel{display:none;}
-  .lore-panel.active{display:block; animation:fadeUp .5s ease;}
-  .lore-cards{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
-  @media (max-width:820px){ .lore-cards{grid-template-columns:1fr;} }
-  .lore-card{background:var(--paper); border:1px solid var(--line); border-radius:8px; padding:32px;}
-  .lore-card-title{font-family:'Cinzel',serif; font-size:14px; letter-spacing:0.04em; color:var(--gold); margin-bottom:14px; font-weight:600;}
-  .lore-card-text{font-size:14px; line-height:1.85; color:var(--ink-soft); font-weight:300;}
-  .lore-card-text strong{color:var(--ink); font-weight:600;}
+/* ── PRODUCTS ── */
+.products{background:var(--paper);}
+.products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+@media(max-width:760px){.products-grid{grid-template-columns:1fr;}}
+.product-card{position:relative;border-radius:8px;overflow:hidden;min-height:480px;display:flex;flex-direction:column;justify-content:flex-end;padding:0;color:#fff;transition:transform .4s ease,box-shadow .4s ease;}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(42,33,24,0.18);}
+.pc-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.pc-body{padding:28px 28px 30px;position:relative;z-index:2;}
+.pc-latte .pc-body{background:linear-gradient(180deg,rgba(61,34,8,0) 0%,rgba(61,34,8,0.55) 28%,rgba(42,22,4,0.95) 65%,rgba(42,22,4,0.98) 100%);}
+.pc-curry .pc-body{background:linear-gradient(180deg,rgba(122,46,46,0) 0%,rgba(122,46,46,0.55) 28%,rgba(92,16,16,0.95) 65%,rgba(92,16,16,0.98) 100%);}
+.pc-mocha .pc-body{background:linear-gradient(180deg,rgba(74,44,24,0) 0%,rgba(74,44,24,0.55) 28%,rgba(54,32,15,0.95) 65%,rgba(54,32,15,0.98) 100%);}
+.pc-matcha .pc-body{background:linear-gradient(180deg,rgba(45,74,45,0) 0%,rgba(45,74,45,0.55) 28%,rgba(22,40,15,0.95) 65%,rgba(22,40,15,0.98) 100%);}
+.pc-velvet .pc-body{background:linear-gradient(180deg,rgba(42,26,61,0) 0%,rgba(42,26,61,0.55) 28%,rgba(28,16,45,0.95) 65%,rgba(28,16,45,0.98) 100%);}
+.pc-badge{position:absolute;top:20px;left:16px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);background:var(--gold-bright);padding:6px 14px;border-radius:20px;font-weight:600;z-index:3;}
+.pc-weight{position:absolute;top:20px;right:16px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.08em;color:#fff;background:rgba(0,0,0,0.45);padding:6px 14px;border-radius:20px;z-index:3;}
+/* PRICE TAG on product card */
+.pc-price{position:absolute;bottom:auto;top:56px;right:16px;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--gold-bright);background:rgba(0,0,0,0.55);padding:5px 13px;border-radius:16px;z-index:3;letter-spacing:0.03em;}
+.pc-name{font-family:'Cinzel Decorative',serif;font-size:25px;line-height:1.15;margin-bottom:8px;}
+.pc-tagline{font-size:12.5px;font-style:italic;color:var(--gold-pale);opacity:0.95;margin-bottom:16px;font-weight:300;}
+.pc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+.pc-tag{font-size:10px;letter-spacing:0.05em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.28);padding:5px 11px;border-radius:20px;color:rgba(255,255,255,0.85);}
+.pc-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.pc-btn{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;padding:13px 18px;border-radius:2px;transition:all .25s ease;flex:1;text-align:center;min-width:120px;}
+.pc-btn-fill{background:var(--gold-bright);color:var(--ink);}
+.pc-btn-fill:hover{background:#fff;}
+.pc-btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.35);}
+.pc-btn-outline:hover{border-color:var(--gold-bright);color:var(--gold-pale);}
+/* Shopify/Amazon buttons — shown when uncommented */
+.pc-btn-shopify{background:#96BF48;color:#fff;}
+.pc-btn-shopify:hover{background:#7EA83B;}
+.pc-btn-amazon{background:#FF9900;color:var(--ink);}
+.pc-btn-amazon:hover{background:#E68A00;}
 
-  .standard{background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  .standard-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
-  @media (max-width:900px){ .standard-grid{grid-template-columns:repeat(2,1fr);} }
-  .standard-item{background:var(--paper); padding:44px 26px; text-align:center;}
-  .standard-icon{font-size:28px; margin-bottom:16px;}
-  .standard-h{font-family:'Cinzel',serif; font-size:13.5px; letter-spacing:0.04em; margin-bottom:10px; color:var(--ink);}
-  .standard-p{font-size:13px; color:var(--text-dim); line-height:1.7; font-weight:300;}
+/* ACTUAL PRODUCT IMAGE SECTION */
+.actual-product{background:var(--cream);padding:80px 24px;}
+.actual-product .section-inner{max-width:1180px;margin:0 auto;}
+.ap-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:48px;}
+@media(max-width:1000px){.ap-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:600px){.ap-grid{grid-template-columns:repeat(2,1fr);}}
+.ap-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-align:center;transition:transform .3s ease,box-shadow .3s ease;}
+.ap-card:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(42,33,24,0.12);}
+.ap-img{width:100%;aspect-ratio:1;object-fit:cover;display:block;}
+/* Placeholder shown until photo uploaded */
+.ap-placeholder{width:100%;aspect-ratio:1;background:linear-gradient(135deg,var(--cream),var(--gold-pale));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;}
+.ap-placeholder span{font-size:32px;}
+.ap-placeholder p{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim);font-family:'Cinzel',serif;}
+.ap-label{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.04em;color:var(--ink);padding:14px 12px 6px;font-weight:600;}
+.ap-code{font-size:10px;color:var(--text-dim);letter-spacing:0.06em;text-transform:uppercase;padding:0 12px 14px;}
+.handmade-badge{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:10px 20px;border-radius:20px;margin-top:36px;}
 
-  .ingredients{background:var(--cream);}
-  .ingredients-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:18px;}
-  @media (max-width:980px){ .ingredients-grid{grid-template-columns:repeat(3,1fr);} }
-  @media (max-width:560px){ .ingredients-grid{grid-template-columns:repeat(2,1fr);} }
-  .ingredient-card{background:var(--paper); border:1px solid var(--line); border-radius:8px; overflow:hidden; text-align:center; transition:transform .3s ease, box-shadow .3s ease;}
-  .ingredient-card:hover{transform:translateY(-4px); box-shadow:0 16px 30px rgba(42,33,24,0.12);}
-  .ingredient-img{width:100%; height:110px; object-fit:cover; display:block;}
-  .ingredient-name{font-family:'Cinzel',serif; font-size:12.5px; letter-spacing:0.04em; color:var(--ink); margin:14px 10px 8px;}
-  .ingredient-benefit{font-size:11.5px; color:var(--text-dim); line-height:1.55; padding:0 12px 18px; font-weight:300;}
+/* ── LORE ── */
+.lore{background:var(--cream);}
+.lore-tabs{display:flex;justify-content:center;gap:10px;margin-bottom:48px;flex-wrap:wrap;}
+.lore-tab{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--line);border-radius:24px;cursor:pointer;background:var(--paper);color:var(--ink-soft);transition:all .25s ease;}
+.lore-tab.active{background:var(--ink);color:var(--gold-pale);border-color:var(--ink);}
+.lore-panel{display:none;}
+.lore-panel.active{display:block;animation:fadeUp .5s ease;}
+.lore-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+@media(max-width:820px){.lore-cards{grid-template-columns:1fr;}}
+.lore-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:32px;}
+.lore-card-title{font-family:'Cinzel',serif;font-size:14px;letter-spacing:0.04em;color:var(--gold);margin-bottom:14px;font-weight:600;}
+.lore-card-text{font-size:14px;line-height:1.85;color:var(--ink-soft);font-weight:300;}
+.lore-card-text strong{color:var(--ink);font-weight:600;}
 
-  .story{background:var(--ivory);}
-  .story-wrap{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;}
-  @media (max-width:860px){ .story-wrap{grid-template-columns:1fr;} }
-  .story-crest{width:240px; height:240px; margin:0 auto; border:1.5px solid var(--gold); border-radius:50%; overflow:hidden; position:relative; background:var(--paper);}
-  .story-crest::before{content:''; position:absolute; inset:-14px; border:1px solid var(--gold-pale); border-radius:50%;}
-  .story-crest img{width:100%; height:100%; object-fit:cover;}
-  .story-text h2{font-family:'Cinzel Decorative',serif; font-size:clamp(26px,3.4vw,36px); color:var(--ink); margin-bottom:22px; line-height:1.25;}
-  .story-text p{font-size:15px; line-height:1.85; color:var(--ink-soft); margin-bottom:16px; font-weight:300;}
-  .story-text p strong{font-weight:600; color:var(--ink);}
+/* ── STANDARD ── */
+.standard{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.standard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+@media(max-width:900px){.standard-grid{grid-template-columns:repeat(2,1fr);}}
+.standard-item{background:var(--paper);padding:44px 26px;text-align:center;}
+.standard-icon{font-size:28px;margin-bottom:16px;}
+.standard-h{font-family:'Cinzel',serif;font-size:13.5px;letter-spacing:0.04em;margin-bottom:10px;color:var(--ink);}
+.standard-p{font-size:13px;color:var(--text-dim);line-height:1.7;font-weight:300;}
 
-  .video-section{background:var(--cream);}
-  .video-caption{max-width:600px; margin:0 auto 36px; text-align:center; font-size:14.5px; line-height:1.85; color:var(--ink-soft); font-weight:300;}
-  .video-wrap{max-width:780px; margin:0 auto; border-radius:10px; overflow:hidden; border:1px solid var(--line); box-shadow:0 20px 50px rgba(42,33,24,0.1);}
-  .video-wrap video{width:100%; display:block; background:#000;}
+/* ── INGREDIENTS ── */
+.ingredients{background:var(--cream);}
+.ingredients-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;}
+@media(max-width:980px){.ingredients-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:560px){.ingredients-grid{grid-template-columns:repeat(2,1fr);}}
+.ingredient-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;text-align:center;transition:transform .3s ease,box-shadow .3s ease;}
+.ingredient-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(42,33,24,0.12);}
+.ingredient-img{width:100%;height:110px;object-fit:cover;display:block;}
+.ingredient-name{font-family:'Cinzel',serif;font-size:12.5px;letter-spacing:0.04em;color:var(--ink);margin:14px 10px 8px;}
+.ingredient-benefit{font-size:11.5px;color:var(--text-dim);line-height:1.55;padding:0 12px 18px;font-weight:300;}
 
-  .ritual{background:var(--paper);}
-  .ritual-tabs{display:flex; justify-content:center; gap:10px; margin-bottom:48px; flex-wrap:wrap;}
-  .rt-tab{font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; padding:12px 22px; border:1px solid var(--line); border-radius:24px; cursor:pointer; background:transparent; color:var(--ink-soft); transition:all .25s ease;}
-  .rt-tab.active{background:var(--ink); color:var(--gold-pale); border-color:var(--ink);}
-  .rt-panel{display:none; max-width:680px; margin:0 auto;}
-  .rt-panel.active{display:block; animation:fadeUp .5s ease;}
-  .rt-step{display:flex; gap:20px; padding:20px 0; border-bottom:1px solid var(--line);}
-  .rt-step:last-child{border-bottom:none;}
-  .rt-num{font-family:'Cinzel Decorative',serif; font-size:22px; color:var(--gold); min-width:36px;}
-  .rt-text{font-size:14.5px; line-height:1.75; color:var(--ink-soft); padding-top:2px;}
-  .rt-text strong{color:var(--ink); font-weight:600;}
+/* ── STORY ── */
+.story{background:var(--ivory);}
+.story-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+@media(max-width:860px){.story-wrap{grid-template-columns:1fr;}}
+.story-crest{width:240px;height:240px;margin:0 auto;border:1.5px solid var(--gold);border-radius:50%;overflow:hidden;position:relative;background:var(--paper);}
+.story-crest::before{content:'';position:absolute;inset:-14px;border:1px solid var(--gold-pale);border-radius:50%;}
+.story-crest img{width:100%;height:100%;object-fit:cover;}
+.story-text h2{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,3.4vw,36px);color:var(--ink);margin-bottom:22px;line-height:1.25;}
+.story-text p{font-size:15px;line-height:1.85;color:var(--ink-soft);margin-bottom:16px;font-weight:300;}
+.story-text p strong{font-weight:600;color:var(--ink);}
 
-  .origins{background:var(--cream);}
-  .origin-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
-  @media (max-width:900px){ .origin-grid{grid-template-columns:repeat(2,1fr);} }
-  .origin-card{background:var(--paper); border:1px solid var(--line); border-radius:8px; padding:32px 24px; text-align:center;}
-  .origin-map{width:90px; height:90px; margin:0 auto 18px; object-fit:contain;}
-  .origin-name{font-family:'Cinzel',serif; font-size:13px; letter-spacing:0.04em; color:var(--ink); margin-bottom:6px;}
-  .origin-sub{font-size:12px; color:var(--text-dim); line-height:1.6;}
-  .origin-single{max-width:900px; margin:0 auto; background:var(--paper); border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 20px 50px rgba(42,33,24,0.08);}
-  .origin-single-img{width:100%; max-height:460px; object-fit:cover; display:block;}
-  .origin-single-list{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line);}
-  @media (max-width:700px){ .origin-single-list{grid-template-columns:1fr;} }
-  .origin-single-item{background:var(--paper); padding:26px 28px;}
+/* ── VIDEO ── */
+.video-section{background:var(--cream);}
+.video-caption{max-width:600px;margin:0 auto 36px;text-align:center;font-size:14.5px;line-height:1.85;color:var(--ink-soft);font-weight:300;}
+.video-wrap{max-width:780px;margin:0 auto;border-radius:10px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 50px rgba(42,33,24,0.1);}
+.video-wrap video{width:100%;display:block;background:#000;}
 
-  .invitation{background:linear-gradient(165deg, var(--cream) 0%, var(--gold-pale) 100%); position:relative;}
-  .invite-box{max-width:680px; margin:0 auto; text-align:center; border:1px solid var(--gold); border-radius:8px; padding:64px 44px; background:var(--paper);}
-  .invite-box::before{content:'✦'; color:var(--gold); font-size:18px; display:block; margin-bottom:18px;}
-  .invite-title{font-family:'Cinzel Decorative',serif; font-size:clamp(24px,3vw,32px); margin-bottom:18px; color:var(--ink);}
-  .invite-p{font-size:14.5px; color:var(--ink-soft); line-height:1.85; margin-bottom:8px; font-weight:300;}
-  .invite-price{font-family:'Cinzel',serif; font-size:13px; letter-spacing:0.04em; color:var(--gold); margin:26px 0; padding:14px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  .invite-list{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:22px 0 30px;}
-  .invite-pill{font-size:11px; letter-spacing:0.03em; padding:8px 16px; border:1px solid var(--gold-pale); border-radius:20px; color:var(--ink-soft); background:var(--cream);}
+/* ── RITUAL ── */
+.ritual{background:var(--paper);}
+.ritual-tabs{display:flex;justify-content:center;gap:10px;margin-bottom:48px;flex-wrap:wrap;}
+.rt-tab{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:12px 22px;border:1px solid var(--line);border-radius:24px;cursor:pointer;background:transparent;color:var(--ink-soft);transition:all .25s ease;}
+.rt-tab.active{background:var(--ink);color:var(--gold-pale);border-color:var(--ink);}
+.rt-panel{display:none;max-width:680px;margin:0 auto;}
+.rt-panel.active{display:block;animation:fadeUp .5s ease;}
+.rt-step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);}
+.rt-step:last-child{border-bottom:none;}
+.rt-num{font-family:'Cinzel Decorative',serif;font-size:22px;color:var(--gold);min-width:36px;}
+.rt-text{font-size:14.5px;line-height:1.75;color:var(--ink-soft);padding-top:2px;}
+.rt-text strong{color:var(--ink);font-weight:600;}
 
-  .reviews{background:var(--paper);}
-  .reviews-wrap{max-width:620px; margin:0 auto;}
-  .review-form-box{background:var(--ivory); border:1px solid var(--line); border-radius:8px; padding:36px;}
-  .review-form-box h3{font-family:'Cinzel',serif; font-size:16px; color:var(--ink); margin-bottom:8px;}
-  .review-form-box p{font-size:13px; color:var(--text-dim); margin-bottom:24px; line-height:1.6;}
-  .form-group{margin-bottom:18px;}
-  .form-group label{display:block; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px; font-weight:600;}
-  .form-group input, .form-group select, .form-group textarea{width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:4px; font-family:'Inter',sans-serif; font-size:14px; color:var(--ink); background:var(--paper);}
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus{outline:2px solid var(--gold-pale); border-color:var(--gold);}
-  .form-group textarea{resize:vertical; min-height:100px;}
-  .star-rating{display:flex; gap:8px; font-size:24px;}
-  .star{cursor:pointer; color:var(--line); transition:color .2s ease;}
-  .star.active, .star:hover{color:var(--gold);}
-  .submit-btn{font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; background:var(--ink); color:var(--gold-pale); padding:15px 32px; border:none; border-radius:2px; cursor:pointer; transition:all .25s ease; width:100%;}
-  .submit-btn:hover{background:var(--gold); color:var(--ink);}
-  .form-success{display:none; text-align:center; padding:40px 20px;}
-  .form-success.show{display:block;}
-  .form-success .ico{font-size:36px; margin-bottom:14px;}
-  .form-success h4{font-family:'Cinzel',serif; font-size:16px; color:var(--ink); margin-bottom:8px;}
-  .form-success p{font-size:13px; color:var(--text-dim);}
-  .reviews-display h3{font-family:'Cinzel',serif; font-size:16px; color:var(--ink); margin-bottom:20px;}
-  .review-card{background:var(--ivory); border:1px solid var(--line); border-radius:8px; padding:24px; margin-bottom:16px;}
-  .review-stars{color:var(--gold); font-size:14px; margin-bottom:10px;}
-  .review-text{font-size:13.5px; color:var(--ink-soft); line-height:1.7; margin-bottom:12px; font-style:italic;}
-  .review-meta{font-size:12px; color:var(--text-dim); display:flex; justify-content:space-between;}
-  .review-meta strong{color:var(--ink);}
+/* ── ORIGINS ── */
+.origins{background:var(--cream);}
+.origin-single{max-width:900px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 20px 50px rgba(42,33,24,0.08);}
+.origin-single-img{width:100%;max-height:460px;object-fit:cover;display:block;}
+.origin-single-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);}
+@media(max-width:700px){.origin-single-list{grid-template-columns:1fr;}}
+.origin-single-item{background:var(--paper);padding:26px 28px;}
+.origin-name{font-family:'Cinzel',serif;font-size:13px;letter-spacing:0.04em;color:var(--ink);margin-bottom:6px;}
+.origin-sub{font-size:12px;color:var(--text-dim);line-height:1.6;}
 
-  .services{background:var(--ink); color:var(--ivory);}
-  .services .section-eyebrow{color:var(--gold-bright);}
-  .services .section-title{color:var(--ivory);}
-  .services-intro{text-align:center; max-width:640px; margin:0 auto 56px; font-size:14.5px; color:rgba(251,248,242,0.7); line-height:1.8; font-weight:300;}
-  .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-  @media (max-width:900px){ .services-grid{grid-template-columns:1fr 1fr;} }
-  @media (max-width:600px){ .services-grid{grid-template-columns:1fr;} }
-  .service-card{background:rgba(251,248,242,0.04); border:1px solid rgba(201,162,74,0.25); border-radius:8px; padding:30px 26px; transition:all .3s ease;}
-  .service-card:hover{background:rgba(251,248,242,0.07); border-color:var(--gold-bright);}
-  .service-icon{font-size:26px; margin-bottom:16px;}
-  .service-title{font-family:'Cinzel',serif; font-size:14px; color:var(--gold-bright); margin-bottom:10px; letter-spacing:0.02em;}
-  .service-desc{font-size:13px; color:rgba(251,248,242,0.65); line-height:1.7; font-weight:300;}
-  .services-cta{text-align:center; margin-top:48px;}
-  .services-cta p{font-size:13px; color:rgba(251,248,242,0.6); margin-bottom:20px;}
+/* ── WHOLESALE ── */
+.wholesale{background:var(--ink);color:var(--ivory);padding:80px 24px;}
+.wholesale-inner{max-width:860px;margin:0 auto;text-align:center;}
+.wholesale-inner .section-eyebrow{color:var(--gold-bright);}
+.wholesale-inner .section-title{color:var(--ivory);margin-bottom:20px;}
+.wholesale-desc{font-size:15px;color:rgba(251,248,242,0.7);line-height:1.85;margin-bottom:36px;font-weight:300;max-width:640px;margin-left:auto;margin-right:auto;}
+.wholesale-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px;}
+@media(max-width:720px){.wholesale-grid{grid-template-columns:1fr;}}
+.wholesale-item{background:rgba(251,248,242,0.05);border:1px solid rgba(201,162,74,0.3);border-radius:8px;padding:28px 22px;text-align:left;}
+.wholesale-item-icon{font-size:24px;margin-bottom:12px;}
+.wholesale-item-title{font-family:'Cinzel',serif;font-size:13px;color:var(--gold-bright);margin-bottom:8px;letter-spacing:0.03em;}
+.wholesale-item-text{font-size:12.5px;color:rgba(251,248,242,0.6);line-height:1.7;font-weight:300;}
 
-  .contact{background:var(--cream);}
-  .contact-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:0; border:1px solid var(--line); border-radius:8px; overflow:hidden; background:var(--paper);}
-  @media (max-width:860px){ .contact-grid{grid-template-columns:1fr;} }
-  .contact-left{padding:56px 48px; background:var(--ink); color:var(--ivory);}
-  .contact-left h3{font-family:'Cinzel Decorative',serif; font-size:25px; margin-bottom:18px;}
-  .contact-left p{font-size:14px; color:rgba(251,248,242,0.65); line-height:1.8; margin-bottom:36px; font-weight:300;}
-  .contact-method{display:flex; align-items:flex-start; gap:16px; margin-bottom:28px;}
-  .cm-icon{width:42px; height:42px; border:1px solid rgba(201,162,74,0.4); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0;}
-  .cm-label{font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-bright); margin-bottom:4px;}
-  .cm-value{font-size:14px; color:var(--ivory);}
-  .cm-value a{border-bottom:1px solid rgba(201,162,74,0.4); transition:border-color .2s ease;}
-  .cm-value a:hover{border-color:var(--gold-bright);}
-  .contact-right{padding:56px 48px;}
-  .contact-right h4{font-family:'Cinzel',serif; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:24px;}
-  .payid-box{background:var(--ink); color:var(--ivory); border-radius:6px; padding:28px; margin-bottom:28px; text-align:center;}
-  .payid-box .pb-label{font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-bright); margin-bottom:10px;}
-  .payid-box .pb-val{font-size:16px; letter-spacing:0.01em; word-break:break-all;}
-  .payid-box .pb-sub{font-size:11px; color:rgba(251,248,242,0.55); margin-top:8px;}
-  .quick-actions{display:flex; flex-direction:column; gap:12px;}
-  .qa-btn{display:flex; align-items:center; gap:12px; border:1px solid var(--line); border-radius:6px; padding:16px 20px; transition:all .25s ease;}
-  .qa-btn:hover{border-color:var(--gold); background:var(--ivory);}
-  .qa-icon{font-size:18px;}
-  .qa-text{font-size:13.5px; font-weight:500; color:var(--ink);}
-  .qa-sub{font-size:11px; color:var(--text-dim); margin-top:2px;}
+/* ── INVITATION / SAMPLE ── */
+.invitation{background:linear-gradient(165deg,var(--cream) 0%,var(--gold-pale) 100%);position:relative;}
+.invite-box{max-width:680px;margin:0 auto;text-align:center;border:1px solid var(--gold);border-radius:8px;padding:64px 44px;background:var(--paper);}
+.invite-box::before{content:'✦';color:var(--gold);font-size:18px;display:block;margin-bottom:18px;}
+.invite-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,3vw,32px);margin-bottom:18px;color:var(--ink);}
+.invite-p{font-size:14.5px;color:var(--ink-soft);line-height:1.85;margin-bottom:8px;font-weight:300;}
+.invite-price{font-family:'Cinzel',serif;font-size:13px;letter-spacing:0.04em;color:var(--gold);margin:26px 0;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.invite-list{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:22px 0 30px;}
+.invite-pill{font-size:11px;letter-spacing:0.03em;padding:8px 16px;border:1px solid var(--gold-pale);border-radius:20px;color:var(--ink-soft);background:var(--cream);}
 
-  footer{background:var(--ink); color:rgba(251,248,242,0.6); padding:64px 24px 28px;}
-  .footer-inner{max-width:1180px; margin:0 auto;}
-  .footer-top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px; margin-bottom:48px;}
-  .footer-brand{max-width:320px;}
-  .footer-crest{display:flex; align-items:center; gap:10px; margin-bottom:16px;}
-  .footer-crest img{width:34px; height:34px; border-radius:50%; border:1px solid var(--gold);}
-  .footer-brand-name{font-family:'Cinzel',serif; font-size:15px; letter-spacing:0.08em; color:var(--ivory);}
-  .footer-brand p{font-size:12.5px; line-height:1.8; font-weight:300;}
-  .footer-cols{display:flex; gap:60px; flex-wrap:wrap;}
-  .footer-col h5{font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-bright); margin-bottom:18px;}
-  .footer-col a, .footer-col span{display:block; font-size:12.5px; margin-bottom:12px; font-weight:300;}
-  .footer-col a:hover{color:var(--gold-bright);}
-  .footer-bottom{border-top:1px solid rgba(201,162,74,0.18); padding-top:24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:11px;}
-  .social-row{display:flex; gap:10px; flex-wrap:wrap;}
-  .social-pill{
-    font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; font-weight:600;
-    border:1px solid rgba(201,162,74,0.35); border-radius:20px; padding:8px 14px;
-    color:var(--gold-bright); transition:all .25s ease; white-space:nowrap;
-  }
-  .social-pill:hover{background:var(--gold); color:var(--ink); border-color:var(--gold);}
+/* ── REVIEWS ── */
+.reviews{background:var(--paper);}
+.reviews-wrap{max-width:620px;margin:0 auto;}
+.review-form-box{background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:36px;}
+.review-form-box h3{font-family:'Cinzel',serif;font-size:16px;color:var(--ink);margin-bottom:8px;}
+.review-form-box p{font-size:13px;color:var(--text-dim);margin-bottom:24px;line-height:1.6;}
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;font-weight:600;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:4px;font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);background:var(--paper);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:2px solid var(--gold-pale);border-color:var(--gold);}
+.form-group textarea{resize:vertical;min-height:100px;}
+.star-rating{display:flex;gap:8px;font-size:24px;}
+.star{cursor:pointer;color:var(--line);transition:color .2s ease;}
+.star.active,.star:hover{color:var(--gold);}
+.submit-btn{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:15px 32px;border:none;border-radius:2px;cursor:pointer;transition:all .25s ease;width:100%;}
+.submit-btn:hover{background:var(--gold);color:var(--ink);}
+.form-success{display:none;text-align:center;padding:40px 20px;}
+.form-success.show{display:block;}
+.form-success .ico{font-size:36px;margin-bottom:14px;}
+.form-success h4{font-family:'Cinzel',serif;font-size:16px;color:var(--ink);margin-bottom:8px;}
+.form-success p{font-size:13px;color:var(--text-dim);}
 
-  .sticky-cta{position:fixed; bottom:0; left:0; right:0; z-index:150; background:var(--ink); border-top:1px solid var(--gold); padding:12px 16px; display:none; gap:10px;}
-  @media (max-width:760px){ .sticky-cta{display:flex;} body{padding-bottom:64px;} }
-  .sticky-btn{flex:1; text-align:center; font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; padding:13px; border-radius:3px; font-weight:600;}
-  .sticky-btn.fill{background:var(--gold-bright); color:var(--ink);}
-  .sticky-btn.outline{background:transparent; border:1px solid var(--gold); color:var(--gold-pale);}
+/* ── SERVICES / WORK WITH ME ── */
+.services{background:var(--ink);color:var(--ivory);}
+.services .section-eyebrow{color:var(--gold-bright);}
+.services .section-title{color:var(--ivory);}
+.services-intro{text-align:center;max-width:680px;margin:0 auto 16px;font-size:14.5px;color:rgba(251,248,242,0.7);line-height:1.8;font-weight:300;}
+.services-paid-note{text-align:center;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.08em;color:var(--gold-bright);margin-bottom:48px;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.services-grid{grid-template-columns:1fr;}}
+.service-card{background:rgba(251,248,242,0.04);border:1px solid rgba(201,162,74,0.25);border-radius:8px;padding:30px 26px;transition:all .3s ease;}
+.service-card:hover{background:rgba(251,248,242,0.07);border-color:var(--gold-bright);}
+/* Featured highlight card */
+.service-card.highlight{background:rgba(201,162,74,0.07);border:1px solid rgba(201,162,74,0.5);grid-column:1/-1;}
+.service-card.highlight .service-title{font-size:16px;}
+.service-card.highlight .service-desc{font-size:13.5px;color:rgba(251,248,242,0.8);}
+.service-icon{font-size:26px;margin-bottom:16px;}
+.service-title{font-family:'Cinzel',serif;font-size:14px;color:var(--gold-bright);margin-bottom:10px;letter-spacing:0.02em;}
+.service-desc{font-size:13px;color:rgba(251,248,242,0.65);line-height:1.7;font-weight:300;}
+.services-cta{text-align:center;margin-top:48px;}
+.services-cta p{font-size:13px;color:rgba(251,248,242,0.6);margin-bottom:20px;}
 
-  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
-  .reveal.in{opacity:1; transform:translateY(0);}
-  a:focus-visible, button:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+/* ── CONTACT ── */
+.contact{background:var(--cream);}
+.contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--paper);}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+.contact-left{padding:56px 48px;background:var(--ink);color:var(--ivory);}
+.contact-left h3{font-family:'Cinzel Decorative',serif;font-size:25px;margin-bottom:18px;}
+.contact-left p{font-size:14px;color:rgba(251,248,242,0.65);line-height:1.8;margin-bottom:36px;font-weight:300;}
+.contact-method{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px;}
+.cm-icon{width:42px;height:42px;border:1px solid rgba(201,162,74,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.cm-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:4px;}
+.cm-value{font-size:14px;color:var(--ivory);}
+.cm-value a{border-bottom:1px solid rgba(201,162,74,0.4);transition:border-color .2s ease;}
+.cm-value a:hover{border-color:var(--gold-bright);}
+.contact-right{padding:56px 48px;}
+.contact-right h4{font-family:'Cinzel',serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
+.payid-box{background:var(--ink);color:var(--ivory);border-radius:6px;padding:28px;margin-bottom:28px;text-align:center;}
+.payid-box .pb-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:10px;}
+.payid-box .pb-val{font-size:16px;letter-spacing:0.01em;word-break:break-all;}
+.payid-box .pb-sub{font-size:11px;color:rgba(251,248,242,0.55);margin-top:8px;}
+.quick-actions{display:flex;flex-direction:column;gap:12px;}
+.qa-btn{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:6px;padding:16px 20px;transition:all .25s ease;}
+.qa-btn:hover{border-color:var(--gold);background:var(--ivory);}
+.qa-icon{font-size:18px;}
+.qa-text{font-size:13.5px;font-weight:500;color:var(--ink);}
+.qa-sub{font-size:11px;color:var(--text-dim);margin-top:2px;}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:rgba(251,248,242,0.6);padding:64px 24px 28px;}
+.footer-inner{max-width:1180px;margin:0 auto;}
+.footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:48px;}
+.footer-brand{max-width:320px;}
+.footer-crest{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.footer-crest img{width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);}
+.footer-brand-name{font-family:'Cinzel',serif;font-size:15px;letter-spacing:0.08em;color:var(--ivory);}
+.footer-brand p{font-size:12.5px;line-height:1.8;font-weight:300;}
+.footer-cols{display:flex;gap:60px;flex-wrap:wrap;}
+.footer-col h5{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:18px;}
+.footer-col a,.footer-col span{display:block;font-size:12.5px;margin-bottom:12px;font-weight:300;}
+.footer-col a:hover{color:var(--gold-bright);}
+.footer-bottom{border-top:1px solid rgba(201,162,74,0.18);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:11px;}
+.social-row{display:flex;gap:10px;flex-wrap:wrap;}
+.social-pill{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;border:1px solid rgba(201,162,74,0.35);border-radius:20px;padding:8px 14px;color:var(--gold-bright);transition:all .25s ease;white-space:nowrap;}
+.social-pill:hover{background:var(--gold);color:var(--ink);border-color:var(--gold);}
+
+/* ── STICKY CTA ── */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:150;background:var(--ink);border-top:1px solid var(--gold);padding:12px 16px;display:none;gap:10px;}
+@media(max-width:760px){.sticky-cta{display:flex;}body{padding-bottom:64px;}}
+.sticky-btn{flex:1;text-align:center;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:13px;border-radius:3px;font-weight:600;}
+.sticky-btn.fill{background:var(--gold-bright);color:var(--ink);}
+.sticky-btn.outline{background:transparent;border:1px solid var(--gold);color:var(--gold-pale);}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+/* ── SHOPIFY / AMAZON INTEGRATION NOTE ──────────────────────────────────────
+   TO ADD SHOPIFY: Replace each "Order on WhatsApp" button href with your
+   Shopify product page URL. Example:
+     href="https://wiseking.com.au/products/golden-saffron-latte"
+   TO ADD AMAZON (for Curry Coast Rub & Café Mocha only):
+     href="https://amazon.com.au/dp/YOUR_ASIN"
+   You can also add a class="pc-btn pc-btn-shopify" for green Shopify styling,
+   or class="pc-btn pc-btn-amazon" for orange Amazon styling.
+   No other code changes needed — just update the href values.
+   ───────────────────────────────────────────────────────────────────────── */
 </style>
 </head>
 <body>
 
+<!-- ═══ TOPBAR ════════════════════════════════════════════════════════════ -->
 <div class="topbar">
-  🇦🇺 BLENDED &amp; PACKED IN GEELONG, AUSTRALIA &nbsp;·&nbsp; NO FILLERS · NO SHORTCUTS &nbsp;·&nbsp; FREE SAMPLES — $5 POSTAGE
+  🇦🇺 BLENDED &amp; PACKED IN GEELONG, AUSTRALIA &nbsp;·&nbsp; NO FILLERS · NO SHORTCUTS &nbsp;·&nbsp; HANDMADE IN SMALL BATCHES
 </div>
 
+<!-- ═══ NAV ═══════════════════════════════════════════════════════════════ -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="brand-mark">
@@ -310,6 +377,7 @@
       <a href="#ritual">Preparation</a>
       <a href="#sample">Free Sample</a>
       <a href="#reviews">Reviews</a>
+      <a href="#wholesale">Wholesale</a>
       <a href="#services">Work With Me</a>
       <a href="https://wa.me/61470442705" class="nav-cta">Order Now</a>
     </div>
@@ -321,16 +389,18 @@
     <a href="#ritual">Preparation</a>
     <a href="#sample">Free Sample</a>
     <a href="#reviews">Reviews</a>
+    <a href="#wholesale">Wholesale</a>
     <a href="#services">Work With Me</a>
     <a href="https://wa.me/61470442705">Order via WhatsApp</a>
   </div>
 </nav>
 
+<!-- ═══ HERO ════════════════════════════════════════════════════════════════ -->
 <header class="hero">
   <div class="hero-crest-wide"><img src="kangaroo-crown.png.PNG" alt="Wise King Enterprise — royal kangaroo crest"></div>
   <div class="eyebrow">Wise King Enterprise</div>
   <h1>Worthy of <em>Royalty.</em><br>Crafted by Hand.</h1>
-  <p class="hero-sub">Four ultra-premium wellness blends, hand-crafted in small batches in Geelong, Australia. Real ingredients. No fillers. No shortcuts.</p>
+  <p class="hero-sub">Five ultra-premium wellness blends, hand-crafted in small batches in Geelong, Australia. Real ingredients. No fillers. No shortcuts. No machines.</p>
   <p class="hero-motto">&ldquo;Not competing. Just creating.&rdquo;</p>
   <div class="hero-ctas">
     <a href="#products" class="btn-primary">Explore The Range</a>
@@ -339,82 +409,190 @@
   <div class="hero-stats">
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Blended in Geelong</div></div>
     <div class="stat"><div class="stat-num">0g</div><div class="stat-label">Added Sugar</div></div>
-    <div class="stat"><div class="stat-num">4</div><div class="stat-label">Royal Blends</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Royal Blends</div></div>
+    <div class="stat"><div class="stat-num">By Hand</div><div class="stat-label">Every Batch</div></div>
   </div>
 </header>
 
+<!-- ═══ FEEDBACK BANNER — TOP ═══════════════════════════════════════════════ -->
+<div class="feedback-banner">
+  <div class="feedback-banner-inner">
+    <p>Tried a Wise King Sample? Tell Us What You Thought</p>
+    <p class="fb-sub">Your honest feedback shapes every future batch. Takes 60 seconds.</p>
+    <a href="#reviews" class="fb-btn">Share Your Feedback ↓</a>
+  </div>
+</div>
+
+<!-- ═══ PRODUCTS ═════════════════════════════════════════════════════════════ -->
 <section id="products" class="products">
   <div class="section-inner">
     <div class="section-head reveal">
       <div class="section-eyebrow">The Royal Collection</div>
-      <h2 class="section-title">Four Blends. One Standard.</h2>
+      <h2 class="section-title">Five Blends. One Standard.</h2>
       <div class="divider-seal"><span></span></div>
     </div>
     <div class="products-grid">
+
+      <!-- Golden Saffron Latte -->
       <div class="product-card pc-latte reveal">
-        <img src="Latte.JPG" alt="Wise King Golden Saffron Latte — real product label" class="pc-img">
+        <img src="Latte.JPG" alt="Wise King Golden Saffron Latte" class="pc-img">
         <span class="pc-badge">Bestseller</span>
         <span class="pc-weight">50g</span>
+        <span class="pc-price">$29.99</span>
         <div class="pc-body">
           <div class="pc-name">Golden Saffron<br>Latte</div>
           <div class="pc-tagline">&ldquo;Saffron inside — rarer than gold, in every batch.&rdquo;</div>
-          <div class="pc-tags"><span class="pc-tag">No Caffeine</span><span class="pc-tag">No Added Sugar</span><span class="pc-tag">6 Botanicals</span></div>
-          <!-- ORDER-BUTTONS: swap href for Shopify/Amazon links when ready -->
+          <div class="pc-tags"><span class="pc-tag">No Caffeine</span><span class="pc-tag">No Added Sugar</span><span class="pc-tag">6 Botanicals</span><span class="pc-tag">Handmade</span></div>
           <div class="pc-actions">
-            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Golden%20Saffron%20Latte%20please." class="pc-btn pc-btn-fill">Order on WhatsApp</a>
+            <!-- SHOPIFY: replace href below with your Shopify product URL when ready -->
+            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Golden%20Saffron%20Latte%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Golden%20Saffron%20Latte" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
         </div>
       </div>
+
+      <!-- Curry Coast Rub -->
       <div class="product-card pc-curry reveal">
-        <img src="Curry.JPG" alt="Wise King Curry Coast Rub — real product label" class="pc-img">
+        <img src="Curry.JPG" alt="Wise King Curry Coast Rub" class="pc-img">
         <span class="pc-badge">Signature</span>
         <span class="pc-weight">100g</span>
+        <span class="pc-price">$15.99</span>
         <div class="pc-body">
           <div class="pc-name">Curry Coast<br>Rub</div>
           <div class="pc-tagline">&ldquo;Twelve spices. Like the Twelve Apostles — each one essential.&rdquo;</div>
           <div class="pc-tags"><span class="pc-tag">No Salt Added</span><span class="pc-tag">12 Spices</span><span class="pc-tag">Handmade</span></div>
-          <!-- ORDER-BUTTONS: swap href for Shopify/Amazon links when ready -->
           <div class="pc-actions">
-            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Curry%20Coast%20Rub%20please." class="pc-btn pc-btn-fill">Order on WhatsApp</a>
+            <!-- SHOPIFY: replace href + AMAZON: add second button with Amazon link -->
+            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Curry%20Coast%20Rub%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Curry%20Coast%20Rub" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
         </div>
       </div>
+
+      <!-- Café Mocha Blend -->
       <div class="product-card pc-mocha reveal">
-        <img src="Mocha.JPG" alt="Wise King Café Mocha Blend — real product label" class="pc-img">
+        <img src="Mocha.JPG" alt="Wise King Café Mocha Blend" class="pc-img">
         <span class="pc-badge">New</span>
         <span class="pc-weight">100g</span>
+        <span class="pc-price">$19.99</span>
         <div class="pc-body">
           <div class="pc-name">Café Mocha<br>Blend</div>
           <div class="pc-tagline">&ldquo;Premium coffee meets dark cocoa — no sugar, no shortcuts.&rdquo;</div>
-          <div class="pc-tags"><span class="pc-tag">Contains Caffeine</span><span class="pc-tag">No Sugar Added</span><span class="pc-tag">No Fillers</span></div>
-          <!-- ORDER-BUTTONS: swap href for Shopify/Amazon links when ready -->
+          <div class="pc-tags"><span class="pc-tag">Contains Caffeine</span><span class="pc-tag">No Sugar Added</span><span class="pc-tag">Handmade</span></div>
           <div class="pc-actions">
-            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Cafe%20Mocha%20Blend%20please." class="pc-btn pc-btn-fill">Order on WhatsApp</a>
+            <!-- SHOPIFY + AMAZON (after 3 months) -->
+            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Cafe%20Mocha%20Blend%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Cafe%20Mocha%20Blend" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
         </div>
       </div>
+
+      <!-- Ceremonial Matcha -->
       <div class="product-card pc-matcha reveal">
-        <img src="Matcha.JPG" alt="Wise King Ceremonial Matcha — real product label" class="pc-img">
+        <img src="Matcha.JPG" alt="Wise King Ceremonial Matcha" class="pc-img">
         <span class="pc-badge">Ceremonial Grade</span>
         <span class="pc-weight">30g</span>
+        <span class="pc-price">$49.99</span>
         <div class="pc-body">
           <div class="pc-name">Ceremonial<br>Matcha</div>
           <div class="pc-tagline">&ldquo;Stone-milled in Japan — the birthplace of matcha.&rdquo;</div>
           <div class="pc-tags"><span class="pc-tag">Product of Japan</span><span class="pc-tag">100% Pure</span><span class="pc-tag">No Additives</span></div>
-          <!-- ORDER-BUTTONS: swap href for Shopify/Amazon links when ready -->
           <div class="pc-actions">
-            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Ceremonial%20Matcha%20please." class="pc-btn pc-btn-fill">Order on WhatsApp</a>
+            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Ceremonial%20Matcha%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Ceremonial%20Matcha" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
         </div>
       </div>
+
+      <!-- Velvet Curry Base — full width -->
+      <div class="product-card pc-velvet reveal" style="grid-column:1/-1;min-height:520px;">
+        <img src="Velvet Curry Base.jpeg" alt="Wise King Velvet Curry Base" class="pc-img">
+        <span class="pc-badge">New — Limited</span>
+        <span class="pc-weight">150g</span>
+        <span class="pc-price">$26.99</span>
+        <div class="pc-body">
+          <div class="pc-name">Wise King<br>Velvet Curry Base</div>
+          <div class="pc-tagline">&ldquo;Restaurant-quality curry in seconds — ten spices, one jar, no compromise.&rdquo;</div>
+          <div class="pc-tags">
+            <span class="pc-tag">No Salt Added</span>
+            <span class="pc-tag">10 Spices</span>
+            <span class="pc-tag">Just Add Water</span>
+            <span class="pc-tag">Glass Jar</span>
+            <span class="pc-tag">Handmade</span>
+          </div>
+          <div class="pc-actions" style="max-width:480px;">
+            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Velvet%20Curry%20Base%20please." class="pc-btn pc-btn-fill">Order Now</a>
+            <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Velvet%20Curry%20Base" class="pc-btn pc-btn-outline">Email Order</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
+<!-- ═══ ACTUAL PRODUCT PHOTOS ════════════════════════════════════════════════ -->
+<section class="actual-product" id="ourproducts">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">The Real Thing</div>
+      <h2 class="section-title">Our Finished Products</h2>
+      <div class="divider-seal"><span></span></div>
+      <p style="font-size:14px;color:var(--ink-soft);margin-top:20px;font-weight:300;max-width:560px;margin-left:auto;margin-right:auto;">Every jar and pouch you see below is weighed, filled, sealed and labelled by hand in Geelong — no machines, no assembly lines. What you receive is exactly what you see here.</p>
+      <div class="handmade-badge reveal">🤲 &nbsp; Handmade — No Machines Used. Ever.</div>
+    </div>
+    <div class="ap-grid reveal">
+
+      <!-- Golden Latte — photo filename: wkgl -->
+      <div class="ap-card">
+        <!-- PHOTO: upload wkgl.jpg to GitHub and change the line below -->
+        <!-- <img src="wkgl.jpg" alt="Wise King Golden Saffron Latte — finished product" class="ap-img"> -->
+        <div class="ap-placeholder"><span>✨</span><p>Photo coming soon</p></div>
+        <div class="ap-label">Golden Saffron Latte</div>
+        <div class="ap-code">WKGL · 50g · $29.99</div>
+      </div>
+
+      <!-- Curry Coast Rub — photo filename: wkccr -->
+      <div class="ap-card">
+        <!-- PHOTO: upload wkccr.jpg and uncomment below -->
+        <!-- <img src="wkccr.jpg" alt="Wise King Curry Coast Rub — finished product" class="ap-img"> -->
+        <div class="ap-placeholder"><span>🌶</span><p>Photo coming soon</p></div>
+        <div class="ap-label">Curry Coast Rub</div>
+        <div class="ap-code">WKCCR · 100g · $15.99</div>
+      </div>
+
+      <!-- Café Mocha — photo filename: wkcm -->
+      <div class="ap-card">
+        <!-- PHOTO: upload wkcm.jpg and uncomment below -->
+        <!-- <img src="wkcm.jpg" alt="Wise King Café Mocha Blend — finished product" class="ap-img"> -->
+        <div class="ap-placeholder"><span>☕</span><p>Photo coming soon</p></div>
+        <div class="ap-label">Café Mocha Blend</div>
+        <div class="ap-code">WKCM · 100g · $19.99</div>
+      </div>
+
+      <!-- Ceremonial Matcha — photo filename: wkm -->
+      <div class="ap-card">
+        <!-- PHOTO: upload wkm.jpg and uncomment below -->
+        <!-- <img src="wkm.jpg" alt="Wise King Ceremonial Matcha — finished product" class="ap-img"> -->
+        <div class="ap-placeholder"><span>🍵</span><p>Photo coming soon</p></div>
+        <div class="ap-label">Ceremonial Matcha</div>
+        <div class="ap-code">WKM · 30g · $49.99</div>
+      </div>
+
+      <!-- Velvet Curry Base — photo filename: wkvcb -->
+      <div class="ap-card">
+        <!-- PHOTO: upload wkvcb.jpg and uncomment below -->
+        <!-- <img src="wkvcb.jpg" alt="Wise King Velvet Curry Base — finished product" class="ap-img"> -->
+        <div class="ap-placeholder"><span>🪔</span><p>Photo coming soon</p></div>
+        <div class="ap-label">Velvet Curry Base</div>
+        <div class="ap-code">WKVCB · 150g · $26.99</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LORE / WHAT MAKES EACH BLEND ════════════════════════════════════════ -->
 <section class="lore" id="lore">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -427,46 +605,52 @@
       <button class="lore-tab" data-lore="curry">Curry Coast Rub</button>
       <button class="lore-tab" data-lore="mocha">Café Mocha</button>
       <button class="lore-tab" data-lore="matcha">Ceremonial Matcha</button>
+      <button class="lore-tab" data-lore="velvet">Velvet Curry Base</button>
     </div>
-
     <div class="lore-panel active" id="lorepanel-latte">
       <div class="lore-cards">
-        <div class="lore-card"><div class="lore-card-title">The 60-Second Ritual</div><div class="lore-card-text">If your Golden Latte completely dissolves, you aren&rsquo;t drinking real spices — you are drinking chemical extracts. Because Wise King uses <strong>100% raw, unadulterated botanicals</strong>, they naturally settle after a minute or two. This is not a flaw, it is a feature. Those 60 seconds are when the heat of the milk unlocks the active curcumin in our turmeric and draws out the raw power of pure saffron threads. Give your cup a slow, gentle swirl as you drink — an authentic, unfiltered ritual.</div></div>
-        <div class="lore-card"><div class="lore-card-title">Saffron Inside — Rarer Than Gold</div><div class="lore-card-text">Most commercial brands use cheap saffron powder or synthetic flavouring to cut costs. We don&rsquo;t take shortcuts. Look closely and you&rsquo;ll see the physical, deep-crimson threads of <strong>real saffron</strong> — the world&rsquo;s most expensive spice, hand-harvested from the heart of the Crocus flower. We leave the threads whole so you can witness the raw luxury swirling in your cup, infusing every sip with gold.</div></div>
-        <div class="lore-card"><div class="lore-card-title">The Queen of Spices Meets the Double-Benefit Catalyst</div><div class="lore-card-text">Our recipe is biologically optimised, not just delicious. At its heart is vibrant turmeric, paired deliberately with cracked black pepper — because a pinch of black pepper <strong>multiplies your body&rsquo;s ability to absorb turmeric&rsquo;s benefits by up to 2,000%</strong>. We wrap this golden catalyst in the aromatic luxury of green cardamom, the undisputed Queen of Spices, for a sweet, warm depth without a single gram of sugar.</div></div>
-        <div class="lore-card"><div class="lore-card-title">No Shortcuts, No Fillers</div><div class="lore-card-text">Six hand-selected botanicals. Nothing else. No maltodextrin, no anti-caking agents, no artificial colour to fake the gold you should be tasting. Every gram of every batch is weighed, blended, and packed by hand in Geelong — to a standard that simply does not bend.</div></div>
+        <div class="lore-card"><div class="lore-card-title">The 60-Second Ritual</div><div class="lore-card-text">If your Golden Latte completely dissolves, you aren&rsquo;t drinking real spices — you are drinking chemical extracts. Because Wise King uses <strong>100% raw, unadulterated botanicals</strong>, they naturally settle after a minute or two. This is not a flaw, it is a feature. Those 60 seconds are when the heat of the milk unlocks the active curcumin and draws out the raw power of pure saffron threads.</div></div>
+        <div class="lore-card"><div class="lore-card-title">Saffron Inside — Rarer Than Gold</div><div class="lore-card-text">Look closely and you&rsquo;ll see the physical, deep-crimson threads of <strong>real saffron</strong> — the world&rsquo;s most expensive spice, hand-harvested from the heart of the Crocus flower. We leave the threads whole so you can witness the raw luxury swirling in your cup, infusing every sip with gold.</div></div>
+        <div class="lore-card"><div class="lore-card-title">The Queen of Spices Meets the Double-Benefit Catalyst</div><div class="lore-card-text">At its heart is vibrant turmeric, paired deliberately with cracked black pepper — because a pinch of black pepper <strong>multiplies your body&rsquo;s ability to absorb turmeric&rsquo;s benefits by up to 2,000%</strong>. We wrap this in the aromatic luxury of green cardamom for a sweet, warm depth without a single gram of sugar.</div></div>
+        <div class="lore-card"><div class="lore-card-title">No Shortcuts, No Fillers</div><div class="lore-card-text">Six hand-selected botanicals. Nothing else. No maltodextrin, no anti-caking agents, no artificial colour to fake the gold you should be tasting. Every gram of every batch is weighed, blended, and packed <strong>entirely by hand</strong> in Geelong — to a standard that simply does not bend.</div></div>
       </div>
     </div>
-
     <div class="lore-panel" id="lorepanel-curry">
       <div class="lore-cards">
-        <div class="lore-card"><div class="lore-card-title">Twelve Spices, Zero Compromise</div><div class="lore-card-text">Most spice rubs are mostly salt and filler, with one or two real spices doing the talking. Curry Coast Rub is the opposite: <strong>twelve whole spices, hand-balanced in even measure</strong>, with no salt added at all. Every spice earns its place — there is no padding to cut costs, only flavour built layer by layer like a coastal sunset.</div></div>
-        <div class="lore-card"><div class="lore-card-title">The Twelve Apostles Standard</div><div class="lore-card-text">Named for the Twelve Apostles on the Great Ocean Road — twelve limestone stacks, each one essential to the view, none replaceable. Our rub follows the same principle: <strong>twelve spices, each one essential</strong>. Remove one and the whole blend loses its shape. That is the discipline behind every batch.</div></div>
-        <div class="lore-card"><div class="lore-card-title">Rest Before You Cook</div><div class="lore-card-text">Real spice rubs need time to work. Rub generously into meat or vegetables, then rest for 10 minutes before grilling or roasting. In that resting time, the smoked paprika, Kashmiri chilli, and warm cardamom begin to draw moisture and bind to the surface — <strong>the difference between a coating and a crust</strong>.</div></div>
-        <div class="lore-card"><div class="lore-card-title">Built for the Whole Kitchen</div><div class="lore-card-text">This is not a one-trick blend. Curry Coast Rub works as a dry rub on the grill, stirred through a slow-cooked curry, or folded into a gravy. Twelve premium spices, hand-blended in Geelong, with <strong>no salt and no fillers</strong> — built to earn a permanent place in your spice drawer.</div></div>
+        <div class="lore-card"><div class="lore-card-title">Twelve Spices, Zero Compromise</div><div class="lore-card-text">Most spice rubs are mostly salt and filler. Curry Coast Rub is the opposite: <strong>twelve whole spices, hand-balanced in even measure</strong>, with no salt added at all. Every spice earns its place — there is no padding, only flavour built layer by layer.</div></div>
+        <div class="lore-card"><div class="lore-card-title">The Twelve Apostles Standard</div><div class="lore-card-text">Named for the Twelve Apostles on the Great Ocean Road — twelve limestone stacks, each one essential, none replaceable. Our rub follows the same principle: <strong>twelve spices, each one essential</strong>. Remove one and the whole blend loses its shape.</div></div>
+        <div class="lore-card"><div class="lore-card-title">Rest Before You Cook</div><div class="lore-card-text">Rub generously into meat or vegetables, then rest for 10 minutes before grilling or roasting. In that resting time, the smoked paprika, Kashmiri chilli, and warm cardamom begin to bind to the surface — <strong>the difference between a coating and a crust</strong>.</div></div>
+        <div class="lore-card"><div class="lore-card-title">Built for the Whole Kitchen</div><div class="lore-card-text">This is not a one-trick blend. Curry Coast Rub works as a dry rub on the grill, stirred through a slow-cooked curry, or folded into a gravy. Twelve premium spices, <strong>hand-blended in Geelong</strong>, with no salt and no fillers — built to earn a permanent place in your spice drawer.</div></div>
       </div>
     </div>
-
     <div class="lore-panel" id="lorepanel-mocha">
       <div class="lore-cards">
-        <div class="lore-card"><div class="lore-card-title">Two Ingredients. No Argument.</div><div class="lore-card-text">Most café mocha mixes are mostly sugar, with coffee and cocoa as an afterthought. Ours is the reverse: <strong>50% premium instant coffee, 50% dark Dutch-process cocoa</strong>. Nothing else. No sugar, no creamer powder, no flavour fillers pretending to be chocolate. What you taste is what we put in — nothing more, nothing less.</div></div>
-        <div class="lore-card"><div class="lore-card-title">The Paste-First Method</div><div class="lore-card-text">Real cocoa and real instant coffee don&rsquo;t dissolve instantly into cold milk the way sugar-laden mixes do. That&rsquo;s why the ritual matters: <strong>a splash of hot water first, stirred into a smooth paste</strong>, fully unlocks the dark cocoa before the milk goes in. Skip this step and you&rsquo;ll lose half the depth this blend is capable of.</div></div>
-        <div class="lore-card"><div class="lore-card-title">Dutch-Process, Deliberately</div><div class="lore-card-text">We chose Dutch-process cocoa specifically for its <strong>smoother, less acidic, deeper flavour</strong> compared to natural cocoa powder. Paired with a premium instant coffee rather than a cheap filler blend, the result is closer to a café-bought mocha than anything you&rsquo;ll find in a supermarket sachet.</div></div>
-        <div class="lore-card"><div class="lore-card-title">Hot or Iced — Built for Both</div><div class="lore-card-text">This blend was designed to work two ways: a rich, warming mocha in winter, or stirred into cold milk and poured over ice in summer. <strong>One blend, year-round</strong> — sweetened only as much as you choose, never by us.</div></div>
+        <div class="lore-card"><div class="lore-card-title">Two Ingredients. No Argument.</div><div class="lore-card-text">Most café mocha mixes are mostly sugar. Ours is the reverse: <strong>50% premium instant coffee, 50% dark Dutch-process cocoa</strong>. Nothing else. No sugar, no creamer powder, no flavour fillers pretending to be chocolate.</div></div>
+        <div class="lore-card"><div class="lore-card-title">The Paste-First Method</div><div class="lore-card-text">Real cocoa and real instant coffee don&rsquo;t dissolve instantly into cold milk. That&rsquo;s why the ritual matters: <strong>a splash of hot water first, stirred into a smooth paste</strong>, fully unlocks the dark cocoa before the milk goes in.</div></div>
+        <div class="lore-card"><div class="lore-card-title">Dutch-Process, Deliberately</div><div class="lore-card-text">We chose Dutch-process cocoa specifically for its <strong>smoother, less acidic, deeper flavour</strong>. Paired with a premium instant coffee, the result is closer to a café-bought mocha than anything you&rsquo;ll find in a supermarket sachet.</div></div>
+        <div class="lore-card"><div class="lore-card-title">Hot or Iced — Built for Both</div><div class="lore-card-text">A rich, warming mocha in winter, or stirred into cold milk and poured over ice in summer. <strong>One blend, year-round</strong> — sweetened only as much as you choose, never by us.</div></div>
       </div>
     </div>
-
     <div class="lore-panel" id="lorepanel-matcha">
       <div class="lore-cards">
-        <div class="lore-card"><div class="lore-card-title">The Friction Test</div><div class="lore-card-text">Don&rsquo;t judge us by our cover — judge us by your fingertips. Rub a pinch of our matcha between your fingers. It will <strong>completely disappear into your skin like silk</strong>, leaving no grain behind. That is the texture of true stone-milled luxury, and it is the fastest way to tell real ceremonial matcha from the rest.</div></div>
-        <div class="lore-card"><div class="lore-card-title">Slow Craft &amp; Scarcity</div><div class="lore-card-text">A single tin takes one hour to make. Our leaves are shade-grown for 20+ days to maximise L-theanine — the calm-focus amino acid — then <strong>slowly ground on granite wheels at a rate of just 30g per hour</strong>. Every tin you receive represents an hour of dedicated, heat-free milling to preserve the vibrant emerald hue and rich umami flavour.</div></div>
-        <div class="lore-card"><div class="lore-card-title">The Raw Luxury Angle</div><div class="lore-card-text">We put 100% of your money into the leaves, not the landfill. Flashy tins and over-engineered packaging are often used to mask mediocre tea. We chose minimal, low-profile packaging so <strong>every dollar goes directly toward sourcing the rarest, purest shade-grown tencha leaves in Japan</strong>.</div></div>
-        <div class="lore-card"><div class="lore-card-title">The No-Bitterness Guarantee</div><div class="lore-card-text">If you need sugar, it isn&rsquo;t our matcha. Pure luxury grade carries <strong>zero bitterness</strong>. It whisks into a vibrant, creamy froth with a naturally sweet, oceanic finish — designed to be enjoyed traditionally, with just water, a whisk, and a moment of calm.</div></div>
+        <div class="lore-card"><div class="lore-card-title">The Friction Test</div><div class="lore-card-text">Rub a pinch of our matcha between your fingers. It will <strong>completely disappear into your skin like silk</strong>, leaving no grain behind. That is the texture of true stone-milled luxury, and it is the fastest way to tell real ceremonial matcha from the rest.</div></div>
+        <div class="lore-card"><div class="lore-card-title">Slow Craft &amp; Scarcity</div><div class="lore-card-text">Our leaves are shade-grown for 20+ days to maximise L-theanine — the calm-focus amino acid — then <strong>slowly ground on granite wheels at a rate of just 30g per hour</strong>. Every pouch represents an hour of dedicated, heat-free milling.</div></div>
+        <div class="lore-card"><div class="lore-card-title">The Raw Luxury Angle</div><div class="lore-card-text">We put 100% of your money into the leaves, not the landfill. We chose minimal packaging so <strong>every dollar goes directly toward sourcing the rarest, purest shade-grown tencha leaves in Japan</strong>.</div></div>
+        <div class="lore-card"><div class="lore-card-title">The No-Bitterness Guarantee</div><div class="lore-card-text">If you need sugar, it isn&rsquo;t our matcha. Pure luxury grade carries <strong>zero bitterness</strong>. It whisks into a vibrant, creamy froth with a naturally sweet, oceanic finish.</div></div>
+      </div>
+    </div>
+    <div class="lore-panel" id="lorepanel-velvet">
+      <div class="lore-cards">
+        <div class="lore-card"><div class="lore-card-title">The Bhuna — Bottled</div><div class="lore-card-text">The most time-consuming step in any Indian curry is the bhuna — slow-frying onion, tomato, garlic, and ginger into a caramelised paste. <strong>Wise King Velvet Curry Base skips that step entirely.</strong> Three teaspoons mixed with warm water creates an instant, balanced masala paste ready in seconds.</div></div>
+        <div class="lore-card"><div class="lore-card-title">Ten Spices, One Rule</div><div class="lore-card-text">Onion powder leads at 32% — the sweet savoury foundation. Tomato powder provides colour and tang. Garlic and ginger form the aromatic spine. Cumin, coriander, turmeric, Kashmiri chilli, clove, and cinnamon complete the blend. <strong>No salt. No fillers.</strong></div></div>
+        <div class="lore-card"><div class="lore-card-title">The Paste-First Method</div><div class="lore-card-text">Mix your measured powder with warm water to form a smooth paste. Add to hot oil in a pan and cook for exactly 2 minutes — this is your bhuna. You will hear the sizzle. The kitchen will smell like a restaurant. <strong>Then add your protein or vegetables.</strong></div></div>
+        <div class="lore-card"><div class="lore-card-title">Works With Everything</div><div class="lore-card-text">Chicken, lamb, beef, seafood, paneer, vegetables, lentils, chickpeas — this base works with all of them. 18g for 250g vegetables. 20g for 250g meat. <strong>One jar, dozens of meals</strong> — authentic Indian flavour without the hours of prep.</div></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══ STANDARD ══════════════════════════════════════════════════════════════ -->
 <section class="standard" id="standard">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -475,13 +659,14 @@
     </div>
   </div>
   <div class="standard-grid reveal">
-    <div class="standard-item"><div class="standard-icon">🌿</div><div class="standard-h">Real Ingredients</div><div class="standard-p">Every ingredient named in full. Nothing hidden behind &ldquo;natural flavours.&rdquo;</div></div>
-    <div class="standard-item"><div class="standard-icon">🚫</div><div class="standard-h">No Fillers</div><div class="standard-p">No maltodextrin, no bulking agents, no added sugar. Just the blend.</div></div>
-    <div class="standard-item"><div class="standard-icon">✋</div><div class="standard-h">Blended by Hand</div><div class="standard-p">Small batches, weighed and filled by hand in our Geelong kitchen.</div></div>
-    <div class="standard-item"><div class="standard-icon">👑</div><div class="standard-h">Royal Sourcing</div><div class="standard-p">Saffron, Japanese matcha, premium spices — sourced for quality, not cost.</div></div>
+    <div class="standard-item"><div class="standard-icon">🤲</div><div class="standard-h">Handmade — No Machines</div><div class="standard-p">Every gram is weighed, every pouch filled, every lid sealed — entirely by hand. No automation. No shortcuts.</div></div>
+    <div class="standard-item"><div class="standard-icon">🌿</div><div class="standard-h">Real Ingredients</div><div class="standard-p">Every ingredient named in full on the label. Nothing hidden behind &ldquo;natural flavours.&rdquo;</div></div>
+    <div class="standard-item"><div class="standard-icon">✕</div><div class="standard-h">No Fillers</div><div class="standard-p">No maltodextrin, no bulking agents, no added sugar. Just the blend, exactly as described.</div></div>
+    <div class="standard-item"><div class="standard-icon">👑</div><div class="standard-h">Royal Sourcing</div><div class="standard-p">Saffron, Japanese matcha, HACCP-certified spices — sourced for quality, never cost.</div></div>
   </div>
 </section>
 
+<!-- ═══ INGREDIENTS ════════════════════════════════════════════════════════════ -->
 <section class="ingredients" id="ingredients">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -490,40 +675,17 @@
       <div class="divider-seal"><span></span></div>
     </div>
     <div class="ingredients-grid reveal">
-      <div class="ingredient-card">
-        <img src="turmeric.jpg.JPG" alt="Turmeric powder" class="ingredient-img">
-        <div class="ingredient-name">Turmeric</div>
-        <div class="ingredient-benefit">Rich in curcumin — supports joint health and is the golden base of the entire blend.</div>
-      </div>
-      <div class="ingredient-card">
-        <img src="ginger.jpg.JPG" alt="Ginger powder" class="ingredient-img">
-        <div class="ingredient-name">Ginger</div>
-        <div class="ingredient-benefit">Warms the body and aids digestion — the spice that gives the latte its gentle kick.</div>
-      </div>
-      <div class="ingredient-card">
-        <img src="clove.jpg.JPG" alt="Clove powder" class="ingredient-img">
-        <div class="ingredient-name">Clove</div>
-        <div class="ingredient-benefit">A natural antioxidant powerhouse, adding warmth and a subtle depth to every cup.</div>
-      </div>
-      <div class="ingredient-card">
-        <img src="cardamom.jpg.JPG" alt="Green cardamom" class="ingredient-img">
-        <div class="ingredient-name">Green Cardamom</div>
-        <div class="ingredient-benefit">The Queen of Spices — brings a sweet, aromatic depth without a single gram of sugar.</div>
-      </div>
-      <div class="ingredient-card">
-        <img src="black-pepper.jpg.JPG" alt="Black pepper" class="ingredient-img">
-        <div class="ingredient-name">Black Pepper</div>
-        <div class="ingredient-benefit">Multiplies turmeric&rsquo;s absorption by up to 2,000% — the catalyst that makes the blend work.</div>
-      </div>
-      <div class="ingredient-card">
-        <img src="saffron.jpg.JPG" alt="Saffron threads" class="ingredient-img">
-        <div class="ingredient-name">Saffron</div>
-        <div class="ingredient-benefit">The world&rsquo;s most expensive spice, hand-harvested — supports mood, focus, and a luxurious finish.</div>
-      </div>
+      <div class="ingredient-card"><img src="turmeric.jpg.JPG" alt="Turmeric powder" class="ingredient-img"><div class="ingredient-name">Turmeric</div><div class="ingredient-benefit">Rich in curcumin — supports joint health and is the golden base of the entire blend.</div></div>
+      <div class="ingredient-card"><img src="ginger.jpg.JPG" alt="Ginger powder" class="ingredient-img"><div class="ingredient-name">Ginger</div><div class="ingredient-benefit">Warms the body and aids digestion — the spice that gives the latte its gentle kick.</div></div>
+      <div class="ingredient-card"><img src="clove.jpg.JPG" alt="Clove powder" class="ingredient-img"><div class="ingredient-name">Clove</div><div class="ingredient-benefit">A natural antioxidant powerhouse, adding warmth and a subtle depth to every cup.</div></div>
+      <div class="ingredient-card"><img src="cardamom.jpg.JPG" alt="Green cardamom" class="ingredient-img"><div class="ingredient-name">Green Cardamom</div><div class="ingredient-benefit">The Queen of Spices — brings a sweet, aromatic depth without a single gram of sugar.</div></div>
+      <div class="ingredient-card"><img src="black-pepper.jpg.JPG" alt="Black pepper" class="ingredient-img"><div class="ingredient-name">Black Pepper</div><div class="ingredient-benefit">Multiplies turmeric&rsquo;s absorption by up to 2,000% — the catalyst that makes the blend work.</div></div>
+      <div class="ingredient-card"><img src="saffron.jpg.JPG" alt="Saffron threads" class="ingredient-img"><div class="ingredient-name">Saffron</div><div class="ingredient-benefit">The world&rsquo;s most expensive spice, hand-harvested — supports mood, focus, and a luxurious finish.</div></div>
     </div>
   </div>
 </section>
 
+<!-- ═══ STORY ══════════════════════════════════════════════════════════════════ -->
 <section class="story" id="story">
   <div class="section-inner">
     <div class="story-wrap">
@@ -532,13 +694,14 @@
         <div class="section-eyebrow">Our Story</div>
         <h2>Proudly Made in Geelong.<br>A Standard That Won&rsquo;t Drop.</h2>
         <p>Wise King Enterprise began with a simple observation: the wellness market was selling sugar dressed up as spice. Most golden lattes listed sugar as the first ingredient. Most matcha was cut with filler.</p>
-        <p><strong>Piyush</strong> — founder and spice-lover from Geelong — decided to do it properly. Every batch is blended by hand, in a registered production kitchen, to a standard that does not compromise. No fillers. No bulking agents. No shortcuts.</p>
-        <p>When you order from Wise King, your blend is weighed, filled, sealed and labelled by hand — by someone who cares about every gram.</p>
+        <p><strong>Piyush</strong> — founder and spice-lover from Geelong — decided to do it properly. Every batch is blended by hand, in a registered Class 3 food production kitchen, to a standard that does not compromise. No fillers. No bulking agents. No shortcuts. <strong>No machines.</strong></p>
+        <p>When you order from Wise King, your blend is weighed, filled, sealed and labelled by hand — by someone who cares about every single gram.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══ VIDEO ══════════════════════════════════════════════════════════════════ -->
 <section class="video-section">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -556,6 +719,7 @@
   </div>
 </section>
 
+<!-- ═══ RITUAL / PREPARATION ══════════════════════════════════════════════════ -->
 <section class="ritual" id="ritual">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -568,6 +732,7 @@
       <button class="rt-tab" data-tab="curry">Curry Coast Rub</button>
       <button class="rt-tab" data-tab="mocha">Café Mocha</button>
       <button class="rt-tab" data-tab="matcha">Ceremonial Matcha</button>
+      <button class="rt-tab" data-tab="velvet">Velvet Curry Base</button>
     </div>
     <div class="rt-panel active" id="panel-latte">
       <div class="rt-step"><div class="rt-num">I</div><div class="rt-text">Add <strong>4g</strong> (one level teaspoon) to your cup.</div></div>
@@ -593,9 +758,16 @@
       <div class="rt-step"><div class="rt-num">III</div><div class="rt-text">For a latte: add a splash of hot water, whisk to a paste, then add 200ml warm frothed milk.</div></div>
       <div class="rt-step"><div class="rt-num">IV</div><div class="rt-text">Sweeten with honey if desired.</div></div>
     </div>
+    <div class="rt-panel" id="panel-velvet">
+      <div class="rt-step"><div class="rt-num">I</div><div class="rt-text">Measure <strong>18g</strong> (3 tsp) for 250g vegetables or paneer. Use <strong>20g</strong> for 250g meat.</div></div>
+      <div class="rt-step"><div class="rt-num">II</div><div class="rt-text">Add 3 tablespoons of <strong>warm water</strong>. Mix into a smooth, thick paste — let it sit 1 minute so the powders fully hydrate.</div></div>
+      <div class="rt-step"><div class="rt-num">III</div><div class="rt-text">Heat 2 tablespoons of <strong>oil or ghee</strong> in a pan on medium-high. Add the paste — it will sizzle. Stir constantly for <strong>2 full minutes</strong>. This is the bhuna step — do not skip it.</div></div>
+      <div class="rt-step"><div class="rt-num">IV</div><div class="rt-text">Add your protein or vegetables. Pour in 150ml water. Salt to taste. <strong>Cover and simmer 6–8 minutes.</strong> Garnish with fresh coriander.</div></div>
+    </div>
   </div>
 </section>
 
+<!-- ═══ ORIGINS ════════════════════════════════════════════════════════════════ -->
 <section class="origins" id="origins">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -604,33 +776,37 @@
       <div class="divider-seal"><span></span></div>
     </div>
     <div class="origin-single reveal">
-      <img src="Products.JPG" alt="The Wise King range — raw spices, saffron threads, and the four blends" class="origin-single-img">
+      <img src="Products.JPG" alt="The Wise King range — all five blends" class="origin-single-img">
       <div class="origin-single-list">
-        <div class="origin-single-item"><div class="origin-name">Golden Saffron Latte</div><div class="origin-sub">Blended &amp; packed in Geelong, Australia</div></div>
-        <div class="origin-single-item"><div class="origin-name">Curry Coast Rub</div><div class="origin-sub">Twelve spices, hand-blended on the Great Ocean Road coast</div></div>
-        <div class="origin-single-item"><div class="origin-name">Café Mocha Blend</div><div class="origin-sub">Coffee and cocoa, hand-blended in Geelong</div></div>
-        <div class="origin-single-item"><div class="origin-name">Ceremonial Matcha</div><div class="origin-sub">Stone-milled in Japan — the birthplace of matcha</div></div>
+        <div class="origin-single-item"><div class="origin-name">Golden Saffron Latte</div><div class="origin-sub">Blended &amp; packed in Geelong, Australia · $29.99 / 50g</div></div>
+        <div class="origin-single-item"><div class="origin-name">Curry Coast Rub</div><div class="origin-sub">Twelve spices, hand-blended on the Great Ocean Road coast · $15.99 / 100g</div></div>
+        <div class="origin-single-item"><div class="origin-name">Café Mocha Blend</div><div class="origin-sub">Coffee and cocoa, hand-blended in Geelong · $19.99 / 100g</div></div>
+        <div class="origin-single-item"><div class="origin-name">Ceremonial Matcha</div><div class="origin-sub">Stone-milled in Japan — the birthplace of matcha · $49.99 / 30g</div></div>
+        <div class="origin-single-item" style="grid-column:1/-1;"><div class="origin-name">Wise King Velvet Curry Base</div><div class="origin-sub">Ten spices, blended by hand in Geelong, Victoria — restaurant-quality in a jar · $26.99 / 150g</div></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══ FREE SAMPLE ════════════════════════════════════════════════════════════ -->
 <section class="invitation" id="sample">
   <div class="invite-box reveal">
     <div class="invite-title">A Royal Invitation</div>
     <p class="invite-p">Before you commit to the full range, taste it for yourself.</p>
-    <p class="invite-p">Choose <strong style="color:var(--gold); font-weight:600;">any 2 products</strong> from our collection of four — we&rsquo;ll send a generous sample of each, straight to your door.</p>
+    <p class="invite-p">Choose <strong style="color:var(--gold);font-weight:600;">any 2 products</strong> from our collection of five — we&rsquo;ll send a generous sample of each, straight to your door.</p>
     <div class="invite-price">$5 POSTAGE ONLY &nbsp;·&nbsp; SAMPLES THEMSELVES ARE FREE</div>
     <div class="invite-list">
       <span class="invite-pill">Golden Saffron Latte</span>
       <span class="invite-pill">Curry Coast Rub</span>
       <span class="invite-pill">Café Mocha Blend</span>
       <span class="invite-pill">Ceremonial Matcha</span>
+      <span class="invite-pill">Velvet Curry Base</span>
     </div>
     <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27d%20like%20to%20request%20a%20free%20sample.%20I%27d%20like%20to%20try%3A%20" class="btn-primary" style="margin-top:6px;">Request Your Sample</a>
   </div>
 </section>
 
+<!-- ═══ REVIEWS ════════════════════════════════════════════════════════════════ -->
 <section class="reviews" id="reviews">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -660,7 +836,8 @@
                 <option value="Curry Coast Rub">Curry Coast Rub</option>
                 <option value="Café Mocha Blend">Café Mocha Blend</option>
                 <option value="Ceremonial Matcha">Ceremonial Matcha</option>
-                <option value="All 4 Products">All 4 Products</option>
+                <option value="Velvet Curry Base">Velvet Curry Base</option>
+                <option value="Multiple Products">Multiple Products</option>
               </select>
             </div>
             <div class="form-group">
@@ -691,6 +868,45 @@
   </div>
 </section>
 
+<!-- ═══ FEEDBACK BANNER — BOTTOM ══════════════════════════════════════════════ -->
+<div class="feedback-banner">
+  <div class="feedback-banner-inner">
+    <p>Had a Sample? Your Feedback Matters.</p>
+    <p class="fb-sub">Every review helps us improve. Scroll up to share yours — 60 seconds is all it takes.</p>
+    <a href="#reviews" class="fb-btn">Leave a Review ↑</a>
+  </div>
+</div>
+
+<!-- ═══ WHOLESALE ═════════════════════════════════════════════════════════════ -->
+<section class="wholesale" id="wholesale">
+  <div class="wholesale-inner">
+    <div class="section-eyebrow">For Retailers &amp; Stockists</div>
+    <h2 class="section-title reveal">Open to Wholesale</h2>
+    <p class="wholesale-desc reveal">Wise King Enterprise is open to wholesale supply arrangements. Whether you&rsquo;re a café, health food store, gift retailer, or specialty grocer — we can supply you directly. All products are HACCP-sourced, Class 3 registered, and shelf-ready with compliant labels and GS1 barcodes.</p>
+    <div class="wholesale-grid reveal">
+      <div class="wholesale-item">
+        <div class="wholesale-item-icon">📦</div>
+        <div class="wholesale-item-title">Minimum Order</div>
+        <div class="wholesale-item-text">Flexible MOQ for first orders. Get in touch and we&rsquo;ll discuss what works for your store volume.</div>
+      </div>
+      <div class="wholesale-item">
+        <div class="wholesale-item-icon">🏷️</div>
+        <div class="wholesale-item-title">Shelf-Ready Products</div>
+        <div class="wholesale-item-text">All products arrive with compliant labels, barcodes, best-before dates, and ingredient lists — ready for your shelf the day they arrive.</div>
+      </div>
+      <div class="wholesale-item">
+        <div class="wholesale-item-icon">🤝</div>
+        <div class="wholesale-item-title">Contract Manufacturing</div>
+        <div class="wholesale-item-text">Have a dry spice or powder blend you want produced under your own label? I hold a Class 3 food business licence and can produce small-batch blends for your brand.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:8px;">
+      <a href="mailto:piyush@wiseking.com.au?subject=Wholesale%20Enquiry%20-%20Wise%20King%20Enterprise" class="btn-ghost" style="border-color:var(--gold-bright);color:var(--gold-pale);">Send a Wholesale Enquiry</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WORK WITH ME ════════════════════════════════════════════════════════════ -->
 <section class="services" id="services">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -698,25 +914,41 @@
       <h2 class="section-title">Work With Me</h2>
       <div class="divider-seal"><span></span></div>
     </div>
-    <p class="services-intro reveal">Building Wise King Enterprise from the ground up — labels, packaging, compliance, finances, and this very website — means I bring genuine, hands-on skills to the table. I&rsquo;m available for a limited number of part-time remote projects each week.</p>
+    <p class="services-intro reveal">I built Wise King Enterprise from nothing — council registration, food safety certification, labels, website, pricing, suppliers, and compliance. I offer these skills to others on a paid basis.</p>
+    <p class="services-paid-note reveal">All services are charged · Remote · Australian time zone · Limited availability</p>
     <div class="services-grid reveal">
+
+      <!-- HIGHLIGHT: Start a Home-Based Business -->
+      <div class="service-card highlight">
+        <div class="service-icon">🏠</div>
+        <div class="service-title">Start Your Own Home-Based Business — From Idea to Trading</div>
+        <div class="service-desc">Want to start a small business from home but don&rsquo;t know where to begin? I&rsquo;ve done it — ABN registration, council food licence, food safety certification, product development, label design, supplier sourcing, website, and pricing strategy. I can walk you through every step. Whether it&rsquo;s a food business, product-based business, or service — if you have an idea and need a guide who has been through it all, get in touch.</div>
+      </div>
+
+      <!-- Contract Manufacturing -->
+      <div class="service-card highlight" style="background:rgba(201,162,74,0.05);">
+        <div class="service-icon">🏭</div>
+        <div class="service-title">Contract Manufacturing — Class 3 Licensed Kitchen</div>
+        <div class="service-desc">Have a dry food product — a spice blend, powder mix, seasoning, or herbal blend — that you want produced under your own label? I hold a registered Class 3 food business licence in Geelong and can produce small-batch blends for your brand. Minimum order quantities are flexible. All batches are produced in a compliant kitchen with records kept. Contact me to discuss your product and requirements.</div>
+      </div>
+
       <div class="service-card"><div class="service-icon">🎨</div><div class="service-title">Canva &amp; Brand Design</div><div class="service-desc">Product labels, social media graphics, packaging design — built for premium, print-ready results.</div></div>
       <div class="service-card"><div class="service-icon">🛒</div><div class="service-title">eCommerce &amp; Listings</div><div class="service-desc">Shopify setup, Amazon listings, product descriptions, and pricing strategy for small brands.</div></div>
       <div class="service-card"><div class="service-icon">📊</div><div class="service-title">Excel &amp; Operations Systems</div><div class="service-desc">Cost calculators, stock trackers, P&amp;L dashboards — built with live formulas, not static spreadsheets.</div></div>
       <div class="service-card"><div class="service-icon">✉️</div><div class="service-title">Virtual Assistant — Operations</div><div class="service-desc">Supplier coordination, compliance paperwork, email management, and general business admin.</div></div>
       <div class="service-card"><div class="service-icon">📝</div><div class="service-title">Wellness &amp; Food Content</div><div class="service-desc">Product copy, taglines, and content that understands the wellness and small-batch food space.</div></div>
       <div class="service-card"><div class="service-icon">📱</div><div class="service-title">Social Media Support</div><div class="service-desc">Content planning, scheduling, and platform-specific strategy for growing small brands.</div></div>
-      <div class="service-card"><div class="service-icon">🏷️</div><div class="service-title">GS1 Barcode Assistance</div><div class="service-desc">Help registering and applying GS1 barcodes for retail, Shopify, or Amazon listings — done correctly the first time.</div></div>
-      <div class="service-card"><div class="service-icon">🧪</div><div class="service-title">Lab Testing Coordination</div><div class="service-desc">Guidance sourcing accredited labs and organising nutritional or compositional testing when a product needs it.</div></div>
-      <div class="service-card"><div class="service-icon">📋</div><div class="service-title">Nutrition Panel (FSANZ)</div><div class="service-desc">Hands-on experience calculating compliant Nutrition Information Panels using the FSANZ framework — done it for my own range.</div></div>
+      <div class="service-card"><div class="service-icon">🏷️</div><div class="service-title">GS1 Barcode Assistance</div><div class="service-desc">Help registering and applying GS1 barcodes for retail, Shopify, or Amazon — done correctly the first time.</div></div>
+      <div class="service-card"><div class="service-icon">📋</div><div class="service-title">Nutrition Panel (FSANZ)</div><div class="service-desc">Hands-on experience calculating compliant Nutrition Information Panels — done it for my own range.</div></div>
     </div>
     <div class="services-cta reveal">
-      <p>Available 10–12 hours per week · Remote · Australian time zone</p>
-      <a href="mailto:piyush@wiseking.com.au?subject=Freelance%20Work%20Enquiry" class="btn-ghost" style="border-color:var(--gold-bright); color:var(--gold-pale);">Get In Touch</a>
+      <p>Have a project or idea? Let&rsquo;s talk.</p>
+      <a href="mailto:piyush@wiseking.com.au?subject=Work%20With%20Me%20Enquiry" class="btn-ghost" style="border-color:var(--gold-bright);color:var(--gold-pale);">Get In Touch</a>
     </div>
   </div>
 </section>
 
+<!-- ═══ CONTACT ════════════════════════════════════════════════════════════════ -->
 <section class="contact" id="contact">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -727,7 +959,7 @@
     <div class="contact-grid reveal">
       <div class="contact-left">
         <h3>We&rsquo;d Love to Hear From You</h3>
-        <p>Whether you&rsquo;re placing an order, requesting a sample, or asking about wholesale — reach out directly. A real person (Piyush) replies to every message.</p>
+        <p>Whether you&rsquo;re placing an order, requesting a sample, asking about wholesale, or enquiring about services — a real person (Piyush) replies to every message.</p>
         <div class="contact-method"><div class="cm-icon">💬</div><div><div class="cm-label">WhatsApp — Orders &amp; Enquiries</div><div class="cm-value"><a href="https://wa.me/61470442705">0470 442 705</a></div></div></div>
         <div class="contact-method"><div class="cm-icon">📞</div><div><div class="cm-label">Call Us</div><div class="cm-value"><a href="tel:+61470442705">0470 442 705</a></div></div></div>
         <div class="contact-method"><div class="cm-icon">✉️</div><div><div class="cm-label">Email</div><div class="cm-value"><a href="mailto:piyush@wiseking.com.au">piyush@wiseking.com.au</a></div></div></div>
@@ -737,10 +969,11 @@
         <h4>Quick Actions</h4>
         <div class="quick-actions">
           <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27d%20like%20to%20place%20an%20order." class="qa-btn"><span class="qa-icon">🛒</span><div><div class="qa-text">Order via WhatsApp</div><div class="qa-sub">Fastest way to order</div></div></a>
-          <a href="mailto:orders@wiseking.com.au?subject=Order%20Enquiry" class="qa-btn"><span class="qa-icon">✉️</span><div><div class="qa-text">Order via Email</div><div class="qa-sub">orders@wiseking.com.au</div></div></a>
+          <a href="mailto:orders@wiseking.com.au?subject=Order%20Enquiry" class="qa-btn"><span class="qa-icon">✉️</span><div><div class="qa-text">Order via Email</div><div class="qa-sub">orders@wiseking.com.au</div></div></div></a>
           <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27d%20like%20to%20request%20a%20free%20sample." class="qa-btn"><span class="qa-icon">🎁</span><div><div class="qa-text">Request a Free Sample</div><div class="qa-sub">Choose any 2 — $5 postage</div></div></a>
+          <a href="mailto:piyush@wiseking.com.au?subject=Wholesale%20Enquiry" class="qa-btn"><span class="qa-icon">📦</span><div><div class="qa-text">Wholesale Enquiry</div><div class="qa-sub">Cafés, retailers, stockists</div></div></a>
         </div>
-        <div class="payid-box" style="margin-top:28px;">
+        <div class="payid-box" style="margin-top:24px;">
           <div class="pb-label">PayID — Direct Payment</div>
           <div class="pb-val">payments@wiseking.com.au</div>
           <div class="pb-sub">Wise King Enterprise</div>
@@ -750,6 +983,7 @@
   </div>
 </section>
 
+<!-- ═══ FOOTER ════════════════════════════════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -764,18 +998,24 @@
           <a href="#story">Our Story</a>
           <a href="#ritual">Preparation</a>
           <a href="#sample">Free Sample</a>
+          <a href="#wholesale">Wholesale</a>
           <a href="#services">Work With Me</a>
         </div>
         <div class="footer-col">
           <h5>Contact</h5>
           <a href="https://wa.me/61470442705">WhatsApp / Call: 0470 442 705</a>
           <a href="mailto:piyush@wiseking.com.au">piyush@wiseking.com.au</a>
+          <a href="mailto:piyush@wiseking.com.au?subject=Wholesale%20Enquiry">Wholesale Enquiry</a>
         </div>
         <div class="footer-col">
           <h5>Business</h5>
           <span>ABN 45 909 364 650</span>
           <span>Geelong, Victoria</span>
           <span>Class 3 Food Business</span>
+          <!-- SHOPIFY LINK: uncomment when ready -->
+          <!-- <a href="https://wiseking.com.au/shop" target="_blank">Shop Online — Shopify</a> -->
+          <!-- AMAZON LINK: uncomment after 3 months -->
+          <!-- <a href="https://amazon.com.au/stores/WiseKing" target="_blank">Find Us on Amazon AU</a> -->
         </div>
       </div>
     </div>
@@ -786,80 +1026,78 @@
         <a href="https://www.tiktok.com/@wisekingenterprise?_r=1&_t=ZS-97MdkclA9bE" aria-label="TikTok" target="_blank" rel="noopener" class="social-pill">TikTok</a>
         <a href="https://www.facebook.com/share/1GiWM7CafZ/?mibextid=wwXIfr" aria-label="Facebook" target="_blank" rel="noopener" class="social-pill">Facebook</a>
         <a href="https://www.youtube.com/@wisekingenterprise" aria-label="YouTube" target="_blank" rel="noopener" class="social-pill">YouTube</a>
-        <a href="https://pinterest.com/wisekingenterprise" aria-label="Pinterest" target="_blank" rel="noopener" class="social-pill">Pinterest</a>
       </div>
     </div>
   </div>
 </footer>
 
+<!-- ═══ STICKY CTA ════════════════════════════════════════════════════════════ -->
 <div class="sticky-cta">
   <a href="https://wa.me/61470442705" class="sticky-btn fill">Order Now</a>
   <a href="#sample" class="sticky-btn outline">Free Sample</a>
 </div>
 
 <script>
-  const burger = document.getElementById('burgerBtn');
-  const mmenu = document.getElementById('mobileMenu');
-  burger.addEventListener('click', () => mmenu.classList.toggle('open'));
-  mmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mmenu.classList.remove('open')));
+const burger = document.getElementById('burgerBtn');
+const mmenu = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => mmenu.classList.toggle('open'));
+mmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mmenu.classList.remove('open')));
 
-  const tabs = document.querySelectorAll('.rt-tab');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.rt-panel').forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
-    });
+const tabs = document.querySelectorAll('.rt-tab');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.rt-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
   });
+});
 
-  const loreTabs = document.querySelectorAll('.lore-tab');
-  loreTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      loreTabs.forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.lore-panel').forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById('lorepanel-' + tab.dataset.lore).classList.add('active');
-    });
+const loreTabs = document.querySelectorAll('.lore-tab');
+loreTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    loreTabs.forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.lore-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('lorepanel-' + tab.dataset.lore).classList.add('active');
   });
+});
 
-  const stars = document.querySelectorAll('.star');
-  const ratingInput = document.getElementById('rf-rating');
-  stars.forEach(star => {
-    star.addEventListener('click', () => {
-      const val = parseInt(star.dataset.val);
-      ratingInput.value = val;
-      stars.forEach(s => { s.classList.toggle('active', parseInt(s.dataset.val) <= val); });
-    });
+const stars = document.querySelectorAll('.star');
+const ratingInput = document.getElementById('rf-rating');
+stars.forEach(star => {
+  star.addEventListener('click', () => {
+    const val = parseInt(star.dataset.val);
+    ratingInput.value = val;
+    stars.forEach(s => { s.classList.toggle('active', parseInt(s.dataset.val) <= val); });
   });
+});
 
-  const reviewForm = document.getElementById('reviewForm');
-  reviewForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    const data = new FormData(reviewForm);
-    fetch(reviewForm.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if(response.ok){
-        document.getElementById('reviewFormVisible').style.display = 'none';
-        document.getElementById('formSuccess').classList.add('show');
-      } else {
-        alert('Something went wrong. Please try again or message us directly on WhatsApp.');
-      }
-    }).catch(() => {
+const reviewForm = document.getElementById('reviewForm');
+reviewForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = new FormData(reviewForm);
+  fetch(reviewForm.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if(response.ok){
+      document.getElementById('reviewFormVisible').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    } else {
       alert('Something went wrong. Please try again or message us directly on WhatsApp.');
-    });
+    }
+  }).catch(() => {
+    alert('Something went wrong. Please try again or message us directly on WhatsApp.');
   });
+});
 
-  const revealEls = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => obs.observe(el));
+const revealEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.12 });
+revealEls.forEach(el => obs.observe(el));
 </script>
-
 </body>
 </html>
-
