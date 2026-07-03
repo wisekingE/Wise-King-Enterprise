@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wise King Enterprise | Royal-Grade Wellness Blends — Geelong, Australia</title>
-<meta name="description" content="Ultra-premium hand-blended wellness powders from Geelong, Australia. Golden Saffron Latte, Ceremonial Matcha, Café Mocha, Curry Coast Rub, Velvet Curry Base. No fillers. No shortcuts.">
+<meta name="description" content="Ultra-premium hand-blended wellness powders made by a husband-and-wife team in Geelong, Australia. Golden Saffron Latte, Café Mocha, Curry Coast Rub, Velvet Curry Base. No fillers. No shortcuts.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -57,7 +57,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 @media(max-width:940px){.nav-links{display:none;}.burger{display:flex;}}
 
 /* ── HERO ── */
-.hero{background:radial-gradient(ellipse 120% 70% at 50% -10%,rgba(197,162,74,0.14),transparent 60%),linear-gradient(180deg,var(--cream) 0%,var(--ivory) 100%);color:var(--ink);padding:90px 24px 100px;text-align:center;overflow:hidden;}
+.hero{background:radial-gradient(ellipse 120% 70% at 50% -10%,rgba(197,162,74,0.14),transparent 60%),linear-gradient(180deg,var(--cream) 0%,var(--ivory) 100%);color:var(--ink);padding:90px 24px 60px;text-align:center;overflow:hidden;}
 .hero-crest-wide{max-width:300px;width:80%;margin:0 auto 30px;animation:crestIn 1s ease both;}
 .hero-crest-wide img{width:100%;height:auto;display:block;margin:0 auto;}
 @keyframes crestIn{from{opacity:0;transform:scale(0.85) translateY(10px);}to{opacity:1;transform:scale(1) translateY(0);}}
@@ -78,6 +78,11 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .stat-num{font-family:'Cinzel Decorative',serif;font-size:26px;color:var(--gold);margin-bottom:4px;}
 .stat-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);}
 @media(max-width:600px){.stat{padding:0 18px;margin-bottom:18px;}}
+
+/* ── TRUST BAR ── */
+.trust-bar{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:30px;padding:0 24px 90px;animation:fadeUp 1s ease 1s both;}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:11.5px;letter-spacing:0.03em;color:var(--ink-soft);font-weight:500;}
+.trust-item .tick{color:var(--gold);font-weight:700;}
 
 /* ── FEEDBACK BANNER ── */
 .feedback-banner{background:linear-gradient(135deg,var(--ink) 0%,#3D2A1A 100%);padding:28px 24px;text-align:center;border-top:1px solid rgba(201,162,74,0.3);border-bottom:1px solid rgba(201,162,74,0.3);}
@@ -106,12 +111,14 @@ section{padding:100px 24px;}
 /* Each card is a clean photo + info layout — no overlay text on top of image */
 .product-card{border-radius:10px;overflow:hidden;background:var(--paper);border:1px solid var(--line);transition:transform .4s ease,box-shadow .4s ease;display:flex;flex-direction:column;}
 .product-card:hover{transform:translateY(-5px);box-shadow:0 20px 45px rgba(42,33,24,0.14);}
+.product-card.sold-out .pc-photo img{filter:grayscale(60%);opacity:0.75;}
 
 /* Photo area */
 .pc-photo{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--cream);}
 .pc-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
 .product-card:hover .pc-photo img{transform:scale(1.04);}
 .pc-badge{position:absolute;top:14px;left:14px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:var(--gold-bright);padding:6px 14px;border-radius:20px;font-weight:600;z-index:2;}
+.pc-badge.sold-out-badge{background:var(--ink);color:var(--gold-pale);}
 .pc-weight-pill{position:absolute;top:14px;right:14px;font-family:'Cinzel',serif;font-size:11px;background:var(--ink);color:var(--gold-pale);padding:5px 13px;border-radius:14px;z-index:2;}
 
 /* Info area — DARK BACKGROUND to make price and info very visible */
@@ -138,6 +145,7 @@ section{padding:100px 24px;}
 .pc-velvet .pc-btn-fill:hover{background:#5C2A8A;color:#fff;}
 .pc-btn-outline{background:transparent;color:rgba(232,217,181,0.75);border:1px solid rgba(201,162,74,0.4);}
 .pc-btn-outline:hover{border-color:var(--gold-bright);color:var(--gold-bright);}
+.pc-btn-disabled{background:rgba(232,217,181,0.08);color:rgba(232,217,181,0.35);border:1px solid rgba(201,162,74,0.15);cursor:not-allowed;flex:1;text-align:center;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;padding:13px 18px;border-radius:2px;}
 /* Velvet — full width */
 .pc-velvet{grid-column:1/-1;}
 .pc-velvet .pc-photo{aspect-ratio:16/7;}
@@ -266,14 +274,28 @@ section{padding:100px 24px;}
 .wholesale-item-title{font-family:'Cinzel',serif;font-size:13px;color:var(--gold-bright);margin-bottom:8px;letter-spacing:0.03em;}
 .wholesale-item-text{font-size:12.5px;color:rgba(251,248,242,0.6);line-height:1.7;font-weight:300;}
 
-/* ── WORK WITH ME — compact ── */
-.services{background:var(--cream);padding:80px 24px;}
-.services-inner{max-width:860px;margin:0 auto;text-align:center;}
-.services-intro{font-size:15px;color:var(--ink-soft);line-height:1.8;font-weight:300;margin-bottom:36px;max-width:620px;margin-left:auto;margin-right:auto;}
-.services-wa{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;padding:18px 32px;border-radius:4px;margin-bottom:28px;transition:all .3s ease;border:1px solid transparent;}
-.services-wa:hover{background:transparent;color:var(--ink);border-color:var(--ink);}
-.services-wa .wa-icon{font-size:20px;}
-.services-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px;}
+/* ── SERVICES / LAUNCH COACHING PRODUCT ── */
+.services{background:var(--cream);padding:100px 24px;}
+.services-inner{max-width:900px;margin:0 auto;}
+.services-intro{font-size:15px;color:var(--ink-soft);line-height:1.8;font-weight:300;margin-bottom:48px;max-width:620px;margin-left:auto;margin-right:auto;text-align:center;}
+.service-product{border-radius:10px;overflow:hidden;background:var(--ink);border:1px solid rgba(201,162,74,0.3);display:grid;grid-template-columns:1fr;box-shadow:0 20px 45px rgba(42,33,24,0.14);}
+.sp-inner{padding:44px 40px;}
+.sp-badge{display:inline-block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:var(--gold-bright);padding:6px 14px;border-radius:20px;font-weight:600;margin-bottom:18px;}
+.sp-name{font-family:'Cinzel Decorative',serif;font-size:28px;line-height:1.2;color:var(--gold-pale);margin-bottom:10px;}
+.sp-tagline{font-size:13.5px;font-style:italic;color:rgba(232,217,181,0.65);margin-bottom:22px;font-weight:300;line-height:1.6;}
+.sp-price-row{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;}
+.sp-price{font-family:'Cinzel',serif;font-size:34px;font-weight:700;color:var(--gold-bright);}
+.sp-price-label{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(232,217,181,0.5);}
+.sp-list{list-style:none;margin-bottom:30px;}
+.sp-list li{display:flex;gap:10px;font-size:14px;color:rgba(232,217,181,0.85);line-height:1.7;margin-bottom:10px;font-weight:300;}
+.sp-list li::before{content:'✦';color:var(--gold-bright);flex-shrink:0;}
+.sp-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.sp-btn-fill{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;background:var(--gold-bright);color:var(--ink);padding:16px 30px;border-radius:2px;transition:all .25s ease;}
+.sp-btn-fill:hover{background:#fff;}
+.sp-btn-outline{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;background:transparent;color:rgba(232,217,181,0.8);border:1px solid rgba(201,162,74,0.4);padding:16px 30px;border-radius:2px;transition:all .25s ease;}
+.sp-btn-outline:hover{border-color:var(--gold-bright);color:var(--gold-bright);}
+.services-chips-head{text-align:center;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin:48px 0 20px;}
+.services-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
 .sc{font-size:12px;letter-spacing:0.04em;text-transform:uppercase;border:1px solid var(--gold-pale);padding:9px 18px;border-radius:20px;color:var(--ink-soft);background:var(--paper);}
 
 /* ── CONTACT ── */
@@ -337,37 +359,49 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   FUTURE UPDATES — HOW TO GUIDE (read this, make the change, save & push)
 ══════════════════════════════════════════════════════════════════════════════
 
-  1. SHOPIFY — adding buy links:
-     Search this file for "<!-- SHOPIFY:". Replace the href="https://wa.me/..."
-     on the Order Now button with your Shopify product URL, e.g.:
-       href="https://wiseking.com.au/products/golden-saffron-latte"
-     Also add class="pc-btn pc-btn-shopify" for the Shopify green button style.
-     Uncomment the footer Shopify link when ready.
+  1. SHOPIFY BUY BUTTON — turning "Shop Online (Coming Soon)" into a real button:
+     Once your Shopify store has real products in it:
+       a) In Shopify Admin, add the "Buy Button" sales channel
+       b) Create a Buy Button for each product, copy its embed code
+       c) Search this file for "<!-- SHOPIFY BUY BUTTON:" and paste the embed
+          code into the marked container div for that product
+       d) Delete the matching "pc-btn-disabled" span once the real button is in
+     This keeps your custom royal-brand design exactly as-is while adding a
+     real Shopify cart + checkout + card payments on top of it.
 
   2. AMAZON — adding Amazon buy links:
      Search for "<!-- AMAZON:". Add a second button next to Order Now:
        <a href="https://amazon.com.au/dp/YOUR_ASIN" class="pc-btn pc-btn-amazon">Buy on Amazon</a>
-     Use on Curry Coast Rub and Café Mocha only (your 2 Amazon products).
+     Use on Curry Coast Rub and Café Mocha only (your 2 Amazon products),
+     once your Amazon Seller account is live — per your own 3-month plan.
 
-  3. PROMOTIONAL DISCOUNTS (e.g. 10% off via WhatsApp):
+  3. MATCHA — bringing it back into the active range:
+     Search for "MATCHA — CURRENTLY SOLD OUT". Follow the inline instructions
+     to restore the Order Now / Email Order buttons and remove the sold-out badge.
+
+  4. PROMOTIONAL DISCOUNTS (e.g. 10% off via WhatsApp):
      Find the product's pc-tagline text and update it, e.g.:
        "Order via WhatsApp — get 10% off. Use code ROYAL10 at checkout."
      Or add a small banner above the products section. Search "<!-- PROMO BANNER -->".
 
-  4. SHELF / GROUP PHOTO (wholesale/supermarket style image):
+  5. SHELF / GROUP PHOTO (wholesale/supermarket style image):
      Search "<!-- GROUP PHOTO SECTION -->".
      Upload your group photo to GitHub and replace the src="" with your filename.
      The section is pre-built, just needs the image filename filled in.
 
-  5. CRAFT PROCESS VIDEO — updating with a new video:
+  6. CRAFT PROCESS VIDEO — updating with a new video:
      Delete the old video from GitHub.
      Upload the new video file (any name).
      Find <source src="YOUR_CRAFT_VIDEO.mp4"> below and change to the new filename.
      Save and push. Done.
 
-  6. PRICES — changing a price:
+  7. PRICES — changing a price:
      Search "class=\"pc-price\"". Each product has one line. Change the dollar amount.
      Also update the invite-pill text in the Free Sample section if needed.
+
+  8. LAUNCH COACHING SERVICE — changing the price or what's included:
+     Search "sp-price" for the price, and "sp-list" for the bullet list of
+     what's included in the session.
 
 ══════════════════════════════════════════════════════════════════════════════
 */
@@ -394,7 +428,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <a href="#sample">Free Sample</a>
       <a href="#reviews">Reviews</a>
       <a href="#wholesale">Wholesale</a>
-      <a href="#services">Work With Me</a>
+      <a href="#services">Launch Coaching</a>
       <a href="https://wa.me/61470442705" class="nav-cta">Order Now</a>
     </div>
     <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -406,7 +440,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     <a href="#sample">Free Sample</a>
     <a href="#reviews">Reviews</a>
     <a href="#wholesale">Wholesale</a>
-    <a href="#services">Work With Me</a>
+    <a href="#services">Launch Coaching</a>
     <a href="https://wa.me/61470442705">Order via WhatsApp</a>
   </div>
 </nav>
@@ -416,7 +450,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="hero-crest-wide"><img src="kangaroo-crown.png.PNG" alt="Wise King Enterprise — royal kangaroo crest"></div>
   <div class="eyebrow">Wise King Enterprise</div>
   <h1>Worthy of <em>Royalty.</em><br>Crafted by Hand.</h1>
-  <p class="hero-sub">Five ultra-premium wellness blends, hand-crafted in small batches in Geelong, Australia. Real ingredients. No fillers. No shortcuts. No machines.</p>
+  <p class="hero-sub">Ultra-premium wellness blends, hand-crafted in small batches in Geelong, Australia. Real ingredients. No fillers. No shortcuts. No machines.</p>
   <p class="hero-motto">&ldquo;Not competing. Just creating.&rdquo;</p>
   <div class="hero-ctas">
     <a href="#products" class="btn-primary">Explore The Range</a>
@@ -427,6 +461,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     <div class="stat"><div class="stat-num">0g</div><div class="stat-label">Added Sugar</div></div>
     <div class="stat"><div class="stat-num">5</div><div class="stat-label">Royal Blends</div></div>
     <div class="stat"><div class="stat-num">By Hand</div><div class="stat-label">Every Batch</div></div>
+  </div>
+  <div class="trust-bar">
+    <div class="trust-item"><span class="tick">✓</span> Registered Class 3 Food Business</div>
+    <div class="trust-item"><span class="tick">✓</span> GS1 Barcoded</div>
+    <div class="trust-item"><span class="tick">✓</span> HACCP-Sourced Ingredients</div>
   </div>
 </header>
 
@@ -472,10 +511,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           </div>
           <div class="pc-tags"><span class="pc-tag">No Caffeine</span><span class="pc-tag">No Added Sugar</span><span class="pc-tag">6 Botanicals</span><span class="pc-tag">Handmade</span></div>
           <div class="pc-actions">
-            <!-- SHOPIFY: replace href below with Shopify product URL when ready -->
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Golden%20Saffron%20Latte%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Golden%20Saffron%20Latte" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
+          <!-- SHOPIFY BUY BUTTON: paste embed code below to replace this placeholder -->
+          <!-- <div class="shopify-buy-button-golden-latte"></div> -->
         </div>
       </div>
 
@@ -496,10 +536,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           </div>
           <div class="pc-tags"><span class="pc-tag">No Salt Added</span><span class="pc-tag">12 Spices</span><span class="pc-tag">Handmade</span></div>
           <div class="pc-actions">
-            <!-- SHOPIFY: replace href · AMAZON: add second button here -->
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Curry%20Coast%20Rub%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Curry%20Coast%20Rub" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
+          <!-- SHOPIFY BUY BUTTON: paste embed code below to replace this placeholder -->
+          <!-- <div class="shopify-buy-button-curry-coast-rub"></div> -->
+          <!-- AMAZON: add once your Amazon Seller account is live —
+          <a href="https://amazon.com.au/dp/YOUR_ASIN" class="pc-btn pc-btn-amazon">Buy on Amazon</a> -->
         </div>
       </div>
 
@@ -520,19 +563,28 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           </div>
           <div class="pc-tags"><span class="pc-tag">Contains Caffeine</span><span class="pc-tag">No Sugar Added</span><span class="pc-tag">Handmade</span></div>
           <div class="pc-actions">
-            <!-- SHOPIFY: replace href · AMAZON: add second button here (after 3 months) -->
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Cafe%20Mocha%20Blend%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Cafe%20Mocha%20Blend" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
+          <!-- SHOPIFY BUY BUTTON: paste embed code below to replace this placeholder -->
+          <!-- <div class="shopify-buy-button-cafe-mocha"></div> -->
+          <!-- AMAZON: add once your Amazon Seller account is live —
+          <a href="https://amazon.com.au/dp/YOUR_ASIN" class="pc-btn pc-btn-amazon">Buy on Amazon</a> -->
         </div>
       </div>
 
-      <!-- CEREMONIAL MATCHA -->
-      <div class="product-card pc-matcha reveal">
+      <!-- CEREMONIAL MATCHA — CURRENTLY SOLD OUT (kept visible, not orderable)
+           TO BRING BACK INTO ROTATION LATER:
+           1. Remove class="sold-out" from the product-card div below
+           2. Remove the "Sold Out" badge span and un-comment the badge line below it
+           3. Replace the disabled-button block with the real Order Now / Email Order buttons
+              (same pattern as the other four products above)
+      -->
+      <div class="product-card pc-matcha sold-out reveal">
         <div class="pc-photo">
-          <!-- Image: NewMatcha.jpg — already in your GitHub repo -->
           <img src="NewMatcha.jpg" alt="Wise King Ceremonial Matcha — real product">
-          <span class="pc-badge">Ceremonial Grade</span>
+          <span class="pc-badge sold-out-badge">Sold Out — Back Soon</span>
+          <!-- <span class="pc-badge">Ceremonial Grade</span> -->
           <span class="pc-weight-pill">30g</span>
         </div>
         <div class="pc-info">
@@ -542,11 +594,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
             <span class="pc-price">$49.99</span>
             <span class="pc-weight-label">/ 30g pouch</span>
           </div>
-          <div class="pc-tags"><span class="pc-tag">Uji, Kyoto</span><span class="pc-tag">JAS Organic</span><span class="pc-tag">Lab Tested</span><span class="pc-tag">Vegan &amp; GF</span>
+          <div class="pc-tags"><span class="pc-tag">Uji, Kyoto</span><span class="pc-tag">JAS Organic</span><span class="pc-tag">Lab Tested</span><span class="pc-tag">Vegan &amp; GF</span></div>
           <div class="pc-actions">
-            <!-- SHOPIFY: replace href -->
-            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Ceremonial%20Matcha%20please." class="pc-btn pc-btn-fill">Order Now</a>
-            <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Ceremonial%20Matcha" class="pc-btn pc-btn-outline">Email Order</a>
+            <span class="pc-btn-disabled">Currently Unavailable</span>
+            <a href="mailto:piyush@wiseking.com.au?subject=Notify%20Me%20-%20Ceremonial%20Matcha" class="pc-btn pc-btn-outline">Notify Me When Back</a>
           </div>
         </div>
       </div>
@@ -568,10 +619,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           </div>
           <div class="pc-tags"><span class="pc-tag">No Salt Added</span><span class="pc-tag">10 Spices</span><span class="pc-tag">Just Add Water</span><span class="pc-tag">Glass Jar</span><span class="pc-tag">Handmade</span></div>
           <div class="pc-actions" style="max-width:480px;">
-            <!-- SHOPIFY: replace href -->
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Velvet%20Curry%20Base%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Velvet%20Curry%20Base" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
+          <!-- SHOPIFY BUY BUTTON: paste embed code below to replace this placeholder -->
+          <!-- <div class="shopify-buy-button-velvet-curry-base"></div> -->
         </div>
       </div>
 
@@ -631,32 +683,33 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     </div>
     <div class="lore-panel" id="lorepanel-matcha">
       <div class="lore-cards">
-        <div class="lore-card"><div class="lore-card-title">The Friction Test</div><div class="lore-card-text">Rub a pinch of our matcha between your fingers. It will <strong>completely disappear into your skin like silk</strong>, leaving no grain behind. That is the texture of true stone-milled luxury, and it is the fastest way to tell real ceremonial matcha from the rest.</div></div>
-        <div class="lore-card"><div class="lore-card-title">Slow Craft &amp; Scarcity</div><div class="lore-card-text">Our leaves are shade-grown for 20+ days to maximise L-theanine — the calm-focus amino acid — then <strong>slowly ground on granite wheels at a rate of just 30g per hour</strong>. Every pouch represents an hour of dedicated, heat-free milling.</div></div>
-        <div class="lore-card"><div class="lore-card-title">The Raw Luxury Angle</div><div class="lore-card-text">We put 100% of your money into the leaves, not the landfill. We chose minimal packaging so <strong>every dollar goes directly toward sourcing the rarest, purest shade-grown tencha leaves in Japan</strong>.</div></div>
-        <div class="lore-card"><div class="lore-card-title">The No-Bitterness Guarantee</div><div class="lore-card-text">If you need sugar, it isn&rsquo;t our matcha. Pure luxury grade carries <strong>zero bitterness</strong>. It whisks into a vibrant, creamy froth with a naturally sweet, oceanic finish.</div></div>
+        <div class="lore-card">
+          <div class="lore-card-title">The Friction Test</div>
+          <div class="lore-card-text">Rub a pinch of our matcha between your fingers. It will <strong>completely disappear into your skin like silk</strong>, leaving no grain behind. That is the texture of true stone-milled luxury, and it is the fastest way to tell real ceremonial matcha from the rest. Most powders leave grit. Ours leaves nothing but vivid green.</div>
+        </div>
+        <div class="lore-card">
+          <div class="lore-card-title">Uji, Kyoto — 350 Years of Mastery</div>
+          <div class="lore-card-text">Our matcha comes from <strong>Yamasan Co., Uji City, Kyoto</strong> — the most prestigious matcha-growing region in Japan, with over 800 years of cultivation history. Produced in collaboration with local tea masters on a <strong>350-year-old protected tea plantation</strong>, blessed with the ideal climate, soil, and altitude for ceremonial-grade tea. Not just Japanese matcha. Uji matcha — the origin that defines the standard.</div>
+        </div>
+        <div class="lore-card">
+          <div class="lore-card-title">Lab-Tested. Certified Clean.</div>
+          <div class="lore-card-text">Every batch is backed by a <strong>Certificate of Analysis</strong> from Yamasan's Overseas Division. Results: <strong>Heavy metals — not detected. Pesticide residue — not detected. E. coli — negative. Coliform — negative.</strong> Tested under Japanese Pharmaceutical (JP) Regulation standards. You are not taking our word for it — you are reading the lab results. The paperwork exists and is held on file.</div>
+        </div>
+        <div class="lore-card">
+          <div class="lore-card-title">JAS Organic Certified — Independently Inspected</div>
+          <div class="lore-card-text">Yamasan holds <strong>JAS Organic Certification (No. 17C-004)</strong> issued by the Hyogo Prefectural Organic Agriculture Society (HOAS), certified since 2018 and annually inspected — most recently November 2023. JAS is Japan's national organic agricultural standard, requiring rigorous third-party auditing of the entire growing and production process. <strong>Vegan. Gluten free. 100% pure — nothing added.</strong></div>
+        </div>
       </div>
     </div>
-    <div class="lore-panel active" id="lorepanel-matcha">
-  <div class="lore-cards">
-    <div class="lore-card">
-      <div class="lore-card-title">The Friction Test</div>
-      <div class="lore-card-text">Rub a pinch of our matcha between your fingers. It will <strong>completely disappear into your skin like silk</strong>, leaving no grain behind. That is the texture of true stone-milled luxury, and it is the fastest way to tell real ceremonial matcha from the rest. Most powders leave grit. Ours leaves nothing but vivid green.</div>
-    </div>
-    <div class="lore-card">
-      <div class="lore-card-title">Uji, Kyoto — 350 Years of Mastery</div>
-      <div class="lore-card-text">Our matcha comes from <strong>Yamasan Co., Uji City, Kyoto</strong> — the most prestigious matcha-growing region in Japan, with over 800 years of cultivation history. Produced in collaboration with local tea masters on a <strong>350-year-old protected tea plantation</strong>, blessed with the ideal climate, soil, and altitude for ceremonial-grade tea. Not just Japanese matcha. Uji matcha — the origin that defines the standard.</div>
-    </div>
-    <div class="lore-card">
-      <div class="lore-card-title">Lab-Tested. Certified Clean.</div>
-      <div class="lore-card-text">Every batch is backed by a <strong>Certificate of Analysis</strong> from Yamasan's Overseas Division. Results: <strong>Heavy metals — not detected. Pesticide residue — not detected. E. coli — negative. Coliform — negative.</strong> Tested under Japanese Pharmaceutical (JP) Regulation standards. You are not taking our word for it — you are reading the lab results. The paperwork exists and is held on file.</div>
-    </div>
-    <div class="lore-card">
-      <div class="lore-card-title">JAS Organic Certified — Independently Inspected</div>
-      <div class="lore-card-text">Yamasan holds <strong>JAS Organic Certification (No. 17C-004)</strong> issued by the Hyogo Prefectural Organic Agriculture Society (HOAS), certified since 2018 and annually inspected — most recently November 2023. JAS is Japan's national organic agricultural standard, requiring rigorous third-party auditing of the entire growing and production process. <strong>Vegan. Gluten free. 100% pure — nothing added.</strong></div>
+    <div class="lore-panel" id="lorepanel-velvet">
+      <div class="lore-cards">
+        <div class="lore-card"><div class="lore-card-title">The Bhuna Step — Non-Negotiable</div><div class="lore-card-text">Most jarred curry pastes skip the step that actually builds flavour: frying the paste in hot oil until it splits and deepens. <strong>Two full minutes of constant stirring</strong> is what separates a real curry base from a shortcut — it's the difference restaurant kitchens know and home shortcuts skip.</div></div>
+        <div class="lore-card"><div class="lore-card-title">Ten Spices, One Jar</div><div class="lore-card-text">Everything you'd normally reach for ten separate jars to find — <strong>pre-balanced, pre-measured, ready to fry</strong>. No salt added, so you stay in control of the final dish.</div></div>
+        <div class="lore-card"><div class="lore-card-title">Vegetables, Paneer, or Meat</div><div class="lore-card-text">One base, three directions. <strong>15g for vegetables or paneer, 18g for meat</strong> — the ratio adjusts for what you're cooking, not the other way around.</div></div>
+        <div class="lore-card"><div class="lore-card-title">Glass, Not Plastic</div><div class="lore-card-text">Packed in a <strong>reusable glass jar</strong>, because a base this concentrated deserves better than a sachet — and the jar earns a second life in your kitchen once it's empty.</div></div>
+      </div>
     </div>
   </div>
-</div>
 </section>
 
 <!-- THE ROYAL STANDARD (stays as is) -->
@@ -694,17 +747,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
-<!-- OUR STORY (stays as is) -->
+<!-- OUR STORY — REWRITTEN: husband-and-wife team -->
 <section class="story" id="story">
   <div class="section-inner">
     <div class="story-wrap">
       <div class="story-crest reveal"><img src="crown.png.PNG" alt="The Wise King — royal kangaroo crest"></div>
       <div class="story-text reveal">
         <div class="section-eyebrow">Our Story</div>
-        <h2>Proudly Made in Geelong.<br>A Standard That Won&rsquo;t Drop.</h2>
-        <p>Wise King Enterprise began with a simple observation: the wellness market was selling sugar dressed up as spice. Most golden lattes listed sugar as the first ingredient. Most matcha was cut with filler.</p>
-        <p><strong>Piyush</strong> — founder and spice-lover from Geelong — decided to do it properly. Every batch is blended by hand, in a registered Class 3 food production kitchen, to a standard that does not compromise. No fillers. No bulking agents. No shortcuts. <strong>No machines.</strong></p>
-        <p>When you order from Wise King, your blend is weighed, filled, sealed and labelled by hand — by someone who cares about every single gram.</p>
+        <h2>Two People. One Kitchen.<br>Zero Shortcuts.</h2>
+        <p>Wise King Enterprise started as a conversation between a husband and wife who were tired of two things: spice blends padded out with fillers, and spending our best years building someone else's business instead of our own.</p>
+        <p>We are genuinely obsessed with spice, herbs, and flavour — the kind of obsession that means reading ingredient labels in the supermarket aisle and being disappointed by what we find. We wanted the convenience of a ready-made blend without losing the real ingredients that make food actually taste like something.</p>
+        <p><strong>So we built it ourselves</strong> — every batch hand-blended in a registered Class 3 kitchen in Geelong, weighed and packed by the two of us, to a standard that does not bend. No fillers. No bulking agents. No machines.</p>
+        <p>This is also, honestly, about building something of our own — a business we own outright, on our own judgment, instead of working for wages that never quite matched the effort. Every jar that leaves our kitchen is proof that it's possible.</p>
       </div>
     </div>
   </div>
@@ -721,9 +775,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     <p class="video-caption reveal">Saffron — the world&rsquo;s most expensive spice — has long been linked to sharper focus and a calmer mind. So that&rsquo;s how we filmed ours: a good book in hand, a slow sip of Golden Saffron Latte, and a few minutes of uninterrupted focus.</p>
     <div class="video-wrap reveal">
       <!-- Video file: liqgold.mp4.MP4 — must be in your GitHub repo root -->
-      <!-- GitHub Pages serves MP4 files. If the video still doesn't play after push,
-           go to GitHub → your repo → Settings → Pages and confirm the site is published.
-           Then hard-refresh the page (Ctrl+Shift+R / Cmd+Shift+R). -->
       <video controls playsinline preload="metadata" style="width:100%;display:block;">
         <source src="liqgold.mp4.MP4" type="video/mp4">
         Your browser does not support video playback.
@@ -740,16 +791,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <h2 class="section-title" style="color:var(--ivory);">Watch How It&rsquo;s Made</h2>
       <div class="divider-seal"><span style="background:rgba(201,162,74,0.4);"></span></div>
     </div>
-    <p class="craft-caption reveal">Every batch is weighed, blended, filled, and sealed by hand. This is what that looks like.</p>
+    <p class="craft-caption reveal">Every batch is weighed, blended, filled, and sealed by hand, by the two of us. This is what that looks like.</p>
     <div class="craft-wrap reveal">
-      <!-- TO UPDATE THIS VIDEO:
-           1. Delete old video file from GitHub repo.
-           2. Upload new video file (any filename, e.g. "packing_july2026.mp4").
-           3. Change src below to the new filename. Save and push. Done.
-      -->
       <video controls playsinline preload="metadata" style="width:100%;display:block;">
         <source src="liqgold.mp4.MP4" type="video/mp4">
-        <!-- Replace the src above with your new video filename when you have a packing/process video -->
         Your browser does not support video playback.
       </video>
     </div>
@@ -804,19 +849,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
-<!-- A ROYAL INVITATION — FREE SAMPLE (stays as is) -->
+<!-- A ROYAL INVITATION — FREE SAMPLE -->
 <section class="invitation" id="sample">
   <div class="section-inner">
     <div class="invite-box reveal">
       <div class="invite-title">A Royal Invitation</div>
       <p class="invite-p">Before you commit to the full range, taste it for yourself.</p>
-      <p class="invite-p">Choose <strong style="color:var(--gold);font-weight:600;">any 2 products</strong> from our collection of five — we&rsquo;ll send a generous sample of each, straight to your door.</p>
+      <p class="invite-p">Choose <strong style="color:var(--gold);font-weight:600;">any 2 products</strong> from our collection — we&rsquo;ll send a 10g sample pouch of each, straight to your door.</p>
       <div class="invite-price">$5 POSTAGE ONLY &nbsp;·&nbsp; SAMPLES THEMSELVES ARE FREE</div>
       <div class="invite-list">
         <span class="invite-pill">Golden Saffron Latte</span>
         <span class="invite-pill">Curry Coast Rub</span>
         <span class="invite-pill">Café Mocha Blend</span>
-        <span class="invite-pill">Ceremonial Matcha</span>
         <span class="invite-pill">Velvet Curry Base</span>
       </div>
       <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27d%20like%20to%20request%20a%20free%20sample.%20I%27d%20like%20to%20try%3A%20" class="btn-primary">Request Your Sample</a>
@@ -882,7 +926,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </div>
 
-<!-- OPEN TO WHOLESALE (stays as is) -->
+<!-- OPEN TO WHOLESALE -->
 <section class="wholesale" id="wholesale">
   <div class="wholesale-inner">
     <div class="section-eyebrow">For Retailers &amp; Stockists</div>
@@ -891,24 +935,49 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     <div class="wholesale-grid reveal">
       <div class="wholesale-item"><div class="wholesale-item-icon">📦</div><div class="wholesale-item-title">Minimum Order</div><div class="wholesale-item-text">Flexible MOQ for first orders. Get in touch and we&rsquo;ll discuss what works for your store volume.</div></div>
       <div class="wholesale-item"><div class="wholesale-item-icon">🏷️</div><div class="wholesale-item-title">Shelf-Ready Products</div><div class="wholesale-item-text">All products arrive with compliant labels, barcodes, best-before dates, and ingredient lists — ready for your shelf the day they arrive.</div></div>
-      <div class="wholesale-item"><div class="wholesale-item-icon">🔄</div><div class="wholesale-item-title">Reliable Restocking</div><div class="wholesale-item-text">Consistent small-batch production means you can count on regular restocks without the supply gaps larger manufacturers often have.</div></div>    </div>
+      <div class="wholesale-item"><div class="wholesale-item-icon">🔄</div><div class="wholesale-item-title">Reliable Restocking</div><div class="wholesale-item-text">Consistent small-batch production means you can count on regular restocks without the supply gaps larger manufacturers often have.</div></div>
+    </div>
     <div style="text-align:center;margin-top:8px;">
       <a href="mailto:piyush@wiseking.com.au?subject=Wholesale%20Enquiry%20-%20Wise%20King%20Enterprise" class="btn-ghost" style="border-color:var(--gold-bright);color:var(--gold-pale);">Send a Wholesale Enquiry</a>
     </div>
   </div>
 </section>
 
-<!-- WORK WITH ME — compact -->
+<!-- LAUNCH COACHING — STRUCTURED SERVICE PRODUCT -->
 <section class="services" id="services">
   <div class="services-inner">
-    <div class="section-eyebrow reveal">Beyond the Blend</div>
-    <h2 class="section-title reveal" style="margin-bottom:20px;">Work With Me</h2>
-    <p class="services-intro reveal">I built Wise King Enterprise from nothing — ABN, council licence, food safety cert, labels, website, pricing, and suppliers. I offer these skills to others on a paid basis. Message me on WhatsApp to discuss what you need.</p>
-    <div style="text-align:center;" class="reveal">
-      <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." class="services-wa">
-        <span class="wa-icon">💬</span> Chat With Me on WhatsApp
-      </a>
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Beyond the Blend</div>
+      <h2 class="section-title">Have a Business Idea? We've Already Done the Hard Part.</h2>
+      <div class="divider-seal"><span></span></div>
     </div>
+    <p class="services-intro reveal">We built Wise King Enterprise from a blank page — ABN, council food registration, food safety certification, compliant labels, GS1 barcodes, a website, pricing, and suppliers. If you've got an idea and don't know where to start, we'll walk you through exactly what we did.</p>
+
+    <div class="service-product reveal">
+      <div class="sp-inner">
+        <span class="sp-badge">1:1 Session</span>
+        <div class="sp-name">The Idea-to-Launch Session</div>
+        <div class="sp-tagline">&ldquo;For anyone with a business idea and no idea where to start.&rdquo;</div>
+        <div class="sp-price-row">
+          <span class="sp-price">$149</span>
+          <span class="sp-price-label">/ 90-minute 1:1 video call</span>
+        </div>
+        <ul class="sp-list">
+          <li>How to register your business name and ABN correctly the first time</li>
+          <li>What council/food registration actually requires, and how to avoid the mistakes we made</li>
+          <li>Label compliance — what the law actually requires vs. what's optional</li>
+          <li>GS1 barcodes explained — what to buy, what to avoid, how much it really costs</li>
+          <li>Pricing your product so you're actually profitable, not just busy</li>
+          <li>A written follow-up summary of your specific next steps after the call</li>
+        </ul>
+        <div class="sp-actions">
+          <a href="https://wa.me/61470442705?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Idea-to-Launch%20Session." class="sp-btn-fill">Book on WhatsApp</a>
+          <a href="mailto:piyush@wiseking.com.au?subject=Idea-to-Launch%20Session%20Enquiry" class="sp-btn-outline">Email Enquiry</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-chips-head">Other Ways We Can Help</div>
     <div class="services-chips reveal">
       <span class="sc">🏠 Home Business Launch</span>
       <span class="sc">🎨 Label &amp; Brand Design</span>
@@ -933,7 +1002,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     <div class="contact-grid reveal">
       <div class="contact-left">
         <h3>We&rsquo;d Love to Hear From You</h3>
-        <p>Whether you&rsquo;re placing an order, requesting a sample, asking about wholesale, or enquiring about services — a real person (Piyush) replies to every message.</p>
+        <p>Whether you&rsquo;re placing an order, requesting a sample, asking about wholesale, or enquiring about launch coaching — a real person replies to every message.</p>
         <div class="contact-method"><div class="cm-icon">💬</div><div><div class="cm-label">WhatsApp — Orders &amp; Enquiries</div><div class="cm-value"><a href="https://wa.me/61470442705">0470 442 705</a></div></div></div>
         <div class="contact-method"><div class="cm-icon">📞</div><div><div class="cm-label">Call Us</div><div class="cm-value"><a href="tel:+61470442705">0470 442 705</a></div></div></div>
         <div class="contact-method"><div class="cm-icon">✉️</div><div><div class="cm-label">Email</div><div class="cm-value"><a href="mailto:piyush@wiseking.com.au">piyush@wiseking.com.au</a></div></div></div>
@@ -963,7 +1032,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-crest"><img src="crown.png.PNG" alt="Wise King crest"><span class="footer-brand-name">WISE KING ENTERPRISE</span></div>
-        <p>Ultra-premium wellness blends, hand-crafted in small batches in Geelong, Australia. &ldquo;Not competing. Just creating.&rdquo;</p>
+        <p>A husband-and-wife-made range of ultra-premium wellness blends, hand-crafted in small batches in Geelong, Australia. &ldquo;Not competing. Just creating.&rdquo;</p>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
@@ -973,7 +1042,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <a href="#ritual">Preparation</a>
           <a href="#sample">Free Sample</a>
           <a href="#wholesale">Wholesale</a>
-          <a href="#services">Work With Me</a>
+          <a href="#services">Launch Coaching</a>
         </div>
         <div class="footer-col">
           <h5>Contact</h5>
@@ -986,9 +1055,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <span>ABN 45 909 364 650</span>
           <span>Geelong, Victoria</span>
           <span>Class 3 Food Business</span>
-          <!-- SHOPIFY LINK — uncomment when ready:
-          <a href="https://wiseking.com.au/shop" target="_blank">Shop Online — Shopify</a> -->
-          <!-- AMAZON LINK — uncomment after 3 months:
+          <!-- SHOPIFY LINK — uncomment when your Shopify store/Buy Buttons are live:
+          <a href="https://wiseking.com.au/collections/all" target="_blank">Shop Online — Shopify</a> -->
+          <!-- AMAZON LINK — uncomment once your Amazon Seller account is live:
           <a href="https://amazon.com.au/stores/WiseKing" target="_blank">Find Us on Amazon AU</a> -->
         </div>
       </div>
