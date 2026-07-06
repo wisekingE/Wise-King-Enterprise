@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wise King Enterprise | Royal-Grade Wellness Blends — Geelong, Australia</title>
-<meta name="description" content="Ultra-premium hand-blended wellness powders made by a husband-and-wife team in Geelong, Australia. Golden Saffron Latte, Café Mocha, Curry Coast Rub, Velvet Curry Base. No fillers. No shortcuts.">
+<meta name="description" content="Ultra-premium hand-blended wellness powders made by a husband-and-wife team in Geelong, Australia. Golden Saffron Latte, Café Mocha, Curry Coast Rub. No fillers. No shortcuts.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -207,12 +207,6 @@ section{padding:100px 24px;}
 .craft-video .section-title{color:var(--ivory);}
 .craft-video .section-head{margin-bottom:40px;}
 .craft-caption{max-width:600px;margin:0 auto 36px;text-align:center;font-size:14.5px;line-height:1.85;color:rgba(251,248,242,0.65);font-weight:300;}
-/* ─ HOW TO UPDATE THIS VIDEO:
-   1. Delete the old video file from your GitHub repo.
-   2. Upload the new video file to GitHub (any name, e.g. "packing2026.mp4").
-   3. Find the <video> tag below and change the src= value to the new filename.
-   4. Save and push index.html. Done — the new video plays automatically.
-   ─ */
 .craft-wrap{max-width:780px;margin:0 auto;border-radius:10px;overflow:hidden;border:1px solid rgba(201,162,74,0.3);box-shadow:0 20px 50px rgba(0,0,0,0.3);}
 .craft-wrap video{width:100%;display:block;background:#111;}
 
@@ -242,6 +236,14 @@ section{padding:100px 24px;}
 /* ── REVIEWS ── */
 .reviews{background:var(--paper);}
 .reviews-wrap{max-width:620px;margin:0 auto;}
+.testimonial-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:980px;margin:0 auto 64px;}
+@media(max-width:760px){.testimonial-grid{grid-template-columns:1fr;}}
+.testimonial-card{background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:28px;display:flex;flex-direction:column;}
+.testimonial-stars{color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:14px;}
+.testimonial-text{font-size:14px;line-height:1.75;color:var(--ink-soft);font-weight:300;margin-bottom:20px;flex:1;}
+.testimonial-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:14px;}
+.testimonial-name{font-family:'Cinzel',serif;font-size:12.5px;letter-spacing:0.04em;color:var(--ink);font-weight:600;}
+.testimonial-product{font-size:10.5px;letter-spacing:0.05em;text-transform:uppercase;color:var(--gold);background:var(--gold-pale);padding:4px 10px;border-radius:12px;}
 .review-form-box{background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:36px;}
 .review-form-box h3{font-family:'Cinzel',serif;font-size:16px;color:var(--ink);margin-bottom:8px;}
 .review-form-box p{font-size:13px;color:var(--text-dim);margin-bottom:24px;line-height:1.6;}
@@ -353,58 +355,6 @@ footer{background:var(--ink);color:rgba(251,248,242,0.6);padding:64px 24px 28px;
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.in{opacity:1;transform:translateY(0);}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
-
-/*
-══════════════════════════════════════════════════════════════════════════════
-  FUTURE UPDATES — HOW TO GUIDE (read this, make the change, save & push)
-══════════════════════════════════════════════════════════════════════════════
-
-  1. SHOPIFY BUY BUTTON — turning "Shop Online (Coming Soon)" into a real button:
-     Once your Shopify store has real products in it:
-       a) In Shopify Admin, add the "Buy Button" sales channel
-       b) Create a Buy Button for each product, copy its embed code
-       c) Search this file for "<!-- SHOPIFY BUY BUTTON:" and paste the embed
-          code into the marked container div for that product
-       d) Delete the matching "pc-btn-disabled" span once the real button is in
-     This keeps your custom royal-brand design exactly as-is while adding a
-     real Shopify cart + checkout + card payments on top of it.
-
-  2. AMAZON — adding Amazon buy links:
-     Search for "<!-- AMAZON:". Add a second button next to Order Now:
-       <a href="https://amazon.com.au/dp/YOUR_ASIN" class="pc-btn pc-btn-amazon">Buy on Amazon</a>
-     Use on Curry Coast Rub and Café Mocha only (your 2 Amazon products),
-     once your Amazon Seller account is live — per your own 3-month plan.
-
-  3. MATCHA — bringing it back into the active range:
-     Search for "MATCHA — CURRENTLY SOLD OUT". Follow the inline instructions
-     to restore the Order Now / Email Order buttons and remove the sold-out badge.
-
-  4. PROMOTIONAL DISCOUNTS (e.g. 10% off via WhatsApp):
-     Find the product's pc-tagline text and update it, e.g.:
-       "Order via WhatsApp — get 10% off. Use code ROYAL10 at checkout."
-     Or add a small banner above the products section. Search "<!-- PROMO BANNER -->".
-
-  5. SHELF / GROUP PHOTO (wholesale/supermarket style image):
-     Search "<!-- GROUP PHOTO SECTION -->".
-     Upload your group photo to GitHub and replace the src="" with your filename.
-     The section is pre-built, just needs the image filename filled in.
-
-  6. CRAFT PROCESS VIDEO — updating with a new video:
-     Delete the old video from GitHub.
-     Upload the new video file (any name).
-     Find <source src="YOUR_CRAFT_VIDEO.mp4"> below and change to the new filename.
-     Save and push. Done.
-
-  7. PRICES — changing a price:
-     Search "class=\"pc-price\"". Each product has one line. Change the dollar amount.
-     Also update the invite-pill text in the Free Sample section if needed.
-
-  8. LAUNCH COACHING SERVICE — changing the price or what's included:
-     Search "sp-price" for the price, and "sp-list" for the bullet list of
-     what's included in the session.
-
-══════════════════════════════════════════════════════════════════════════════
-*/
 </style>
 </head>
 <body>
@@ -479,12 +429,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 </div>
 
 <!-- PRODUCTS -->
-<!-- PROMO BANNER: uncomment and edit this block to show a promotional offer -->
-<!--
-<div style="background:var(--gold-bright);color:var(--ink);text-align:center;padding:16px 24px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;">
-  🎁 &nbsp; Order via WhatsApp or Email and receive 10% off your first order &nbsp; 🎁
-</div>
--->
 <section id="products" class="products">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -497,7 +441,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <!-- GOLDEN SAFFRON LATTE -->
       <div class="product-card pc-latte reveal">
         <div class="pc-photo">
-          <!-- Image: NewGL.jpg — already in your GitHub repo -->
           <img src="NewGL.jpg" alt="Wise King Golden Saffron Latte — real product">
           <span class="pc-badge">Bestseller</span>
           <span class="pc-weight-pill">50g</span>
@@ -514,15 +457,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Golden%20Saffron%20Latte%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Golden%20Saffron%20Latte" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
-          <!-- SHOPIFY BUY BUTTON: paste embed code below to replace this placeholder -->
-          <!-- <div class="shopify-buy-button-golden-latte"></div> -->
         </div>
       </div>
 
       <!-- CURRY COAST RUB -->
       <div class="product-card pc-curry reveal">
         <div class="pc-photo">
-          <!-- Image: Newcurry.jpg — already in your GitHub repo -->
           <img src="Newcurry.jpg" alt="Wise King Curry Coast Rub — real product">
           <span class="pc-badge">Signature</span>
           <span class="pc-weight-pill">100g</span>
@@ -539,17 +479,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Curry%20Coast%20Rub%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Curry%20Coast%20Rub" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
-          <!-- SHOPIFY BUY BUTTON: paste embed code below to replace this placeholder -->
-          <!-- <div class="shopify-buy-button-curry-coast-rub"></div> -->
-          <!-- AMAZON: add once your Amazon Seller account is live —
-          <a href="https://amazon.com.au/dp/YOUR_ASIN" class="pc-btn pc-btn-amazon">Buy on Amazon</a> -->
         </div>
       </div>
 
       <!-- CAFÉ MOCHA BLEND -->
       <div class="product-card pc-mocha reveal">
         <div class="pc-photo">
-          <!-- Image: Newmocha.jpg — already in your GitHub repo -->
           <img src="Newmocha.jpg" alt="Wise King Café Mocha Blend — real product">
           <span class="pc-badge">New</span>
           <span class="pc-weight-pill">100g</span>
@@ -558,7 +493,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <div class="pc-name">Café Mocha Blend</div>
           <div class="pc-tagline">&ldquo;Premium coffee meets dark cocoa — no sugar, no shortcuts.&rdquo;</div>
           <div class="pc-price-row">
-            <span class="pc-price">$19.99</span>
+            <span class="pc-price">$24.99</span>
             <span class="pc-weight-label">/ 100g pouch</span>
           </div>
           <div class="pc-tags"><span class="pc-tag">Contains Caffeine</span><span class="pc-tag">No Sugar Added</span><span class="pc-tag">Handmade</span></div>
@@ -566,25 +501,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Cafe%20Mocha%20Blend%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Cafe%20Mocha%20Blend" class="pc-btn pc-btn-outline">Email Order</a>
           </div>
-          <!-- SHOPIFY BUY BUTTON: paste embed code below to replace this placeholder -->
-          <!-- <div class="shopify-buy-button-cafe-mocha"></div> -->
-          <!-- AMAZON: add once your Amazon Seller account is live —
-          <a href="https://amazon.com.au/dp/YOUR_ASIN" class="pc-btn pc-btn-amazon">Buy on Amazon</a> -->
         </div>
       </div>
 
-      <!-- CEREMONIAL MATCHA — CURRENTLY SOLD OUT (kept visible, not orderable)
-           TO BRING BACK INTO ROTATION LATER:
-           1. Remove class="sold-out" from the product-card div below
-           2. Remove the "Sold Out" badge span and un-comment the badge line below it
-           3. Replace the disabled-button block with the real Order Now / Email Order buttons
-              (same pattern as the other four products above)
-      -->
+      <!-- CEREMONIAL MATCHA — CURRENTLY SOLD OUT -->
       <div class="product-card pc-matcha sold-out reveal">
         <div class="pc-photo">
           <img src="NewMatcha.jpg" alt="Wise King Ceremonial Matcha — real product">
           <span class="pc-badge sold-out-badge">Sold Out — Back Soon</span>
-          <!-- <span class="pc-badge">Ceremonial Grade</span> -->
           <span class="pc-weight-pill">30g</span>
         </div>
         <div class="pc-info">
@@ -602,47 +526,33 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
         </div>
       </div>
 
-      <!-- VELVET CURRY BASE — full width -->
-      <div class="product-card pc-velvet reveal">
+      <!-- CURRY COAST BASE — COMING SOON -->
+      <div class="product-card pc-velvet sold-out reveal">
         <div class="pc-photo">
-          <!-- Image: NewVelvet.JPG — already in your GitHub repo -->
-          <img src="NewVelvet.JPG" alt="Wise King Velvet Curry Base — real product">
-          <span class="pc-badge">New — Limited</span>
+          <img src="NewVelvet.JPG" alt="Wise King Curry Coast Base — real product">
+          <span class="pc-badge sold-out-badge">Coming Soon</span>
           <span class="pc-weight-pill">150g</span>
         </div>
         <div class="pc-info">
-          <div class="pc-name">Wise King Velvet Curry Base</div>
-          <div class="pc-tagline">&ldquo;Restaurant-quality curry in seconds — ten spices, one jar, no compromise.&rdquo;</div>
+          <div class="pc-name">Curry Coast Base</div>
+          <div class="pc-tagline">&ldquo;One base. Every curry you'll ever need.&rdquo;</div>
           <div class="pc-price-row">
             <span class="pc-price">$26.99</span>
             <span class="pc-weight-label">/ 150g glass jar</span>
           </div>
-          <div class="pc-tags"><span class="pc-tag">No Salt Added</span><span class="pc-tag">10 Spices</span><span class="pc-tag">Just Add Water</span><span class="pc-tag">Glass Jar</span><span class="pc-tag">Handmade</span></div>
+          <div class="pc-tags"><span class="pc-tag">No Salt Added</span><span class="pc-tag">Just Add Water</span><span class="pc-tag">Glass Jar</span><span class="pc-tag">Handmade</span></div>
           <div class="pc-actions" style="max-width:480px;">
-            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Velvet%20Curry%20Base%20please." class="pc-btn pc-btn-fill">Order Now</a>
-            <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Velvet%20Curry%20Base" class="pc-btn pc-btn-outline">Email Order</a>
+            <span class="pc-btn-disabled">Coming Soon</span>
+            <a href="mailto:piyush@wiseking.com.au?subject=Notify%20Me%20-%20Curry%20Coast%20Base" class="pc-btn pc-btn-outline">Notify Me When Available</a>
           </div>
-          <!-- SHOPIFY BUY BUTTON: paste embed code below to replace this placeholder -->
-          <!-- <div class="shopify-buy-button-velvet-curry-base"></div> -->
         </div>
       </div>
 
     </div>
-
-    <!-- GROUP PHOTO SECTION — uncomment once you have all 5 products photographed together -->
-    <!--
-    <div style="margin-top:60px;border-radius:10px;overflow:hidden;border:1px solid var(--line);">
-      <img src="YOUR_GROUP_PHOTO.jpg" alt="Wise King Enterprise — full range of five products" style="width:100%;display:block;max-height:500px;object-fit:cover;">
-      <div style="background:var(--ink);padding:20px 28px;text-align:center;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-bright);">
-        The Complete Wise King Range — Shelf-Ready for Wholesale
-      </div>
-    </div>
-    -->
-
   </div>
 </section>
 
-<!-- THE ROYAL DECREE (stays as is) -->
+<!-- THE ROYAL DECREE -->
 <section class="lore" id="lore">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -655,7 +565,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <button class="lore-tab" data-lore="curry">Curry Coast Rub</button>
       <button class="lore-tab" data-lore="mocha">Café Mocha</button>
       <button class="lore-tab" data-lore="matcha">Ceremonial Matcha</button>
-      <button class="lore-tab" data-lore="velvet">Velvet Curry Base</button>
+      <button class="lore-tab" data-lore="velvet">Curry Coast Base</button>
     </div>
     <div class="lore-panel active" id="lorepanel-latte">
       <div class="lore-cards">
@@ -712,7 +622,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
-<!-- THE ROYAL STANDARD (stays as is) -->
+<!-- THE ROYAL STANDARD -->
 <section class="standard" id="standard">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -728,7 +638,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
-<!-- THE SIX ROYAL INGREDIENTS (stays as is) -->
+<!-- THE SIX ROYAL INGREDIENTS -->
 <section class="ingredients" id="ingredients">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -747,7 +657,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
-<!-- OUR STORY — REWRITTEN: husband-and-wife team -->
+<!-- OUR STORY -->
 <section class="story" id="story">
   <div class="section-inner">
     <div class="story-wrap">
@@ -764,7 +674,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
-<!-- THE RITUAL OF FOCUS — VIDEO (stays as is, video fixed) -->
+<!-- THE RITUAL OF FOCUS — VIDEO -->
 <section class="video-section">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -774,7 +684,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     </div>
     <p class="video-caption reveal">Saffron — the world&rsquo;s most expensive spice — has long been linked to sharper focus and a calmer mind. So that&rsquo;s how we filmed ours: a good book in hand, a slow sip of Golden Saffron Latte, and a few minutes of uninterrupted focus.</p>
     <div class="video-wrap reveal">
-      <!-- Video file: liqgold.mp4.MP4 — must be in your GitHub repo root -->
       <video controls playsinline preload="metadata" style="width:100%;display:block;">
         <source src="liqgold.mp4.MP4" type="video/mp4">
         Your browser does not support video playback.
@@ -783,7 +692,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
-<!-- BEHIND THE BLEND — CRAFT PROCESS VIDEO (new permanent section) -->
+<!-- BEHIND THE BLEND — CRAFT PROCESS VIDEO -->
 <section class="craft-video" id="craft">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -801,7 +710,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
-<!-- THE RITUAL — HOW TO PREPARE (stays as is) -->
+<!-- THE RITUAL — HOW TO PREPARE -->
 <section class="ritual" id="ritual">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -814,7 +723,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <button class="rt-tab" data-tab="curry">Curry Coast Rub</button>
       <button class="rt-tab" data-tab="mocha">Café Mocha</button>
       <button class="rt-tab" data-tab="matcha">Ceremonial Matcha</button>
-      <button class="rt-tab" data-tab="velvet">Velvet Curry Base</button>
+      <button class="rt-tab" data-tab="velvet">Curry Coast Base</button>
     </div>
     <div class="rt-panel active" id="panel-latte">
       <div class="rt-step"><div class="rt-num">I</div><div class="rt-text">Add <strong>4g</strong> (one level teaspoon) to your cup.</div></div>
@@ -861,14 +770,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
         <span class="invite-pill">Golden Saffron Latte</span>
         <span class="invite-pill">Curry Coast Rub</span>
         <span class="invite-pill">Café Mocha Blend</span>
-        <span class="invite-pill">Velvet Curry Base</span>
       </div>
       <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27d%20like%20to%20request%20a%20free%20sample.%20I%27d%20like%20to%20try%3A%20" class="btn-primary">Request Your Sample</a>
     </div>
   </div>
 </section>
 
-<!-- TRIED AND LOVED — REVIEWS (stays as is) -->
+<!-- TRIED AND LOVED — REVIEWS -->
 <section class="reviews" id="reviews">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -876,6 +784,50 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <h2 class="section-title">Tried &amp; Loved</h2>
       <div class="divider-seal"><span></span></div>
     </div>
+
+    <div class="testimonial-grid reveal">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"This steak rub exceeded my expectations, with a subtle smoky flavor that really enhances the meat. It created a delicious crust on the steak while keeping the natural beef flavor front and center. I used it on porterhouse cooked on the pan — I'll definitely be keeping this as a staple in my spice cabinet."</div>
+        <div class="testimonial-footer">
+          <span class="testimonial-name">Patrick B.</span>
+          <span class="testimonial-product">Curry Coast Rub</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"Absolutely love this rub! Perfectly complimented the steak rather than overpowering it. Created a beautiful crust when cooked, a little goes a long way. I will definitely be buying again and recommending it to everyone."</div>
+        <div class="testimonial-footer">
+          <span class="testimonial-name">Kelly H.</span>
+          <span class="testimonial-product">Curry Coast Rub</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"This handmade spice blend is perfectly balanced. It adds wonderful flavour without being overly spicy, allowing the natural taste of the ingredients to shine. I love using it to marinate chicken wings, and it's also amazing stirred through curry — gives it an authentic, exotic flavour like something from a proper restaurant."</div>
+        <div class="testimonial-footer">
+          <span class="testimonial-name">Yuji N.</span>
+          <span class="testimonial-product">Curry Coast Rub</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"It was good, I used it to make curry. It blended well, loved the taste."</div>
+        <div class="testimonial-footer">
+          <span class="testimonial-name">Kshitiz A.</span>
+          <span class="testimonial-product">Curry Coast Rub</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"Tastes amazing, this latte — yes, I will recommend."</div>
+        <div class="testimonial-footer">
+          <span class="testimonial-name">Honey</span>
+          <span class="testimonial-product">Golden Saffron Latte</span>
+        </div>
+      </div>
+    </div>
+
     <div class="reviews-wrap reveal">
       <div class="review-form-box">
         <div id="reviewFormVisible">
@@ -892,7 +844,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
                 <option>Curry Coast Rub</option>
                 <option>Café Mocha Blend</option>
                 <option>Ceremonial Matcha</option>
-                <option>Velvet Curry Base</option>
+                <option>Curry Coast Base</option>
                 <option>Multiple Products</option>
               </select>
             </div>
@@ -943,7 +895,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
-<!-- LAUNCH COACHING — STRUCTURED SERVICE PRODUCT -->
+<!-- LAUNCH COACHING -->
 <section class="services" id="services">
   <div class="services-inner">
     <div class="section-head reveal">
@@ -1055,10 +1007,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <span>ABN 45 909 364 650</span>
           <span>Geelong, Victoria</span>
           <span>Class 3 Food Business</span>
-          <!-- SHOPIFY LINK — uncomment when your Shopify store/Buy Buttons are live:
-          <a href="https://wiseking.com.au/collections/all" target="_blank">Shop Online — Shopify</a> -->
-          <!-- AMAZON LINK — uncomment once your Amazon Seller account is live:
-          <a href="https://amazon.com.au/stores/WiseKing" target="_blank">Find Us on Amazon AU</a> -->
         </div>
       </div>
     </div>
