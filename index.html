@@ -127,7 +127,7 @@ section{padding:100px 24px;}
 .pc-weight-label{font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(232,217,181,0.5);}
 .pc-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;}
 .pc-tag{font-size:10px;letter-spacing:0.05em;text-transform:uppercase;border:1px solid rgba(201,162,74,0.35);padding:4px 10px;border-radius:14px;color:rgba(232,217,181,0.7);}
-.pc-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;align-items:flex-start;}
+.pc-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;}
 .pc-btn{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;padding:13px 18px;border-radius:2px;transition:all .25s ease;flex:1;text-align:center;min-width:120px;}
 .pc-latte .pc-btn-fill{background:#8B5E1A;color:var(--gold-pale);}
 .pc-latte .pc-btn-fill:hover{background:var(--gold-bright);color:var(--ink);}
@@ -375,7 +375,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <a href="#reviews">Reviews</a>
       <a href="#wholesale">Wholesale</a>
       <a href="#services">Launch Coaching</a>
-      <a href="#products" class="nav-cta">Order Now</a>
+      <a href="https://wa.me/61470442705" class="nav-cta">Order Now</a>
     </div>
     <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -999,7 +999,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 
 <!-- STICKY CTA (mobile) -->
 <div class="sticky-cta">
-  <a href="#products" class="sticky-btn fill">Order Now</a>
+  <a href="https://wa.me/61470442705" class="sticky-btn fill">Order Now</a>
   <a href="#sample" class="sticky-btn outline">Free Sample</a>
 </div>
 
@@ -1108,8 +1108,8 @@ revealEls.forEach(el=>obs.observe(el));
               "price": false,
               "description": false,
               "options": false,
-              "quantity": true,
-              "button": true,
+              "quantity": false,
+              "button": false,
               "buttonWithQuantity": true
             },
             "styles": {
@@ -1206,8 +1206,8 @@ revealEls.forEach(el=>obs.observe(el));
               "price": false,
               "description": false,
               "options": false,
-              "quantity": true,
-              "button": true,
+              "quantity": false,
+              "button": false,
               "buttonWithQuantity": true
             },
             "styles": {
@@ -1304,8 +1304,8 @@ revealEls.forEach(el=>obs.observe(el));
               "price": false,
               "description": false,
               "options": false,
-              "quantity": true,
-              "button": true,
+              "quantity": false,
+              "button": false,
               "buttonWithQuantity": true
             },
             "styles": {
