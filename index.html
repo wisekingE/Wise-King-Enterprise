@@ -144,6 +144,7 @@ section{padding:100px 24px;}
 .pc-btn-disabled{background:rgba(232,217,181,0.08);color:rgba(232,217,181,0.35);border:1px solid rgba(201,162,74,0.15);cursor:not-allowed;flex:1;text-align:center;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;padding:13px 18px;border-radius:2px;min-width:120px;}
 .pc-velvet{grid-column:1/-1;}
 .pc-velvet .pc-photo{aspect-ratio:16/7;}
+.pc-buybutton-wrap{flex:1;min-width:140px;}
 
 /* ── LORE ── */
 .lore{background:var(--cream);}
@@ -449,8 +450,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           </div>
           <div class="pc-tags"><span class="pc-tag">No Caffeine</span><span class="pc-tag">No Added Sugar</span><span class="pc-tag">6 Botanicals</span><span class="pc-tag">Handmade</span></div>
           <div class="pc-actions">
-            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Golden%20Saffron%20Latte%20please." class="pc-btn pc-btn-fill">Order Now</a>
-            <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Golden%20Saffron%20Latte" class="pc-btn pc-btn-outline">Email Order</a>
+            <div class="pc-buybutton-wrap">
+              <div id='product-component-1783601033579'></div>
+            </div>
+            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Golden%20Saffron%20Latte%20please." class="pc-btn pc-btn-outline">WhatsApp Order</a>
             <a href="#ritual" onclick="showRitual('latte');return false;" class="pc-btn pc-btn-outline">How to Make It</a>
           </div>
         </div>
@@ -472,8 +475,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           </div>
           <div class="pc-tags"><span class="pc-tag">No Salt Added</span><span class="pc-tag">12 Spices</span><span class="pc-tag">Handmade</span></div>
           <div class="pc-actions">
-            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Curry%20Coast%20Rub%20please." class="pc-btn pc-btn-fill">Order Now</a>
-            <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Curry%20Coast%20Rub" class="pc-btn pc-btn-outline">Email Order</a>
+            <div class="pc-buybutton-wrap">
+              <div id='product-component-1783601072144'></div>
+            </div>
+            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Curry%20Coast%20Rub%20please." class="pc-btn pc-btn-outline">WhatsApp Order</a>
             <a href="#ritual" onclick="showRitual('curry');return false;" class="pc-btn pc-btn-outline">How to Make It</a>
           </div>
         </div>
@@ -495,8 +500,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           </div>
           <div class="pc-tags"><span class="pc-tag">Contains Caffeine</span><span class="pc-tag">No Sugar Added</span><span class="pc-tag">Handmade</span></div>
           <div class="pc-actions">
-            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Cafe%20Mocha%20Blend%20please." class="pc-btn pc-btn-fill">Order Now</a>
-            <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Cafe%20Mocha%20Blend" class="pc-btn pc-btn-outline">Email Order</a>
+            <div class="pc-buybutton-wrap">
+              <div id='product-component-1783601099220'></div>
+            </div>
+            <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Cafe%20Mocha%20Blend%20please." class="pc-btn pc-btn-outline">WhatsApp Order</a>
             <a href="#ritual" onclick="showRitual('mocha');return false;" class="pc-btn pc-btn-outline">How to Make It</a>
           </div>
         </div>
@@ -1055,5 +1062,306 @@ const revealEls=document.querySelectorAll('.reveal');
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.12});
 revealEls.forEach(el=>obs.observe(el));
 </script>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SHOPIFY BUY BUTTON EMBEDS — 3 PRODUCTS         -->
+<!-- These power the "Buy Now" instant checkout      -->
+<!-- buttons inside each product card above.         -->
+<!-- ══════════════════════════════════════════════ -->
+
+<!-- Golden Saffron Latte -->
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'hmfrhb-nb.myshopify.com',
+      storefrontAccessToken: '3d4441b139fbd67f3300852feab77068',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '10491198406837',
+        node: document.getElementById('product-component-1783601033579'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+          "product": {
+            "contents": {
+              "img": false,
+              "title": false,
+              "price": false,
+              "description": false,
+              "options": false,
+              "quantity": true,
+              "button": true,
+              "buttonWithQuantity": true
+            },
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "margin-left": "0",
+                  "margin-bottom": "0"
+                }
+              },
+              "button": {
+                ":hover": { "background-color": "#a37b34" },
+                "background-color": "#b5893a",
+                ":focus": { "background-color": "#a37b34" },
+                "font-family": "Cinzel, serif",
+                "font-size": "11px",
+                "letter-spacing": "0.06em",
+                "text-transform": "uppercase",
+                "font-weight": "600",
+                "padding-top": "13px",
+                "padding-bottom": "13px",
+                "border-radius": "2px"
+              }
+            },
+            "text": { "button": "Buy Now" }
+          },
+          "productSet": {
+            "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0" } } }
+          },
+          "modalProduct": {
+            "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true },
+            "styles": {
+              "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
+              "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } }
+            },
+            "text": { "button": "Add to cart" }
+          },
+          "option": {},
+          "cart": {
+            "styles": {
+              "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } }
+            },
+            "text": { "total": "Subtotal", "button": "Checkout" }
+          },
+          "toggle": {
+            "styles": {
+              "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } }
+            }
+          }
+        },
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+
+<!-- Curry Coast Rub -->
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'hmfrhb-nb.myshopify.com',
+      storefrontAccessToken: '3d4441b139fbd67f3300852feab77068',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '10491200110773',
+        node: document.getElementById('product-component-1783601072144'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+          "product": {
+            "contents": {
+              "img": false,
+              "title": false,
+              "price": false,
+              "description": false,
+              "options": false,
+              "quantity": true,
+              "button": true,
+              "buttonWithQuantity": true
+            },
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "margin-left": "0",
+                  "margin-bottom": "0"
+                }
+              },
+              "button": {
+                ":hover": { "background-color": "#a37b34" },
+                "background-color": "#b5893a",
+                ":focus": { "background-color": "#a37b34" },
+                "font-family": "Cinzel, serif",
+                "font-size": "11px",
+                "letter-spacing": "0.06em",
+                "text-transform": "uppercase",
+                "font-weight": "600",
+                "padding-top": "13px",
+                "padding-bottom": "13px",
+                "border-radius": "2px"
+              }
+            },
+            "text": { "button": "Buy Now" }
+          },
+          "productSet": {
+            "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0" } } }
+          },
+          "modalProduct": {
+            "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true },
+            "styles": {
+              "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
+              "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } }
+            },
+            "text": { "button": "Add to cart" }
+          },
+          "option": {},
+          "cart": {
+            "styles": {
+              "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } }
+            },
+            "text": { "total": "Subtotal", "button": "Checkout" }
+          },
+          "toggle": {
+            "styles": {
+              "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } }
+            }
+          }
+        },
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+
+<!-- Café Mocha Blend -->
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'hmfrhb-nb.myshopify.com',
+      storefrontAccessToken: '3d4441b139fbd67f3300852feab77068',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '10491203256501',
+        node: document.getElementById('product-component-1783601099220'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+          "product": {
+            "contents": {
+              "img": false,
+              "title": false,
+              "price": false,
+              "description": false,
+              "options": false,
+              "quantity": true,
+              "button": true,
+              "buttonWithQuantity": true
+            },
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "margin-left": "0",
+                  "margin-bottom": "0"
+                }
+              },
+              "button": {
+                ":hover": { "background-color": "#a37b34" },
+                "background-color": "#b5893a",
+                ":focus": { "background-color": "#a37b34" },
+                "font-family": "Cinzel, serif",
+                "font-size": "11px",
+                "letter-spacing": "0.06em",
+                "text-transform": "uppercase",
+                "font-weight": "600",
+                "padding-top": "13px",
+                "padding-bottom": "13px",
+                "border-radius": "2px"
+              }
+            },
+            "text": { "button": "Buy Now" }
+          },
+          "productSet": {
+            "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0" } } }
+          },
+          "modalProduct": {
+            "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true },
+            "styles": {
+              "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
+              "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } }
+            },
+            "text": { "button": "Add to cart" }
+          },
+          "option": {},
+          "cart": {
+            "styles": {
+              "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } }
+            },
+            "text": { "total": "Subtotal", "button": "Checkout" }
+          },
+          "toggle": {
+            "styles": {
+              "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } }
+            }
+          }
+        },
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+
 </body>
 </html>
