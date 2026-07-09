@@ -108,12 +108,10 @@ section{padding:100px 24px;}
 .products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
 @media(max-width:760px){.products-grid{grid-template-columns:1fr;}}
 
-/* Each card is a clean photo + info layout — no overlay text on top of image */
 .product-card{border-radius:10px;overflow:hidden;background:var(--paper);border:1px solid var(--line);transition:transform .4s ease,box-shadow .4s ease;display:flex;flex-direction:column;}
 .product-card:hover{transform:translateY(-5px);box-shadow:0 20px 45px rgba(42,33,24,0.14);}
 .product-card.sold-out .pc-photo img{filter:grayscale(60%);opacity:0.75;}
 
-/* Photo area */
 .pc-photo{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--cream);}
 .pc-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
 .product-card:hover .pc-photo img{transform:scale(1.04);}
@@ -121,7 +119,6 @@ section{padding:100px 24px;}
 .pc-badge.sold-out-badge{background:var(--ink);color:var(--gold-pale);}
 .pc-weight-pill{position:absolute;top:14px;right:14px;font-family:'Cinzel',serif;font-size:11px;background:var(--ink);color:var(--gold-pale);padding:5px 13px;border-radius:14px;z-index:2;}
 
-/* Info area — DARK BACKGROUND to make price and info very visible */
 .pc-info{padding:22px 24px 24px;background:var(--ink);flex:1;display:flex;flex-direction:column;}
 .pc-name{font-family:'Cinzel Decorative',serif;font-size:20px;line-height:1.2;color:var(--gold-pale);margin-bottom:6px;}
 .pc-tagline{font-size:12px;font-style:italic;color:rgba(232,217,181,0.65);margin-bottom:14px;font-weight:300;line-height:1.55;}
@@ -131,8 +128,7 @@ section{padding:100px 24px;}
 .pc-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;}
 .pc-tag{font-size:10px;letter-spacing:0.05em;text-transform:uppercase;border:1px solid rgba(201,162,74,0.35);padding:4px 10px;border-radius:14px;color:rgba(232,217,181,0.7);}
 .pc-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;}
-.pc-btn{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;padding:13px 18px;border-radius:2px;transition:all .25s ease;flex:1;text-align:center;}
-/* Each product's primary button gets its own colour derived from product identity */
+.pc-btn{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;padding:13px 18px;border-radius:2px;transition:all .25s ease;flex:1;text-align:center;min-width:120px;}
 .pc-latte .pc-btn-fill{background:#8B5E1A;color:var(--gold-pale);}
 .pc-latte .pc-btn-fill:hover{background:var(--gold-bright);color:var(--ink);}
 .pc-curry .pc-btn-fill{background:#8B1A1A;color:#fff;}
@@ -145,8 +141,7 @@ section{padding:100px 24px;}
 .pc-velvet .pc-btn-fill:hover{background:#5C2A8A;color:#fff;}
 .pc-btn-outline{background:transparent;color:rgba(232,217,181,0.75);border:1px solid rgba(201,162,74,0.4);}
 .pc-btn-outline:hover{border-color:var(--gold-bright);color:var(--gold-bright);}
-.pc-btn-disabled{background:rgba(232,217,181,0.08);color:rgba(232,217,181,0.35);border:1px solid rgba(201,162,74,0.15);cursor:not-allowed;flex:1;text-align:center;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;padding:13px 18px;border-radius:2px;}
-/* Velvet — full width */
+.pc-btn-disabled{background:rgba(232,217,181,0.08);color:rgba(232,217,181,0.35);border:1px solid rgba(201,162,74,0.15);cursor:not-allowed;flex:1;text-align:center;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;padding:13px 18px;border-radius:2px;min-width:120px;}
 .pc-velvet{grid-column:1/-1;}
 .pc-velvet .pc-photo{aspect-ratio:16/7;}
 
@@ -195,13 +190,13 @@ section{padding:100px 24px;}
 .story-text p{font-size:15px;line-height:1.85;color:var(--ink-soft);margin-bottom:16px;font-weight:300;}
 .story-text p strong{font-weight:600;color:var(--ink);}
 
-/* ── VIDEO (Ritual of Focus) ── */
+/* ── VIDEO ── */
 .video-section{background:var(--cream);}
 .video-caption{max-width:600px;margin:0 auto 36px;text-align:center;font-size:14.5px;line-height:1.85;color:var(--ink-soft);font-weight:300;}
 .video-wrap{max-width:780px;margin:0 auto;border-radius:10px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 50px rgba(42,33,24,0.1);}
 .video-wrap video{width:100%;display:block;background:#000;}
 
-/* ── BEHIND THE BLEND (Craft Process Video) ── */
+/* ── BEHIND THE BLEND ── */
 .craft-video{background:var(--ink);padding:100px 24px;}
 .craft-video .section-eyebrow{color:var(--gold-bright);}
 .craft-video .section-title{color:var(--ivory);}
@@ -276,7 +271,7 @@ section{padding:100px 24px;}
 .wholesale-item-title{font-family:'Cinzel',serif;font-size:13px;color:var(--gold-bright);margin-bottom:8px;letter-spacing:0.03em;}
 .wholesale-item-text{font-size:12.5px;color:rgba(251,248,242,0.6);line-height:1.7;font-weight:300;}
 
-/* ── SERVICES / LAUNCH COACHING PRODUCT ── */
+/* ── SERVICES ── */
 .services{background:var(--cream);padding:100px 24px;}
 .services-inner{max-width:900px;margin:0 auto;}
 .services-intro{font-size:15px;color:var(--ink-soft);line-height:1.8;font-weight:300;margin-bottom:48px;max-width:620px;margin-left:auto;margin-right:auto;text-align:center;}
@@ -409,7 +404,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="hero-stats">
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Blended in Geelong</div></div>
     <div class="stat"><div class="stat-num">0g</div><div class="stat-label">Added Sugar</div></div>
-    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Royal Blends</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label">Royal Blends</div></div>
     <div class="stat"><div class="stat-num">By Hand</div><div class="stat-label">Every Batch</div></div>
   </div>
   <div class="trust-bar">
@@ -433,7 +428,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="section-inner">
     <div class="section-head reveal">
       <div class="section-eyebrow">The Royal Collection</div>
-      <h2 class="section-title">Five Blends. One Standard.</h2>
+      <h2 class="section-title">Four Blends. One Standard.</h2>
       <div class="divider-seal"><span></span></div>
     </div>
     <div class="products-grid">
@@ -456,6 +451,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <div class="pc-actions">
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Golden%20Saffron%20Latte%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Golden%20Saffron%20Latte" class="pc-btn pc-btn-outline">Email Order</a>
+            <a href="#ritual" onclick="showRitual('latte');return false;" class="pc-btn pc-btn-outline">How to Make It</a>
           </div>
         </div>
       </div>
@@ -478,6 +474,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <div class="pc-actions">
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Curry%20Coast%20Rub%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Curry%20Coast%20Rub" class="pc-btn pc-btn-outline">Email Order</a>
+            <a href="#ritual" onclick="showRitual('curry');return false;" class="pc-btn pc-btn-outline">How to Make It</a>
           </div>
         </div>
       </div>
@@ -500,11 +497,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <div class="pc-actions">
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Cafe%20Mocha%20Blend%20please." class="pc-btn pc-btn-fill">Order Now</a>
             <a href="mailto:orders@wiseking.com.au?subject=Order%20-%20Cafe%20Mocha%20Blend" class="pc-btn pc-btn-outline">Email Order</a>
+            <a href="#ritual" onclick="showRitual('mocha');return false;" class="pc-btn pc-btn-outline">How to Make It</a>
           </div>
         </div>
       </div>
 
-      <!-- CEREMONIAL MATCHA — CURRENTLY SOLD OUT -->
+      <!-- CEREMONIAL MATCHA — SOLD OUT -->
       <div class="product-card pc-matcha sold-out reveal">
         <div class="pc-photo">
           <img src="NewMatcha.jpg" alt="Wise King Ceremonial Matcha — real product">
@@ -522,28 +520,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <div class="pc-actions">
             <span class="pc-btn-disabled">Currently Unavailable</span>
             <a href="mailto:piyush@wiseking.com.au?subject=Notify%20Me%20-%20Ceremonial%20Matcha" class="pc-btn pc-btn-outline">Notify Me When Back</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- CURRY COAST BASE — COMING SOON -->
-      <div class="product-card pc-velvet sold-out reveal">
-        <div class="pc-photo">
-          <img src="NewVelvet.JPG" alt="Wise King Curry Coast Base — real product">
-          <span class="pc-badge sold-out-badge">Coming Soon</span>
-          <span class="pc-weight-pill">150g</span>
-        </div>
-        <div class="pc-info">
-          <div class="pc-name">Curry Coast Base</div>
-          <div class="pc-tagline">&ldquo;One base. Every curry you'll ever need.&rdquo;</div>
-          <div class="pc-price-row">
-            <span class="pc-price">$26.99</span>
-            <span class="pc-weight-label">/ 150g glass jar</span>
-          </div>
-          <div class="pc-tags"><span class="pc-tag">No Salt Added</span><span class="pc-tag">Just Add Water</span><span class="pc-tag">Glass Jar</span><span class="pc-tag">Handmade</span></div>
-          <div class="pc-actions" style="max-width:480px;">
-            <span class="pc-btn-disabled">Coming Soon</span>
-            <a href="mailto:piyush@wiseking.com.au?subject=Notify%20Me%20-%20Curry%20Coast%20Base" class="pc-btn pc-btn-outline">Notify Me When Available</a>
+            <a href="#ritual" onclick="showRitual('matcha');return false;" class="pc-btn pc-btn-outline">How to Make It</a>
           </div>
         </div>
       </div>
@@ -551,6 +528,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     </div>
   </div>
 </section>
+
+<!-- COMING SOON — MARKETS & SHELVES -->
+<div class="feedback-banner" style="background:linear-gradient(135deg,var(--gold) 0%,var(--gold-bright) 100%);border-color:transparent;">
+  <div class="feedback-banner-inner">
+    <p style="color:var(--ink);">👑 Coming Soon: Farmers Markets &amp; Local Shelves</p>
+    <p class="fb-sub" style="color:rgba(42,33,24,0.75);">We're working toward stalls at local farmers markets, and shelf space in independent butchers and grocers across Geelong &amp; the Bellarine Peninsula. Follow along on Instagram for launch dates.</p>
+  </div>
+</div>
 
 <!-- THE ROYAL DECREE -->
 <section class="lore" id="lore">
@@ -565,7 +550,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <button class="lore-tab" data-lore="curry">Curry Coast Rub</button>
       <button class="lore-tab" data-lore="mocha">Café Mocha</button>
       <button class="lore-tab" data-lore="matcha">Ceremonial Matcha</button>
-      <button class="lore-tab" data-lore="velvet">Curry Coast Base</button>
     </div>
     <div class="lore-panel active" id="lorepanel-latte">
       <div class="lore-cards">
@@ -609,14 +593,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <div class="lore-card-title">JAS Organic Certified — Independently Inspected</div>
           <div class="lore-card-text">Yamasan holds <strong>JAS Organic Certification (No. 17C-004)</strong> issued by the Hyogo Prefectural Organic Agriculture Society (HOAS), certified since 2018 and annually inspected — most recently November 2023. JAS is Japan's national organic agricultural standard, requiring rigorous third-party auditing of the entire growing and production process. <strong>Vegan. Gluten free. 100% pure — nothing added.</strong></div>
         </div>
-      </div>
-    </div>
-    <div class="lore-panel" id="lorepanel-velvet">
-      <div class="lore-cards">
-        <div class="lore-card"><div class="lore-card-title">The Bhuna Step — Non-Negotiable</div><div class="lore-card-text">Most jarred curry pastes skip the step that actually builds flavour: frying the paste in hot oil until it splits and deepens. <strong>Two full minutes of constant stirring</strong> is what separates a real curry base from a shortcut — it's the difference restaurant kitchens know and home shortcuts skip.</div></div>
-        <div class="lore-card"><div class="lore-card-title">Ten Spices, One Jar</div><div class="lore-card-text">Everything you'd normally reach for ten separate jars to find — <strong>pre-balanced, pre-measured, ready to fry</strong>. No salt added, so you stay in control of the final dish.</div></div>
-        <div class="lore-card"><div class="lore-card-title">Vegetables, Paneer, or Meat</div><div class="lore-card-text">One base, three directions. <strong>15g for vegetables or paneer, 18g for meat</strong> — the ratio adjusts for what you're cooking, not the other way around.</div></div>
-        <div class="lore-card"><div class="lore-card-title">Glass, Not Plastic</div><div class="lore-card-text">Packed in a <strong>reusable glass jar</strong>, because a base this concentrated deserves better than a sachet — and the jar earns a second life in your kitchen once it's empty.</div></div>
       </div>
     </div>
   </div>
@@ -723,7 +699,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <button class="rt-tab" data-tab="curry">Curry Coast Rub</button>
       <button class="rt-tab" data-tab="mocha">Café Mocha</button>
       <button class="rt-tab" data-tab="matcha">Ceremonial Matcha</button>
-      <button class="rt-tab" data-tab="velvet">Curry Coast Base</button>
     </div>
     <div class="rt-panel active" id="panel-latte">
       <div class="rt-step"><div class="rt-num">I</div><div class="rt-text">Add <strong>4g</strong> (one level teaspoon) to your cup.</div></div>
@@ -748,12 +723,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <div class="rt-step"><div class="rt-num">II</div><div class="rt-text">Add 70–80°C water — not boiling. Whisk briskly in a &lsquo;W&rsquo; motion until frothy.</div></div>
       <div class="rt-step"><div class="rt-num">III</div><div class="rt-text">For a latte: add a splash of hot water, whisk to a paste, then add 200ml warm frothed milk.</div></div>
       <div class="rt-step"><div class="rt-num">IV</div><div class="rt-text">Sweeten with honey if desired.</div></div>
-    </div>
-    <div class="rt-panel" id="panel-velvet">
-      <div class="rt-step"><div class="rt-num">I</div><div class="rt-text">Measure <strong>15g</strong> (3 tsp) for 250g vegetables or paneer. Use <strong>18g</strong> for 250g meat.</div></div>
-      <div class="rt-step"><div class="rt-num">II</div><div class="rt-text">Add 3 tablespoons of <strong>warm water</strong>. Mix into a smooth, thick paste — let it sit 1 minute so the powders fully hydrate.</div></div>
-      <div class="rt-step"><div class="rt-num">III</div><div class="rt-text">Heat 2 tablespoons of <strong>oil or ghee</strong> in a pan on medium-high. Add the paste — it will sizzle. Stir constantly for <strong>2 full minutes</strong>. This is the bhuna step — do not skip it.</div></div>
-      <div class="rt-step"><div class="rt-num">IV</div><div class="rt-text">Add your protein or vegetables. Pour in 150ml water. Salt to taste. <strong>Cover and simmer 6–8 minutes.</strong> Garnish with fresh coriander.</div></div>
     </div>
   </div>
 </section>
@@ -844,7 +813,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
                 <option>Curry Coast Rub</option>
                 <option>Café Mocha Blend</option>
                 <option>Ceremonial Matcha</option>
-                <option>Curry Coast Base</option>
                 <option>Multiple Products</option>
               </select>
             </div>
@@ -1033,6 +1001,12 @@ const burger=document.getElementById('burgerBtn');
 const mmenu=document.getElementById('mobileMenu');
 burger.addEventListener('click',()=>mmenu.classList.toggle('open'));
 mmenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mmenu.classList.remove('open')));
+
+function showRitual(key){
+  const tab=document.querySelector('.rt-tab[data-tab="'+key+'"]');
+  if(tab){tab.click();}
+  document.getElementById('ritual').scrollIntoView({behavior:'smooth',block:'start'});
+}
 
 const tabs=document.querySelectorAll('.rt-tab');
 tabs.forEach(tab=>{
