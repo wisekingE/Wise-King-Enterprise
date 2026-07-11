@@ -84,6 +84,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .trust-item{display:flex;align-items:center;gap:7px;font-size:11.5px;letter-spacing:0.03em;color:var(--ink-soft);font-weight:500;}
 .trust-item .tick{color:var(--gold);font-weight:700;}
 
+/* ── SHIPPING BANNER ── */
+.shipping-banner{background:var(--gold-bright);padding:14px 24px;text-align:center;}
+.shipping-banner-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}
+.ship-icon{font-size:18px;}
+.ship-text{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);font-weight:600;}
+.ship-text strong{color:var(--latte-deep);}
+@media(max-width:500px){.ship-text{font-size:10.5px;}}
+
 /* ── FEEDBACK BANNER ── */
 .feedback-banner{background:linear-gradient(135deg,var(--ink) 0%,#3D2A1A 100%);padding:28px 24px;text-align:center;border-top:1px solid rgba(201,162,74,0.3);border-bottom:1px solid rgba(201,162,74,0.3);}
 .feedback-banner-inner{max-width:700px;margin:0 auto;}
@@ -259,6 +267,21 @@ section{padding:100px 24px;}
 .form-success h4{font-family:'Cinzel',serif;font-size:16px;color:var(--ink);margin-bottom:8px;}
 .form-success p{font-size:13px;color:var(--text-dim);}
 
+/* ── NEWSLETTER ── */
+.newsletter{background:linear-gradient(165deg,var(--ink) 0%,#3D2A1A 100%);padding:90px 24px;}
+.newsletter-box{max-width:560px;margin:0 auto;text-align:center;}
+.nl-icon{color:var(--gold-bright);font-size:20px;margin-bottom:16px;}
+.nl-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,3vw,32px);color:var(--gold-pale);margin-bottom:14px;}
+.nl-sub{font-size:14px;color:rgba(251,248,242,0.65);line-height:1.75;font-weight:300;margin-bottom:32px;}
+.nl-form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+.nl-input{flex:1;min-width:220px;padding:15px 18px;border:1px solid rgba(201,162,74,0.4);border-radius:2px;background:rgba(251,248,242,0.06);color:var(--ivory);font-family:'Inter',sans-serif;font-size:14px;}
+.nl-input::placeholder{color:rgba(251,248,242,0.4);}
+.nl-input:focus{outline:none;border-color:var(--gold-bright);}
+.nl-btn{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--gold-bright);color:var(--ink);padding:15px 30px;border:none;border-radius:2px;cursor:pointer;transition:all .25s ease;}
+.nl-btn:hover{background:#fff;}
+.nl-success{display:none;margin-top:18px;font-family:'Cinzel',serif;font-size:13px;color:var(--gold-bright);}
+.nl-success.show{display:block;}
+
 /* ── WHOLESALE ── */
 .wholesale{background:var(--ink);color:var(--ivory);padding:100px 24px;}
 .wholesale-inner{max-width:860px;margin:0 auto;text-align:center;}
@@ -414,6 +437,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     <div class="trust-item"><span class="tick">✓</span> HACCP-Sourced Ingredients</div>
   </div>
 </header>
+
+<!-- FREE SHIPPING BANNER -->
+<div class="shipping-banner">
+  <div class="shipping-banner-inner">
+    <span class="ship-icon">🚚</span>
+    <span class="ship-text">FREE SHIPPING AUSTRALIA-WIDE ON ORDERS OVER <strong>$49.99</strong></span>
+  </div>
+</div>
 
 <!-- FEEDBACK BANNER — TOP -->
 <div class="feedback-banner">
@@ -918,6 +949,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
+<!-- NEWSLETTER SIGNUP -->
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-box reveal">
+    <div class="nl-icon">✦</div>
+    <h2 class="nl-title">Join the Royal Court</h2>
+    <p class="nl-sub">Be first to know about new blends, restocks, and exclusive launch offers. No spam — just the good stuff, straight to your inbox.</p>
+    <form id="newsletterForm" action="https://formspree.io/f/xwvzzzeg" method="POST" class="nl-form">
+      <input type="email" name="email" placeholder="Enter your email address" required class="nl-input">
+      <input type="hidden" name="form_type" value="Newsletter Signup">
+      <button type="submit" class="nl-btn">Sign Up</button>
+    </form>
+    <p class="nl-success" id="nlSuccess">👑 Welcome to the Royal Court — you're on the list!</p>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="section-inner">
@@ -1056,6 +1102,19 @@ reviewForm.addEventListener('submit',function(e){
       document.getElementById('formSuccess').classList.add('show');
     }else{alert('Something went wrong. Message us on WhatsApp instead.');}
   }).catch(()=>alert('Something went wrong. Message us on WhatsApp instead.'));
+});
+
+const newsletterForm=document.getElementById('newsletterForm');
+newsletterForm.addEventListener('submit',function(e){
+  e.preventDefault();
+  const data=new FormData(newsletterForm);
+  fetch(newsletterForm.action,{method:'POST',body:data,headers:{'Accept':'application/json'}})
+  .then(r=>{
+    if(r.ok){
+      newsletterForm.style.display='none';
+      document.getElementById('nlSuccess').classList.add('show');
+    }else{alert('Something went wrong. Please try again or message us on WhatsApp.');}
+  }).catch(()=>alert('Something went wrong. Please try again or message us on WhatsApp.'));
 });
 
 const revealEls=document.querySelectorAll('.reveal');
