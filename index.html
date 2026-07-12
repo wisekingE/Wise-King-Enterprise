@@ -42,7 +42,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .brand-mark{display:flex;align-items:center;gap:10px;color:var(--ink);}
 .logo-img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold);}
 .brand-name{font-family:'Cinzel',serif;font-size:15px;letter-spacing:0.12em;font-weight:600;}
-.nav-links{display:flex;gap:20px;align-items:center;}
+.nav-links{display:flex;gap:22px;align-items:center;}
 .nav-links a{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;padding:6px 0;position:relative;transition:color .25s ease;}
 .nav-links a:hover{color:var(--gold);}
 .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--gold);transition:width .25s ease;}
@@ -54,33 +54,50 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .mobile-menu{display:none;flex-direction:column;background:var(--paper);border-top:1px solid var(--line);padding:8px 24px 24px;}
 .mobile-menu a{padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);}
 .mobile-menu.open{display:flex;}
-@media(max-width:940px){.nav-links{display:none;}.burger{display:flex;}}
+@media(max-width:1020px){.nav-links{display:none;}.burger{display:flex;}}
 
-/* ── HERO ── */
-.hero{background:radial-gradient(ellipse 120% 70% at 50% -10%,rgba(197,162,74,0.14),transparent 60%),linear-gradient(180deg,var(--cream) 0%,var(--ivory) 100%);color:var(--ink);padding:90px 24px 60px;text-align:center;overflow:hidden;}
-.hero-crest-wide{max-width:300px;width:80%;margin:0 auto 30px;animation:crestIn 1s ease both;}
-.hero-crest-wide img{width:100%;height:auto;display:block;margin:0 auto;}
-@keyframes crestIn{from{opacity:0;transform:scale(0.85) translateY(10px);}to{opacity:1;transform:scale(1) translateY(0);}}
-.eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;animation:fadeUp 1s ease 0.15s both;}
-.hero h1{font-size:clamp(36px,7vw,72px);line-height:1.1;font-weight:700;margin-bottom:24px;animation:fadeUp 1s ease 0.3s both;}
+/* ── HERO V2 (Cinematic split) ── */
+.hero{background:radial-gradient(ellipse 120% 70% at 50% -10%,rgba(197,162,74,0.16),transparent 60%),linear-gradient(180deg,var(--cream) 0%,var(--ivory) 100%);padding:70px 24px 0;overflow:hidden;}
+.hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:36px;text-align:center;}}
+.hero-text{padding-bottom:60px;}
+.eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;animation:fadeUp 1s ease 0.15s both;}
+.hero h1{font-size:clamp(34px,5.2vw,60px);line-height:1.12;font-weight:700;margin-bottom:22px;color:var(--ink);animation:fadeUp 1s ease 0.3s both;}
 .hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--gold),var(--gold-bright),#D4B05E);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-.hero-sub{font-size:clamp(15px,2vw,18px);color:var(--ink-soft);max-width:600px;margin:0 auto 14px;line-height:1.75;font-weight:300;animation:fadeUp 1s ease 0.45s both;}
-.hero-motto{font-family:'Cinzel',serif;font-style:italic;font-size:14px;color:var(--gold);margin-bottom:42px;animation:fadeUp 1s ease 0.55s both;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
-.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeUp 1s ease 0.7s both;}
+.hero-sub{font-size:clamp(15px,1.6vw,17px);color:var(--ink-soft);max-width:480px;margin:0 0 14px;line-height:1.75;font-weight:300;animation:fadeUp 1s ease 0.45s both;}
+@media(max-width:900px){.hero-sub{margin:0 auto 14px;}}
+.hero-motto{font-family:'Cinzel',serif;font-style:italic;font-size:14px;color:var(--gold);margin-bottom:34px;animation:fadeUp 1s ease 0.55s both;}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;animation:fadeUp 1s ease 0.7s both;}
+@media(max-width:900px){.hero-ctas{justify-content:center;}}
 .btn-primary{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:17px 36px;border-radius:1px;border:1px solid var(--ink);transition:all .3s ease;display:inline-block;}
 .btn-primary:hover{background:transparent;color:var(--ink);}
 .btn-ghost{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;background:transparent;color:var(--ink);padding:17px 36px;border-radius:1px;border:1px solid var(--ink-soft);transition:all .3s ease;display:inline-block;}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
-.hero-stats{display:flex;justify-content:center;gap:0;margin-top:70px;flex-wrap:wrap;animation:fadeUp 1s ease 0.85s both;}
+
+/* Cinematic product visual */
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;animation:fadeUp 1.1s ease 0.4s both;}
+.hero-glow{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,74,0.35) 0%,rgba(201,162,74,0.08) 55%,transparent 75%);filter:blur(10px);z-index:0;}
+.hero-steam{position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:120px;height:180px;z-index:2;pointer-events:none;opacity:0.55;}
+.hero-steam span{position:absolute;bottom:0;width:10px;height:120px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 40%,rgba(255,255,255,0) 100%);border-radius:50%;filter:blur(4px);animation:steamRise 4s ease-in-out infinite;}
+.hero-steam span:nth-child(1){left:20px;animation-delay:0s;}
+.hero-steam span:nth-child(2){left:55px;animation-delay:1.1s;height:150px;}
+.hero-steam span:nth-child(3){left:90px;animation-delay:2.1s;}
+@keyframes steamRise{0%{transform:translateY(0) scaleX(1);opacity:0;}20%{opacity:0.7;}100%{transform:translateY(-90px) scaleX(1.4);opacity:0;}}
+.hero-frame{position:relative;z-index:1;width:100%;max-width:420px;border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(42,33,24,0.25);border:1px solid rgba(201,162,74,0.35);}
+.hero-frame img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/5;}
+.hero-frame-caption{position:absolute;bottom:16px;left:16px;right:16px;background:rgba(42,33,24,0.72);backdrop-filter:blur(6px);border-radius:8px;padding:12px 16px;z-index:2;}
+.hfc-name{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.05em;color:var(--gold-pale);margin-bottom:2px;}
+.hfc-sub{font-size:10.5px;color:rgba(232,217,181,0.7);font-style:italic;}
+
+.hero-stats{display:flex;justify-content:center;gap:0;margin-top:0;padding:44px 24px 40px;flex-wrap:wrap;border-top:1px solid var(--line);max-width:1240px;margin-left:auto;margin-right:auto;}
 .stat{padding:0 36px;text-align:center;border-right:1px solid var(--line);}
 .stat:last-child{border-right:none;}
-.stat-num{font-family:'Cinzel Decorative',serif;font-size:26px;color:var(--gold);margin-bottom:4px;}
+.stat-num{font-family:'Cinzel Decorative',serif;font-size:24px;color:var(--gold);margin-bottom:4px;}
 .stat-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);}
 @media(max-width:600px){.stat{padding:0 18px;margin-bottom:18px;}}
 
-/* ── TRUST BAR ── */
-.trust-bar{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:30px;padding:0 24px 90px;animation:fadeUp 1s ease 1s both;}
+.trust-bar{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;padding:0 24px 50px;max-width:1240px;margin:0 auto;}
 .trust-item{display:flex;align-items:center;gap:7px;font-size:11.5px;letter-spacing:0.03em;color:var(--ink-soft);font-weight:500;}
 .trust-item .tick{color:var(--gold);font-weight:700;}
 
@@ -126,6 +143,7 @@ section{padding:100px 24px;}
 .pc-badge{position:absolute;top:14px;left:14px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:var(--gold-bright);padding:6px 14px;border-radius:20px;font-weight:600;z-index:2;}
 .pc-badge.sold-out-badge{background:var(--ink);color:var(--gold-pale);}
 .pc-weight-pill{position:absolute;top:14px;right:14px;font-family:'Cinzel',serif;font-size:11px;background:var(--ink);color:var(--gold-pale);padding:5px 13px;border-radius:14px;z-index:2;}
+.pc-ingredient-pill{position:absolute;bottom:14px;left:14px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.04em;background:rgba(42,33,24,0.78);backdrop-filter:blur(4px);color:var(--gold-pale);padding:6px 13px;border-radius:14px;z-index:2;}
 
 .pc-info{padding:22px 24px 24px;background:var(--ink);flex:1;display:flex;flex-direction:column;}
 .pc-name{font-family:'Cinzel Decorative',serif;font-size:20px;line-height:1.2;color:var(--gold-pale);margin-bottom:6px;}
@@ -154,22 +172,39 @@ section{padding:100px 24px;}
 .pc-velvet .pc-photo{aspect-ratio:16/7;}
 .pc-buybutton-wrap{flex:1;min-width:140px;}
 
+/* ── TRUST / SOCIAL PROOF ── */
+.trust-section{background:var(--cream);}
+.asseenin{text-align:center;margin-bottom:56px;}
+.asseenin-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);margin-bottom:20px;}
+.asseenin-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+.asseenin-pill{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-soft);border:1px dashed var(--gold-pale);background:var(--paper);padding:10px 18px;border-radius:20px;}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:56px;}
+@media(max-width:900px){.trust-grid{grid-template-columns:repeat(2,1fr);}}
+.trust-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:30px 22px;text-align:center;}
+.trust-card-icon{font-size:26px;margin-bottom:14px;}
+.trust-card-title{font-family:'Cinzel',serif;font-size:13px;letter-spacing:0.03em;color:var(--ink);margin-bottom:8px;}
+.trust-card-text{font-size:12.5px;color:var(--text-dim);line-height:1.6;font-weight:300;}
+.rating-summary{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:28px;max-width:520px;margin:0 auto;}
+.rating-num{font-family:'Cinzel Decorative',serif;font-size:40px;color:var(--gold);}
+.rating-stars-big{color:var(--gold);font-size:20px;letter-spacing:3px;margin-bottom:4px;}
+.rating-sub{font-size:12px;color:var(--text-dim);}
+
 /* ── LORE ── */
-.lore{background:var(--cream);}
+.lore{background:var(--paper);}
 .lore-tabs{display:flex;justify-content:center;gap:10px;margin-bottom:48px;flex-wrap:wrap;}
-.lore-tab{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--line);border-radius:24px;cursor:pointer;background:var(--paper);color:var(--ink-soft);transition:all .25s ease;}
+.lore-tab{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--line);border-radius:24px;cursor:pointer;background:var(--cream);color:var(--ink-soft);transition:all .25s ease;}
 .lore-tab.active{background:var(--ink);color:var(--gold-pale);border-color:var(--ink);}
 .lore-panel{display:none;}
 .lore-panel.active{display:block;animation:fadeUp .5s ease;}
 .lore-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
 @media(max-width:820px){.lore-cards{grid-template-columns:1fr;}}
-.lore-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:32px;}
+.lore-card{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:32px;}
 .lore-card-title{font-family:'Cinzel',serif;font-size:14px;letter-spacing:0.04em;color:var(--gold);margin-bottom:14px;font-weight:600;}
 .lore-card-text{font-size:14px;line-height:1.85;color:var(--ink-soft);font-weight:300;}
 .lore-card-text strong{color:var(--ink);font-weight:600;}
 
 /* ── STANDARD ── */
-.standard{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.standard{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 .standard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
 @media(max-width:900px){.standard-grid{grid-template-columns:repeat(2,1fr);}}
 .standard-item{background:var(--paper);padding:44px 26px;text-align:center;}
@@ -178,11 +213,11 @@ section{padding:100px 24px;}
 .standard-p{font-size:13px;color:var(--text-dim);line-height:1.7;font-weight:300;}
 
 /* ── INGREDIENTS ── */
-.ingredients{background:var(--cream);}
+.ingredients{background:var(--paper);}
 .ingredients-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;}
 @media(max-width:980px){.ingredients-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:560px){.ingredients-grid{grid-template-columns:repeat(2,1fr);}}
-.ingredient-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;text-align:center;transition:transform .3s ease,box-shadow .3s ease;}
+.ingredient-card{background:var(--cream);border:1px solid var(--line);border-radius:8px;overflow:hidden;text-align:center;transition:transform .3s ease,box-shadow .3s ease;}
 .ingredient-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(42,33,24,0.12);}
 .ingredient-img{width:100%;height:110px;object-fit:cover;display:block;}
 .ingredient-name{font-family:'Cinzel',serif;font-size:12.5px;letter-spacing:0.04em;color:var(--ink);margin:14px 10px 8px;}
@@ -248,6 +283,7 @@ section{padding:100px 24px;}
 .testimonial-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:14px;}
 .testimonial-name{font-family:'Cinzel',serif;font-size:12.5px;letter-spacing:0.04em;color:var(--ink);font-weight:600;}
 .testimonial-product{font-size:10.5px;letter-spacing:0.05em;text-transform:uppercase;color:var(--gold);background:var(--gold-pale);padding:4px 10px;border-radius:12px;}
+.testimonial-verified{display:inline-flex;align-items:center;gap:4px;font-size:10px;letter-spacing:0.04em;text-transform:uppercase;color:#4a7c4a;margin-top:8px;font-weight:600;}
 .review-form-box{background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:36px;}
 .review-form-box h3{font-family:'Cinzel',serif;font-size:16px;color:var(--ink);margin-bottom:8px;}
 .review-form-box p{font-size:13px;color:var(--text-dim);margin-bottom:24px;line-height:1.6;}
@@ -319,8 +355,19 @@ section{padding:100px 24px;}
 .services-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
 .sc{font-size:12px;letter-spacing:0.04em;text-transform:uppercase;border:1px solid var(--gold-pale);padding:9px 18px;border-radius:20px;color:var(--ink-soft);background:var(--paper);}
 
+/* ── JOURNAL TEASER ── */
+.journal{background:var(--ivory);}
+.journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:820px){.journal-grid{grid-template-columns:1fr;}}
+.journal-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:32px 26px;text-align:center;position:relative;overflow:hidden;}
+.journal-soon{position:absolute;top:14px;right:14px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;background:var(--gold-pale);color:var(--ink);padding:4px 10px;border-radius:12px;}
+.journal-icon{font-size:26px;margin-bottom:16px;}
+.journal-card-title{font-family:'Cinzel',serif;font-size:14px;color:var(--ink);margin-bottom:10px;}
+.journal-card-text{font-size:12.5px;color:var(--text-dim);line-height:1.7;font-weight:300;}
+.journal-note{text-align:center;margin-top:36px;font-size:13px;color:var(--text-dim);font-style:italic;}
+
 /* ── CONTACT ── */
-.contact{background:var(--ivory);}
+.contact{background:var(--cream);}
 .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--paper);}
 @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
 .contact-left{padding:56px 48px;background:var(--ink);color:var(--ivory);}
@@ -391,39 +438,52 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <span class="brand-name">WISE KING</span>
     </a>
     <div class="nav-links">
-      <a href="#products">The Range</a>
+      <a href="#products">Shop / The Range</a>
       <a href="#story">Our Story</a>
-      <a href="#ritual">Preparation</a>
-      <a href="#sample">Free Sample</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#wholesale">Wholesale</a>
-      <a href="#services">Launch Coaching</a>
+      <a href="#ritual">The Ritual</a>
+      <a href="#journal">Journal / Recipes</a>
+      <a href="#wholesale">Wholesale / Coaching</a>
+      <a href="#contact">Contact</a>
       <a href="https://wa.me/61470442705" class="nav-cta">Order Now</a>
     </div>
     <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#products">The Range</a>
+    <a href="#products">Shop / The Range</a>
     <a href="#story">Our Story</a>
-    <a href="#ritual">Preparation</a>
-    <a href="#sample">Free Sample</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#wholesale">Wholesale</a>
-    <a href="#services">Launch Coaching</a>
+    <a href="#ritual">The Ritual</a>
+    <a href="#journal">Journal / Recipes</a>
+    <a href="#wholesale">Wholesale / Coaching</a>
+    <a href="#contact">Contact</a>
     <a href="https://wa.me/61470442705">Order via WhatsApp</a>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO V2 — CINEMATIC SPLIT -->
 <header class="hero">
-  <div class="hero-crest-wide"><img src="kangaroo-crown.png.PNG" alt="Wise King Enterprise — royal kangaroo crest"></div>
-  <div class="eyebrow">Wise King Enterprise</div>
-  <h1>Worthy of <em>Royalty.</em><br>Crafted by Hand.</h1>
-  <p class="hero-sub">Ultra-premium wellness blends, hand-crafted in small batches in Geelong, Australia. Real ingredients. No fillers. No shortcuts. No machines.</p>
-  <p class="hero-motto">&ldquo;Not competing. Just creating.&rdquo;</p>
-  <div class="hero-ctas">
-    <a href="#products" class="btn-primary">Explore The Range</a>
-    <a href="#sample" class="btn-ghost">Request Free Sample</a>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="eyebrow">Wise King Enterprise</div>
+      <h1>Worthy of <em>Royalty.</em><br>Crafted by Hand.</h1>
+      <p class="hero-sub">Ultra-premium wellness blends, hand-crafted in small batches in Geelong, Australia. Real ingredients. No fillers. No shortcuts. No machines.</p>
+      <p class="hero-motto">&ldquo;Not competing. Just creating.&rdquo;</p>
+      <div class="hero-ctas">
+        <a href="#products" class="btn-primary">Explore The Range</a>
+        <a href="#sample" class="btn-ghost">Request Free Sample</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-glow"></div>
+      <div class="hero-steam"><span></span><span></span><span></span></div>
+      <div class="hero-frame">
+        <!-- REPLACE NewGL.jpg with your cinematic Golden Latte shot (steam + saffron threads visible) -->
+        <img src="NewGL.jpg" alt="Wise King Golden Saffron Latte — real saffron threads, gently steaming">
+        <div class="hero-frame-caption">
+          <div class="hfc-name">Golden Saffron Latte</div>
+          <div class="hfc-sub">Real saffron threads. Hand-blended. Bestseller.</div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="hero-stats">
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Blended in Geelong</div></div>
@@ -446,16 +506,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </div>
 
-<!-- FEEDBACK BANNER — TOP -->
-<div class="feedback-banner">
-  <div class="feedback-banner-inner">
-    <p>Tried a Wise King Sample? Tell Us What You Thought</p>
-    <p class="fb-sub">Your honest feedback shapes every future batch. Takes 60 seconds.</p>
-    <a href="#reviews" class="fb-btn">Share Your Feedback ↓</a>
-  </div>
-</div>
-
-<!-- PRODUCTS -->
+<!-- THE ROYAL COLLECTION (moved up, right after hero) -->
 <section id="products" class="products">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -471,6 +522,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <img src="NewGL.jpg" alt="Wise King Golden Saffron Latte — real product">
           <span class="pc-badge">Bestseller</span>
           <span class="pc-weight-pill">50g</span>
+          <span class="pc-ingredient-pill">✦ Real Saffron Threads</span>
         </div>
         <div class="pc-info">
           <div class="pc-name">Golden Saffron Latte</div>
@@ -485,7 +537,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
               <div id='product-component-1783601033579'></div>
             </div>
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Golden%20Saffron%20Latte%20please." class="pc-btn pc-btn-outline">WhatsApp Order</a>
-            <a href="#ritual" onclick="showRitual('latte');return false;" class="pc-btn pc-btn-outline">How to Make It</a>
+            <a href="#ritual" onclick="showRitual('latte');return false;" class="pc-btn pc-btn-outline">Learn More</a>
           </div>
         </div>
       </div>
@@ -496,6 +548,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <img src="Newcurry.jpg" alt="Wise King Curry Coast Rub — real product">
           <span class="pc-badge">Signature</span>
           <span class="pc-weight-pill">100g</span>
+          <span class="pc-ingredient-pill">✦ 12 Whole Spices</span>
         </div>
         <div class="pc-info">
           <div class="pc-name">Curry Coast Rub</div>
@@ -510,7 +563,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
               <div id='product-component-1783601072144'></div>
             </div>
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Curry%20Coast%20Rub%20please." class="pc-btn pc-btn-outline">WhatsApp Order</a>
-            <a href="#ritual" onclick="showRitual('curry');return false;" class="pc-btn pc-btn-outline">How to Make It</a>
+            <a href="#ritual" onclick="showRitual('curry');return false;" class="pc-btn pc-btn-outline">Learn More</a>
           </div>
         </div>
       </div>
@@ -521,6 +574,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <img src="Newmocha.jpg" alt="Wise King Café Mocha Blend — real product">
           <span class="pc-badge">New</span>
           <span class="pc-weight-pill">100g</span>
+          <span class="pc-ingredient-pill">✦ Dutch-Process Cocoa</span>
         </div>
         <div class="pc-info">
           <div class="pc-name">Café Mocha Blend</div>
@@ -535,7 +589,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
               <div id='product-component-1783601099220'></div>
             </div>
             <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%20want%20to%20order%20the%20Cafe%20Mocha%20Blend%20please." class="pc-btn pc-btn-outline">WhatsApp Order</a>
-            <a href="#ritual" onclick="showRitual('mocha');return false;" class="pc-btn pc-btn-outline">How to Make It</a>
+            <a href="#ritual" onclick="showRitual('mocha');return false;" class="pc-btn pc-btn-outline">Learn More</a>
           </div>
         </div>
       </div>
@@ -546,6 +600,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <img src="NewMatcha.jpg" alt="Wise King Ceremonial Matcha — real product">
           <span class="pc-badge sold-out-badge">Sold Out — Back Soon</span>
           <span class="pc-weight-pill">30g</span>
+          <span class="pc-ingredient-pill">✦ Uji, Kyoto Matcha</span>
         </div>
         <div class="pc-info">
           <div class="pc-name">Ceremonial Matcha</div>
@@ -558,11 +613,46 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <div class="pc-actions">
             <span class="pc-btn-disabled">Currently Unavailable</span>
             <a href="mailto:piyush@wiseking.com.au?subject=Notify%20Me%20-%20Ceremonial%20Matcha" class="pc-btn pc-btn-outline">Notify Me When Back</a>
-            <a href="#ritual" onclick="showRitual('matcha');return false;" class="pc-btn pc-btn-outline">How to Make It</a>
+            <a href="#ritual" onclick="showRitual('matcha');return false;" class="pc-btn pc-btn-outline">Learn More</a>
           </div>
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- TRUST & SOCIAL PROOF -->
+<section class="trust-section" id="trust">
+  <div class="section-inner">
+    <div class="asseenin reveal">
+      <div class="asseenin-label">Trusted &amp; Verified</div>
+      <div class="asseenin-row">
+        <span class="asseenin-pill">Registered Class 3 Food Business</span>
+        <span class="asseenin-pill">GS1 Australia Barcoded</span>
+        <span class="asseenin-pill">HACCP-Sourced Ingredients</span>
+        <span class="asseenin-pill">City of Greater Geelong Certified</span>
+      </div>
+    </div>
+    <div class="section-head reveal">
+      <div class="section-eyebrow">From Our Customers</div>
+      <h2 class="section-title">Real Reviews, Real People</h2>
+      <div class="divider-seal"><span></span></div>
+    </div>
+    <div class="rating-summary reveal" style="margin-bottom:56px;">
+      <div>
+        <div class="rating-num">5.0</div>
+      </div>
+      <div>
+        <div class="rating-stars-big">★★★★★</div>
+        <div class="rating-sub">Based on verified customer reviews</div>
+      </div>
+    </div>
+    <div class="trust-grid reveal">
+      <div class="trust-card"><div class="trust-card-icon">🤲</div><div class="trust-card-title">Hand-Blended</div><div class="trust-card-text">Every batch weighed and packed by the two of us — no machines, no shortcuts.</div></div>
+      <div class="trust-card"><div class="trust-card-icon">📋</div><div class="trust-card-title">Fully Registered</div><div class="trust-card-text">Class 3 Food Business, ABN, GS1 barcodes — the real paperwork, on file.</div></div>
+      <div class="trust-card"><div class="trust-card-icon">🌿</div><div class="trust-card-title">HACCP-Sourced</div><div class="trust-card-text">Ingredients sourced from HACCP-certified suppliers, not the cheapest bulk bin.</div></div>
+      <div class="trust-card"><div class="trust-card-icon">💬</div><div class="trust-card-title">A Real Person Replies</div><div class="trust-card-text">Every order, sample request, and question gets answered by us directly.</div></div>
     </div>
   </div>
 </section>
@@ -800,6 +890,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <span class="testimonial-name">Patrick B.</span>
           <span class="testimonial-product">Curry Coast Rub</span>
         </div>
+        <span class="testimonial-verified">✓ Verified Customer</span>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
@@ -808,6 +899,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <span class="testimonial-name">Kelly H.</span>
           <span class="testimonial-product">Curry Coast Rub</span>
         </div>
+        <span class="testimonial-verified">✓ Verified Customer</span>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
@@ -816,6 +908,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <span class="testimonial-name">Yuji N.</span>
           <span class="testimonial-product">Curry Coast Rub</span>
         </div>
+        <span class="testimonial-verified">✓ Verified Customer</span>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
@@ -824,6 +917,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <span class="testimonial-name">Kshitiz A.</span>
           <span class="testimonial-product">Curry Coast Rub</span>
         </div>
+        <span class="testimonial-verified">✓ Verified Customer</span>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
@@ -832,6 +926,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <span class="testimonial-name">Honey</span>
           <span class="testimonial-product">Golden Saffron Latte</span>
         </div>
+        <span class="testimonial-verified">✓ Verified Customer</span>
       </div>
     </div>
 
@@ -949,6 +1044,38 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
+<!-- JOURNAL / RECIPES — TEASER (Phase 2) -->
+<section class="journal" id="journal">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">The Royal Journal</div>
+      <h2 class="section-title">Recipes &amp; Rituals — Coming Soon</h2>
+      <div class="divider-seal"><span></span></div>
+    </div>
+    <div class="journal-grid reveal">
+      <div class="journal-card">
+        <span class="journal-soon">Coming Soon</span>
+        <div class="journal-icon">📖</div>
+        <div class="journal-card-title">Recipe Library</div>
+        <div class="journal-card-text">Curries, marinades, and lattes built around every Wise King blend — beyond the base ritual.</div>
+      </div>
+      <div class="journal-card">
+        <span class="journal-soon">Coming Soon</span>
+        <div class="journal-icon">✨</div>
+        <div class="journal-card-title">Ingredient Deep-Dives</div>
+        <div class="journal-card-text">The story and sourcing behind saffron, matcha, and every spice in the collection.</div>
+      </div>
+      <div class="journal-card">
+        <span class="journal-soon">Coming Soon</span>
+        <div class="journal-icon">👑</div>
+        <div class="journal-card-title">From Our Kitchen</div>
+        <div class="journal-card-text">Behind-the-scenes notes from every batch — what we learned, what we changed, what's next.</div>
+      </div>
+    </div>
+    <p class="journal-note reveal">We're building this out properly rather than rushing it — check back soon, or follow @wisekingenterprise for updates as it goes live.</p>
+  </div>
+</section>
+
 <!-- NEWSLETTER SIGNUP -->
 <section class="newsletter" id="newsletter">
   <div class="newsletter-box reveal">
@@ -1010,10 +1137,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <div class="footer-cols">
         <div class="footer-col">
           <h5>Explore</h5>
-          <a href="#products">The Range</a>
+          <a href="#products">Shop / The Range</a>
           <a href="#story">Our Story</a>
-          <a href="#ritual">Preparation</a>
-          <a href="#sample">Free Sample</a>
+          <a href="#ritual">The Ritual</a>
+          <a href="#journal">Journal / Recipes</a>
           <a href="#wholesale">Wholesale</a>
           <a href="#services">Launch Coaching</a>
         </div>
@@ -1124,8 +1251,6 @@ revealEls.forEach(el=>obs.observe(el));
 
 <!-- ══════════════════════════════════════════════ -->
 <!-- SHOPIFY BUY BUTTON EMBEDS — 3 PRODUCTS         -->
-<!-- These power the "Buy Now" instant checkout      -->
-<!-- buttons inside each product card above.         -->
 <!-- ══════════════════════════════════════════════ -->
 
 <!-- Golden Saffron Latte -->
@@ -1134,14 +1259,8 @@ revealEls.forEach(el=>obs.observe(el));
 (function () {
   var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
   if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) {
-      ShopifyBuyInit();
-    } else {
-      loadScript();
-    }
-  } else {
-    loadScript();
-  }
+    if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); }
+  } else { loadScript(); }
   function loadScript() {
     var script = document.createElement('script');
     script.async = true;
@@ -1161,43 +1280,14 @@ revealEls.forEach(el=>obs.observe(el));
         moneyFormat: '%24%7B%7Bamount%7D%7D',
         options: {
           "product": {
-            "contents": {
-              "img": false,
-              "title": false,
-              "price": false,
-              "description": false,
-              "options": false,
-              "quantity": false,
-              "button": false,
-              "buttonWithQuantity": true
-            },
+            "contents": { "img": false, "title": false, "price": false, "description": false, "options": false, "quantity": false, "button": false, "buttonWithQuantity": true },
             "styles": {
-              "product": {
-                "@media (min-width: 601px)": {
-                  "max-width": "100%",
-                  "margin-left": "0",
-                  "margin-bottom": "0"
-                }
-              },
-              "button": {
-                ":hover": { "background-color": "#a37b34" },
-                "background-color": "#b5893a",
-                ":focus": { "background-color": "#a37b34" },
-                "font-family": "Cinzel, serif",
-                "font-size": "11px",
-                "letter-spacing": "0.06em",
-                "text-transform": "uppercase",
-                "font-weight": "600",
-                "padding-top": "13px",
-                "padding-bottom": "13px",
-                "border-radius": "2px"
-              }
+              "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "0" } },
+              "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" }, "font-family": "Cinzel, serif", "font-size": "11px", "letter-spacing": "0.06em", "text-transform": "uppercase", "font-weight": "600", "padding-top": "13px", "padding-bottom": "13px", "border-radius": "2px" }
             },
             "text": { "button": "Buy Now" }
           },
-          "productSet": {
-            "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0" } } }
-          },
+          "productSet": { "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0" } } } },
           "modalProduct": {
             "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true },
             "styles": {
@@ -1208,16 +1298,10 @@ revealEls.forEach(el=>obs.observe(el));
           },
           "option": {},
           "cart": {
-            "styles": {
-              "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } }
-            },
+            "styles": { "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } } },
             "text": { "total": "Subtotal", "button": "Checkout" }
           },
-          "toggle": {
-            "styles": {
-              "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } }
-            }
-          }
+          "toggle": { "styles": { "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } } } }
         },
       });
     });
@@ -1232,14 +1316,8 @@ revealEls.forEach(el=>obs.observe(el));
 (function () {
   var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
   if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) {
-      ShopifyBuyInit();
-    } else {
-      loadScript();
-    }
-  } else {
-    loadScript();
-  }
+    if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); }
+  } else { loadScript(); }
   function loadScript() {
     var script = document.createElement('script');
     script.async = true;
@@ -1259,43 +1337,14 @@ revealEls.forEach(el=>obs.observe(el));
         moneyFormat: '%24%7B%7Bamount%7D%7D',
         options: {
           "product": {
-            "contents": {
-              "img": false,
-              "title": false,
-              "price": false,
-              "description": false,
-              "options": false,
-              "quantity": false,
-              "button": false,
-              "buttonWithQuantity": true
-            },
+            "contents": { "img": false, "title": false, "price": false, "description": false, "options": false, "quantity": false, "button": false, "buttonWithQuantity": true },
             "styles": {
-              "product": {
-                "@media (min-width: 601px)": {
-                  "max-width": "100%",
-                  "margin-left": "0",
-                  "margin-bottom": "0"
-                }
-              },
-              "button": {
-                ":hover": { "background-color": "#a37b34" },
-                "background-color": "#b5893a",
-                ":focus": { "background-color": "#a37b34" },
-                "font-family": "Cinzel, serif",
-                "font-size": "11px",
-                "letter-spacing": "0.06em",
-                "text-transform": "uppercase",
-                "font-weight": "600",
-                "padding-top": "13px",
-                "padding-bottom": "13px",
-                "border-radius": "2px"
-              }
+              "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "0" } },
+              "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" }, "font-family": "Cinzel, serif", "font-size": "11px", "letter-spacing": "0.06em", "text-transform": "uppercase", "font-weight": "600", "padding-top": "13px", "padding-bottom": "13px", "border-radius": "2px" }
             },
             "text": { "button": "Buy Now" }
           },
-          "productSet": {
-            "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0" } } }
-          },
+          "productSet": { "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0" } } } },
           "modalProduct": {
             "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true },
             "styles": {
@@ -1306,16 +1355,10 @@ revealEls.forEach(el=>obs.observe(el));
           },
           "option": {},
           "cart": {
-            "styles": {
-              "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } }
-            },
+            "styles": { "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } } } },
             "text": { "total": "Subtotal", "button": "Checkout" }
           },
-          "toggle": {
-            "styles": {
-              "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } }
-            }
-          }
+          "toggle": { "styles": { "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } } } }
         },
       });
     });
@@ -1330,14 +1373,8 @@ revealEls.forEach(el=>obs.observe(el));
 (function () {
   var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
   if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) {
-      ShopifyBuyInit();
-    } else {
-      loadScript();
-    }
-  } else {
-    loadScript();
-  }
+    if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); }
+  } else { loadScript(); }
   function loadScript() {
     var script = document.createElement('script');
     script.async = true;
@@ -1357,43 +1394,14 @@ revealEls.forEach(el=>obs.observe(el));
         moneyFormat: '%24%7B%7Bamount%7D%7D',
         options: {
           "product": {
-            "contents": {
-              "img": false,
-              "title": false,
-              "price": false,
-              "description": false,
-              "options": false,
-              "quantity": false,
-              "button": false,
-              "buttonWithQuantity": true
-            },
+            "contents": { "img": false, "title": false, "price": false, "description": false, "options": false, "quantity": false, "button": false, "buttonWithQuantity": true },
             "styles": {
-              "product": {
-                "@media (min-width: 601px)": {
-                  "max-width": "100%",
-                  "margin-left": "0",
-                  "margin-bottom": "0"
-                }
-              },
-              "button": {
-                ":hover": { "background-color": "#a37b34" },
-                "background-color": "#b5893a",
-                ":focus": { "background-color": "#a37b34" },
-                "font-family": "Cinzel, serif",
-                "font-size": "11px",
-                "letter-spacing": "0.06em",
-                "text-transform": "uppercase",
-                "font-weight": "600",
-                "padding-top": "13px",
-                "padding-bottom": "13px",
-                "border-radius": "2px"
-              }
+              "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "0" } },
+              "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" }, "font-family": "Cinzel, serif", "font-size": "11px", "letter-spacing": "0.06em", "text-transform": "uppercase", "font-weight": "600", "padding-top": "13px", "padding-bottom": "13px", "border-radius": "2px" }
             },
             "text": { "button": "Buy Now" }
           },
-          "productSet": {
-            "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0" } } }
-          },
+          "productSet": { "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0" } } } },
           "modalProduct": {
             "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true },
             "styles": {
@@ -1404,16 +1412,10 @@ revealEls.forEach(el=>obs.observe(el));
           },
           "option": {},
           "cart": {
-            "styles": {
-              "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } }
-            },
+            "styles": { "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } } } },
             "text": { "total": "Subtotal", "button": "Checkout" }
           },
-          "toggle": {
-            "styles": {
-              "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } }
-            }
-          }
+          "toggle": { "styles": { "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } } } }
         },
       });
     });
