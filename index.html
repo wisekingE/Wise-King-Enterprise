@@ -57,7 +57,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 @media(max-width:1020px){.nav-links{display:none;}.burger{display:flex;}}
 
 /* ── CART ICON ── */
-#shopify-cart-container{display:flex;align-items:center;}
+#shopify-cart-container{display:flex;align-items:center;margin-left:12px;}
 #shopify-cart-container iframe{position:static !important;}
 
 /* ── HERO V2 (Cinematic split) ── */
@@ -430,16 +430,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <img src="crown.png.PNG" alt="Wise King Enterprise crest" class="logo-img">
       <span class="brand-name">WISE KING</span>
     </a>
-    <div class="nav-links">
+   <div class="nav-links">
       <a href="#products">Shop / The Range</a>
       <a href="#story">Our Story</a>
       <a href="#ritual">The Ritual</a>
       <a href="#journal">Journal / Recipes</a>
       <a href="#wholesale">Wholesale / Coaching</a>
       <a href="#contact">Contact</a>
-      <div id="shopify-cart-container"></div>
       <a href="https://wa.me/61470442705" class="nav-cta">Order Now</a>
     </div>
+    <div id="shopify-cart-container"></div>
     <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
@@ -1304,9 +1304,7 @@ revealEls.forEach(el=>obs.observe(el));
             },
             "text": { "button": "Add to Cart" }
           },
-          "option": {},
-          "cart": { "popup": false },
-          "toggle": {}
+         "option": {}
         },
       });
 
@@ -1333,9 +1331,7 @@ revealEls.forEach(el=>obs.observe(el));
             },
             "text": { "button": "Add to Cart" }
           },
-          "option": {},
-          "cart": { "popup": false },
-          "toggle": {}
+         "option": {}
         },
       });
 
@@ -1362,12 +1358,9 @@ revealEls.forEach(el=>obs.observe(el));
             },
             "text": { "button": "Add to Cart" }
           },
-          "option": {},
-          "cart": { "popup": false },
-          "toggle": {}
+         "option": {}
         },
       });
-
     });
   }
 })();
