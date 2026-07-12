@@ -1251,6 +1251,10 @@ revealEls.forEach(el=>obs.observe(el));
     ShopifyBuy.UI.onReady(client).then(function (ui) {
 
       // ── Shared cart — icon lives in the nav, opens as a slide-out drawer ──
+      // FIX: lineItem "contents" must be explicitly declared with every
+      // control set to true, or the SDK renders a stripped-down line item
+      // with no quantity +/- and no remove control. This was the cause of
+      // "can't change quantity or remove items" in the cart drawer.
       ui.createComponent('cart', {
         node: document.getElementById('shopify-cart-container'),
         options: {
@@ -1272,8 +1276,12 @@ revealEls.forEach(el=>obs.observe(el));
             },
             "text": { "total": "Subtotal", "button": "Checkout", "empty": "Your cart is empty", "notice": "Free shipping on orders over $49.99", "noteDescription": "Add a note to your order" },
             "contents": {
-              "note": true
-            }
+              "note": true,
+              "title": true,
+              "lineItems": true,
+              "footer": true
+            },
+            "popup": true
           },
           "toggle": {
             "styles": {
@@ -1290,10 +1298,21 @@ revealEls.forEach(el=>obs.observe(el));
             }
           },
           "lineItem": {
+            "contents": {
+              "image": true,
+              "title": true,
+              "variantTitle": true,
+              "price": true,
+              "quantity": true,
+              "quantityIncrement": true,
+              "quantityDecrement": true,
+              "quantityInput": true
+            },
             "styles": {
               "variantTitle": { "color": "#5C5142" },
               "title": { "color": "#2A2118", "font-family": "Cinzel, serif" },
-              "price": { "color": "#B5893A" }
+              "price": { "color": "#B5893A" },
+              "quantityInput": { "color": "#2A2118" }
             }
           }
         }
