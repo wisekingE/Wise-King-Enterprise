@@ -57,8 +57,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 @media(max-width:1020px){.nav-links{display:none;}.burger{display:flex;}}
 
 /* ── CART ICON ── */
-#shopify-cart-container{display:flex;align-items:center;margin-left:12px;}
-#shopify-cart-container iframe{position:static !important;}
+/* FIX: do NOT force the Shopify cart iframe to position:static — it needs its
+   own fixed/absolute positioning to render as a slide-out drawer overlay.
+   Forcing static positioning is what caused the "shake, won't open" bug. */
+#shopify-cart-container{display:flex;align-items:center;margin-left:12px;position:relative;z-index:250;}
 
 /* ── HERO V2 (Cinematic split) ── */
 .hero{background:radial-gradient(ellipse 120% 70% at 50% -10%,rgba(197,162,74,0.16),transparent 60%),linear-gradient(180deg,var(--cream) 0%,var(--ivory) 100%);padding:70px 24px 0;overflow:hidden;}
@@ -547,7 +549,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <div class="pc-name">Curry Coast Rub</div>
           <div class="pc-tagline">&ldquo;Twelve spices. Like the Twelve Apostles — each one essential.&rdquo;</div>
           <div class="pc-price-row">
-            <span class="pc-price">$12.99</span>
+            <span class="pc-price">$19.99</span>
             <span class="pc-weight-label">/ 100g pouch</span>
           </div>
           <div class="pc-tags"><span class="pc-tag">No Salt Added</span><span class="pc-tag">12 Spices</span><span class="pc-tag">Handmade</span></div>
@@ -1214,6 +1216,10 @@ revealEls.forEach(el=>obs.observe(el));
 <!-- ══════════════════════════════════════════════ -->
 <!-- SHOPIFY SHARED CART — ONE CLIENT, ONE CART      -->
 <!-- All 3 products + 1 shared cart icon in the nav  -->
+<!-- FIXED: removed "popup": false from the cart      -->
+<!-- component so it renders as a proper slide-out    -->
+<!-- drawer overlay instead of fighting for inline     -->
+<!-- space in the nav bar.                             -->
 <!-- ══════════════════════════════════════════════ -->
 <script type="text/javascript">
 /*<![CDATA[*/
@@ -1244,7 +1250,7 @@ revealEls.forEach(el=>obs.observe(el));
 
     ShopifyBuy.UI.onReady(client).then(function (ui) {
 
-      // ── Shared cart — icon lives in the nav, accumulates all products ──
+      // ── Shared cart — icon lives in the nav, opens as a slide-out drawer ──
       ui.createComponent('cart', {
         node: document.getElementById('shopify-cart-container'),
         options: {
@@ -1259,10 +1265,15 @@ revealEls.forEach(el=>obs.observe(el));
                 "letter-spacing": "0.06em",
                 "text-transform": "uppercase",
                 "font-weight": "600"
+              },
+              "footer": {
+                "background-color": "#FBF8F2"
               }
             },
-            "text": { "total": "Subtotal", "button": "Checkout" },
-            "popup": false
+            "text": { "total": "Subtotal", "button": "Checkout", "empty": "Your cart is empty", "notice": "Free shipping on orders over $49.99", "noteDescription": "Add a note to your order" },
+            "contents": {
+              "note": true
+            }
           },
           "toggle": {
             "styles": {
@@ -1276,6 +1287,13 @@ revealEls.forEach(el=>obs.observe(el));
                 "color": "#2A2118",
                 "background-color": "#E8D9B5"
               }
+            }
+          },
+          "lineItem": {
+            "styles": {
+              "variantTitle": { "color": "#5C5142" },
+              "title": { "color": "#2A2118", "font-family": "Cinzel, serif" },
+              "price": { "color": "#B5893A" }
             }
           }
         }
