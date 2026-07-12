@@ -42,7 +42,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .brand-mark{display:flex;align-items:center;gap:10px;color:var(--ink);}
 .logo-img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold);}
 .brand-name{font-family:'Cinzel',serif;font-size:15px;letter-spacing:0.12em;font-weight:600;}
-.nav-links{display:flex;gap:22px;align-items:center;}
+.nav-links{display:flex;gap:18px;align-items:center;}
 .nav-links a{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;padding:6px 0;position:relative;transition:color .25s ease;}
 .nav-links a:hover{color:var(--gold);}
 .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--gold);transition:width .25s ease;}
@@ -55,6 +55,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .mobile-menu a{padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);}
 .mobile-menu.open{display:flex;}
 @media(max-width:1020px){.nav-links{display:none;}.burger{display:flex;}}
+
+/* ── CART ICON ── */
+#shopify-cart-container{display:flex;align-items:center;}
+#shopify-cart-container iframe{position:static !important;}
 
 /* ── HERO V2 (Cinematic split) ── */
 .hero{background:radial-gradient(ellipse 120% 70% at 50% -10%,rgba(197,162,74,0.16),transparent 60%),linear-gradient(180deg,var(--cream) 0%,var(--ivory) 100%);padding:70px 24px 0;overflow:hidden;}
@@ -433,6 +437,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <a href="#journal">Journal / Recipes</a>
       <a href="#wholesale">Wholesale / Coaching</a>
       <a href="#contact">Contact</a>
+      <div id="shopify-cart-container"></div>
       <a href="https://wa.me/61470442705" class="nav-cta">Order Now</a>
     </div>
     <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -1207,17 +1212,22 @@ revealEls.forEach(el=>obs.observe(el));
 </script>
 
 <!-- ══════════════════════════════════════════════ -->
-<!-- SHOPIFY BUY BUTTON EMBEDS — 3 PRODUCTS (fixed) -->
+<!-- SHOPIFY SHARED CART — ONE CLIENT, ONE CART      -->
+<!-- All 3 products + 1 shared cart icon in the nav  -->
 <!-- ══════════════════════════════════════════════ -->
-
-<!-- Golden Saffron Latte -->
 <script type="text/javascript">
 /*<![CDATA[*/
 (function () {
   var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
   if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); }
-  } else { loadScript(); }
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
   function loadScript() {
     var script = document.createElement('script');
     script.async = true;
@@ -1225,12 +1235,53 @@ revealEls.forEach(el=>obs.observe(el));
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
     script.onload = ShopifyBuyInit;
   }
+
   function ShopifyBuyInit() {
     var client = ShopifyBuy.buildClient({
       domain: 'hmfrhb-nb.myshopify.com',
       storefrontAccessToken: '3d4441b139fbd67f3300852feab77068',
     });
+
     ShopifyBuy.UI.onReady(client).then(function (ui) {
+
+      // ── Shared cart — icon lives in the nav, accumulates all products ──
+      ui.createComponent('cart', {
+        node: document.getElementById('shopify-cart-container'),
+        options: {
+          "cart": {
+            "styles": {
+              "button": {
+                ":hover": { "background-color": "#a37b34" },
+                "background-color": "#b5893a",
+                ":focus": { "background-color": "#a37b34" },
+                "font-family": "Cinzel, serif",
+                "font-size": "11px",
+                "letter-spacing": "0.06em",
+                "text-transform": "uppercase",
+                "font-weight": "600"
+              }
+            },
+            "text": { "total": "Subtotal", "button": "Checkout" },
+            "popup": false
+          },
+          "toggle": {
+            "styles": {
+              "toggle": {
+                "background-color": "#B5893A",
+                ":hover": { "background-color": "#a37b34" },
+                ":focus": { "background-color": "#a37b34" }
+              },
+              "count": {
+                "font-size": "12px",
+                "color": "#2A2118",
+                "background-color": "#E8D9B5"
+              }
+            }
+          }
+        }
+      });
+
+      // ── Golden Saffron Latte ──
       ui.createComponent('product', {
         id: '10491198406837',
         node: document.getElementById('product-component-1783601033579'),
@@ -1242,7 +1293,7 @@ revealEls.forEach(el=>obs.observe(el));
               "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "0" } },
               "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" }, "font-family": "Cinzel, serif", "font-size": "11px", "letter-spacing": "0.06em", "text-transform": "uppercase", "font-weight": "600", "padding-top": "13px", "padding-bottom": "13px", "border-radius": "2px" }
             },
-            "text": { "button": "Buy Now" }
+            "text": { "button": "Add to Cart" }
           },
           "productSet": { "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0" } } } },
           "modalProduct": {
@@ -1251,43 +1302,15 @@ revealEls.forEach(el=>obs.observe(el));
               "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
               "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } }
             },
-            "text": { "button": "Add to cart" }
+            "text": { "button": "Add to Cart" }
           },
           "option": {},
-          "cart": {
-            "styles": { "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } } },
-            "text": { "total": "Subtotal", "button": "Checkout" }
-          },
-          "toggle": { "styles": { "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } } } }
+          "cart": { "popup": false },
+          "toggle": {}
         },
       });
-    });
-  }
-})();
-/*]]>*/
-</script>
 
-<!-- Curry Coast Rub -->
-<script type="text/javascript">
-/*<![CDATA[*/
-(function () {
-  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-  if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); }
-  } else { loadScript(); }
-  function loadScript() {
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = scriptURL;
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-    script.onload = ShopifyBuyInit;
-  }
-  function ShopifyBuyInit() {
-    var client = ShopifyBuy.buildClient({
-      domain: 'hmfrhb-nb.myshopify.com',
-      storefrontAccessToken: '3d4441b139fbd67f3300852feab77068',
-    });
-    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      // ── Curry Coast Rub ──
       ui.createComponent('product', {
         id: '10491200110773',
         node: document.getElementById('product-component-1783601072144'),
@@ -1299,7 +1322,7 @@ revealEls.forEach(el=>obs.observe(el));
               "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "0" } },
               "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" }, "font-family": "Cinzel, serif", "font-size": "11px", "letter-spacing": "0.06em", "text-transform": "uppercase", "font-weight": "600", "padding-top": "13px", "padding-bottom": "13px", "border-radius": "2px" }
             },
-            "text": { "button": "Buy Now" }
+            "text": { "button": "Add to Cart" }
           },
           "productSet": { "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0" } } } },
           "modalProduct": {
@@ -1308,43 +1331,15 @@ revealEls.forEach(el=>obs.observe(el));
               "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
               "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } }
             },
-            "text": { "button": "Add to cart" }
+            "text": { "button": "Add to Cart" }
           },
           "option": {},
-          "cart": {
-            "styles": { "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } } },
-            "text": { "total": "Subtotal", "button": "Checkout" }
-          },
-          "toggle": { "styles": { "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } } } }
+          "cart": { "popup": false },
+          "toggle": {}
         },
       });
-    });
-  }
-})();
-/*]]>*/
-</script>
 
-<!-- Café Mocha Blend -->
-<script type="text/javascript">
-/*<![CDATA[*/
-(function () {
-  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-  if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); }
-  } else { loadScript(); }
-  function loadScript() {
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = scriptURL;
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-    script.onload = ShopifyBuyInit;
-  }
-  function ShopifyBuyInit() {
-    var client = ShopifyBuy.buildClient({
-      domain: 'hmfrhb-nb.myshopify.com',
-      storefrontAccessToken: '3d4441b139fbd67f3300852feab77068',
-    });
-    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      // ── Café Mocha Blend ──
       ui.createComponent('product', {
         id: '10491203256501',
         node: document.getElementById('product-component-1783601099220'),
@@ -1356,7 +1351,7 @@ revealEls.forEach(el=>obs.observe(el));
               "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "0" } },
               "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" }, "font-family": "Cinzel, serif", "font-size": "11px", "letter-spacing": "0.06em", "text-transform": "uppercase", "font-weight": "600", "padding-top": "13px", "padding-bottom": "13px", "border-radius": "2px" }
             },
-            "text": { "button": "Buy Now" }
+            "text": { "button": "Add to Cart" }
           },
           "productSet": { "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0" } } } },
           "modalProduct": {
@@ -1365,16 +1360,14 @@ revealEls.forEach(el=>obs.observe(el));
               "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
               "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } }
             },
-            "text": { "button": "Add to cart" }
+            "text": { "button": "Add to Cart" }
           },
           "option": {},
-          "cart": {
-            "styles": { "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } } },
-            "text": { "total": "Subtotal", "button": "Checkout" }
-          },
-          "toggle": { "styles": { "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } } } }
+          "cart": { "popup": false },
+          "toggle": {}
         },
       });
+
     });
   }
 })();
