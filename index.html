@@ -75,7 +75,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .btn-ghost{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;background:transparent;color:var(--ink);padding:17px 36px;border-radius:1px;border:1px solid var(--ink-soft);transition:all .3s ease;display:inline-block;}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
 
-/* Cinematic product visual */
 .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;animation:fadeUp 1.1s ease 0.4s both;}
 .hero-glow{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,74,0.35) 0%,rgba(201,162,74,0.08) 55%,transparent 75%);filter:blur(10px);z-index:0;}
 .hero-steam{position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:120px;height:180px;z-index:2;pointer-events:none;opacity:0.55;}
@@ -331,29 +330,19 @@ section{padding:100px 24px;}
 .wholesale-item-title{font-family:'Cinzel',serif;font-size:13px;color:var(--gold-bright);margin-bottom:8px;letter-spacing:0.03em;}
 .wholesale-item-text{font-size:12.5px;color:rgba(251,248,242,0.6);line-height:1.7;font-weight:300;}
 
-/* ── SERVICES ── */
-.services{background:var(--cream);padding:100px 24px;}
-.services-inner{max-width:900px;margin:0 auto;}
-.services-intro{font-size:15px;color:var(--ink-soft);line-height:1.8;font-weight:300;margin-bottom:48px;max-width:620px;margin-left:auto;margin-right:auto;text-align:center;}
-.service-product{border-radius:10px;overflow:hidden;background:var(--ink);border:1px solid rgba(201,162,74,0.3);display:grid;grid-template-columns:1fr;box-shadow:0 20px 45px rgba(42,33,24,0.14);}
-.sp-inner{padding:44px 40px;}
-.sp-badge{display:inline-block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:var(--gold-bright);padding:6px 14px;border-radius:20px;font-weight:600;margin-bottom:18px;}
-.sp-name{font-family:'Cinzel Decorative',serif;font-size:28px;line-height:1.2;color:var(--gold-pale);margin-bottom:10px;}
-.sp-tagline{font-size:13.5px;font-style:italic;color:rgba(232,217,181,0.65);margin-bottom:22px;font-weight:300;line-height:1.6;}
-.sp-price-row{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;}
-.sp-price{font-family:'Cinzel',serif;font-size:34px;font-weight:700;color:var(--gold-bright);}
-.sp-price-label{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(232,217,181,0.5);}
-.sp-list{list-style:none;margin-bottom:30px;}
-.sp-list li{display:flex;gap:10px;font-size:14px;color:rgba(232,217,181,0.85);line-height:1.7;margin-bottom:10px;font-weight:300;}
-.sp-list li::before{content:'✦';color:var(--gold-bright);flex-shrink:0;}
-.sp-actions{display:flex;gap:12px;flex-wrap:wrap;}
-.sp-btn-fill{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;background:var(--gold-bright);color:var(--ink);padding:16px 30px;border-radius:2px;transition:all .25s ease;}
-.sp-btn-fill:hover{background:#fff;}
-.sp-btn-outline{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;background:transparent;color:rgba(232,217,181,0.8);border:1px solid rgba(201,162,74,0.4);padding:16px 30px;border-radius:2px;transition:all .25s ease;}
-.sp-btn-outline:hover{border-color:var(--gold-bright);color:var(--gold-bright);}
-.services-chips-head{text-align:center;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin:48px 0 20px;}
-.services-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
-.sc{font-size:12px;letter-spacing:0.04em;text-transform:uppercase;border:1px solid var(--gold-pale);padding:9px 18px;border-radius:20px;color:var(--ink-soft);background:var(--paper);}
+/* ── SERVICES COMPACT ── */
+.services-compact{background:var(--cream);padding:48px 24px;}
+.sc-strip{max-width:1000px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.sc-strip-text{flex:1;min-width:260px;}
+.sc-strip-eyebrow{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.sc-strip-title{font-family:'Cinzel',serif;font-size:16px;color:var(--ink);line-height:1.4;margin-bottom:6px;font-weight:600;}
+.sc-strip-sub{font-size:12.5px;color:var(--text-dim);font-weight:300;}
+.sc-strip-actions{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0;}
+.sc-strip-btn{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:12px 24px;border-radius:2px;transition:all .25s ease;white-space:nowrap;}
+.sc-strip-btn:hover{background:var(--gold);color:var(--ink);}
+.sc-strip-link{font-size:11.5px;color:var(--gold);font-weight:500;}
+.sc-strip-link:hover{text-decoration:underline;}
+@media(max-width:600px){.sc-strip{flex-direction:column;align-items:flex-start;}.sc-strip-actions{align-items:flex-start;width:100%;}}
 
 /* ── JOURNAL TEASER ── */
 .journal{background:var(--ivory);}
@@ -476,7 +465,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <div class="hero-glow"></div>
       <div class="hero-steam"><span></span><span></span><span></span></div>
       <div class="hero-frame">
-        <!-- REPLACE NewGL.jpg with your cinematic Golden Latte shot (steam + saffron threads visible) -->
         <img src="NewGL.jpg" alt="Wise King Golden Saffron Latte — real saffron threads, gently steaming">
         <div class="hero-frame-caption">
           <div class="hfc-name">Golden Saffron Latte</div>
@@ -506,7 +494,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </div>
 
-<!-- THE ROYAL COLLECTION (moved up, right after hero) -->
+<!-- THE ROYAL COLLECTION -->
 <section id="products" class="products">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -996,50 +984,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
-<!-- LAUNCH COACHING -->
-<section class="services" id="services">
-  <div class="services-inner">
-    <div class="section-head reveal">
-      <div class="section-eyebrow">Beyond the Blend</div>
-      <h2 class="section-title">Have a Business Idea? We've Already Done the Hard Part.</h2>
-      <div class="divider-seal"><span></span></div>
-    </div>
-    <p class="services-intro reveal">We built Wise King Enterprise from a blank page — ABN, council food registration, food safety certification, compliant labels, GS1 barcodes, a website, pricing, and suppliers. If you've got an idea and don't know where to start, we'll walk you through exactly what we did.</p>
-
-    <div class="service-product reveal">
-      <div class="sp-inner">
-        <span class="sp-badge">1:1 Session</span>
-        <div class="sp-name">The Idea-to-Launch Session</div>
-        <div class="sp-tagline">&ldquo;For anyone with a business idea and no idea where to start.&rdquo;</div>
-        <div class="sp-price-row">
-          <span class="sp-price">$149</span>
-          <span class="sp-price-label">/ 90-minute 1:1 video call</span>
-        </div>
-        <ul class="sp-list">
-          <li>How to register your business name and ABN correctly the first time</li>
-          <li>What council/food registration actually requires, and how to avoid the mistakes we made</li>
-          <li>Label compliance — what the law actually requires vs. what's optional</li>
-          <li>GS1 barcodes explained — what to buy, what to avoid, how much it really costs</li>
-          <li>Pricing your product so you're actually profitable, not just busy</li>
-          <li>A written follow-up summary of your specific next steps after the call</li>
-        </ul>
-        <div class="sp-actions">
-          <a href="https://wa.me/61470442705?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Idea-to-Launch%20Session." class="sp-btn-fill">Book on WhatsApp</a>
-          <a href="mailto:piyush@wiseking.com.au?subject=Idea-to-Launch%20Session%20Enquiry" class="sp-btn-outline">Email Enquiry</a>
-        </div>
+<!-- LAUNCH COACHING — COMPACT -->
+<section class="services-compact" id="services">
+  <div class="section-inner">
+    <div class="sc-strip reveal">
+      <div class="sc-strip-text">
+        <div class="sc-strip-eyebrow">Beyond the Blend</div>
+        <div class="sc-strip-title">Got a business idea of your own? We've already done the hard part.</div>
+        <div class="sc-strip-sub">1:1 Idea-to-Launch coaching — ABN, food registration, labels, barcodes, pricing. $149 / 90 min.</div>
       </div>
-    </div>
-
-    <div class="services-chips-head">Other Ways We Can Help</div>
-    <div class="services-chips reveal">
-      <span class="sc">🏠 Home Business Launch</span>
-      <span class="sc">🎨 Label &amp; Brand Design</span>
-      <span class="sc">🛒 Shopify &amp; Amazon Setup</span>
-      <span class="sc">📊 Excel &amp; Operations</span>
-      <span class="sc">📋 FSANZ Nutrition Panels</span>
-      <span class="sc">🏷️ GS1 Barcode Help</span>
-      <span class="sc">📱 Social Media Support</span>
-      <span class="sc">✉️ Virtual Assistant</span>
+      <div class="sc-strip-actions">
+        <a href="https://wa.me/61470442705?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Idea-to-Launch%20Session." class="sc-strip-btn">Book on WhatsApp</a>
+        <a href="mailto:piyush@wiseking.com.au?subject=Idea-to-Launch%20Session%20Enquiry" class="sc-strip-link">Email enquiry →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1250,7 +1207,7 @@ revealEls.forEach(el=>obs.observe(el));
 </script>
 
 <!-- ══════════════════════════════════════════════ -->
-<!-- SHOPIFY BUY BUTTON EMBEDS — 3 PRODUCTS         -->
+<!-- SHOPIFY BUY BUTTON EMBEDS — 3 PRODUCTS (fixed) -->
 <!-- ══════════════════════════════════════════════ -->
 
 <!-- Golden Saffron Latte -->
@@ -1355,7 +1312,7 @@ revealEls.forEach(el=>obs.observe(el));
           },
           "option": {},
           "cart": {
-            "styles": { "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } } } },
+            "styles": { "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } } },
             "text": { "total": "Subtotal", "button": "Checkout" }
           },
           "toggle": { "styles": { "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } } } }
@@ -1412,7 +1369,7 @@ revealEls.forEach(el=>obs.observe(el));
           },
           "option": {},
           "cart": {
-            "styles": { "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } } } },
+            "styles": { "button": { ":hover": { "background-color": "#a37b34" }, "background-color": "#b5893a", ":focus": { "background-color": "#a37b34" } } },
             "text": { "total": "Subtotal", "button": "Checkout" }
           },
           "toggle": { "styles": { "toggle": { "background-color": "#b5893a", ":hover": { "background-color": "#a37b34" }, ":focus": { "background-color": "#a37b34" } } } }
