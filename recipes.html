@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wise King Enterprise | The Royal Recipe Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FBF8F2; --cream:#F4EEE0; --paper:#FFFFFF; --line:#E6DCC4;
+  --ink:#2A2118; --ink-soft:#5C5142; --text-dim:#8A7D68;
+  --gold:#B5893A; --gold-bright:#C9A24A; --gold-pale:#E8D9B5;
+  --theme:#8B5E1A; --theme-text:#E8D9B5;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--ivory);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+::selection{background:var(--gold-pale);color:var(--ink);}
+
+.topbar{background:var(--ink);color:var(--gold-pale);text-align:center;font-size:11px;letter-spacing:0.1em;padding:9px 16px;font-weight:500;}
+nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mark{display:flex;align-items:center;gap:10px;color:var(--ink);}
+.logo-img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold);}
+.brand-name{font-family:'Cinzel',serif;font-size:15px;letter-spacing:0.12em;font-weight:600;}
+.back-link{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;}
+.back-link:hover{color:var(--gold);}
+
+.rl-hero{background:linear-gradient(165deg,var(--cream) 0%,var(--ivory) 100%);padding:70px 24px 50px;text-align:center;}
+.rl-eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.rl-title{font-family:'Cinzel Decorative',serif;font-size:clamp(30px,4.5vw,48px);color:var(--ink);margin-bottom:16px;}
+.rl-sub{max-width:560px;margin:0 auto;font-size:14.5px;color:var(--ink-soft);line-height:1.8;font-weight:300;}
+
+.product-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:0 24px 50px;max-width:1000px;margin:0 auto;}
+.product-tab{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--line);border-radius:24px;cursor:pointer;background:var(--paper);color:var(--ink-soft);transition:all .25s ease;font-weight:600;}
+.product-tab.active{background:var(--theme);color:var(--theme-text);border-color:var(--theme);}
+.product-tab:disabled{opacity:0.45;cursor:not-allowed;}
+
+.recipes-wrap{max-width:900px;margin:0 auto;padding:0 24px 100px;}
+.recipe-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:28px;}
+.recipe-header{background:var(--theme);color:var(--theme-text);padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.recipe-title{font-family:'Cinzel Decorative',serif;font-size:19px;}
+.recipe-badge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;background:rgba(255,255,255,0.15);padding:5px 12px;border-radius:14px;font-weight:600;}
+.recipe-body{padding:28px;display:grid;grid-template-columns:0.85fr 1.15fr;gap:32px;}
+@media(max-width:700px){.recipe-body{grid-template-columns:1fr;}}
+.recipe-ing-title,.recipe-steps-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--theme);margin-bottom:14px;font-weight:600;}
+.ing-list{list-style:none;}
+.ing-list li{font-size:13.5px;color:var(--ink-soft);padding:8px 0;border-bottom:1px dashed var(--line);}
+.ing-list li:last-child{border-bottom:none;}
+.ing-list li strong{color:var(--ink);}
+.step-list{list-style:none;counter-reset:step;}
+.step-list li{counter-increment:step;position:relative;padding:0 0 18px 34px;font-size:13.5px;line-height:1.7;color:var(--ink-soft);}
+.step-list li:last-child{padding-bottom:0;}
+.step-list li::before{content:counter(step);position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:var(--theme);color:var(--theme-text);font-family:'Cinzel',serif;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.step-list li strong{color:var(--ink);}
+.recipe-note{grid-column:1/-1;background:var(--cream);border-radius:8px;padding:14px 18px;font-size:12.5px;color:var(--ink-soft);font-style:italic;margin-top:6px;}
+
+.coming-soon-panel{text-align:center;padding:70px 24px;background:var(--paper);border:1px dashed var(--gold-pale);border-radius:12px;}
+.coming-soon-panel .cs-icon{font-size:28px;margin-bottom:16px;}
+.coming-soon-panel h3{font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--ink);margin-bottom:10px;}
+.coming-soon-panel p{font-size:13.5px;color:var(--text-dim);max-width:420px;margin:0 auto;}
+
+.giftbox-banner{background:linear-gradient(135deg,var(--ink) 0%,#3D2A1A 100%);padding:32px 24px;text-align:center;margin:0 auto 50px;max-width:900px;border-radius:12px;}
+.giftbox-banner p:first-child{font-family:'Cinzel',serif;font-size:13px;letter-spacing:0.06em;color:var(--gold-pale);margin-bottom:8px;}
+.giftbox-banner p:last-child{font-size:12px;color:rgba(232,217,181,0.65);}
+
+.back-to-shop{background:var(--cream);text-align:center;padding:60px 24px;}
+.back-to-shop a{display:inline-block;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px 34px;border-radius:2px;}
+.back-to-shop a:hover{background:var(--gold);color:var(--ink);}
+
+footer{background:var(--ink);color:rgba(251,248,242,0.6);padding:40px 24px;text-align:center;font-size:12px;}
+footer a{color:var(--gold-pale);}
+</style>
+</head>
+<body>
+
+<div class="topbar">🇦🇺 BLENDED &amp; PACKED IN GEELONG, AUSTRALIA &nbsp;·&nbsp; NO FILLERS · NO SHORTCUTS</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="brand-mark">
+      <img src="crown.png.PNG" alt="Wise King Enterprise crest" class="logo-img">
+      <span class="brand-name">WISE KING</span>
+    </a>
+    <a href="index.html" class="back-link">← Back to Shop</a>
+  </div>
+</nav>
+
+<div class="rl-hero">
+  <div class="rl-eyebrow">The Royal Journal</div>
+  <h1 class="rl-title">The Recipe Library</h1>
+  <p class="rl-sub">Every blend, styled the way we actually make it at home — plus a few ways we've never told anyone about until now.</p>
+</div>
+
+<div class="product-tabs" id="productTabs"></div>
+
+<div class="recipes-wrap">
+  <div class="giftbox-banner">
+    <p>👑 Coming Soon: The Wise King Trove</p>
+    <p>All five blends, 40g each, in one gift box — the whole Royal Collection in miniature.</p>
+  </div>
+  <div id="recipesContainer"></div>
+</div>
+
+<div class="back-to-shop">
+  <a href="index.html">Explore the Full Collection</a>
+</div>
+
+<footer>
+  Wise King Enterprise &nbsp;·&nbsp; Geelong, Victoria &nbsp;·&nbsp;
+  <a href="https://wa.me/61470442705">WhatsApp Us</a>
+</footer>
+
+<script>
+const RECIPES_CONFIG = [
+  {
+    key: 'latte',
+    name: 'Golden Saffron Latte',
+    theme: '#8B5E1A',
+    themeText: '#E8D9B5',
+    available: true,
+    recipes: [
+      {
+        title: 'Iced Golden Latte — Bali Style',
+        badge: 'Signature',
+        ingredients: [
+          '<strong>4g</strong> Golden Saffron Latte (one level teaspoon)',
+          'A splash of hot water',
+          '<strong>4–5</strong> ice cubes',
+          '<strong>200ml</strong> milk of choice, frothed hot',
+          'Honey or maple syrup, to taste'
+        ],
+        steps: [
+          'Add <strong>4g</strong> of Golden Saffron Latte to your glass.',
+          'Add a small splash of hot water and stir into a smooth paste — this step is non-negotiable, it\'s what unlocks the saffron and turmeric.',
+          'Drop in <strong>4–5 ice cubes</strong> directly into the paste.',
+          'Froth your milk hot as normal, then pour it straight over the ice — the contrast is what makes this version work. The ice cracks and dilutes just enough as the hot froth hits it.',
+          'Stir once, gently, top to bottom. Sweeten to taste and drink immediately while the froth is still holding.'
+        ],
+        note: 'This is the version we picked up from someone making it for us in Bali — paste and ice first, hot frothed milk poured last. Don\'t pre-cool the milk; the temperature clash is the whole trick.'
+      },
+      {
+        title: 'Classic Hot Golden Latte',
+        ingredients: [
+          '<strong>4g</strong> Golden Saffron Latte (one level teaspoon)',
+          'A splash of hot water',
+          '<strong>230ml</strong> warm or frothed milk',
+          'Honey or maple syrup, to taste'
+        ],
+        steps: [
+          'Add <strong>4g</strong> to your cup.',
+          'Add a splash of hot water. Stir into a smooth paste — essential for unlocking the saffron.',
+          'Pour <strong>230ml</strong> warm or frothed milk over the paste.',
+          'Sweeten with honey or maple syrup to taste. Enjoy immediately.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'mocha',
+    name: 'Café Mocha Blend',
+    theme: '#3D2208',
+    themeText: '#E8D9B5',
+    available: true,
+    recipes: [
+      {
+        title: 'Iced Mocha — Bali Style',
+        badge: 'Signature',
+        ingredients: [
+          '<strong>6g</strong> Café Mocha Blend (one heaped teaspoon)',
+          'A splash of hot water',
+          '<strong>4–5</strong> ice cubes',
+          '<strong>200ml</strong> milk of choice, frothed hot'
+        ],
+        steps: [
+          'Add <strong>6g</strong> of Café Mocha Blend to your glass.',
+          'Add a splash of hot water and stir into a smooth, glossy paste — this fully unlocks the dark cocoa before anything cold touches it.',
+          'Drop <strong>4–5 ice cubes</strong> straight into the paste.',
+          'Froth your milk hot, then pour it directly over the ice — same method as our Golden Latte. The hot-over-ice contrast gives it a café-crema texture cold-brew mocha usually can\'t.',
+          'Stir gently and drink right away.'
+        ],
+        note: 'Same Bali-style method as the Golden Latte — paste and ice first, hot frothed milk poured last.'
+      },
+      {
+        title: 'Classic Hot Mocha',
+        ingredients: [
+          '<strong>6g</strong> Café Mocha Blend (one heaped teaspoon)',
+          'A splash of hot water',
+          '<strong>200ml</strong> warm or frothed milk'
+        ],
+        steps: [
+          'Add <strong>6g</strong> to a mug.',
+          'Add a splash of hot water. Stir into a smooth paste.',
+          'Pour in <strong>200ml</strong> warm or frothed milk.',
+          'Sweeten to taste if desired.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'matcha',
+    name: 'Ceremonial Matcha',
+    theme: '#2D4A2D',
+    themeText: '#C8E6C9',
+    available: true,
+    recipes: [
+      {
+        title: 'Traditional Usucha (Thin Tea)',
+        badge: 'Signature',
+        ingredients: [
+          '<strong>1.5–2g</strong> Ceremonial Matcha (sifted)',
+          '<strong>60–70ml</strong> water, 70–80°C (not boiling)'
+        ],
+        steps: [
+          'Sift the matcha into a bowl to break up any clumps — this matters more than people expect.',
+          'Add the water at 70–80°C. Boiling water scorches the matcha and turns it bitter.',
+          'Whisk briskly in a tight \'W\' motion (not circular) until a fine, even froth forms across the surface.',
+          'Drink immediately, straight from the bowl.'
+        ],
+        note: 'This is the real ceremonial method — no milk, no sweetener. If your matcha still has grain or grit after whisking, it isn\'t ceremonial-grade.'
+      },
+      {
+        title: 'Matcha Latte',
+        ingredients: [
+          '<strong>2g</strong> Ceremonial Matcha (sifted)',
+          'A splash of hot water',
+          '<strong>200ml</strong> warm or frothed milk',
+          'Honey, to taste'
+        ],
+        steps: [
+          'Sift the matcha into your cup to remove clumps.',
+          'Add a small splash of hot water and whisk into a smooth, bright green paste.',
+          'Pour in <strong>200ml</strong> warm or frothed milk.',
+          'Sweeten with honey if desired.'
+        ]
+      },
+      {
+        title: 'Iced Matcha Latte',
+        ingredients: [
+          '<strong>2g</strong> Ceremonial Matcha (sifted)',
+          'A splash of hot water',
+          '<strong>4–5</strong> ice cubes',
+          '<strong>200ml</strong> milk of choice'
+        ],
+        steps: [
+          'Sift the matcha, then whisk with a splash of hot water into a smooth paste.',
+          'Fill a glass with <strong>4–5 ice cubes</strong>.',
+          'Pour the matcha paste over the ice, then top with cold milk.',
+          'Stir well and drink immediately, before it separates.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'curry',
+    name: 'Curry Coast Rub',
+    theme: '#8B1A1A',
+    themeText: '#fff',
+    available: true,
+    recipes: [
+      {
+        title: 'Classic Steak &amp; Protein Rub',
+        badge: 'Signature',
+        ingredients: [
+          '<strong>250g</strong> steak, chicken, or firm fish',
+          '<strong>1 tbsp</strong> olive oil (or oil of choice)',
+          '<strong>6g</strong> Curry Coast Rub (about 1.5 tsp)'
+        ],
+        steps: [
+          'Pat the protein dry, then rub a thin layer of oil over the surface — this helps the spices bind and stops them from burning.',
+          'Apply <strong>6g</strong> of Curry Coast Rub evenly across all sides, pressing gently so it adheres.',
+          'Rest for <strong>10 minutes</strong> at room temperature before cooking — this is when the smoked paprika and Kashmiri chilli start to bind into a crust.',
+          'Grill, pan-sear, or roast as normal. Rest again for a few minutes after cooking before slicing.'
+        ]
+      },
+      {
+        title: 'Roasted Vegetables',
+        ingredients: [
+          '<strong>500g</strong> mixed vegetables (pumpkin, cauliflower, carrots, potatoes)',
+          '<strong>2 tbsp</strong> olive oil',
+          '<strong>8–10g</strong> Curry Coast Rub'
+        ],
+        steps: [
+          'Preheat oven to <strong>200°C</strong>. Cut vegetables into even, roast-sized pieces.',
+          'Toss with olive oil until lightly coated, then sprinkle over the Curry Coast Rub and toss again until evenly distributed.',
+          'Spread in a single layer on a tray — don\'t overcrowd, or they\'ll steam instead of roast.',
+          'Roast for <strong>30–35 minutes</strong>, turning once halfway, until edges are deeply caramelised.'
+        ]
+      },
+      {
+        title: 'Chicken Wings Marinade',
+        ingredients: [
+          '<strong>1kg</strong> chicken wings',
+          '<strong>2 tbsp</strong> oil',
+          '<strong>15g</strong> Curry Coast Rub',
+          '<strong>1 tbsp</strong> lemon juice (optional)'
+        ],
+        steps: [
+          'Combine oil, Curry Coast Rub, and lemon juice (if using) into a loose marinade.',
+          'Toss the wings through until fully coated. Cover and refrigerate for at least <strong>1 hour</strong>, ideally overnight.',
+          'Bring to room temperature for 15 minutes before cooking.',
+          'Bake at <strong>200°C for 35–40 minutes</strong>, or grill until the skin is crisp and deeply coloured.'
+        ]
+      },
+      {
+        title: 'Curry Coast Curry Base',
+        ingredients: [
+          '<strong>250g</strong> protein or vegetables of choice',
+          '<strong>1</strong> onion, diced',
+          '<strong>2 tbsp</strong> oil',
+          '<strong>10g</strong> Curry Coast Rub',
+          '<strong>400ml</strong> water or coconut milk'
+        ],
+        steps: [
+          'Fry the diced onion in oil until softened and lightly golden.',
+          'Stir in the Curry Coast Rub and fry for <strong>1 minute</strong> until fragrant — this blooms the spices properly.',
+          'Add your protein or vegetables, stirring to coat in the spice mix.',
+          'Pour in water or coconut milk, bring to a simmer, and cook covered for <strong>15–20 minutes</strong> until everything is tender and the sauce has thickened slightly.'
+        ]
+      },
+      {
+        title: 'Slow-Cooked Gravy',
+        ingredients: [
+          '<strong>500g</strong> protein for braising (beef, lamb, or chicken thigh)',
+          '<strong>1 tbsp</strong> oil',
+          '<strong>12g</strong> Curry Coast Rub',
+          '<strong>500ml</strong> stock'
+        ],
+        steps: [
+          'Sear the protein in oil until browned on all sides, then remove from the pan.',
+          'Sprinkle the Curry Coast Rub into the same pan and stir for 30 seconds to toast the spices in the residual fat.',
+          'Return the protein to the pan, pour in the stock, and bring to a simmer.',
+          'Cover and cook low and slow for <strong>1.5–2 hours</strong> (stovetop or slow cooker) until the meat is fork-tender and the gravy has reduced and thickened.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'rubybeet',
+    name: 'Ruby Beet Latte',
+    theme: '#3A1A5C',
+    themeText: '#D4B8F0',
+    available: false
+  },
+  {
+    key: 'currybase',
+    name: 'Curry Coast Base',
+    theme: '#7A2E2E',
+    themeText: '#fff',
+    available: false
+  }
+];
+
+const tabsEl = document.getElementById('productTabs');
+const containerEl = document.getElementById('recipesContainer');
+
+function renderTabs(activeKey){
+  tabsEl.innerHTML = RECIPES_CONFIG.map(p => `
+    <button class="product-tab ${p.key===activeKey?'active':''}" data-key="${p.key}">
+      ${p.name}
+    </button>`).join('');
+
+  tabsEl.querySelectorAll('.product-tab').forEach(btn=>{
+    btn.addEventListener('click', ()=> showProduct(btn.dataset.key));
+  });
+}
+
+function renderRecipeCard(r, theme, themeText){
+  return `
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <span class="recipe-title">${r.title}</span>
+        ${r.badge ? `<span class="recipe-badge">${r.badge}</span>` : ''}
+      </div>
+      <div class="recipe-body">
+        <div>
+          <div class="recipe-ing-title">Ingredients</div>
+          <ul class="ing-list">${r.ingredients.map(i=>`<li>${i}</li>`).join('')}</ul>
+        </div>
+        <div>
+          <div class="recipe-steps-title">Method</div>
+          <ol class="step-list">${r.steps.map(s=>`<li>${s}</li>`).join('')}</ol>
+        </div>
+        ${r.note ? `<div class="recipe-note">${r.note}</div>` : ''}
+      </div>
+    </div>`;
+}
+
+function showProduct(key){
+  const product = RECIPES_CONFIG.find(p => p.key === key);
+  if (!product) return;
+
+  document.documentElement.style.setProperty('--theme', product.theme);
+  document.documentElement.style.setProperty('--theme-text', product.themeText);
+
+  renderTabs(key);
+
+  if (!product.available) {
+    containerEl.innerHTML = `
+      <div class="coming-soon-panel">
+        <div class="cs-icon">👑</div>
+        <h3>${product.name} Recipes — Coming Soon</h3>
+        <p>We're developing this blend before we develop its recipes. Check back once it's launched.</p>
+      </div>`;
+    return;
+  }
+
+  containerEl.innerHTML = product.recipes.map(r => renderRecipeCard(r, product.theme, product.themeText)).join('');
+}
+
+const params = new URLSearchParams(window.location.search);
+const initialKey = params.get('p') || 'latte';
+showProduct(initialKey);
+</script>
+</body>
+</html>
