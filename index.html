@@ -1545,7 +1545,7 @@ function renderProductCard(p) {
           <div class="pc-actions">
             <span class="pc-btn-disabled">Currently Unavailable</span>
             <a href="mailto:piyush@wiseking.com.au?subject=${p.notifyEmailSubject}" class="pc-btn pc-btn-outline">Notify Me When Back</a>
-            <a href="#ritual" onclick="showRitual('${p.ritualKey}');return false;" class="pc-btn pc-btn-outline">Learn More</a>
+            <a href="product.html?p=${p.key}" class="pc-btn pc-btn-outline">Ingredients &amp; Ritual</a>
           </div>
         </div>
       </div>`;
@@ -1576,7 +1576,7 @@ function renderProductCard(p) {
             <button class="pc-btn pc-btn-fill pc-add-btn" data-add-key="${p.key}">Add to Cart</button>
           </div>
           <a href="https://wa.me/61470442705?text=${encodeURIComponent(p.whatsappText)}" class="pc-btn pc-btn-outline">WhatsApp Order</a>
-          <a href="#ritual" onclick="showRitual('${p.ritualKey}');return false;" class="pc-btn pc-btn-outline">Learn More</a>
+          <a href="product.html?p=${p.key}" class="pc-btn pc-btn-outline">Ingredients &amp; Ritual</a>
         </div>
       </div>
     </div>`;
