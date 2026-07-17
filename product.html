@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wise King Enterprise | Product Details</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FBF8F2; --cream:#F4EEE0; --paper:#FFFFFF; --line:#E6DCC4;
+  --ink:#2A2118; --ink-soft:#5C5142; --text-dim:#8A7D68;
+  --gold:#B5893A; --gold-bright:#C9A24A; --gold-pale:#E8D9B5;
+  --theme:#8B5E1A; --theme-text:#E8D9B5;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--ivory);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+::selection{background:var(--gold-pale);color:var(--ink);}
+
+.topbar{background:var(--ink);color:var(--gold-pale);text-align:center;font-size:11px;letter-spacing:0.1em;padding:9px 16px;font-weight:500;}
+nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mark{display:flex;align-items:center;gap:10px;color:var(--ink);}
+.logo-img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold);}
+.brand-name{font-family:'Cinzel',serif;font-size:15px;letter-spacing:0.12em;font-weight:600;}
+.back-link{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;}
+.back-link:hover{color:var(--gold);}
+#shopify-cart-container{display:flex;align-items:center;}
+.cart-toggle-btn{position:relative;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--paper);cursor:pointer;transition:all .25s ease;}
+.cart-toggle-btn:hover{border-color:var(--gold);background:var(--cream);}
+.cart-toggle-btn svg{width:18px;height:18px;stroke:var(--ink);}
+.cart-count-badge{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--gold);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.cart-count-badge.hidden{display:none;}
+
+.cart-overlay{position:fixed;inset:0;background:rgba(42,33,24,0.5);opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:400;}
+.cart-overlay.open{opacity:1;pointer-events:auto;}
+.cart-drawer{position:fixed;top:0;right:0;height:100vh;width:420px;max-width:92vw;background:var(--paper);z-index:401;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(42,33,24,0.25);}
+.cart-drawer.open{transform:translateX(0);}
+.cart-drawer-header{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid var(--line);}
+.cart-drawer-title{font-family:'Cinzel Decorative',serif;font-size:18px;color:var(--ink);}
+.cart-close-btn{background:none;border:none;font-size:24px;line-height:1;color:var(--ink-soft);cursor:pointer;padding:4px 8px;}
+.cart-lines{flex:1;overflow-y:auto;padding:12px 24px;}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--text-dim);font-size:14px;}
+.cart-line{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--line);}
+.cart-line-img{width:64px;height:64px;border-radius:6px;object-fit:cover;background:var(--cream);flex-shrink:0;}
+.cart-line-info{flex:1;display:flex;flex-direction:column;gap:6px;}
+.cart-line-title{font-family:'Cinzel',serif;font-size:13px;color:var(--ink);}
+.cart-line-price{font-size:12.5px;color:var(--gold);font-weight:600;}
+.cart-line-controls{display:flex;align-items:center;gap:10px;margin-top:2px;}
+.cart-qty-stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:20px;overflow:hidden;}
+.cart-qty-btn{width:26px;height:26px;background:var(--cream);border:none;cursor:pointer;font-size:14px;color:var(--ink);}
+.cart-qty-num{width:28px;text-align:center;font-size:13px;}
+.cart-line-remove{background:none;border:none;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;text-decoration:underline;}
+.cart-drawer-footer{padding:22px 24px 26px;border-top:1px solid var(--line);background:var(--cream);}
+.cart-subtotal-row{display:flex;justify-content:space-between;align-items:center;font-family:'Cinzel',serif;font-size:15px;color:var(--ink);margin-bottom:8px;}
+.cart-shipping-note{font-size:11.5px;color:var(--text-dim);margin-bottom:16px;}
+.cart-checkout-btn{width:100%;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px;border:none;border-radius:2px;cursor:pointer;}
+.cart-checkout-btn:disabled{opacity:0.5;cursor:not-allowed;}
+
+/* THEMED PRODUCT HERO */
+.p-hero{background:linear-gradient(135deg,var(--theme) 0%,var(--ink) 100%);padding:60px 24px;}
+.p-hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+@media(max-width:860px){.p-hero-inner{grid-template-columns:1fr;text-align:center;}}
+.p-hero-img-wrap{border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.15);}
+.p-hero-img-wrap img{width:100%;aspect-ratio:4/5;object-fit:cover;}
+.p-badge{display:inline-block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:var(--gold-bright);padding:6px 14px;border-radius:20px;font-weight:600;margin-bottom:18px;}
+.p-name{font-family:'Cinzel Decorative',serif;font-size:clamp(30px,4vw,44px);color:var(--theme-text);margin-bottom:10px;line-height:1.1;}
+.p-tagline{font-size:15px;font-style:italic;color:rgba(255,255,255,0.7);margin-bottom:22px;}
+.p-price-row{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+@media(max-width:860px){.p-price-row{justify-content:center;}}
+.p-price{font-family:'Cinzel',serif;font-size:32px;font-weight:700;color:var(--gold-bright);}
+.p-weight{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+.p-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;}
+@media(max-width:860px){.p-tags{justify-content:center;}}
+.p-tag{font-size:10px;letter-spacing:0.05em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.25);padding:5px 12px;border-radius:14px;color:rgba(255,255,255,0.75);}
+.p-actions{display:flex;gap:12px;flex-wrap:wrap;}
+@media(max-width:860px){.p-actions{justify-content:center;}}
+.p-qty-stepper{display:flex;align-items:center;border:1px solid rgba(255,255,255,0.3);border-radius:20px;overflow:hidden;}
+.p-qty-btn{width:36px;height:44px;background:transparent;border:none;cursor:pointer;font-size:16px;color:#fff;}
+.p-qty-btn:hover{background:rgba(255,255,255,0.12);}
+.p-qty-val{width:30px;text-align:center;color:#fff;font-size:14px;}
+.p-add-btn{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;background:var(--gold-bright);color:var(--ink);padding:14px 30px;border:none;border-radius:2px;cursor:pointer;transition:all .25s ease;}
+.p-add-btn:hover{background:#fff;}
+.p-add-btn.added{background:#4a7c4a;color:#fff;}
+.p-whatsapp-btn{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;background:transparent;color:rgba(255,255,255,0.85);padding:14px 24px;border:1px solid rgba(255,255,255,0.35);border-radius:2px;}
+.p-unavailable{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.4);padding:14px 24px;border-radius:2px;}
+
+section{padding:80px 24px;}
+.sec-inner{max-width:1000px;margin:0 auto;}
+.sec-head{text-align:center;margin-bottom:48px;}
+.sec-eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--theme);margin-bottom:14px;}
+.sec-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,3.4vw,34px);color:var(--ink);}
+
+.ing-icons-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;}
+@media(max-width:900px){.ing-icons-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:520px){.ing-icons-grid{grid-template-columns:repeat(2,1fr);}}
+.ing-icon-card{background:var(--cream);border:1px solid var(--line);border-radius:8px;overflow:hidden;text-align:center;}
+.ing-icon-card img{width:100%;height:100px;object-fit:cover;}
+.ing-icon-name{font-family:'Cinzel',serif;font-size:12px;color:var(--ink);margin:12px 8px 6px;}
+.ing-icon-benefit{font-size:11px;color:var(--text-dim);line-height:1.5;padding:0 10px 16px;font-weight:300;}
+
+.ing-cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+@media(max-width:700px){.ing-cards-grid{grid-template-columns:1fr;}}
+.ing-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px;}
+.ing-card-title{font-family:'Cinzel',serif;font-size:13.5px;color:var(--theme);margin-bottom:10px;font-weight:600;}
+.ing-card-text{font-size:13.5px;line-height:1.7;color:var(--ink-soft);font-weight:300;}
+
+.ritual-steps{max-width:640px;margin:0 auto;}
+.rt-step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);}
+.rt-step:last-child{border-bottom:none;}
+.rt-num{font-family:'Cinzel Decorative',serif;font-size:22px;color:var(--theme);min-width:36px;}
+.rt-text{font-size:14.5px;line-height:1.75;color:var(--ink-soft);padding-top:2px;}
+.rt-text strong{color:var(--ink);font-weight:600;}
+
+.back-to-shop{background:var(--cream);text-align:center;}
+.back-to-shop a{display:inline-block;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px 34px;border-radius:2px;}
+.back-to-shop a:hover{background:var(--gold);color:var(--ink);}
+
+footer{background:var(--ink);color:rgba(251,248,242,0.6);padding:40px 24px;text-align:center;font-size:12px;}
+footer a{color:var(--gold-pale);}
+</style>
+</head>
+<body>
+
+<div class="topbar">🇦🇺 BLENDED &amp; PACKED IN GEELONG, AUSTRALIA &nbsp;·&nbsp; NO FILLERS · NO SHORTCUTS</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="brand-mark">
+      <img src="crown.png.PNG" alt="Wise King Enterprise crest" class="logo-img">
+      <span class="brand-name">WISE KING</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <a href="index.html" class="back-link">← Back to Shop</a>
+      <div id="shopify-cart-container">
+        <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-count-badge hidden" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div id="productHero"></div>
+
+<section>
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">What's Inside</div>
+      <h2 class="sec-title" id="insideTitle">Ingredients</h2>
+    </div>
+    <div id="insideContent"></div>
+  </div>
+</section>
+
+<section style="background:var(--cream);">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">The Ritual</div>
+      <h2 class="sec-title">How to Prepare</h2>
+    </div>
+    <div class="ritual-steps" id="ritualSteps"></div>
+  </div>
+</section>
+
+<div class="back-to-shop" style="padding:60px 24px;">
+  <a href="index.html">Explore the Full Collection</a>
+</div>
+
+<footer>
+  Wise King Enterprise &nbsp;·&nbsp; Geelong, Victoria &nbsp;·&nbsp;
+  <a href="https://wa.me/61470442705">WhatsApp Us</a>
+</footer>
+
+<div id="cartOverlay" class="cart-overlay"></div>
+<aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+  <div class="cart-drawer-header">
+    <span class="cart-drawer-title">Your Cart</span>
+    <button id="cartCloseBtn" class="cart-close-btn" aria-label="Close cart">&times;</button>
+  </div>
+  <div id="cartLines" class="cart-lines"><div class="cart-empty">Your cart is empty.</div></div>
+  <div class="cart-drawer-footer">
+    <div class="cart-subtotal-row"><span>Subtotal</span><span id="cartSubtotal">$0.00</span></div>
+    <p class="cart-shipping-note">Free shipping Australia-wide on orders over $49.99</p>
+    <button id="cartCheckoutBtn" class="cart-checkout-btn" disabled>Checkout</button>
+  </div>
+</aside>
+
+<script>
+const PRODUCT_DETAILS = {
+  latte: {
+    productId: '10491198406837',
+    name: 'Golden Saffron Latte',
+    tagline: '"Saffron inside — rarer than gold, in every batch."',
+    price: 19.99, weight: '50g', weightLabel: '/ 50g pouch',
+    heroImage: 'ilovelatte.JPG',
+    badge: 'Bestseller',
+    tags: ['No Caffeine','No Added Sugar','6 Botanicals','Handmade'],
+    theme: '#8B5E1A', themeText: '#E8D9B5',
+    whatsappText: 'Hi Piyush, I want to order the Golden Saffron Latte please.',
+    soldOut: false,
+    insideMode: 'icons',
+    ingredientIcons: [
+      {img:'turmeric.jpg.JPG', name:'Turmeric', benefit:'Rich in curcumin — the golden base of the entire blend.'},
+      {img:'ginger.jpg.JPG', name:'Ginger', benefit:'Warms the body and aids digestion.'},
+      {img:'clove.jpg.JPG', name:'Clove', benefit:'A natural antioxidant powerhouse.'},
+      {img:'cardamom.jpg.JPG', name:'Green Cardamom', benefit:'Sweet, aromatic depth — no sugar needed.'},
+      {img:'black-pepper.jpg.JPG', name:'Black Pepper', benefit:'Multiplies turmeric absorption by up to 2,000%.'},
+      {img:'saffron.jpg.JPG', name:'Saffron', benefit:'The world\'s most expensive spice, hand-harvested.'}
+    ],
+    ritualSteps: [
+      {n:'I', text:'Add <strong>4g</strong> (one level teaspoon) to your cup.'},
+      {n:'II', text:'Add a splash of hot water. Stir into a smooth paste — this step is essential.'},
+      {n:'III', text:'Pour <strong>230ml</strong> warm or frothed milk over the paste.'},
+      {n:'IV', text:'Sweeten with honey or maple syrup to taste. Enjoy immediately.'}
+    ]
+  },
+  curry: {
+    productId: '10491200110773',
+    name: 'Curry Coast Rub',
+    tagline: '"Twelve spices. Like the Twelve Apostles — each one essential."',
+    price: 19.99, weight: '100g', weightLabel: '/ 100g pouch',
+    heroImage: 'iloveccr.JPG',
+    badge: 'Signature',
+    tags: ['No Salt Added','12 Spices','Handmade'],
+    theme: '#8B1A1A', themeText: '#fff',
+    whatsappText: 'Hi Piyush, I want to order the Curry Coast Rub please.',
+    soldOut: false,
+    insideMode: 'cards',
+    ingredientCards: [
+      {title:'Twelve Spices, Zero Compromise', text:'Twelve whole spices, hand-balanced in even measure, with no salt added at all. Every spice earns its place.'},
+      {title:'The Twelve Apostles Standard', text:'Named for the Twelve Apostles on the Great Ocean Road — twelve essential, none replaceable.'},
+      {title:'Rest Before You Cook', text:'Rub in, rest 10 minutes. That\'s when smoked paprika and Kashmiri chilli bind to the surface.'},
+      {title:'Built for the Whole Kitchen', text:'Dry rub on the grill, stirred into a curry, or folded into a gravy — no salt, no fillers.'}
+    ],
+    ritualSteps: [
+      {n:'I', text:'Use <strong>6g</strong> per 250g of meat or vegetables.'},
+      {n:'II', text:'Rub evenly into the surface. Rest for 10 minutes before cooking.'},
+      {n:'III', text:'Grill, roast, or pan-sear as desired.'},
+      {n:'IV', text:'Also excellent stirred into curries or gravies — adjust to taste.'}
+    ]
+  },
+  mocha: {
+    productId: '10491203256501',
+    name: 'Café Mocha Blend',
+    tagline: '"Premium coffee meets dark cocoa — no sugar, no shortcuts."',
+    price: 15.99, weight: '100g', weightLabel: '/ 100g pouch',
+    heroImage: 'ilovecm.JPG',
+    badge: 'New',
+    tags: ['Contains Caffeine','No Sugar Added','Handmade'],
+    theme: '#3D2208', themeText: '#E8D9B5',
+    whatsappText: 'Hi Piyush, I want to order the Cafe Mocha Blend please.',
+    soldOut: false,
+    insideMode: 'cards',
+    ingredientCards: [
+      {title:'Two Ingredients. No Argument.', text:'50% premium instant coffee, 50% dark Dutch-process cocoa. Nothing else — no sugar, no fillers.'},
+      {title:'The Paste-First Method', text:'A splash of hot water first, stirred into a smooth paste, unlocks the dark cocoa before milk goes in.'},
+      {title:'Dutch-Process, Deliberately', text:'Chosen for its smoother, less acidic, deeper flavour — closer to a café-bought mocha.'},
+      {title:'Hot or Iced — Built for Both', text:'A warming mocha in winter, or over ice in summer. Sweetened only as much as you choose.'}
+    ],
+    ritualSteps: [
+      {n:'I', text:'Add <strong>6g</strong> (one heaped teaspoon) to a mug.'},
+      {n:'II', text:'Add a splash of hot water. Stir into a smooth paste.'},
+      {n:'III', text:'Pour in <strong>200ml</strong> warm or frothed milk.'},
+      {n:'IV', text:'Sweeten to taste. Also delicious served over ice.'}
+    ]
+  },
+  matcha: {
+    productId: null,
+    name: 'Ceremonial Matcha',
+    tagline: '"Stone-milled in Japan — the birthplace of matcha."',
+    price: 39.99, weight: '30g', weightLabel: '/ 30g pouch',
+    heroImage: 'ilovematcha.JPG',
+    badge: 'Sold Out — Back Soon',
+    tags: ['Uji, Kyoto','JAS Organic','Lab Tested','Vegan & GF'],
+    theme: '#2D4A2D', themeText: '#C8E6C9',
+    whatsappText: null,
+    soldOut: true,
+    notifyEmailSubject: 'Notify%20Me%20-%20Ceremonial%20Matcha',
+    insideMode: 'cards',
+    ingredientCards: [
+      {title:'The Friction Test', text:'Rub a pinch between your fingers — it disappears into your skin like silk, leaving no grain behind.'},
+      {title:'Uji, Kyoto — 350 Years of Mastery', text:'From Yamasan Co., a 350-year-old protected tea plantation in Japan\'s most prestigious matcha region.'},
+      {title:'Lab-Tested. Certified Clean.', text:'Certificate of Analysis: heavy metals not detected, pesticide residue not detected, E. coli negative.'},
+      {title:'JAS Organic Certified', text:'Independently inspected under Japan\'s national organic standard. Vegan. Gluten free. Nothing added.'}
+    ],
+    ritualSteps: [
+      {n:'I', text:'Sift <strong>1.5g</strong> into a bowl to remove any clumps.'},
+      {n:'II', text:'Add 70–80°C water — not boiling. Whisk briskly in a \'W\' motion until frothy.'},
+      {n:'III', text:'For a latte: add a splash of hot water, whisk to a paste, then add 200ml warm frothed milk.'},
+      {n:'IV', text:'Sweeten with honey if desired.'}
+    ]
+  }
+};
+
+const params = new URLSearchParams(window.location.search);
+const productKey = params.get('p') || 'latte';
+const P = PRODUCT_DETAILS[productKey] || PRODUCT_DETAILS.latte;
+
+document.title = `${P.name} | Wise King Enterprise`;
+document.documentElement.style.setProperty('--theme', P.theme);
+document.documentElement.style.setProperty('--theme-text', P.themeText);
+
+function formatMoney(n){ return '$' + parseFloat(n).toFixed(2); }
+
+function renderHero(){
+  const actionsHtml = P.soldOut ? `
+    <span class="p-unavailable">Currently Unavailable</span>
+    <a href="mailto:piyush@wiseking.com.au?subject=${P.notifyEmailSubject}" class="p-whatsapp-btn">Notify Me When Back</a>
+  ` : `
+    <div class="p-qty-stepper">
+      <button class="p-qty-btn" id="pQtyDec">−</button>
+      <span class="p-qty-val" id="pQtyVal">1</span>
+      <button class="p-qty-btn" id="pQtyInc">+</button>
+    </div>
+    <button class="p-add-btn" id="pAddBtn">Add to Cart</button>
+    <a href="https://wa.me/61470442705?text=${encodeURIComponent(P.whatsappText)}" class="p-whatsapp-btn">WhatsApp Order</a>
+  `;
+
+  document.getElementById('productHero').innerHTML = `
+    <div class="p-hero">
+      <div class="p-hero-inner">
+        <div class="p-hero-img-wrap"><img src="${P.heroImage}" alt="${P.name}"></div>
+        <div>
+          <span class="p-badge">${P.badge}</span>
+          <h1 class="p-name">${P.name}</h1>
+          <p class="p-tagline">${P.tagline}</p>
+          <div class="p-price-row">
+            <span class="p-price">${formatMoney(P.price)}</span>
+            <span class="p-weight">${P.weightLabel}</span>
+          </div>
+          <div class="p-tags">${P.tags.map(t=>`<span class="p-tag">${t}</span>`).join('')}</div>
+          <div class="p-actions">${actionsHtml}</div>
+        </div>
+      </div>
+    </div>`;
+
+  if (!P.soldOut) {
+    document.getElementById('pQtyInc').addEventListener('click', ()=>{
+      const el = document.getElementById('pQtyVal');
+      el.textContent = parseInt(el.textContent) + 1;
+    });
+    document.getElementById('pQtyDec').addEventListener('click', ()=>{
+      const el = document.getElementById('pQtyVal');
+      el.textContent = Math.max(1, parseInt(el.textContent) - 1);
+    });
+    document.getElementById('pAddBtn').addEventListener('click', async (e)=>{
+      const btn = e.target;
+      const qty = parseInt(document.getElementById('pQtyVal').textContent) || 1;
+      const original = btn.textContent;
+      btn.textContent = 'Adding…'; btn.disabled = true;
+      const variantId = await resolveVariantId(P.productId);
+      if (!variantId){ btn.textContent = 'Unavailable'; setTimeout(()=>{btn.textContent=original;btn.disabled=false;},1800); return; }
+      await addLineToCart(variantId, qty);
+      btn.textContent = 'Added ✓'; btn.classList.add('added');
+      document.getElementById('pQtyVal').textContent = '1';
+      setTimeout(()=>{btn.textContent=original;btn.classList.remove('added');btn.disabled=false;},1400);
+      openCart();
+    });
+  }
+}
+
+function renderInside(){
+  document.getElementById('insideTitle').textContent = `Inside the ${P.name}`;
+  const container = document.getElementById('insideContent');
+  if (P.insideMode === 'icons'){
+    container.innerHTML = `<div class="ing-icons-grid">${P.ingredientIcons.map(i=>`
+      <div class="ing-icon-card">
+        <img src="${i.img}" alt="${i.name}">
+        <div class="ing-icon-name">${i.name}</div>
+        <div class="ing-icon-benefit">${i.benefit}</div>
+      </div>`).join('')}</div>`;
+  } else {
+    container.innerHTML = `<div class="ing-cards-grid">${P.ingredientCards.map(c=>`
+      <div class="ing-card">
+        <div class="ing-card-title">${c.title}</div>
+        <div class="ing-card-text">${c.text}</div>
+      </div>`).join('')}</div>`;
+  }
+}
+
+function renderRitual(){
+  document.getElementById('ritualSteps').innerHTML = P.ritualSteps.map(s=>`
+    <div class="rt-step">
+      <div class="rt-num">${s.n}</div>
+      <div class="rt-text">${s.text}</div>
+    </div>`).join('');
+}
+
+const SHOP_DOMAIN = 'hmfrhb-nb.myshopify.com';
+const STOREFRONT_TOKEN = '3d4441b139fbd67f3300852feab77068';
+const API_VERSION = '2025-10';
+const GRAPHQL_URL = `https://${SHOP_DOMAIN}/api/${API_VERSION}/graphql.json`;
+
+async function shopifyFetch(query, variables) {
+  try {
+    const res = await fetch(GRAPHQL_URL, { method:'POST', headers:{'Content-Type':'application/json','X-Shopify-Storefront-Access-Token':STOREFRONT_TOKEN}, body: JSON.stringify({query,variables}) });
+    const json = await res.json();
+    if (json.errors){ console.error(json.errors); return null; }
+    return json.data;
+  } catch(err){ console.error(err); return null; }
+}
+
+const CART_FIELDS = `id checkoutUrl cost{subtotalAmount{amount currencyCode}} lines(first:50){edges{node{id quantity merchandise{... on ProductVariant{id title price{amount currencyCode} image{url} product{title}}}}}}`;
+
+const variantCache = {};
+async function resolveVariantId(productId){
+  if (!productId) return null;
+  if (variantCache[productId]) return variantCache[productId];
+  const q = `query($id:ID!){product(id:$id){variants(first:1){edges{node{id}}}}}`;
+  const data = await shopifyFetch(q, {id:`gid://shopify/Product/${productId}`});
+  const v = data?.product?.variants?.edges?.[0]?.node?.id || null;
+  if (v) variantCache[productId] = v;
+  return v;
+}
+
+let currentCart = null;
+function getSavedCartId(){ try{return localStorage.getItem('wke_cart_id');}catch(e){return null;} }
+function saveCartId(id){ try{localStorage.setItem('wke_cart_id', id);}catch(e){} }
+
+async function loadExistingCart(){
+  const id = getSavedCartId();
+  if (!id) return;
+  const q = `query($id:ID!){cart(id:$id){${CART_FIELDS}}}`;
+  const data = await shopifyFetch(q, {id});
+  if (data?.cart){ currentCart = data.cart; renderCart(); }
+  else { try{localStorage.removeItem('wke_cart_id');}catch(e){} }
+}
+
+async function createCartWithLine(variantId, qty){
+  const m = `mutation($lines:[CartLineInput!]){cartCreate(input:{lines:$lines}){cart{${CART_FIELDS}} userErrors{field message}}}`;
+  const data = await shopifyFetch(m, {lines:[{merchandiseId:variantId,quantity:qty}]});
+  const r = data?.cartCreate;
+  if (r?.userErrors?.length){ console.error(r.userErrors); return; }
+  if (r?.cart){ currentCart = r.cart; saveCartId(currentCart.id); renderCart(); }
+}
+
+async function addLineToCart(variantId, qty){
+  if (!currentCart){ await createCartWithLine(variantId, qty); return; }
+  const m = `mutation($cartId:ID!,$lines:[CartLineInput!]!){cartLinesAdd(cartId:$cartId,lines:$lines){cart{${CART_FIELDS}} userErrors{field message}}}`;
+  const data = await shopifyFetch(m, {cartId:currentCart.id, lines:[{merchandiseId:variantId,quantity:qty}]});
+  const r = data?.cartLinesAdd;
+  if (r?.userErrors?.length){ console.error(r.userErrors); return; }
+  if (r?.cart){ currentCart = r.cart; renderCart(); }
+}
+
+async function updateLineQuantity(lineId, qty){
+  if (!currentCart) return;
+  if (qty <= 0){ await removeLine(lineId); return; }
+  const m = `mutation($cartId:ID!,$lines:[CartLineUpdateInput!]!){cartLinesUpdate(cartId:$cartId,lines:$lines){cart{${CART_FIELDS}} userErrors{field message}}}`;
+  const data = await shopifyFetch(m, {cartId:currentCart.id, lines:[{id:lineId,quantity:qty}]});
+  const r = data?.cartLinesUpdate;
+  if (r?.cart){ currentCart = r.cart; renderCart(); }
+}
+
+async function removeLine(lineId){
+  if (!currentCart) return;
+  const m = `mutation($cartId:ID!,$lineIds:[ID!]!){cartLinesRemove(cartId:$cartId,lineIds:$lineIds){cart{${CART_FIELDS}} userErrors{field message}}}`;
+  const data = await shopifyFetch(m, {cartId:currentCart.id, lineIds:[lineId]});
+  const r = data?.cartLinesRemove;
+  if (r?.cart){ currentCart = r.cart; renderCart(); }
+}
+
+function renderCart(){
+  const linesEl = document.getElementById('cartLines');
+  const subtotalEl = document.getElementById('cartSubtotal');
+  const countEl = document.getElementById('cartCount');
+  const checkoutBtn = document.getElementById('cartCheckoutBtn');
+  const edges = currentCart?.lines?.edges || [];
+  if (!currentCart || edges.length === 0){
+    linesEl.innerHTML = '<div class="cart-empty">Your cart is empty.</div>';
+    subtotalEl.textContent = formatMoney(0); countEl.textContent='0'; countEl.classList.add('hidden'); checkoutBtn.disabled = true;
+    return;
+  }
+  let totalQty = 0;
+  linesEl.innerHTML = edges.map(({node})=>{
+    totalQty += node.quantity;
+    const m = node.merchandise; const img = m.image?.url || '';
+    return `<div class="cart-line" data-line-id="${node.id}">
+      ${img?`<img class="cart-line-img" src="${img}" alt="${m.product.title}">`:`<div class="cart-line-img"></div>`}
+      <div class="cart-line-info">
+        <div class="cart-line-title">${m.product.title}</div>
+        <div class="cart-line-price">${formatMoney(m.price.amount)}</div>
+        <div class="cart-line-controls">
+          <div class="cart-qty-stepper">
+            <button class="cart-qty-btn" data-line-action="dec" data-line-id="${node.id}" data-qty="${node.quantity}">−</button>
+            <span class="cart-qty-num">${node.quantity}</span>
+            <button class="cart-qty-btn" data-line-action="inc" data-line-id="${node.id}" data-qty="${node.quantity}">+</button>
+          </div>
+          <button class="cart-line-remove" data-line-action="remove" data-line-id="${node.id}">Remove</button>
+        </div>
+      </div></div>`;
+  }).join('');
+  subtotalEl.textContent = formatMoney(currentCart.cost.subtotalAmount.amount);
+  countEl.textContent = totalQty; countEl.classList.remove('hidden'); checkoutBtn.disabled = false;
+}
+
+document.getElementById('cartLines').addEventListener('click', (e)=>{
+  const btn = e.target.closest('[data-line-action]'); if (!btn) return;
+  const lineId = btn.dataset.lineId, action = btn.dataset.lineAction;
+  if (action==='inc') updateLineQuantity(lineId, parseInt(btn.dataset.qty)+1);
+  if (action==='dec') updateLineQuantity(lineId, parseInt(btn.dataset.qty)-1);
+  if (action==='remove') removeLine(lineId);
+});
+
+const cartDrawer = document.getElementById('cartDrawer');
+const cartOverlay = document.getElementById('cartOverlay');
+function openCart(){ cartDrawer.classList.add('open'); cartOverlay.classList.add('open'); cartDrawer.setAttribute('aria-hidden','false'); }
+function closeCart(){ cartDrawer.classList.remove('open'); cartOverlay.classList.remove('open'); cartDrawer.setAttribute('aria-hidden','true'); }
+document.getElementById('cartToggleBtn').addEventListener('click', openCart);
+document.getElementById('cartCloseBtn').addEventListener('click', closeCart);
+cartOverlay.addEventListener('click', closeCart);
+document.getElementById('cartCheckoutBtn').addEventListener('click', ()=>{ if (currentCart?.checkoutUrl) window.location.href = currentCart.checkoutUrl; });
+
+(async function init(){
+  renderHero();
+  renderInside();
+  renderRitual();
+  await loadExistingCart();
+})();
+</script>
+</body>
+</html>
