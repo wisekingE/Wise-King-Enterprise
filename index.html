@@ -353,7 +353,7 @@ section{padding:100px 24px;}
 
 /* ── JOURNAL TEASER ── */
 .journal{background:var(--ivory);}
-.journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.journal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:700px;margin:0 auto;}
 @media(max-width:820px){.journal-grid{grid-template-columns:1fr;}}
 .journal-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:32px 26px;text-align:center;position:relative;overflow:hidden;}
 .journal-soon{position:absolute;top:14px;right:14px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;background:var(--gold-pale);color:var(--ink);padding:4px 10px;border-radius:12px;}
@@ -836,18 +836,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
         <div class="journal-card-title">Recipe Library</div>
         <div class="journal-card-text">Curries, marinades, and lattes built around every Wise King blend — beyond the base ritual.</div>
       </a>
-      <div class="journal-card">
-        <span class="journal-soon">Coming Soon</span>
+     <a href="ingredients.html" class="journal-card" style="cursor:pointer;">
         <div class="journal-icon">✨</div>
         <div class="journal-card-title">Ingredient Deep-Dives</div>
         <div class="journal-card-text">The story and sourcing behind saffron, matcha, and every spice in the collection.</div>
-      </div>
-      <div class="journal-card">
-        <span class="journal-soon">Coming Soon</span>
-        <div class="journal-icon">👑</div>
-        <div class="journal-card-title">From Our Kitchen</div>
-        <div class="journal-card-text">Behind-the-scenes notes from every batch — what we learned, what we changed, what's next.</div>
-      </div>
+      </a>
     </div>
     <p class="journal-note reveal">We're building this out properly rather than rushing it — check back soon, or follow @wisekingenterprise for updates as it goes live.</p>
   </div>
