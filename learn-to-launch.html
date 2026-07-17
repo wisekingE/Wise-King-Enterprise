@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn to Launch | Wise King Enterprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FBF8F2; --cream:#F4EEE0; --paper:#FFFFFF; --line:#E6DCC4;
+  --ink:#2A2118; --ink-soft:#5C5142; --text-dim:#8A7D68;
+  --gold:#B5893A; --gold-bright:#C9A24A; --gold-pale:#E8D9B5;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--ivory);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+::selection{background:var(--gold-pale);color:var(--ink);}
+
+.topbar{background:var(--ink);color:var(--gold-pale);text-align:center;font-size:11px;letter-spacing:0.1em;padding:9px 16px;font-weight:500;}
+nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mark{display:flex;align-items:center;gap:10px;color:var(--ink);}
+.logo-img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold);}
+.brand-name{font-family:'Cinzel',serif;font-size:15px;letter-spacing:0.12em;font-weight:600;}
+.back-link{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;}
+.back-link:hover{color:var(--gold);}
+
+section{padding:90px 24px;}
+.sec-inner{max-width:900px;margin:0 auto;}
+
+/* HERO */
+.ltl-hero{background:linear-gradient(165deg,var(--ink) 0%,#3D2A1A 100%);color:var(--ivory);text-align:center;padding:90px 24px 70px;}
+.ltl-eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:20px;}
+.ltl-title{font-family:'Cinzel Decorative',serif;font-size:clamp(32px,5vw,52px);margin-bottom:22px;line-height:1.15;}
+.ltl-sub{max-width:640px;margin:0 auto 36px;font-size:15.5px;color:rgba(251,248,242,0.75);line-height:1.85;font-weight:300;}
+.ltl-cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.ltl-btn-fill{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--gold-bright);color:var(--ink);padding:16px 32px;border-radius:2px;transition:all .25s ease;}
+.ltl-btn-fill:hover{background:#fff;}
+.ltl-btn-outline{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:transparent;color:rgba(251,248,242,0.85);border:1px solid rgba(201,162,74,0.4);padding:16px 32px;border-radius:2px;}
+.ltl-btn-outline:hover{border-color:var(--gold-bright);color:var(--gold-bright);}
+
+/* THE STORY */
+.story-section{background:var(--paper);}
+.sec-eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;text-align:center;}
+.sec-title{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,3.6vw,36px);color:var(--ink);text-align:center;margin-bottom:40px;}
+.story-body p{font-size:15px;line-height:1.9;color:var(--ink-soft);margin-bottom:18px;font-weight:300;}
+.story-body strong{color:var(--ink);font-weight:600;}
+
+/* PROOF GRID */
+.proof-section{background:var(--cream);}
+.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+@media(max-width:700px){.proof-grid{grid-template-columns:1fr;}}
+.proof-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px;}
+.proof-icon{font-size:22px;margin-bottom:12px;}
+.proof-title{font-family:'Cinzel',serif;font-size:13.5px;color:var(--ink);margin-bottom:8px;font-weight:600;}
+.proof-text{font-size:13px;color:var(--text-dim);line-height:1.7;font-weight:300;}
+
+/* WHAT I CAN HELP WITH */
+.help-section{background:var(--paper);}
+.help-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:760px;margin:0 auto;}
+@media(max-width:600px){.help-list{grid-template-columns:1fr;}}
+.help-item{display:flex;gap:12px;align-items:flex-start;background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:16px 18px;}
+.help-check{color:var(--gold);font-weight:700;flex-shrink:0;}
+.help-text{font-size:13.5px;color:var(--ink-soft);line-height:1.6;}
+
+/* HOW IT WORKS */
+.how-section{background:var(--cream);}
+.how-steps{max-width:640px;margin:0 auto;}
+.how-step{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);}
+.how-step:last-child{border-bottom:none;}
+.how-num{font-family:'Cinzel Decorative',serif;font-size:24px;color:var(--gold);min-width:38px;}
+.how-text-title{font-family:'Cinzel',serif;font-size:14px;color:var(--ink);margin-bottom:6px;font-weight:600;}
+.how-text-body{font-size:13.5px;line-height:1.7;color:var(--ink-soft);font-weight:300;}
+
+/* FINAL CTA */
+.final-cta{background:linear-gradient(165deg,var(--gold-pale) 0%,var(--cream) 100%);text-align:center;}
+.final-cta-box{max-width:640px;margin:0 auto;border:1px solid var(--gold);border-radius:10px;padding:56px 40px;background:var(--paper);}
+.final-cta-title{font-family:'Cinzel Decorative',serif;font-size:clamp(22px,3vw,30px);color:var(--ink);margin-bottom:16px;}
+.final-cta-text{font-size:14.5px;color:var(--ink-soft);line-height:1.8;margin-bottom:30px;font-weight:300;}
+
+.back-to-shop{background:var(--ivory);text-align:center;padding:50px 24px;}
+.back-to-shop a{display:inline-block;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);}
+.back-to-shop a:hover{color:var(--gold);}
+
+footer{background:var(--ink);color:rgba(251,248,242,0.6);padding:40px 24px;text-align:center;font-size:12px;}
+footer a{color:var(--gold-pale);}
+</style>
+</head>
+<body>
+
+<div class="topbar">🇦🇺 BLENDED &amp; PACKED IN GEELONG, AUSTRALIA &nbsp;·&nbsp; NO FILLERS · NO SHORTCUTS</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="brand-mark">
+      <img src="crown.png.PNG" alt="Wise King Enterprise crest" class="logo-img">
+      <span class="brand-name">WISE KING</span>
+    </a>
+    <a href="index.html" class="back-link">← Back to Shop</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="ltl-hero">
+  <div class="ltl-eyebrow">Beyond the Blend</div>
+  <h1 class="ltl-title">Learn to Launch</h1>
+  <p class="ltl-sub">I didn't come from a business background. I built Wise King Enterprise from a blank page — registration, food safety, compliant labels, barcodes, a working online store with real checkout — mostly on my own, using AI as leverage instead of a team. If you've got an idea and don't know where to start, I can walk you through exactly what I did.</p>
+  <div class="ltl-cta-row">
+    <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27d%20like%20to%20talk%20about%20Learn%20to%20Launch." class="ltl-btn-fill">Let's Talk on WhatsApp</a>
+    <a href="mailto:piyush@wiseking.com.au?subject=Learn%20to%20Launch%20Enquiry" class="ltl-btn-outline">Email Instead</a>
+  </div>
+</div>
+
+<!-- THE STORY -->
+<section class="story-section">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">My Story</div>
+    <h2 class="sec-title">From Process Worker to Founder</h2>
+    <div class="story-body">
+      <p>I left my job to build Wise King Enterprise full-time. No business degree, no investors, no team — just my wife Vanisha and me, figuring it out one form, one supplier, and one late night at a time.</p>
+      <p>What I did have was a willingness to actually sit down and learn the system — council food registration, HACCP sourcing, GS1 barcoding, FSANZ labelling rules, and eventually a full online store with a real shopping cart and checkout, built without hiring a developer.</p>
+      <p><strong>I leaned on AI tools heavily to do this</strong> — not as a shortcut around the hard parts, but as a way to move fast on the parts that would normally take months or cost thousands in agency fees. Every piece of paperwork, every website change, every product page — I did it myself, with AI doing the heavy lifting on execution while I made the actual business decisions.</p>
+      <p>If you've got an idea sitting in your head and no idea how to turn it into something real, that's exactly the gap I can help close.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof-section">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">What's Actually Live</div>
+    <h2 class="sec-title">Not Theory — A Real, Operating Business</h2>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-icon">📋</div>
+        <div class="proof-title">Registered Class 3 Food Business</div>
+        <div class="proof-text">Fully registered with the City of Greater Geelong, with an active Class 3 Food Licence and HACCP-sourced ingredients.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-icon">🏷️</div>
+        <div class="proof-title">GS1 Barcoded Products</div>
+        <div class="proof-text">Every product carries a genuine GS1 barcode — the same standard used by major retailers, done correctly from day one.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-icon">🛒</div>
+        <div class="proof-title">A Real Online Store</div>
+        <div class="proof-text">A fully custom storefront with a working shopping cart and live Shopify checkout — built and maintained without a developer on payroll.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-icon">📦</div>
+        <div class="proof-title">Real Products, Real Sales</div>
+        <div class="proof-text">Multiple products in market, compliant labels, wholesale conversations underway, and an actual customer base building from zero.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I CAN HELP WITH -->
+<section class="help-section">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Where I Can Help</div>
+    <h2 class="sec-title">The Parts That Actually Stop People</h2>
+    <div class="help-list">
+      <div class="help-item"><span class="help-check">✓</span><span class="help-text">Registering your business name and ABN the right way, first time</span></div>
+      <div class="help-item"><span class="help-check">✓</span><span class="help-text">What council/food registration actually requires (and what it doesn't)</span></div>
+      <div class="help-item"><span class="help-check">✓</span><span class="help-text">Label compliance — what the law requires vs. what's just convention</span></div>
+      <div class="help-item"><span class="help-check">✓</span><span class="help-text">GS1 barcodes — what to buy, what to skip, real costs</span></div>
+      <div class="help-item"><span class="help-check">✓</span><span class="help-text">Building a working website and store using AI tools, no developer needed</span></div>
+      <div class="help-item"><span class="help-check">✓</span><span class="help-text">Pricing your product so you're actually profitable, not just busy</span></div>
+      <div class="help-item"><span class="help-check">✓</span><span class="help-text">Setting up Shopify or similar payment systems properly</span></div>
+      <div class="help-item"><span class="help-check">✓</span><span class="help-text">Social media and content strategy that doesn't require showing your face</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">How This Works</div>
+    <h2 class="sec-title">No Fixed Package. A Real Conversation.</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-num">I</div>
+        <div>
+          <div class="how-text-title">You reach out</div>
+          <div class="how-text-body">WhatsApp or email — tell me roughly what you're working on and where you're stuck.</div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">II</div>
+        <div>
+          <div class="how-text-title">We talk it through</div>
+          <div class="how-text-body">A real conversation, by phone or call, about what you actually need — not a sales pitch for a pre-set package. Every business is different, so the help I offer and what it costs gets figured out together, based on your situation.</div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">III</div>
+        <div>
+          <div class="how-text-title">We agree on scope and price</div>
+          <div class="how-text-body">Once I understand what you need — a single session, ongoing support, or something in between — we settle on what makes sense for both of us before any work starts.</div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">IV</div>
+        <div>
+          <div class="how-text-title">You get real help, not a template</div>
+          <div class="how-text-body">Whatever we agree to, you get the same hands-on approach I used to build Wise King — practical, specific, and grounded in what actually worked.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-box">
+    <div class="final-cta-title">Let's Talk</div>
+    <p class="final-cta-text">No obligation, no fixed price on this page. Message me, tell me what you're building, and we'll figure out together what kind of help makes sense — and what it's worth.</p>
+    <div class="ltl-cta-row">
+      <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27d%20like%20to%20talk%20about%20Learn%20to%20Launch." class="ltl-btn-fill" style="background:var(--ink);color:var(--gold-pale);">Message on WhatsApp</a>
+      <a href="mailto:piyush@wiseking.com.au?subject=Learn%20to%20Launch%20Enquiry" class="ltl-btn-outline" style="border-color:var(--ink-soft);color:var(--ink-soft);">Send an Email</a>
+    </div>
+  </div>
+</section>
+
+<div class="back-to-shop">
+  <a href="index.html">← Back to Wise King</a>
+</div>
+
+<footer>
+  Wise King Enterprise &nbsp;·&nbsp; Geelong, Victoria &nbsp;·&nbsp;
+  <a href="https://wa.me/61470442705">WhatsApp Us</a>
+</footer>
+
+</body>
+</html>
