@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wholesale | Wise King Enterprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1YXMYLHBH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G1YXMYLHBH');
+</script>
+<style>
+:root{
+  --ivory:#FBF8F2; --cream:#F4EEE0; --paper:#FFFFFF; --line:#E6DCC4;
+  --ink:#2A2118; --ink-soft:#5C5142; --text-dim:#8A7D68;
+  --gold:#B5893A; --gold-bright:#C9A24A; --gold-pale:#E8D9B5;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--ivory);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+::selection{background:var(--gold-pale);color:var(--ink);}
+
+.topbar{background:var(--ink);color:var(--gold-pale);text-align:center;font-size:11px;letter-spacing:0.1em;padding:9px 16px;font-weight:500;}
+nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mark{display:flex;align-items:center;gap:10px;color:var(--ink);}
+.logo-img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold);}
+.brand-name{font-family:'Cinzel',serif;font-size:15px;letter-spacing:0.12em;font-weight:600;}
+.back-link{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;}
+.back-link:hover{color:var(--gold);}
+
+section{padding:90px 24px;}
+.sec-inner{max-width:1080px;margin:0 auto;}
+.sec-eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;text-align:center;}
+.sec-title{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,3.6vw,36px);color:var(--ink);text-align:center;margin-bottom:20px;}
+.sec-sub{max-width:640px;margin:0 auto 48px;text-align:center;font-size:14.5px;color:var(--ink-soft);line-height:1.85;font-weight:300;}
+
+/* HERO */
+.ws-hero{background:linear-gradient(165deg,var(--ink) 0%,#3D2A1A 100%);padding:0;}
+.ws-hero-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;}
+@media(max-width:860px){.ws-hero-inner{grid-template-columns:1fr;}}
+.ws-hero-text{padding:80px 40px;color:var(--ivory);}
+.ws-eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:20px;}
+.ws-title{font-family:'Cinzel Decorative',serif;font-size:clamp(30px,4.2vw,44px);line-height:1.15;margin-bottom:22px;}
+.ws-sub{font-size:15px;color:rgba(251,248,242,0.75);line-height:1.85;margin-bottom:32px;font-weight:300;max-width:440px;}
+.ws-cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+.ws-btn-fill{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--gold-bright);color:var(--ink);padding:16px 30px;border-radius:2px;transition:all .25s ease;}
+.ws-btn-fill:hover{background:#fff;}
+.ws-btn-outline{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:transparent;color:rgba(251,248,242,0.85);border:1px solid rgba(201,162,74,0.4);padding:16px 30px;border-radius:2px;}
+.ws-btn-outline:hover{border-color:var(--gold-bright);color:var(--gold-bright);}
+.ws-hero-img{height:100%;min-height:340px;overflow:hidden;}
+.ws-hero-img img{width:100%;height:100%;object-fit:cover;}
+
+/* TRUST STRIP */
+.ws-trust{background:var(--cream);padding:36px 24px;}
+.ws-trust-row{max-width:1080px;margin:0 auto;display:flex;justify-content:center;gap:32px;flex-wrap:wrap;}
+.ws-trust-item{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.03em;color:var(--ink-soft);font-weight:500;}
+.ws-trust-item .tick{color:var(--gold);font-weight:700;}
+
+/* BULK PRODUCTS */
+.bulk-section{background:var(--paper);}
+.bulk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:860px){.bulk-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.bulk-grid{grid-template-columns:1fr;}}
+.bulk-card{background:var(--cream);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+.bulk-photo{aspect-ratio:4/3;overflow:hidden;background:var(--ivory);}
+.bulk-photo img{width:100%;height:100%;object-fit:cover;}
+.bulk-body{padding:22px;}
+.bulk-name{font-family:'Cinzel Decorative',serif;font-size:17px;color:var(--ink);margin-bottom:8px;}
+.bulk-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:12px;}
+.bulk-price{font-family:'Cinzel',serif;font-size:22px;font-weight:700;color:var(--gold);}
+.bulk-unit{font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-dim);}
+.bulk-note{font-size:12px;color:var(--text-dim);line-height:1.6;}
+
+/* SAMPLE PROOF */
+.sample-section{background:var(--cream);}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:700px;margin:0 auto 20px;}
+@media(max-width:560px){.sample-grid{grid-template-columns:1fr;}}
+.sample-photo{border-radius:10px;overflow:hidden;border:1px solid var(--line);box-shadow:0 12px 30px rgba(42,33,24,0.1);}
+.sample-photo img{aspect-ratio:1/1;object-fit:cover;}
+
+/* GIFT BOX */
+.giftbox-banner{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-bright) 100%);border-radius:12px;padding:32px 24px;text-align:center;max-width:820px;margin:0 auto;}
+.giftbox-banner p:first-child{font-family:'Cinzel',serif;font-size:14px;letter-spacing:0.04em;color:var(--ink);margin-bottom:8px;font-weight:600;}
+.giftbox-banner p:last-child{font-size:12.5px;color:rgba(42,33,24,0.8);}
+
+/* WHY WHOLESALE */
+.why-section{background:var(--paper);}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:760px){.why-grid{grid-template-columns:1fr;}}
+.why-card{text-align:center;padding:10px;}
+.why-icon{font-size:26px;margin-bottom:14px;}
+.why-title{font-family:'Cinzel',serif;font-size:13.5px;color:var(--ink);margin-bottom:10px;font-weight:600;}
+.why-text{font-size:12.5px;color:var(--text-dim);line-height:1.7;}
+
+/* FINAL CTA */
+.final-cta{background:linear-gradient(165deg,var(--gold-pale) 0%,var(--cream) 100%);text-align:center;}
+.final-cta-box{max-width:640px;margin:0 auto;border:1px solid var(--gold);border-radius:10px;padding:56px 40px;background:var(--paper);}
+.final-cta-title{font-family:'Cinzel Decorative',serif;font-size:clamp(22px,3vw,30px);color:var(--ink);margin-bottom:16px;}
+.final-cta-text{font-size:14.5px;color:var(--ink-soft);line-height:1.8;margin-bottom:30px;font-weight:300;}
+.final-cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.final-btn-fill{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px 30px;border-radius:2px;}
+.final-btn-fill:hover{background:var(--gold);color:var(--ink);}
+.final-btn-outline{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:transparent;color:var(--ink-soft);border:1px solid var(--ink-soft);padding:16px 30px;border-radius:2px;}
+
+.back-to-shop{background:var(--ivory);text-align:center;padding:50px 24px;}
+.back-to-shop a{display:inline-block;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);}
+.back-to-shop a:hover{color:var(--gold);}
+
+footer{background:var(--ink);color:rgba(251,248,242,0.6);padding:40px 24px;text-align:center;font-size:12px;}
+footer a{color:var(--gold-pale);}
+</style>
+</head>
+<body>
+
+<div class="topbar">🇦🇺 BLENDED &amp; PACKED IN GEELONG, AUSTRALIA &nbsp;·&nbsp; NO FILLERS · NO SHORTCUTS</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="brand-mark">
+      <img src="crown.png.PNG" alt="Wise King Enterprise crest" class="logo-img">
+      <span class="brand-name">WISE KING</span>
+    </a>
+    <a href="index.html" class="back-link">← Back to Shop</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="ws-hero">
+  <div class="ws-hero-inner">
+    <div class="ws-hero-text">
+      <div class="ws-eyebrow">For Retailers &amp; Stockists</div>
+      <h1 class="ws-title">Stock the Full Collection</h1>
+      <p class="ws-sub">Cafés, health food stores, gift retailers, and specialty grocers — we supply direct, in bulk, with shelf-ready presentation. Real ingredients, honest pricing, no minimum you can't work with.</p>
+      <div class="ws-cta-row">
+        <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27m%20interested%20in%20stocking%20Wise%20King%20products." class="ws-btn-fill">Enquire on WhatsApp</a>
+        <a href="mailto:piyush@wiseking.com.au?subject=Wholesale%20Enquiry%20-%20Wise%20King%20Enterprise" class="ws-btn-outline">Email Enquiry</a>
+      </div>
+    </div>
+    <div class="ws-hero-img">
+      <img src="wholesale logo.JPG" alt="Wise King Enterprise full product range">
+    </div>
+  </div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="ws-trust">
+  <div class="ws-trust-row">
+    <div class="ws-trust-item"><span class="tick">✓</span> Registered Class 3 Food Business</div>
+    <div class="ws-trust-item"><span class="tick">✓</span> HACCP-Sourced Ingredients</div>
+    <div class="ws-trust-item"><span class="tick">✓</span> Compliant Labels &amp; Best-Before Dating</div>
+    <div class="ws-trust-item"><span class="tick">✓</span> Hand-Blended, Small-Batch Quality</div>
+  </div>
+</div>
+
+<!-- BULK PRODUCTS -->
+<section class="bulk-section">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Bulk Wholesale</div>
+    <h2 class="sec-title">1kg Bags — For Cafés &amp; Foodservice</h2>
+    <p class="sec-sub">Priced for volume use behind the counter. These are unbranded bulk bags, not individually barcoded retail units — ideal for cafés and kitchens using the blend as an ingredient rather than reselling the pouch itself.</p>
+    <div class="bulk-grid">
+      <div class="bulk-card">
+        <div class="bulk-photo"><img src="wslatte.JPG" alt="Golden Saffron Latte bulk"></div>
+        <div class="bulk-body">
+          <div class="bulk-name">Golden Saffron Latte</div>
+          <div class="bulk-price-row"><span class="bulk-price">$115</span><span class="bulk-unit">/ kg</span></div>
+          <div class="bulk-note">Real saffron threads, six botanicals. Ideal for café latte programs.</div>
+        </div>
+      </div>
+      <div class="bulk-card">
+        <div class="bulk-photo"><img src="wscurry.JPG" alt="Curry Coast Rub bulk"></div>
+        <div class="bulk-body">
+          <div class="bulk-name">Curry Coast Rub</div>
+          <div class="bulk-price-row"><span class="bulk-price">$65</span><span class="bulk-unit">/ kg</span></div>
+          <div class="bulk-note">Twelve whole spices, no salt added. Built for kitchen use at scale.</div>
+        </div>
+      </div>
+      <div class="bulk-card">
+        <div class="bulk-photo"><img src="wsmocha.JPG" alt="Café Mocha Blend bulk"></div>
+        <div class="bulk-body">
+          <div class="bulk-name">Café Mocha Blend</div>
+          <div class="bulk-price-row"><span class="bulk-price">$60</span><span class="bulk-unit">/ kg</span></div>
+          <div class="bulk-note">50% coffee, 50% Dutch-process cocoa. No sugar, no fillers.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE PROOF -->
+<section class="sample-section">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Shelf-Ready, From Day One</div>
+    <h2 class="sec-title">Every Order Arrives Ready to Sell</h2>
+    <p class="sec-sub">Compliant labels, best-before dating, and clean presentation on every pouch — no repackaging or relabelling needed on your end.</p>
+    <div class="sample-grid">
+      <div class="sample-photo"><img src="wssample1.JPG" alt="Wise King sample pouch"></div>
+      <div class="sample-photo"><img src="wssample2.JPG" alt="Wise King sample pouch detail"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT BOX -->
+<section style="background:var(--paper);padding-top:0;">
+  <div class="sec-inner">
+    <div class="giftbox-banner">
+      <p>👑 Coming Soon: The Wise King Trove — Wholesale Gift Boxes</p>
+      <p>All blends in one presentation box — ideal for gift retailers and seasonal stockists. Ask us for early access when it launches.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY WHOLESALE -->
+<section class="why-section">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Why Stock With Us</div>
+    <h2 class="sec-title">Built for Small Retailers, Not Big Distributors</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">📦</div>
+        <div class="why-title">Flexible Minimums</div>
+        <div class="why-text">No minimum order that shuts out a first-time stockist. Tell us your volume and we'll work with it.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔄</div>
+        <div class="why-title">Reliable Restocking</div>
+        <div class="why-text">Small-batch production means consistent restocks — no supply gaps larger manufacturers often have.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💬</div>
+        <div class="why-title">A Real Person Replies</div>
+        <div class="why-text">Every enquiry gets answered directly by us — no call centre, no account manager rotation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-box">
+    <div class="final-cta-title">Ready to Stock Wise King?</div>
+    <p class="final-cta-text">Tell us your store, your volume, and what you're thinking — we'll get back to you with pricing and next steps.</p>
+    <div class="final-cta-row">
+      <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27m%20interested%20in%20stocking%20Wise%20King%20products." class="final-btn-fill">WhatsApp Enquiry</a>
+      <a href="mailto:piyush@wiseking.com.au?subject=Wholesale%20Enquiry%20-%20Wise%20King%20Enterprise" class="final-btn-outline">Send an Email</a>
+    </div>
+  </div>
+</section>
+
+<div class="back-to-shop">
+  <a href="index.html">← Back to Wise King</a>
+</div>
+
+<footer>
+  Wise King Enterprise &nbsp;·&nbsp; Geelong, Victoria &nbsp;·&nbsp;
+  <a href="https://wa.me/61470442705">WhatsApp Us</a>
+</footer>
+
+</body>
+</html>
