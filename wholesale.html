@@ -69,15 +69,17 @@ section{padding:90px 24px;}
 .bulk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 @media(max-width:860px){.bulk-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:560px){.bulk-grid{grid-template-columns:1fr;}}
-.bulk-card{background:var(--cream);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+.bulk-card{background:var(--cream);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease;}
+.bulk-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(42,33,24,0.14);}
 .bulk-photo{aspect-ratio:4/3;overflow:hidden;background:var(--ivory);}
-.bulk-photo img{width:100%;height:100%;object-fit:cover;}
+.bulk-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.bulk-card:hover .bulk-photo img{transform:scale(1.06);}
 .bulk-body{padding:22px;}
-.bulk-name{font-family:'Cinzel Decorative',serif;font-size:17px;color:var(--ink);margin-bottom:8px;}
-.bulk-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:12px;}
-.bulk-price{font-family:'Cinzel',serif;font-size:22px;font-weight:700;color:var(--gold);}
-.bulk-unit{font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-dim);}
-.bulk-note{font-size:12px;color:var(--text-dim);line-height:1.6;}
+.bulk-name{font-family:'Cinzel Decorative',serif;font-size:17px;color:var(--ink);margin-bottom:4px;}
+.bulk-size{font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-dim);margin-bottom:14px;}
+.bulk-note{font-size:12px;color:var(--text-dim);line-height:1.6;margin-bottom:18px;}
+.bulk-price-btn{display:block;text-align:center;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:13px 16px;border-radius:2px;transition:all .25s ease;}
+.bulk-price-btn:hover{background:var(--gold);color:var(--ink);}
 
 /* SAMPLE PROOF */
 .sample-section{background:var(--cream);}
@@ -126,143 +128,4 @@ footer a{color:var(--gold-pale);}
   <div class="nav-inner">
     <a href="index.html" class="brand-mark">
       <img src="crown.png.PNG" alt="Wise King Enterprise crest" class="logo-img">
-      <span class="brand-name">WISE KING</span>
-    </a>
-    <a href="index.html" class="back-link">← Back to Shop</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<div class="ws-hero">
-  <div class="ws-hero-inner">
-    <div class="ws-hero-text">
-      <div class="ws-eyebrow">For Retailers &amp; Stockists</div>
-      <h1 class="ws-title">Stock the Full Collection</h1>
-      <p class="ws-sub">Cafés, health food stores, gift retailers, and specialty grocers — we supply direct, in bulk, with shelf-ready presentation. Real ingredients, honest pricing, no minimum you can't work with.</p>
-      <div class="ws-cta-row">
-        <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27m%20interested%20in%20stocking%20Wise%20King%20products." class="ws-btn-fill">Enquire on WhatsApp</a>
-        <a href="mailto:piyush@wiseking.com.au?subject=Wholesale%20Enquiry%20-%20Wise%20King%20Enterprise" class="ws-btn-outline">Email Enquiry</a>
-      </div>
-    </div>
-    <div class="ws-hero-img">
-      <img src="wholesale logo.JPG" alt="Wise King Enterprise full product range">
-    </div>
-  </div>
-</div>
-
-<!-- TRUST STRIP -->
-<div class="ws-trust">
-  <div class="ws-trust-row">
-    <div class="ws-trust-item"><span class="tick">✓</span> Registered Class 3 Food Business</div>
-    <div class="ws-trust-item"><span class="tick">✓</span> HACCP-Sourced Ingredients</div>
-    <div class="ws-trust-item"><span class="tick">✓</span> Compliant Labels &amp; Best-Before Dating</div>
-    <div class="ws-trust-item"><span class="tick">✓</span> Hand-Blended, Small-Batch Quality</div>
-  </div>
-</div>
-
-<!-- BULK PRODUCTS -->
-<section class="bulk-section">
-  <div class="sec-inner">
-    <div class="sec-eyebrow">Bulk Wholesale</div>
-    <h2 class="sec-title">1kg Bags — For Cafés &amp; Foodservice</h2>
-    <p class="sec-sub">Priced for volume use behind the counter. These are unbranded bulk bags, not individually barcoded retail units — ideal for cafés and kitchens using the blend as an ingredient rather than reselling the pouch itself.</p>
-    <div class="bulk-grid">
-      <div class="bulk-card">
-        <div class="bulk-photo"><img src="wslatte.JPG" alt="Golden Saffron Latte bulk"></div>
-        <div class="bulk-body">
-          <div class="bulk-name">Golden Saffron Latte</div>
-          <div class="bulk-price-row"><span class="bulk-price">$115</span><span class="bulk-unit">/ kg</span></div>
-          <div class="bulk-note">Real saffron threads, six botanicals. Ideal for café latte programs.</div>
-        </div>
-      </div>
-      <div class="bulk-card">
-        <div class="bulk-photo"><img src="wscurry.JPG" alt="Curry Coast Rub bulk"></div>
-        <div class="bulk-body">
-          <div class="bulk-name">Curry Coast Rub</div>
-          <div class="bulk-price-row"><span class="bulk-price">$65</span><span class="bulk-unit">/ kg</span></div>
-          <div class="bulk-note">Twelve whole spices, no salt added. Built for kitchen use at scale.</div>
-        </div>
-      </div>
-      <div class="bulk-card">
-        <div class="bulk-photo"><img src="wsmocha.JPG" alt="Café Mocha Blend bulk"></div>
-        <div class="bulk-body">
-          <div class="bulk-name">Café Mocha Blend</div>
-          <div class="bulk-price-row"><span class="bulk-price">$60</span><span class="bulk-unit">/ kg</span></div>
-          <div class="bulk-note">50% coffee, 50% Dutch-process cocoa. No sugar, no fillers.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SAMPLE PROOF -->
-<section class="sample-section">
-  <div class="sec-inner">
-    <div class="sec-eyebrow">Shelf-Ready, From Day One</div>
-    <h2 class="sec-title">Every Order Arrives Ready to Sell</h2>
-    <p class="sec-sub">Compliant labels, best-before dating, and clean presentation on every pouch — no repackaging or relabelling needed on your end.</p>
-    <div class="sample-grid">
-      <div class="sample-photo"><img src="wssample1.JPG" alt="Wise King sample pouch"></div>
-      <div class="sample-photo"><img src="wssample2.JPG" alt="Wise King sample pouch detail"></div>
-    </div>
-  </div>
-</section>
-
-<!-- GIFT BOX -->
-<section style="background:var(--paper);padding-top:0;">
-  <div class="sec-inner">
-    <div class="giftbox-banner">
-      <p>👑 Coming Soon: The Wise King Trove — Wholesale Gift Boxes</p>
-      <p>All blends in one presentation box — ideal for gift retailers and seasonal stockists. Ask us for early access when it launches.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WHY WHOLESALE -->
-<section class="why-section">
-  <div class="sec-inner">
-    <div class="sec-eyebrow">Why Stock With Us</div>
-    <h2 class="sec-title">Built for Small Retailers, Not Big Distributors</h2>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">📦</div>
-        <div class="why-title">Flexible Minimums</div>
-        <div class="why-text">No minimum order that shuts out a first-time stockist. Tell us your volume and we'll work with it.</div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🔄</div>
-        <div class="why-title">Reliable Restocking</div>
-        <div class="why-text">Small-batch production means consistent restocks — no supply gaps larger manufacturers often have.</div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">💬</div>
-        <div class="why-title">A Real Person Replies</div>
-        <div class="why-text">Every enquiry gets answered directly by us — no call centre, no account manager rotation.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="final-cta-box">
-    <div class="final-cta-title">Ready to Stock Wise King?</div>
-    <p class="final-cta-text">Tell us your store, your volume, and what you're thinking — we'll get back to you with pricing and next steps.</p>
-    <div class="final-cta-row">
-      <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27m%20interested%20in%20stocking%20Wise%20King%20products." class="final-btn-fill">WhatsApp Enquiry</a>
-      <a href="mailto:piyush@wiseking.com.au?subject=Wholesale%20Enquiry%20-%20Wise%20King%20Enterprise" class="final-btn-outline">Send an Email</a>
-    </div>
-  </div>
-</section>
-
-<div class="back-to-shop">
-  <a href="index.html">← Back to Wise King</a>
-</div>
-
-<footer>
-  Wise King Enterprise &nbsp;·&nbsp; Geelong, Victoria &nbsp;·&nbsp;
-  <a href="https://wa.me/61470442705">WhatsApp Us</a>
-</footer>
-
-</body>
-</html>
+      <span
