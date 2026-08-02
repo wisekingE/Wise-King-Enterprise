@@ -1,342 +1,157 @@
-<!doctype html> <html lang="en-AU" class="no-js" data-product-page="product.html"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content="Explore premium Australian botanical elixirs, artisan drink blends and distinctive culinary creations from Wise King Enterprise." > <meta name="theme-color" content="#1f3328">
-<title>Shop Rare Australian Botanical Elixirs | Wise King Enterprise</title>
+<!doctype html>
+<html lang="en-AU" class="no-js" data-product-page="product-new.html">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore premium Australian botanical elixirs, artisan drink blends and distinctive culinary creations from Wise King Enterprise.">
+  <meta name="theme-color" content="#1f3328">
+  <title>Shop Rare Australian Botanical Elixirs | Wise King Enterprise</title>
 
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
 
-<script src="data/products.js" defer></script>
-<script src="js/site.js" defer></script>
-<script src="js/catalogue.js" defer></script>
-</head> <body class="shop-page"> <a class="skip-link" data-skip-link href="#main-content"> Skip to main content </a>
-<header class="site-header" data-site-header>
-  <div class="site-header__inner container">
-    <a
-      class="site-brand"
-      href="index.html"
-      aria-label="Wise King Enterprise home"
-    >
-      <span class="site-brand__name">Wise King Enterprise</span>
-      <span class="site-brand__tagline">
-        Rare Australian Botanical Elixirs
-      </span>
-    </a>
+  <script src="data/products.js" defer></script>
+  <script src="js/site.js" defer></script>
+  <script src="js/catalogue.js" defer></script>
+</head>
+<body class="shop-page">
+  <a class="skip-link" data-skip-link href="#main-content">Skip to main content</a>
 
-    <nav
-      class="primary-navigation"
-      aria-label="Primary navigation"
-      data-primary-navigation
-    >
-      <ul class="primary-navigation__list">
-        <li class="primary-navigation__item">
-          <a class="primary-navigation__link" href="index.html">Home</a>
-        </li>
-
-        <li class="primary-navigation__item">
-          <a
-            class="primary-navigation__link"
-            href="shop.html"
-            aria-current="page"
-          >
-            Shop
-          </a>
-        </li>
-
-        <li class="primary-navigation__item">
-          <a class="primary-navigation__link" href="ingredients.html">
-            Ingredients
-          </a>
-        </li>
-
-        <li class="primary-navigation__item">
-          <a class="primary-navigation__link" href="recipes.html">
-            Recipes
-          </a>
-        </li>
-
-        <li class="primary-navigation__item">
-          <a class="primary-navigation__link" href="wholesale.html">
-            Wholesale
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-      aria-label="Open navigation menu"
-      data-menu-toggle
-    >
-      <span class="menu-toggle__line" aria-hidden="true"></span>
-      <span class="menu-toggle__line" aria-hidden="true"></span>
-      <span class="menu-toggle__line" aria-hidden="true"></span>
-    </button>
-  </div>
-
-  <nav
-    class="mobile-menu"
-    id="mobile-menu"
-    aria-label="Mobile navigation"
-    aria-hidden="true"
-    data-mobile-menu
-  >
-    <div class="mobile-menu__inner container">
-      <ul class="mobile-menu__list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html" aria-current="page">Shop</a></li>
-        <li><a href="ingredients.html">Ingredients</a></li>
-        <li><a href="recipes.html">Recipes</a></li>
-        <li><a href="wholesale.html">Wholesale</a></li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
-<main id="main-content" tabindex="-1">
-  <section class="shop-hero" aria-labelledby="shop-heading">
-    <div class="shop-hero__inner container">
-      <p class="shop-hero__eyebrow">Wise King Enterprise</p>
-
-      <h1 class="shop-hero__title" id="shop-heading">
-        Rare Australian<br>
-        Botanical Elixirs
-      </h1>
-
-      <p class="shop-hero__description">
-        Discover premium, small-batch botanical blends crafted in Victoria,
-        Australia, for memorable drinks, inspired cooking and everyday
-        rituals.
-      </p>
-
-      <a
-        class="button button--primary"
-        href="#shop-catalogue"
-        data-focus-target="true"
-      >
-        Explore the collection
-      </a>
-    </div>
-  </section>
-
-  <section
-    class="shop-catalogue"
-    id="shop-catalogue"
-    aria-labelledby="catalogue-heading"
-    data-catalogue-section
-  >
-    <div class="container">
-      <header class="shop-catalogue__header">
-        <div>
-          <p class="section-eyebrow">The collection</p>
-          <h2 id="catalogue-heading">Shop by ritual</h2>
-        </div>
-
-        <p
-          class="shop-catalogue__count"
-          aria-live="polite"
-          aria-atomic="true"
-          data-product-count
-        >
-          Products loading
-        </p>
-      </header>
-
-      <div
-        class="shop-category-filters"
-        aria-label="Filter products by category"
-        data-category-filters
-      >
-        <button
-          class="shop-category-filter is-active"
-          type="button"
-          data-category-filter="all"
-          data-category="all"
-          aria-pressed="true"
-        >
-          All
-        </button>
-
-        <button
-          class="shop-category-filter"
-          type="button"
-          data-category-filter="drink"
-          data-category="drink"
-          aria-pressed="false"
-        >
-          Drink
-        </button>
-
-        <button
-          class="shop-category-filter"
-          type="button"
-          data-category-filter="cook"
-          data-category="cook"
-          aria-pressed="false"
-        >
-          Cook
-        </button>
-
-        <button
-          class="shop-category-filter"
-          type="button"
-          data-category-filter="prepare"
-          data-category="prepare"
-          aria-pressed="false"
-        >
-          Prepare
-        </button>
-
-        <button
-          class="shop-category-filter"
-          type="button"
-          data-category-filter="kids"
-          data-category="kids"
-          aria-pressed="false"
-          hidden
-        >
-          Kids
-        </button>
-      </div>
-
-      <div
-        class="catalogue-loading"
-        role="status"
-        aria-live="polite"
-        data-catalogue-loading
-      >
-        <p>Preparing the collection&hellip;</p>
-      </div>
-
-      <div
-        class="shop-products__grid"
-        aria-label="Available products"
-        aria-live="polite"
-        aria-busy="true"
-        data-product-catalogue
-        data-product-page="product.html"
-        data-empty-message="No products are currently available."
-        data-empty-category-message="No products are currently available in this category."
-      ></div>
-
-      <p
-        class="catalogue-empty"
-        role="status"
-        aria-live="polite"
-        data-catalogue-empty
-        hidden
-      >
-        No products are currently available.
-      </p>
-
-      <div
-        class="catalogue-error"
-        role="alert"
-        data-catalogue-error
-        hidden
-      >
-        <h3>Our collection is temporarily unavailable</h3>
-        <p>
-          Please refresh the page or return soon to explore our botanical
-          blends.
-        </p>
-      </div>
-
-      <noscript>
-        <div class="catalogue-error">
-          <h3>JavaScript is required to view the collection</h3>
-          <p>
-            Please enable JavaScript in your browser to browse available
-            Wise King Enterprise products.
-          </p>
-        </div>
-      </noscript>
-    </div>
-  </section>
-
-  <section
-    class="shop-story"
-    aria-labelledby="shop-story-heading"
-    data-reveal
-  >
-    <div class="shop-story__inner container">
-      <p class="section-eyebrow">Crafted with purpose</p>
-      <h2 id="shop-story-heading">
-        Botanical character in every blend
-      </h2>
-      <p>
-        Thoughtfully selected ingredients, distinctive flavour and
-        small-batch craftsmanship come together in a collection made for
-        generous everyday moments.
-      </p>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="site-footer__inner container">
-    <div class="site-footer__brand">
-      <a
-        class="site-brand site-brand--footer"
-        href="index.html"
-        aria-label="Wise King Enterprise home"
-      >
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner container">
+      <a class="site-brand" href="index.html" aria-label="Wise King Enterprise home">
         <span class="site-brand__name">Wise King Enterprise</span>
-        <span class="site-brand__tagline">
-          Rare Australian Botanical Elixirs
-        </span>
+        <span class="site-brand__tagline">Rare Australian Botanical Elixirs</span>
       </a>
 
-      <p>
-        Premium botanical drink and culinary blends crafted in Victoria,
-        Australia.
-      </p>
+      <nav class="primary-navigation" aria-label="Primary navigation" data-primary-navigation>
+        <ul class="primary-navigation__list">
+          <li class="primary-navigation__item"><a class="primary-navigation__link" href="index.html">Home</a></li>
+          <li class="primary-navigation__item"><a class="primary-navigation__link" href="shop.html" aria-current="page">Shop</a></li>
+          <li class="primary-navigation__item"><a class="primary-navigation__link" href="ingredients.html">Ingredients</a></li>
+          <li class="primary-navigation__item"><a class="primary-navigation__link" href="recipes.html">Recipes</a></li>
+          <li class="primary-navigation__item"><a class="primary-navigation__link" href="wholesale.html">Wholesale</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu" data-menu-toggle>
+        <span class="menu-toggle__line" aria-hidden="true"></span>
+        <span class="menu-toggle__line" aria-hidden="true"></span>
+        <span class="menu-toggle__line" aria-hidden="true"></span>
+      </button>
     </div>
 
-    <nav class="site-footer__navigation" aria-label="Shop and company">
-      <h2 class="site-footer__heading">Explore</h2>
-      <ul>
-        <li><a href="shop.html" aria-current="page">Shop</a></li>
-        <li><a href="ingredients.html">Ingredients</a></li>
-        <li><a href="recipes.html">Recipes</a></li>
-        <li><a href="wholesale.html">Wholesale</a></li>
-      </ul>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true" data-mobile-menu>
+      <div class="mobile-menu__inner container">
+        <ul class="mobile-menu__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html" aria-current="page">Shop</a></li>
+          <li><a href="ingredients.html">Ingredients</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="wholesale.html">Wholesale</a></li>
+        </ul>
+      </div>
     </nav>
+  </header>
 
-    <nav class="site-footer__navigation" aria-label="Policies">
-      <h2 class="site-footer__heading">Information</h2>
-      <ul>
-        <li><a href="shipping-policy.html">Shipping Policy</a></li>
-        <li>
-          <a href="returns-refunds-policy.html">
-            Returns &amp; Refunds
-          </a>
-        </li>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
-      </ul>
-    </nav>
-  </div>
+  <main id="main-content" tabindex="-1">
+    <section class="shop-hero" aria-labelledby="shop-heading">
+      <div class="shop-hero__inner container">
+        <p class="shop-hero__eyebrow">Wise King Enterprise</p>
+        <h1 class="shop-hero__title" id="shop-heading">Rare Australian<br>Botanical Elixirs</h1>
+        <p class="shop-hero__description">Discover premium, small-batch botanical blends crafted in Victoria, Australia, for memorable drinks, inspired cooking and everyday rituals.</p>
+        <a class="button button--primary" href="#shop-catalogue" data-focus-target="true">Explore the collection</a>
+      </div>
+    </section>
 
-  <div class="site-footer__legal container">
-    <p>
-      &copy; <span data-current-year>2026</span> Wise King Enterprise.
-      All rights reserved.
-    </p>
-  </div>
-</footer>
+    <section class="shop-catalogue" id="shop-catalogue" aria-labelledby="catalogue-heading" data-catalogue-section>
+      <div class="container">
+        <header class="shop-catalogue__header">
+          <div>
+            <p class="section-eyebrow">The collection</p>
+            <h2 id="catalogue-heading">Shop by ritual</h2>
+          </div>
+          <p class="shop-catalogue__count" aria-live="polite" aria-atomic="true" data-product-count>Products loading</p>
+        </header>
 
-<button
-  class="back-to-top"
-  type="button"
-  aria-label="Back to top"
-  aria-hidden="true"
-  data-back-to-top
-  data-show-after="600"
-  disabled
->
-  <span aria-hidden="true">&uarr;</span>
-</button>
-</body> </html>
+        <div class="shop-category-filters" aria-label="Filter products by category" data-category-filters>
+          <button class="shop-category-filter is-active" type="button" data-category-filter="all" data-category="all" aria-pressed="true">All</button>
+          <button class="shop-category-filter" type="button" data-category-filter="drink" data-category="drink" aria-pressed="false">Drink</button>
+          <button class="shop-category-filter" type="button" data-category-filter="cook" data-category="cook" aria-pressed="false">Cook</button>
+          <button class="shop-category-filter" type="button" data-category-filter="prepare" data-category="prepare" aria-pressed="false">Prepare</button>
+          <button class="shop-category-filter" type="button" data-category-filter="kids" data-category="kids" aria-pressed="false" hidden>Kids</button>
+        </div>
+
+        <div class="catalogue-loading" role="status" aria-live="polite" data-catalogue-loading>
+          <p>Preparing the collection&hellip;</p>
+        </div>
+
+        <div class="shop-products__grid" aria-label="Available products" aria-live="polite" aria-busy="true" data-product-catalogue data-product-page="product-new.html" data-empty-message="No products are currently available." data-empty-category-message="No products are currently available in this category."></div>
+
+        <p class="catalogue-empty" role="status" aria-live="polite" data-catalogue-empty hidden>No products are currently available.</p>
+
+        <div class="catalogue-error" role="alert" data-catalogue-error hidden>
+          <h3>Our collection is temporarily unavailable</h3>
+          <p>Please refresh the page or return soon to explore our botanical blends.</p>
+        </div>
+
+        <noscript>
+          <div class="catalogue-error">
+            <h3>JavaScript is required to view the collection</h3>
+            <p>Please enable JavaScript in your browser to browse available Wise King Enterprise products.</p>
+          </div>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="shop-story" aria-labelledby="shop-story-heading" data-reveal>
+      <div class="shop-story__inner container">
+        <p class="section-eyebrow">Crafted with purpose</p>
+        <h2 id="shop-story-heading">Botanical character in every blend</h2>
+        <p>Thoughtfully selected ingredients, distinctive flavour and small-batch craftsmanship come together in a collection made for generous everyday moments.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      <div class="site-footer__brand">
+        <a class="site-brand site-brand--footer" href="index.html" aria-label="Wise King Enterprise home">
+          <span class="site-brand__name">Wise King Enterprise</span>
+          <span class="site-brand__tagline">Rare Australian Botanical Elixirs</span>
+        </a>
+        <p>Premium botanical drink and culinary blends crafted in Victoria, Australia.</p>
+      </div>
+
+      <nav class="site-footer__navigation" aria-label="Shop and company">
+        <h2 class="site-footer__heading">Explore</h2>
+        <ul>
+          <li><a href="shop.html" aria-current="page">Shop</a></li>
+          <li><a href="ingredients.html">Ingredients</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="wholesale.html">Wholesale</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-footer__navigation" aria-label="Policies">
+        <h2 class="site-footer__heading">Information</h2>
+        <ul>
+          <li><a href="shipping-policy.html">Shipping Policy</a></li>
+          <li><a href="returns-refunds-policy.html">Returns &amp; Refunds</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="site-footer__legal container">
+      <p>&copy; <span data-current-year>2026</span> Wise King Enterprise. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" data-back-to-top data-show-after="600" disabled>
+    <span aria-hidden="true">&uarr;</span>
+  </button>
+</body>
+</html>
