@@ -1,0 +1,1375 @@
+/*
+
+Wise King Enterprise — Page Layouts
+File: css/pages.css
+Page-specific, mobile-first layouts only.
+Global foundations belong in main.css.
+Reusable UI patterns belong in components.css.
+*/
+
+/* ==========================================================================
+
+Shared page structures
+========================================================================== */
+
+.page-hero {
+position: relative;
+padding-block: var(--section-space-sm);
+background:
+radial-gradient(
+circle at 85% 15%,
+rgb(181 138 53 / 14%),
+transparent 34rem
+),
+var(--color-cream-100);
+overflow: hidden;
+}
+
+.page-hero__inner {
+display: grid;
+width: min(100% - (var(--page-gutter) * 2), var(--container-xl));
+margin-inline: auto;
+gap: var(--space-8);
+}
+
+.page-hero__content {
+max-width: var(--content-measure);
+}
+
+.page-hero__eyebrow {
+margin-block-end: var(--space-3);
+color: var(--color-gold-700);
+font-size: var(--font-size-xs);
+font-weight: 800;
+letter-spacing: var(--letter-spacing-wide);
+text-transform: uppercase;
+}
+
+.page-hero__title {
+margin-block-end: var(--space-4);
+}
+
+.page-hero__description {
+max-width: var(--content-measure);
+color: var(--color-text-soft);
+font-size: var(--font-size-lg);
+}
+
+.page-hero__actions {
+display: flex;
+margin-top: var(--space-6);
+flex-direction: column;
+gap: var(--space-3);
+}
+
+.page-hero__media {
+position: relative;
+min-width: 0;
+border-radius: var(--radius-lg);
+background: var(--color-cream-200);
+box-shadow: var(--shadow-md);
+overflow: hidden;
+}
+
+.page-hero__media img,
+.page-hero__media video {
+width: 100%;
+height: 100%;
+aspect-ratio: 4 / 3;
+object-fit: cover;
+}
+
+.page-section__header {
+max-width: var(--content-measure);
+margin-block-end: var(--space-8);
+}
+
+.page-section__header--center {
+margin-inline: auto;
+text-align: center;
+}
+
+.page-section__eyebrow {
+margin-block-end: var(--space-3);
+color: var(--color-gold-700);
+font-size: var(--font-size-xs);
+font-weight: 800;
+letter-spacing: var(--letter-spacing-wide);
+text-transform: uppercase;
+}
+
+.page-section__title {
+margin-block-end: var(--space-4);
+}
+
+.page-section__description {
+color: var(--color-text-soft);
+}
+
+.split-layout {
+display: grid;
+gap: var(--space-8);
+}
+
+.split-layout__media {
+min-width: 0;
+border-radius: var(--radius-lg);
+background: var(--color-cream-100);
+overflow: hidden;
+}
+
+.split-layout__media img {
+width: 100%;
+height: 100%;
+min-height: 18rem;
+object-fit: cover;
+}
+
+.split-layout__content {
+align-self: center;
+}
+
+.split-layout__content > :last-child {
+margin-block-end: 0;
+}
+
+/* ==========================================================================
+2. Homepage
+========================================================================== */
+
+.home-hero {
+position: relative;
+background:
+radial-gradient(
+ellipse at 75% 15%,
+rgb(181 138 53 / 20%),
+transparent 45%
+),
+linear-gradient(
+180deg,
+var(--color-cream-100),
+var(--color-cream-50)
+);
+overflow: hidden;
+}
+
+.home-hero__inner {
+display: grid;
+width: min(100% - (var(--page-gutter) * 2), var(--container-xl));
+margin-inline: auto;
+padding-block: var(--section-space-sm);
+gap: var(--space-10);
+}
+
+.home-hero__content {
+align-self: center;
+}
+
+.home-hero__eyebrow {
+margin-block-end: var(--space-4);
+color: var(--color-gold-700);
+font-size: var(--font-size-xs);
+font-weight: 800;
+letter-spacing: var(--letter-spacing-wide);
+text-transform: uppercase;
+}
+
+.home-hero__title {
+max-width: 14ch;
+margin-block-end: var(--space-5);
+}
+
+.home-hero__title em {
+color: var(--color-gold-700);
+font-style: normal;
+}
+
+.home-hero__description {
+max-width: 34rem;
+color: var(--color-text-soft);
+font-size: var(--font-size-lg);
+}
+
+.home-hero__motto {
+margin-block: var(--space-4) 0;
+color: var(--color-gold-700);
+font-family: var(--font-heading);
+font-style: italic;
+}
+
+.home-hero__actions {
+display: flex;
+margin-top: var(--space-7);
+flex-direction: column;
+gap: var(--space-3);
+}
+
+.home-hero__visual {
+position: relative;
+align-self: end;
+}
+
+.home-hero__media {
+position: relative;
+max-width: 32rem;
+margin-inline: auto;
+border: var(--border-width) solid rgb(181 138 53 / 35%);
+border-radius: var(--radius-lg);
+background: var(--color-cream-200);
+box-shadow: var(--shadow-lg);
+overflow: hidden;
+}
+
+.home-hero__media img,
+.home-hero__media video {
+width: 100%;
+aspect-ratio: 4 / 5;
+object-fit: cover;
+}
+
+.home-hero__caption {
+position: absolute;
+right: var(--space-4);
+bottom: var(--space-4);
+left: var(--space-4);
+padding: var(--space-4);
+border-radius: var(--radius-md);
+background: rgb(33 19 13 / 78%);
+color: var(--color-cream-100);
+backdrop-filter: blur(0.4rem);
+}
+
+.home-hero__caption-title {
+margin: 0;
+color: var(--color-gold-300);
+font-family: var(--font-heading);
+font-size: var(--font-size-sm);
+}
+
+.home-hero__caption-text {
+margin: var(--space-1) 0 0;
+color: var(--color-cream-200);
+font-size: var(--font-size-xs);
+}
+
+.home-trust {
+border-top: var(--border-width) solid var(--color-border);
+}
+
+.home-trust__list {
+display: grid;
+width: min(100% - (var(--page-gutter) * 2), var(--container-xl));
+margin: 0 auto;
+padding-block: var(--space-6);
+gap: var(--space-4);
+list-style: none;
+}
+
+.home-trust__item {
+display: flex;
+align-items: center;
+gap: var(--space-3);
+color: var(--color-text-soft);
+font-size: var(--font-size-sm);
+font-weight: 700;
+}
+
+.home-trust__icon {
+width: 1.25rem;
+height: 1.25rem;
+flex: 0 0 auto;
+color: var(--color-gold-600);
+}
+
+.home-categories {
+background: var(--color-cream-100);
+}
+
+.home-featured__footer {
+margin-top: var(--space-8);
+text-align: center;
+}
+
+.home-story__image {
+aspect-ratio: 4 / 3;
+}
+
+.home-values__grid,
+.home-reviews__grid {
+display: grid;
+gap: var(--space-5);
+}
+
+.home-cta {
+text-align: center;
+}
+
+.home-cta__inner {
+padding: clamp(var(--space-7), 8vw, var(--space-12));
+border-radius: var(--radius-lg);
+background:
+linear-gradient(rgb(33 19 13 / 84%), rgb(33 19 13 / 84%)),
+var(--home-cta-image, none) center / cover;
+color: var(--color-cream-50);
+}
+
+.home-cta__title {
+max-width: 18ch;
+margin-inline: auto;
+color: inherit;
+}
+
+.home-cta__text {
+max-width: var(--content-measure-narrow);
+margin: var(--space-4) auto 0;
+color: var(--color-cream-200);
+}
+
+.home-cta__actions {
+display: flex;
+margin-top: var(--space-6);
+flex-direction: column;
+align-items: stretch;
+gap: var(--space-3);
+}
+
+/* ==========================================================================
+3. Shop page
+========================================================================== */
+
+.shop-page__layout {
+display: grid;
+gap: var(--space-8);
+}
+
+.shop-page__sidebar {
+min-width: 0;
+}
+
+.shop-page__filters {
+display: grid;
+gap: var(--space-6);
+}
+
+.shop-page__filter-section {
+padding-bottom: var(--space-6);
+border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.shop-page__filter-title {
+margin-block-end: var(--space-3);
+font-family: var(--font-body);
+font-size: var(--font-size-sm);
+letter-spacing: normal;
+}
+
+.shop-page__results {
+min-width: 0;
+}
+
+.shop-page__category-intro {
+margin-block-end: var(--space-8);
+}
+
+.shop-page__category-intro p {
+max-width: var(--content-measure);
+color: var(--color-text-soft);
+}
+
+.shop-page__pagination {
+margin-top: var(--space-10);
+}
+
+/* ==========================================================================
+4. Product page
+========================================================================== */
+
+.product-page__main {
+display: grid;
+gap: var(--space-8);
+}
+
+.product-gallery {
+display: grid;
+min-width: 0;
+gap: var(--space-3);
+}
+
+.product-gallery__stage {
+position: relative;
+border-radius: var(--radius-lg);
+background: var(--color-cream-100);
+overflow: hidden;
+}
+
+.product-gallery__stage img {
+width: 100%;
+aspect-ratio: 4 / 5;
+object-fit: cover;
+}
+
+.product-gallery__thumbnails {
+display: grid;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+gap: var(--space-2);
+}
+
+.product-gallery__thumbnail {
+padding: 0;
+border: var(--border-width) solid transparent;
+border-radius: var(--radius-sm);
+background: var(--color-cream-100);
+overflow: hidden;
+}
+
+.product-gallery__thumbnail:hover,
+.product-gallery__thumbnail.is-active,
+.product-gallery__thumbnail[aria-current="true"] {
+border-color: var(--color-gold-500);
+}
+
+.product-gallery__thumbnail img {
+width: 100%;
+aspect-ratio: 1;
+object-fit: cover;
+}
+
+.product-details {
+min-width: 0;
+}
+
+.product-details__category {
+margin-block-end: var(--space-3);
+color: var(--color-gold-700);
+font-size: var(--font-size-xs);
+font-weight: 800;
+letter-spacing: var(--letter-spacing-wide);
+text-transform: uppercase;
+}
+
+.product-details__title {
+margin-block-end: var(--space-3);
+}
+
+.product-details__tagline {
+color: var(--color-text-soft);
+font-size: var(--font-size-lg);
+}
+
+.product-details__price {
+margin-block: var(--space-5);
+color: var(--color-brown-950);
+font-size: var(--font-size-3xl);
+font-weight: 800;
+}
+
+.product-details__compare-price {
+margin-right: var(--space-3);
+color: var(--color-text-soft);
+font-size: var(--font-size-lg);
+font-weight: 400;
+text-decoration: line-through;
+}
+
+.product-details__summary {
+padding-block: var(--space-5);
+border-block: var(--border-width) solid var(--color-border);
+color: var(--color-text-soft);
+}
+
+.product-details__options {
+display: grid;
+margin-top: var(--space-6);
+gap: var(--space-5);
+}
+
+.product-details__option-title {
+margin-block-end: var(--space-3);
+font-family: var(--font-body);
+font-size: var(--font-size-sm);
+letter-spacing: normal;
+}
+
+.product-details__purchase {
+display: grid;
+margin-top: var(--space-6);
+gap: var(--space-3);
+}
+
+.product-details__quantity {
+justify-self: start;
+}
+
+.product-details__availability {
+display: flex;
+margin-top: var(--space-4);
+align-items: center;
+gap: var(--space-2);
+color: var(--color-success);
+font-size: var(--font-size-sm);
+font-weight: 700;
+}
+
+.product-details__availability.is-unavailable {
+color: var(--color-error);
+}
+
+.product-details__benefits {
+display: grid;
+margin: var(--space-6) 0 0;
+padding: 0;
+gap: var(--space-3);
+list-style: none;
+}
+
+.product-details__benefit {
+display: grid;
+grid-template-columns: auto minmax(0, 1fr);
+align-items: start;
+gap: var(--space-3);
+color: var(--color-text-soft);
+font-size: var(--font-size-sm);
+}
+
+.product-details__benefit svg {
+width: 1.2rem;
+height: 1.2rem;
+margin-top: 0.15rem;
+color: var(--color-gold-600);
+}
+
+.product-information {
+margin-top: var(--section-space-sm);
+}
+
+.product-information__panel {
+max-width: var(--content-measure);
+}
+
+.product-nutrition {
+width: 100%;
+border-collapse: collapse;
+font-size: var(--font-size-sm);
+}
+
+.product-nutrition th,
+.product-nutrition td {
+padding: var(--space-3);
+border-bottom: var(--border-width) solid var(--color-border);
+text-align: left;
+}
+
+.product-nutrition th:last-child,
+.product-nutrition td:last-child {
+text-align: right;
+}
+
+.product-related {
+background: var(--color-cream-100);
+}
+
+/* ==========================================================================
+5. Ingredients page
+========================================================================== */
+
+.ingredients-page__intro {
+max-width: var(--content-measure);
+}
+
+.ingredient-index {
+display: flex;
+margin-block-end: var(--space-8);
+flex-wrap: wrap;
+gap: var(--space-2);
+}
+
+.ingredients-grid {
+display: grid;
+gap: var(--space-5);
+}
+
+.ingredient-card {
+display: grid;
+min-width: 0;
+height: 100%;
+border: var(--border-width) solid var(--color-border);
+border-radius: var(--radius-lg);
+background: var(--color-surface);
+overflow: hidden;
+}
+
+.ingredient-card__media {
+aspect-ratio: 4 / 3;
+background: var(--color-cream-100);
+overflow: hidden;
+}
+
+.ingredient-card__media img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform var(--duration-slow) var(--ease-standard);
+}
+
+.ingredient-card:hover .ingredient-card__media img {
+transform: scale(1.04);
+}
+
+.ingredient-card__body {
+padding: var(--space-5);
+}
+
+.ingredient-card__name {
+margin-block-end: var(--space-2);
+font-size: var(--font-size-xl);
+}
+
+.ingredient-card__origin {
+margin-block-end: var(--space-3);
+color: var(--color-gold-700);
+font-size: var(--font-size-xs);
+font-weight: 800;
+letter-spacing: var(--letter-spacing-wide);
+text-transform: uppercase;
+}
+
+.ingredient-card__description {
+color: var(--color-text-soft);
+font-size: var(--font-size-sm);
+}
+
+.ingredients-standards {
+background: var(--color-cream-100);
+}
+
+.ingredients-standards__grid {
+display: grid;
+gap: var(--space-5);
+}
+
+/* ==========================================================================
+6. Recipes page
+========================================================================== */
+
+.recipes-featured {
+display: grid;
+margin-block-end: var(--space-10);
+border: var(--border-width) solid var(--color-border);
+border-radius: var(--radius-lg);
+background: var(--color-surface);
+overflow: hidden;
+}
+
+.recipes-featured__media {
+min-height: 18rem;
+background: var(--color-cream-100);
+}
+
+.recipes-featured__media img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.recipes-featured__content {
+align-self: center;
+padding: clamp(var(--space-6), 6vw, var(--space-10));
+}
+
+.recipes-grid {
+display: grid;
+gap: var(--space-6);
+}
+
+.recipe-card {
+display: flex;
+height: 100%;
+flex-direction: column;
+border: var(--border-width) solid var(--color-border);
+border-radius: var(--radius-lg);
+background: var(--color-surface);
+overflow: hidden;
+transition:
+box-shadow var(--duration-normal) var(--ease-standard),
+transform var(--duration-normal) var(--ease-standard);
+}
+
+.recipe-card:hover {
+box-shadow: var(--shadow-md);
+transform: translateY(-0.25rem);
+}
+
+.recipe-card__media {
+aspect-ratio: 16 / 10;
+background: var(--color-cream-100);
+overflow: hidden;
+}
+
+.recipe-card__media img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.recipe-card__body {
+display: flex;
+flex: 1;
+flex-direction: column;
+padding: var(--space-5);
+}
+
+.recipe-card__meta {
+display: flex;
+margin-block-end: var(--space-3);
+flex-wrap: wrap;
+gap: var(--space-2) var(--space-4);
+color: var(--color-text-soft);
+font-size: var(--font-size-xs);
+}
+
+.recipe-card__title {
+margin-block-end: var(--space-3);
+font-size: var(--font-size-xl);
+}
+
+.recipe-card__description {
+color: var(--color-text-soft);
+font-size: var(--font-size-sm);
+}
+
+.recipe-card__link {
+margin-top: auto;
+padding-top: var(--space-4);
+font-size: var(--font-size-sm);
+font-weight: 800;
+}
+
+.recipe-detail {
+display: grid;
+gap: var(--space-8);
+}
+
+.recipe-detail__sidebar {
+align-self: start;
+}
+
+.recipe-facts {
+display: grid;
+margin: 0;
+padding: var(--space-5);
+gap: var(--space-4);
+border-radius: var(--radius-lg);
+background: var(--color-cream-100);
+}
+
+.recipe-facts__item {
+display: flex;
+justify-content: space-between;
+gap: var(--space-4);
+}
+
+.recipe-facts dt {
+color: var(--color-text-soft);
+}
+
+.recipe-facts dd {
+margin: 0;
+color: var(--color-brown-950);
+font-weight: 800;
+}
+
+.recipe-ingredients,
+.recipe-method {
+margin-top: var(--space-8);
+}
+
+.recipe-ingredients__list,
+.recipe-method__list {
+display: grid;
+padding-left: 1.25rem;
+gap: var(--space-3);
+}
+
+.recipe-method__list li {
+padding-left: var(--space-2);
+}
+
+/* ==========================================================================
+7. Wholesale page
+========================================================================== */
+
+.wholesale-hero__media img {
+aspect-ratio: 4 / 3;
+}
+
+.wholesale-benefits {
+background: var(--color-cream-100);
+}
+
+.wholesale-benefits__grid,
+.wholesale-process__grid {
+display: grid;
+gap: var(--space-5);
+}
+
+.wholesale-process {
+counter-reset: wholesale-step;
+}
+
+.wholesale-step {
+position: relative;
+padding: var(--space-6);
+border-left: 0.25rem solid var(--color-gold-500);
+border-radius: 0 var(--radius-md) var(--radius-md) 0;
+background: var(--color-surface);
+box-shadow: var(--shadow-sm);
+counter-increment: wholesale-step;
+}
+
+.wholesale-step::before {
+display: grid;
+width: 2.5rem;
+height: 2.5rem;
+margin-block-end: var(--space-4);
+border-radius: var(--radius-pill);
+place-items: center;
+background: var(--color-gold-500);
+color: var(--color-brown-950);
+content: counter(wholesale-step);
+font-weight: 800;
+}
+
+.wholesale-step__title {
+margin-block-end: var(--space-2);
+font-size: var(--font-size-xl);
+}
+
+.wholesale-step__text {
+color: var(--color-text-soft);
+}
+
+.wholesale-enquiry {
+display: grid;
+gap: var(--space-8);
+}
+
+.wholesale-enquiry__aside {
+align-self: start;
+}
+
+.wholesale-enquiry__aside > * + * {
+margin-top: var(--space-6);
+}
+
+/* ==========================================================================
+8. Thank-you page
+========================================================================== */
+
+.thank-you-page {
+display: grid;
+min-height: 65vh;
+padding-block: var(--section-space-sm);
+place-items: center;
+}
+
+.thank-you-page__card {
+width: min(100% - (var(--page-gutter) * 2), 44rem);
+padding: clamp(var(--space-7), 8vw, var(--space-12));
+border: var(--border-width) solid var(--color-border);
+border-radius: var(--radius-lg);
+background: var(--color-surface);
+box-shadow: var(--shadow-md);
+text-align: center;
+}
+
+.thank-you-page__icon {
+display: grid;
+width: 4.5rem;
+height: 4.5rem;
+margin: 0 auto var(--space-6);
+border-radius: var(--radius-pill);
+place-items: center;
+background: rgb(47 107 69 / 12%);
+color: var(--color-success);
+}
+
+.thank-you-page__icon svg {
+width: 2.25rem;
+height: 2.25rem;
+}
+
+.thank-you-page__title {
+margin-block-end: var(--space-4);
+}
+
+.thank-you-page__message {
+max-width: var(--content-measure-narrow);
+margin-inline: auto;
+color: var(--color-text-soft);
+}
+
+.thank-you-page__reference {
+margin-top: var(--space-6);
+padding: var(--space-4);
+border-radius: var(--radius-md);
+background: var(--color-cream-100);
+font-size: var(--font-size-sm);
+}
+
+.thank-you-page__reference strong {
+display: block;
+margin-top: var(--space-1);
+color: var(--color-brown-950);
+overflow-wrap: anywhere;
+}
+
+.thank-you-page__actions {
+display: flex;
+margin-top: var(--space-7);
+flex-direction: column;
+gap: var(--space-3);
+}
+
+/* ==========================================================================
+9. Legal pages
+========================================================================== */
+
+.legal-page {
+width: min(100% - (var(--page-gutter) * 2), var(--container-lg));
+margin-inline: auto;
+padding-block: var(--section-space-sm);
+}
+
+.legal-page__header {
+max-width: var(--content-measure);
+margin-block-end: var(--space-10);
+}
+
+.legal-page__title {
+margin-block-end: var(--space-4);
+}
+
+.legal-page__updated {
+color: var(--color-text-soft);
+font-size: var(--font-size-sm);
+}
+
+.legal-page__layout {
+display: grid;
+gap: var(--space-8);
+}
+
+.legal-page__navigation {
+align-self: start;
+}
+
+.legal-page__navigation-list {
+display: flex;
+margin: 0;
+padding: 0 0 var(--space-3);
+gap: var(--space-2);
+overflow-x: auto;
+list-style: none;
+}
+
+.legal-page__navigation a {
+display: inline-flex;
+min-height: var(--touch-target);
+align-items: center;
+padding-inline: var(--space-4);
+border: var(--border-width) solid var(--color-border);
+border-radius: var(--radius-pill);
+color: var(--color-text-soft);
+font-size: var(--font-size-sm);
+font-weight: 700;
+text-decoration: none;
+white-space: nowrap;
+}
+
+.legal-page__navigation a:hover,
+.legal-page__navigation a[aria-current="true"] {
+border-color: var(--color-gold-500);
+background: var(--color-gold-500);
+color: var(--color-brown-950);
+}
+
+.legal-content {
+min-width: 0;
+max-width: var(--content-measure);
+}
+
+.legal-content section {
+scroll-margin-top: calc(var(--header-height) + var(--space-6));
+}
+
+.legal-content section + section {
+margin-top: var(--space-10);
+padding-top: var(--space-8);
+border-top: var(--border-width) solid var(--color-border);
+}
+
+.legal-content h2 {
+margin-block-end: var(--space-4);
+font-size: var(--font-size-2xl);
+}
+
+.legal-content h3 {
+margin-block: var(--space-6) var(--space-3);
+font-size: var(--font-size-xl);
+}
+
+.legal-content p,
+.legal-content li {
+color: var(--color-text-soft);
+}
+
+.legal-content ul,
+.legal-content ol {
+display: grid;
+padding-left: 1.25rem;
+gap: var(--space-2);
+}
+
+.legal-content address {
+padding: var(--space-5);
+border-left: 0.25rem solid var(--color-gold-500);
+border-radius: 0 var(--radius-md) var(--radius-md) 0;
+background: var(--color-cream-100);
+font-style: normal;
+}
+
+/* ==========================================================================
+10. 404 page
+========================================================================== */
+
+.error-page {
+position: relative;
+display: grid;
+min-height: 70vh;
+padding: var(--section-space-sm) var(--page-gutter);
+place-items: center;
+background:
+radial-gradient(
+circle at 50% 35%,
+rgb(181 138 53 / 16%),
+transparent 26rem
+),
+var(--color-cream-50);
+text-align: center;
+overflow: hidden;
+}
+
+.error-page__content {
+position: relative;
+z-index: 1;
+max-width: 42rem;
+}
+
+.error-page__code {
+display: block;
+margin-block-end: var(--space-3);
+color: var(--color-gold-600);
+font-family: var(--font-heading);
+font-size: clamp(5rem, 25vw, 11rem);
+font-weight: 800;
+letter-spacing: -0.06em;
+line-height: 0.8;
+}
+
+.error-page__title {
+margin-block-end: var(--space-4);
+}
+
+.error-page__message {
+max-width: var(--content-measure-narrow);
+margin-inline: auto;
+color: var(--color-text-soft);
+}
+
+.error-page__actions {
+display: flex;
+margin-top: var(--space-7);
+flex-direction: column;
+gap: var(--space-3);
+}
+
+.error-page__search {
+max-width: 28rem;
+margin: var(--space-8) auto 0;
+text-align: left;
+}
+
+/* ==========================================================================
+11. Responsive page enhancements
+========================================================================== */
+
+@media (min-width: 30rem) {
+.page-hero__actions,
+.home-hero__actions,
+.home-cta__actions,
+.thank-you-page__actions,
+.error-page__actions {
+flex-direction: row;
+flex-wrap: wrap;
+}
+
+.home-trust__list,
+.home-values__grid,
+.home-reviews__grid,
+.ingredients-grid,
+.ingredients-standards__grid,
+.recipes-grid,
+.wholesale-benefits__grid,
+.wholesale-process__grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.product-details__purchase {
+grid-template-columns: auto minmax(12rem, 1fr);
+align-items: center;
+}
+
+.product-details__purchase .button,
+.product-details__purchase .btn {
+width: 100%;
+}
+}
+
+@media (min-width: 48rem) {
+.page-hero__inner,
+.split-layout,
+.home-hero__inner,
+.product-page__main,
+.recipes-featured,
+.recipe-detail,
+.wholesale-enquiry {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+align-items: center;
+}
+
+.page-hero__media img,
+.page-hero__media video {
+aspect-ratio: 4 / 5;
+}
+
+.split-layout--media-right .split-layout__media {
+order: 2;
+}
+
+.home-trust__list {
+grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.home-trust__item {
+justify-content: center;
+}
+
+.ingredients-grid,
+.recipes-grid {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.product-gallery__thumbnails {
+grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.recipes-featured__media {
+min-height: 100%;
+}
+
+.thank-you-page__actions,
+.error-page__actions {
+justify-content: center;
+}
+}
+
+@media (min-width: 64rem) {
+.home-hero__inner {
+min-height: 42rem;
+grid-template-columns: minmax(0, 1fr) minmax(24rem, 0.82fr);
+gap: var(--space-12);
+}
+
+.home-values__grid,
+.home-reviews__grid,
+.ingredients-standards__grid,
+.wholesale-benefits__grid,
+.wholesale-process__grid {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.shop-page__layout {
+grid-template-columns: minmax(13rem, 16rem) minmax(0, 1fr);
+align-items: start;
+gap: var(--space-10);
+}
+
+.shop-page__sidebar {
+position: sticky;
+top: calc(var(--header-height) + var(--space-6));
+}
+
+.product-page__main {
+grid-template-columns: minmax(0, 1.15fr) minmax(22rem, 0.85fr);
+align-items: start;
+gap: var(--space-12);
+}
+
+.product-details {
+position: sticky;
+top: calc(var(--header-height) + var(--space-6));
+}
+
+.legal-page__layout {
+grid-template-columns: minmax(12rem, 15rem) minmax(0, 1fr);
+gap: var(--space-12);
+}
+
+.legal-page__navigation {
+position: sticky;
+top: calc(var(--header-height) + var(--space-6));
+}
+
+.legal-page__navigation-list {
+display: grid;
+padding: 0;
+overflow: visible;
+}
+
+.legal-page__navigation a {
+min-height: auto;
+padding: var(--space-2) 0;
+border: 0;
+border-radius: 0;
+background: transparent;
+white-space: normal;
+}
+
+.legal-page__navigation a:hover,
+.legal-page__navigation a[aria-current="true"] {
+background: transparent;
+color: var(--color-gold-700);
+}
+}
+
+@media (min-width: 80rem) {
+.ingredients-grid {
+grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.wholesale-enquiry {
+grid-template-columns: minmax(18rem, 0.7fr) minmax(0, 1.3fr);
+gap: var(--space-12);
+}
+}
+
+/* ==========================================================================
+12. Reduced-motion support
+========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+.ingredient-card__media img,
+.recipe-card {
+transform: none;
+}
+}
+
+/* ==========================================================================
+13. High-contrast support
+========================================================================== */
+
+@media (prefers-contrast: more) {
+.home-hero__media,
+.ingredient-card,
+.recipe-card,
+.recipes-featured,
+.thank-you-page__card {
+border-width: 0.125rem;
+}
+}
+
+/* ==========================================================================
+14. Print adjustments
+========================================================================== */
+
+@media print {
+.page-hero,
+.home-hero,
+.error-page {
+background: #ffffff;
+}
+
+.page-hero__actions,
+.home-hero__actions,
+.home-cta,
+.shop-page__sidebar,
+.shop-page__pagination,
+.product-gallery__thumbnails,
+.product-details__purchase,
+.product-related,
+.ingredient-index,
+.legal-page__navigation,
+.thank-you-page__actions,
+.error-page__actions,
+.error-page__search {
+display: none !important;
+}
+
+.page-hero__inner,
+.home-hero__inner,
+.split-layout,
+.shop-page__layout,
+.product-page__main,
+.recipes-featured,
+.recipe-detail,
+.wholesale-enquiry,
+.legal-page__layout {
+display: block;
+width: 100%;
+}
+
+.page-hero__media,
+.home-hero__visual,
+.split-layout__media,
+.product-gallery {
+max-width: 32rem;
+margin: 1rem 0;
+}
+
+.product-details,
+.shop-page__sidebar,
+.legal-page__navigation {
+position: static;
+}
+
+.ingredients-grid,
+.recipes-grid,
+.home-values__grid,
+.home-reviews__grid,
+.wholesale-benefits__grid,
+.wholesale-process__grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ingredient-card,
+.recipe-card,
+.recipes-featured,
+.wholesale-step,
+.thank-you-page__card {
+border: 0.0625rem solid #000000;
+box-shadow: none;
+break-inside: avoid;
+}
+
+.legal-content {
+max-width: none;
+}
+
+.legal-content section {
+break-inside: avoid;
+}
+
+.error-page {
+min-height: auto;
+}
+}
