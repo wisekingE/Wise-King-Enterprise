@@ -271,8 +271,12 @@
   ];
 
   global.WISE_KING_CATALOGUE = Object.freeze({
-    needsConfirmation: NEEDS_CONFIRMATION,
-    categories: Object.freeze(categories),
-    products: Object.freeze(products),
-  });
+  needsConfirmation: NEEDS_CONFIRMATION,
+  categories: Object.freeze(categories),
+  products: Object.freeze(products),
+});
+
+global.WiseKingProducts = Object.freeze({
+  products: Object.freeze(products),
+});
 })(globalThis);
