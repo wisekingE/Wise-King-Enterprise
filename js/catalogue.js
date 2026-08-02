@@ -11,8 +11,8 @@ no cart, Shopify or checkout logic.
 "use strict";
 
 const NAMESPACE = "wiseKing";
-const DEFAULT_PRODUCT_PAGE = "product.html";
-const PRODUCT_SOURCE_EVENT = ${NAMESPACE}:products-ready;
+const DEFAULT_PRODUCT_PAGE = "product-new.html";
+const PRODUCT_SOURCE_EVENT = '${NAMESPACE}:products-ready';
 
 const SELECTORS = Object.freeze({
 featuredContainer:
