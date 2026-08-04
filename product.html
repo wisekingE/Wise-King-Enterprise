@@ -219,6 +219,7 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Sweeten with honey or maple syrup to taste. Enjoy immediately.'}
     ]
   },
+
   curry: {
     productId: '10491200110773',
     name: 'Curry Coast Rub',
@@ -230,12 +231,20 @@ const PRODUCT_DETAILS = {
     theme: '#8B1A1A', themeText: '#fff',
     whatsappText: 'Hi Piyush, I want to order the Curry Coast Rub please.',
     soldOut: false,
-    insideMode: 'cards',
-    ingredientCards: [
-      {title:'Twelve Spices, Zero Compromise', text:'Smoked paprika, Kashmiri chilli, ground coriander, garlic, cumin, onion, black pepper, oregano, cinnamon, green cardamom, clove, nutmeg — twelve whole spices, hand-balanced, with no salt added.'},
-      {title:'The Twelve Apostles Standard', text:'Named for the Twelve Apostles on the Great Ocean Road — twelve essential, none replaceable.'},
-      {title:'Rest Before You Cook', text:'Rub in, rest 10 minutes. That\'s when smoked paprika and Kashmiri chilli bind to the surface.'},
-      {title:'Built for the Whole Kitchen', text:'Dry rub on the grill, stirred into a curry, or folded into a gravy — no salt, no fillers.'}
+    insideMode: 'icons',
+    ingredientIcons: [
+      {img:'Paprika.PNG', name:'Smoked Paprika', benefit:'Deep smoky base that carries the whole rub.'},
+      {img:'Kashmiri.PNG', name:'Kashmiri Chilli', benefit:'Mild heat with rich red colour.'},
+      {img:'Coriander.PNG', name:'Coriander', benefit:'Citrusy lift and classic curry backbone.'},
+      {img:'Garlic.PNG', name:'Garlic', benefit:'Savoury depth in every pinch.'},
+      {img:'Cumin.PNG', name:'Cumin', benefit:'Earthy warmth that defines the blend.'},
+      {img:'Onion.PNG', name:'Onion', benefit:'Sweet base note that rounds everything out.'},
+      {img:'black-pepper.jpg.JPG', name:'Black Pepper', benefit:'Sharp finish and aroma.'},
+      {img:'Oregano.PNG', name:'Oregano', benefit:'Herbaceous lift unique to this rub.'},
+      {img:'Cinnamon.PNG', name:'Cinnamon', benefit:'Warm sweetness without sugar.'},
+      {img:'cardamom.jpg.JPG', name:'Green Cardamom', benefit:'Floral aromatic complexity.'},
+      {img:'clove.jpg.JPG', name:'Clove', benefit:'Intense, slightly sweet spice note.'},
+      {img:'Nutmeg.PNG', name:'Nutmeg', benefit:'Subtle warmth that finishes the twelve.'}
     ],
     ritualSteps: [
       {n:'I', text:'Use <strong>6g</strong> per 500g of meat or vegetables.'},
@@ -244,6 +253,7 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Also excellent stirred into curries or gravies — adjust to taste.'}
     ]
   },
+
   mocha: {
     productId: '10491203256501',
     name: 'Café Mocha Blend',
@@ -256,12 +266,10 @@ const PRODUCT_DETAILS = {
     theme: '#3D2208', themeText: '#E8D9B5',
     whatsappText: 'Hi Piyush, I want to order the Cafe Mocha Blend please.',
     soldOut: false,
-    insideMode: 'cards',
-    ingredientCards: [
-      {title:'Two Ingredients. No Argument.', text:'50% premium instant coffee, 50% dark Dutch-process cocoa. Nothing else — no sugar, no fillers.'},
-      {title:'The Paste-First Method', text:'A splash of hot water first, stirred into a smooth paste, unlocks the dark cocoa before milk goes in.'},
-      {title:'Dutch-Process, Deliberately', text:'Chosen for its smoother, less acidic, deeper flavour — closer to a café-bought mocha.'},
-      {title:'Hot or Iced — Built for Both', text:'A warming mocha in winter, or over ice in summer. Sweetened only as much as you choose.'}
+    insideMode: 'icons',
+    ingredientIcons: [
+      {img:'Coffee.PNG', name:'Premium Instant Coffee', benefit:'Clean, bold coffee base — 50% of the blend.'},
+      {img:'Cocoa.PNG', name:'Dutch-Process Cocoa', benefit:'Smooth, deep chocolate flavour with no bitterness.'}
     ],
     ritualSteps: [
       {n:'I', text:'Add <strong>6g</strong> (one heaped teaspoon) to a mug.'},
@@ -270,6 +278,7 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Sweeten to taste. Also delicious served over ice.'}
     ]
   },
+
   matcha: {
     productId: 'REPLACE-WITH-SHOPIFY-MATCHA-ID',
     name: 'Ceremonial Matcha',
@@ -282,12 +291,9 @@ const PRODUCT_DETAILS = {
     theme: '#2D4A2D', themeText: '#C8E6C9',
     whatsappText: 'Hi Piyush, I want to order the Ceremonial Matcha please.',
     soldOut: false,
-    insideMode: 'cards',
-    ingredientCards: [
-      {title:'The Friction Test', text:'Rub a pinch between your fingers — it disappears into your skin like silk, leaving no grain behind.'},
-      {title:'Uji, Kyoto — 350 Years of Mastery', text:'From Yamasan Co., a 350-year-old protected tea plantation in Japan\'s most prestigious matcha region.'},
-      {title:'Lab-Tested. Certified Clean.', text:'Certificate of Analysis: heavy metals not detected, pesticide residue not detected, E. coli negative.'},
-      {title:'JAS Organic Certified', text:'Independently inspected under Japan\'s national organic standard. Vegan. Gluten free. Nothing added.'}
+    insideMode: 'icons',
+    ingredientIcons: [
+      {img:'Matcha.PNG', name:'Ceremonial Matcha', benefit:'Stone-milled in Uji, Kyoto. Pure, vibrant, and lab-tested clean.'}
     ],
     ritualSteps: [
       {n:'I', text:'Sift <strong>2–4g</strong> into a bowl to remove any clumps.'},
@@ -296,6 +302,7 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Sweeten with honey if desired.'}
     ]
   },
+
   rubybeet: {
     productId: 'REPLACE-WITH-SHOPIFY-RUBYBEET-ID',
     name: 'Ruby Beet Latte',
@@ -308,12 +315,13 @@ const PRODUCT_DETAILS = {
     theme: '#7A1E3D', themeText: '#F0D4DE',
     whatsappText: 'Hi Piyush, I want to order the Ruby Beet Latte please.',
     soldOut: false,
-    insideMode: 'cards',
-    ingredientCards: [
-      {title:'Beetroot at Its Heart', text:'Vivid, earthy beetroot powder forms the base — the same natural pigment that gives this latte its deep ruby colour, no dye required.'},
-      {title:'Warmed by Ginger &amp; Cardamom', text:'Ginger brings a gentle warmth, green cardamom lifts it with a floral, aromatic sweetness — no sugar needed.'},
-      {title:'Black Pepper &amp; Cinnamon Finish', text:'A touch of black pepper and cinnamon round the blend out with a warm, spiced finish that lingers.'},
-      {title:'No Shortcuts, No Fillers', text:'Five hand-selected ingredients, nothing else. Hand-blended in Geelong to the same standard as every Wise King product.'}
+    insideMode: 'icons',
+    ingredientIcons: [
+      {img:'Beetroot.PNG', name:'Beetroot', benefit:'Vivid natural colour and earthy sweetness — the heart of the blend.'},
+      {img:'ginger.jpg.JPG', name:'Ginger', benefit:'Gentle warmth that balances the beetroot.'},
+      {img:'cardamom.jpg.JPG', name:'Green Cardamom', benefit:'Floral aromatic lift — no sugar needed.'},
+      {img:'black-pepper.jpg.JPG', name:'Black Pepper', benefit:'Rounds the flavour and aids absorption.'},
+      {img:'Cinnamon.PNG', name:'Cinnamon', benefit:'Soft spiced finish that lingers.'}
     ],
     ritualSteps: [
       {n:'I', text:'Add <strong>3g</strong> (one level teaspoon) to your cup.'},
@@ -322,6 +330,7 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Sweeten with honey or maple syrup to taste. Enjoy immediately.'}
     ]
   },
+
   turmeric: {
     productId: 'REPLACE-WITH-SHOPIFY-TURMERIC-ID',
     name: 'Organic Turmeric Powder',
@@ -333,12 +342,9 @@ const PRODUCT_DETAILS = {
     theme: '#C9A24A', themeText: '#2A2118',
     whatsappText: 'Hi Piyush, I want to order the Organic Turmeric Powder please.',
     soldOut: false,
-    insideMode: 'cards',
-    ingredientCards: [
-      {title:'Single Ingredient. No Compromise.', text:'100% organic turmeric root, ground and packed with nothing else added — no anti-caking agents, no fillers.'},
-      {title:'Rich in Curcumin', text:'Turmeric\'s golden colour and wellness reputation come from curcumin — the active compound this root is prized for.'},
-      {title:'Pairs With Black Pepper', text:'For best absorption, combine with a pinch of black pepper and a source of fat — the classic pairing our own Golden Latte is built around.'},
-      {title:'Kitchen-Ready', text:'Cooking, golden milk, smoothies, or homemade blends — one jar covers savoury and wellness uses alike.'}
+    insideMode: 'icons',
+    ingredientIcons: [
+      {img:'turmeric.jpg.JPG', name:'Organic Turmeric', benefit:'100% pure root — rich in curcumin, nothing added.'}
     ],
     ritualSteps: [
       {n:'I', text:'For golden milk: whisk <strong>1 tsp</strong> into warm milk with a pinch of black pepper and honey to taste.'},
@@ -347,6 +353,7 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Store in a cool, dry place, sealed tightly after each use.'}
     ]
   },
+
   spinach: {
     productId: 'REPLACE-WITH-SHOPIFY-SPINACH-ID',
     name: 'Organic Spinach Powder',
@@ -358,12 +365,9 @@ const PRODUCT_DETAILS = {
     theme: '#2D4A2D', themeText: '#C8E6C9',
     whatsappText: 'Hi Piyush, I want to order the Organic Spinach Powder please.',
     soldOut: false,
-    insideMode: 'cards',
-    ingredientCards: [
-      {title:'Single Ingredient. No Compromise.', text:'100% organic spinach, dehydrated and ground into a fine powder — nothing else added.'},
-      {title:'Concentrated Greens', text:'Dehydration concentrates spinach down to a fraction of its fresh volume, making it easy to add greens to meals without the bulk.'},
-      {title:'Mild, Versatile Flavour', text:'A subtle, earthy taste that blends into smoothies, sauces, and doughs without overpowering other flavours.'},
-      {title:'Vivid Natural Colour', text:'The deep green colour is entirely natural — no dye, no artificial colouring, just spinach.'}
+    insideMode: 'icons',
+    ingredientIcons: [
+      {img:'Spinach.PNG', name:'Organic Spinach', benefit:'Dehydrated and ground — pure concentrated greens, nothing else.'}
     ],
     ritualSteps: [
       {n:'I', text:'Blend <strong>1 tsp</strong> into smoothies for an easy greens boost.'},
@@ -372,6 +376,7 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Store in a cool, dry place, sealed tightly after each use.'}
     ]
   },
+
   beetroot: {
     productId: 'REPLACE-WITH-SHOPIFY-BEETROOT-ID',
     name: 'Organic Beetroot Powder',
@@ -383,12 +388,9 @@ const PRODUCT_DETAILS = {
     theme: '#5C1420', themeText: '#F0D4DE',
     whatsappText: 'Hi Piyush, I want to order the Organic Beetroot Powder please.',
     soldOut: false,
-    insideMode: 'cards',
-    ingredientCards: [
-      {title:'Single Ingredient. No Compromise.', text:'100% organic beetroot, dehydrated and ground — the same root that colours our Ruby Beet Latte, sold on its own.'},
-      {title:'Naturally Vivid Colour', text:'That deep ruby-red comes entirely from the beetroot itself — a natural colourant for baking, drinks, and cooking.'},
-      {title:'Earthy, Slightly Sweet', text:'A mellow, earthy sweetness that works in savoury dishes and sweet treats alike.'},
-      {title:'Kitchen &amp; Wellness Staple', text:'Smoothies, baking, homemade lattes, or stirred into dressings — one jar, many uses.'}
+    insideMode: 'icons',
+    ingredientIcons: [
+      {img:'Beetroot.PNG', name:'Organic Beetroot', benefit:'100% pure dehydrated root — natural colour and earthy sweetness.'}
     ],
     ritualSteps: [
       {n:'I', text:'Blend <strong>1 tsp</strong> into smoothies or juices for colour and earthy depth.'},
@@ -397,6 +399,7 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Store in a cool, dry place, sealed tightly after each use.'}
     ]
   },
+
   curryonthego: {
     productId: 'REPLACE-WITH-SHOPIFY-CURRYONTHEGO-ID',
     name: 'The Curry (On The Go)',
@@ -409,12 +412,18 @@ const PRODUCT_DETAILS = {
     theme: '#7A2E2E', themeText: '#fff',
     whatsappText: 'Hi Piyush, I want to order The Curry (On The Go) please.',
     soldOut: false,
-    insideMode: 'cards',
-    ingredientCards: [
-      {title:'Ten Pantry Staples, One Jar', text:'Onion powder, tomato powder, ground coriander, garlic powder, ginger powder, ground cumin, Kashmiri chilli, turmeric, cinnamon, and clove — the full base for any curry, without the shopping list.'},
-      {title:'The Bhuna Step Matters', text:'Mixing with water into a paste, then frying until the oil separates, replicates the traditional bhuna technique that builds real restaurant depth.'},
-      {title:'Endlessly Adaptable', text:'Works as the base for meat, vegetable, lentil, or paneer curries — adjust heat and thickness however you like.'},
-      {title:'Built for Busy Kitchens', text:'One jar replaces a dozen spice jars — ideal for quick weeknight curries without compromising on flavour.'}
+    insideMode: 'icons',
+    ingredientIcons: [
+      {img:'Onion.PNG', name:'Onion Powder', benefit:'Sweet savoury base that builds the curry foundation.'},
+      {img:'Tomato.PNG', name:'Tomato Powder', benefit:'Natural acidity and body without fresh tomatoes.'},
+      {img:'Coriander.PNG', name:'Coriander', benefit:'Bright, citrusy backbone of every good curry.'},
+      {img:'Garlic.PNG', name:'Garlic Powder', benefit:'Deep savoury note in every spoonful.'},
+      {img:'ginger.jpg.JPG', name:'Ginger Powder', benefit:'Warmth and digestive lift.'},
+      {img:'Cumin.PNG', name:'Cumin', benefit:'Earthy warmth that defines the blend.'},
+      {img:'Kashmiri.PNG', name:'Kashmiri Chilli', benefit:'Mild heat and rich red colour.'},
+      {img:'turmeric.jpg.JPG', name:'Turmeric', benefit:'Golden colour and classic curry depth.'},
+      {img:'Cinnamon.PNG', name:'Cinnamon', benefit:'Subtle sweetness and warmth.'},
+      {img:'clove.jpg.JPG', name:'Clove', benefit:'Intense aromatic finish.'}
     ],
     ritualSteps: [
       {n:'I', text:'Mix <strong>15g</strong> (one heaped tablespoon) with a splash of warm water into a smooth paste.'},
@@ -447,7 +456,6 @@ function renderHero(){
     <a href="https://wa.me/61470442705?text=${encodeURIComponent(P.whatsappText)}" class="p-whatsapp-btn">WhatsApp Order</a>
   `;
 
-  // UPDATED VIDEO LOGIC — works for BOTH vertical and horizontal videos
   let mediaHtml = '';
   if (P.heroVideo) {
     const orientationClass = P.heroVideoOrientation === 'horizontal' ? 'horizontal' : 'vertical';
@@ -460,7 +468,7 @@ function renderHero(){
       </div>
     `;
   } else {
-    mediaHtml = `<img src="${P.heroImage}" alt="${P.name}">`;
+    mediaHtml = `<div class="p-hero-img-wrap vertical"><img src="${P.heroImage}" alt="${P.name}"></div>`;
   }
 
   document.getElementById('productHero').innerHTML = `
@@ -543,31 +551,6 @@ function renderRitual(){
     </div>`).join('');
 }
 
-// ====================== VIDEO LOOP LOGIC (works for every product) ======================
-const video = document.getElementById('heroVideo');
-if (video) {
-  video.muted = true;
-  video.playsInline = true;
-  video.loop = true;
-  video.autoplay = true;
-
-  video.play().catch(() => {
-    // Fallback for Safari (rare now)
-    document.addEventListener('click', () => {
-      if (!video.paused && document.visibilityState === 'visible') video.play().catch(() => {});
-    }, { once: true });
-  });
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      video.pause();
-    } else {
-      video.play().catch(() => {});
-    }
-  });
-}
-
-// All the rest of your existing script (Shopify API, cart, etc.) remains unchanged
 const SHOP_DOMAIN = 'hmfrhb-nb.myshopify.com';
 const STOREFRONT_TOKEN = '3d4441b139fbd67f3300852feab77068';
 const API_VERSION = '2025-10';
