@@ -7,16 +7,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1YXMYLHBH">
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1YXMYLHBH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-G1YXMYLHBH');
 </script>
-  <style>
+<style>
 :root{
   --ivory:#FBF8F2; --cream:#F4EEE0; --paper:#FFFFFF; --line:#E6DCC4;
   --ink:#2A2118; --ink-soft:#5C5142; --text-dim:#8A7D68;
@@ -74,8 +72,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .p-hero{background:linear-gradient(135deg,var(--theme) 0%,var(--ink) 100%);padding:60px 24px;}
 .p-hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
 @media(max-width:860px){.p-hero-inner{grid-template-columns:1fr;text-align:center;}}
-.p-hero-img-wrap{border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.15);}
-.p-hero-img-wrap img{width:100%;aspect-ratio:4/5;object-fit:cover;}
+.p-hero-img-wrap{border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.15);background:#000;}
+.p-hero-img-wrap img,.p-hero-img-wrap video{width:100%;height:100%;object-fit:cover;display:block;}
+.p-hero-img-wrap.vertical img,.p-hero-img-wrap.vertical video{aspect-ratio:4/5;}
+.p-hero-img-wrap.horizontal img,.p-hero-img-wrap.horizontal video{aspect-ratio:16/10;}
 .p-badge{display:inline-block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:var(--gold-bright);padding:6px 14px;border-radius:20px;font-weight:600;margin-bottom:18px;}
 .p-name{font-family:'Cinzel Decorative',serif;font-size:clamp(30px,4vw,44px);color:var(--theme-text);margin-bottom:10px;line-height:1.1;}
 .p-tagline{font-size:15px;font-style:italic;color:rgba(255,255,255,0.7);margin-bottom:22px;}
@@ -155,23 +155,7 @@ footer a{color:var(--gold-pale);}
   </div>
 </nav>
 
-<div id="productHero"></div> 
-  <!-- THE RITUAL OF FOCUS — VIDEO (Golden Latte only for now) -->
-<section class="video-section" id="focusVideoSection" style="display:none;">
-  <div class="sec-inner">
-    <div class="sec-head">
-      <div class="sec-eyebrow">The Ritual of Focus</div>
-      <h2 class="sec-title">Turn the Page. Sip the Gold.</h2>
-    </div>
-    <p style="max-width:600px;margin:0 auto 36px;text-align:center;font-size:14.5px;line-height:1.85;color:var(--ink-soft);font-weight:300;">Saffron — the world's most expensive spice — has long been linked to sharper focus and a calmer mind. So that's how we filmed ours: a good book in hand, a slow sip of Golden Saffron Latte, and a few minutes of uninterrupted focus.</p>
-    <div style="max-width:780px;margin:0 auto;border-radius:10px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 50px rgba(42,33,24,0.1);">
-     <video autoplay muted loop playsinline preload="metadata" style="width:100%;display:block;">
-        <source src="liqgold.mp4.MP4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-    </div>
-  </div>
-</section>
+<div id="productHero"></div>
 
 <section>
   <div class="sec-inner">
@@ -222,8 +206,9 @@ const PRODUCT_DETAILS = {
     productId: '10491198406837',
     name: 'Golden Saffron Latte',
     tagline: '"Saffron inside — rarer than gold, in every batch."',
-    price: 19.99, weight: '50g', weightLabel: '/ 50g pouch',
+    price: 24.99, weight: '50g', weightLabel: '/ 50g pouch',
     heroImage: 'ilovelatte.JPG',
+    heroVideo: 'glattepvideo.mov', heroVideoOrientation: 'vertical',
     badge: 'Bestseller',
     tags: ['No Caffeine','No Added Sugar','6 Botanicals','Handmade'],
     theme: '#8B5E1A', themeText: '#E8D9B5',
@@ -249,7 +234,7 @@ const PRODUCT_DETAILS = {
     productId: '10491200110773',
     name: 'Curry Coast Rub',
     tagline: '"Twelve spices. Like the Twelve Apostles — each one essential."',
-    price: 19.99, weight: '100g', weightLabel: '/ 100g pouch',
+    price: 12.99, weight: '100g', weightLabel: '/ 100g pouch',
     heroImage: 'iloveccr.JPG',
     badge: 'Signature',
     tags: ['No Salt Added','12 Spices','Handmade'],
@@ -258,13 +243,13 @@ const PRODUCT_DETAILS = {
     soldOut: false,
     insideMode: 'cards',
     ingredientCards: [
-      {title:'Twelve Spices, Zero Compromise', text:'Twelve whole spices, hand-balanced in even measure, with no salt added at all. Every spice earns its place.'},
+      {title:'Twelve Spices, Zero Compromise', text:'Smoked paprika, Kashmiri chilli, ground coriander, garlic, cumin, onion, black pepper, oregano, cinnamon, green cardamom, clove, nutmeg — twelve whole spices, hand-balanced, with no salt added.'},
       {title:'The Twelve Apostles Standard', text:'Named for the Twelve Apostles on the Great Ocean Road — twelve essential, none replaceable.'},
       {title:'Rest Before You Cook', text:'Rub in, rest 10 minutes. That\'s when smoked paprika and Kashmiri chilli bind to the surface.'},
       {title:'Built for the Whole Kitchen', text:'Dry rub on the grill, stirred into a curry, or folded into a gravy — no salt, no fillers.'}
     ],
     ritualSteps: [
-      {n:'I', text:'Use <strong>6g</strong> per 250g of meat or vegetables.'},
+      {n:'I', text:'Use <strong>6g</strong> per 500g of meat or vegetables.'},
       {n:'II', text:'Rub evenly into the surface. Rest for 10 minutes before cooking.'},
       {n:'III', text:'Grill, roast, or pan-sear as desired.'},
       {n:'IV', text:'Also excellent stirred into curries or gravies — adjust to taste.'}
@@ -276,6 +261,7 @@ const PRODUCT_DETAILS = {
     tagline: '"Premium coffee meets dark cocoa — no sugar, no shortcuts."',
     price: 15.99, weight: '100g', weightLabel: '/ 100g pouch',
     heroImage: 'ilovecm.JPG',
+    heroVideo: 'cmochapvideo.mov', heroVideoOrientation: 'vertical',
     badge: 'New',
     tags: ['Contains Caffeine','No Sugar Added','Handmade'],
     theme: '#3D2208', themeText: '#E8D9B5',
@@ -296,17 +282,17 @@ const PRODUCT_DETAILS = {
     ]
   },
   matcha: {
-    productId: null,
+    productId: 'REPLACE-WITH-SHOPIFY-MATCHA-ID',
     name: 'Ceremonial Matcha',
     tagline: '"Stone-milled in Japan — the birthplace of matcha."',
     price: 39.99, weight: '30g', weightLabel: '/ 30g pouch',
     heroImage: 'ilovematcha.JPG',
-    badge: 'Sold Out — Back Soon',
+    heroVideo: 'matchapvideo.MP4', heroVideoOrientation: 'vertical',
+    badge: 'Back in Stock',
     tags: ['Uji, Kyoto','JAS Organic','Lab Tested','Vegan & GF'],
     theme: '#2D4A2D', themeText: '#C8E6C9',
-    whatsappText: null,
-    soldOut: true,
-    notifyEmailSubject: 'Notify%20Me%20-%20Ceremonial%20Matcha',
+    whatsappText: 'Hi Piyush, I want to order the Ceremonial Matcha please.',
+    soldOut: false,
     insideMode: 'cards',
     ingredientCards: [
       {title:'The Friction Test', text:'Rub a pinch between your fingers — it disappears into your skin like silk, leaving no grain behind.'},
@@ -315,10 +301,136 @@ const PRODUCT_DETAILS = {
       {title:'JAS Organic Certified', text:'Independently inspected under Japan\'s national organic standard. Vegan. Gluten free. Nothing added.'}
     ],
     ritualSteps: [
-      {n:'I', text:'Sift <strong>1.5g</strong> into a bowl to remove any clumps.'},
+      {n:'I', text:'Sift <strong>2–4g</strong> into a bowl to remove any clumps.'},
       {n:'II', text:'Add 70–80°C water — not boiling. Whisk briskly in a \'W\' motion until frothy.'},
       {n:'III', text:'For a latte: add a splash of hot water, whisk to a paste, then add 200ml warm frothed milk.'},
       {n:'IV', text:'Sweeten with honey if desired.'}
+    ]
+  },
+  rubybeet: {
+    productId: 'REPLACE-WITH-SHOPIFY-RUBYBEET-ID',
+    name: 'Ruby Beet Latte',
+    tagline: '"Earth\'s ruby jewel — beetroot, warmed by ginger and cardamom."',
+    price: 14.99, weight: '50g', weightLabel: '/ 50g pouch',
+    heroImage: 'rblattep.png',
+    heroVideo: 'rblattepvideo.MP4', heroVideoOrientation: 'horizontal',
+    badge: 'New',
+    tags: ['No Caffeine','No Added Sugar','Handmade'],
+    theme: '#7A1E3D', themeText: '#F0D4DE',
+    whatsappText: 'Hi Piyush, I want to order the Ruby Beet Latte please.',
+    soldOut: false,
+    insideMode: 'cards',
+    ingredientCards: [
+      {title:'Beetroot at Its Heart', text:'Vivid, earthy beetroot powder forms the base — the same natural pigment that gives this latte its deep ruby colour, no dye required.'},
+      {title:'Warmed by Ginger &amp; Cardamom', text:'Ginger brings a gentle warmth, green cardamom lifts it with a floral, aromatic sweetness — no sugar needed.'},
+      {title:'Black Pepper &amp; Cinnamon Finish', text:'A touch of black pepper and cinnamon round the blend out with a warm, spiced finish that lingers.'},
+      {title:'No Shortcuts, No Fillers', text:'Five hand-selected ingredients, nothing else. Hand-blended in Geelong to the same standard as every Wise King product.'}
+    ],
+    ritualSteps: [
+      {n:'I', text:'Add <strong>4g</strong> (one level teaspoon) to your cup.'},
+      {n:'II', text:'Add a splash of hot water. Stir into a smooth paste.'},
+      {n:'III', text:'Pour <strong>230ml</strong> warm or frothed milk over the paste.'},
+      {n:'IV', text:'Sweeten with honey or maple syrup to taste. Enjoy immediately.'}
+    ]
+  },
+  turmeric: {
+    productId: 'REPLACE-WITH-SHOPIFY-TURMERIC-ID',
+    name: 'Organic Turmeric Powder',
+    tagline: '"Pure turmeric. Nothing else. Golden, earthy, unfiltered."',
+    price: 11.99, weight: '75g', weightLabel: '/ 75g pouch',
+    heroImage: 'oturmericp.png',
+    badge: 'Organic',
+    tags: ['Organic','No Fillers','Handmade'],
+    theme: '#C9A24A', themeText: '#2A2118',
+    whatsappText: 'Hi Piyush, I want to order the Organic Turmeric Powder please.',
+    soldOut: false,
+    insideMode: 'cards',
+    ingredientCards: [
+      {title:'Single Ingredient. No Compromise.', text:'100% organic turmeric root, ground and packed with nothing else added — no anti-caking agents, no fillers.'},
+      {title:'Rich in Curcumin', text:'Turmeric\'s golden colour and wellness reputation come from curcumin — the active compound this root is prized for.'},
+      {title:'Pairs With Black Pepper', text:'For best absorption, combine with a pinch of black pepper and a source of fat — the classic pairing our own Golden Latte is built around.'},
+      {title:'Kitchen-Ready', text:'Cooking, golden milk, smoothies, or homemade blends — one jar covers savoury and wellness uses alike.'}
+    ],
+    ritualSteps: [
+      {n:'I', text:'For golden milk: whisk <strong>1 tsp</strong> into warm milk with a pinch of black pepper and honey to taste.'},
+      {n:'II', text:'For cooking: add directly to curries, rice, or roasted vegetables early in the cooking process to bloom the flavour.'},
+      {n:'III', text:'For smoothies: blend <strong>&frac12; tsp</strong> with your usual ingredients — a little goes a long way.'},
+      {n:'IV', text:'Store in a cool, dry place, sealed tightly after each use.'}
+    ]
+  },
+  spinach: {
+    productId: 'REPLACE-WITH-SHOPIFY-SPINACH-ID',
+    name: 'Organic Spinach Powder',
+    tagline: '"Concentrated greens, stripped back to one ingredient."',
+    price: 11.99, weight: '60g', weightLabel: '/ 60g pouch',
+    heroImage: 'ospinachp.png',
+    badge: 'Organic',
+    tags: ['Organic','No Fillers','Handmade'],
+    theme: '#2D4A2D', themeText: '#C8E6C9',
+    whatsappText: 'Hi Piyush, I want to order the Organic Spinach Powder please.',
+    soldOut: false,
+    insideMode: 'cards',
+    ingredientCards: [
+      {title:'Single Ingredient. No Compromise.', text:'100% organic spinach, dehydrated and ground into a fine powder — nothing else added.'},
+      {title:'Concentrated Greens', text:'Dehydration concentrates spinach down to a fraction of its fresh volume, making it easy to add greens to meals without the bulk.'},
+      {title:'Mild, Versatile Flavour', text:'A subtle, earthy taste that blends into smoothies, sauces, and doughs without overpowering other flavours.'},
+      {title:'Vivid Natural Colour', text:'The deep green colour is entirely natural — no dye, no artificial colouring, just spinach.'}
+    ],
+    ritualSteps: [
+      {n:'I', text:'Blend <strong>1 tsp</strong> into smoothies for an easy greens boost.'},
+      {n:'II', text:'Stir into soups, sauces, or curries near the end of cooking to preserve colour and nutrients.'},
+      {n:'III', text:'Mix into dough or batter for naturally green pasta, roti, or baked goods.'},
+      {n:'IV', text:'Store in a cool, dry place, sealed tightly after each use.'}
+    ]
+  },
+  beetroot: {
+    productId: 'REPLACE-WITH-SHOPIFY-BEETROOT-ID',
+    name: 'Organic Beetroot Powder',
+    tagline: '"Vivid, earthy beetroot — nothing added, nothing hidden."',
+    price: 11.99, weight: '75g', weightLabel: '/ 75g pouch',
+    heroImage: 'obeetrootp.png',
+    badge: 'Organic',
+    tags: ['Organic','No Fillers','Handmade'],
+    theme: '#5C1420', themeText: '#F0D4DE',
+    whatsappText: 'Hi Piyush, I want to order the Organic Beetroot Powder please.',
+    soldOut: false,
+    insideMode: 'cards',
+    ingredientCards: [
+      {title:'Single Ingredient. No Compromise.', text:'100% organic beetroot, dehydrated and ground — the same root that colours our Ruby Beet Latte, sold on its own.'},
+      {title:'Naturally Vivid Colour', text:'That deep ruby-red comes entirely from the beetroot itself — a natural colourant for baking, drinks, and cooking.'},
+      {title:'Earthy, Slightly Sweet', text:'A mellow, earthy sweetness that works in savoury dishes and sweet treats alike.'},
+      {title:'Kitchen &amp; Wellness Staple', text:'Smoothies, baking, homemade lattes, or stirred into dressings — one jar, many uses.'}
+    ],
+    ritualSteps: [
+      {n:'I', text:'Blend <strong>1 tsp</strong> into smoothies or juices for colour and earthy depth.'},
+      {n:'II', text:'Whisk into warm milk with honey for a simple homemade beetroot latte.'},
+      {n:'III', text:'Add to baking — cakes, brownies, or doughs — for natural colour without food dye.'},
+      {n:'IV', text:'Store in a cool, dry place, sealed tightly after each use.'}
+    ]
+  },
+  curryonthego: {
+    productId: 'REPLACE-WITH-SHOPIFY-CURRYONTHEGO-ID',
+    name: 'The Curry (On The Go)',
+    tagline: '"One jar, every curry — just add water and fry."',
+    price: 13.99, weight: '120g', weightLabel: '/ 120g bag',
+    heroImage: 'thecurryp.JPG',
+    badge: 'New',
+    tags: ['No Salt Added','10 Spices','Handmade'],
+    theme: '#7A2E2E', themeText: '#fff',
+    whatsappText: 'Hi Piyush, I want to order The Curry (On The Go) please.',
+    soldOut: false,
+    insideMode: 'cards',
+    ingredientCards: [
+      {title:'Ten Pantry Staples, One Jar', text:'Onion powder, tomato powder, ground coriander, garlic powder, ginger powder, ground cumin, Kashmiri chilli, turmeric, cinnamon, and clove — the full base for any curry, without the shopping list.'},
+      {title:'The Bhuna Step Matters', text:'Mixing with water into a paste, then frying until the oil separates, replicates the traditional bhuna technique that builds real restaurant depth.'},
+      {title:'Endlessly Adaptable', text:'Works as the base for meat, vegetable, lentil, or paneer curries — adjust heat and thickness however you like.'},
+      {title:'Built for Busy Kitchens', text:'One jar replaces a dozen spice jars — ideal for quick weeknight curries without compromising on flavour.'}
+    ],
+    ritualSteps: [
+      {n:'I', text:'Mix <strong>15g</strong> (one heaped tablespoon) with a splash of warm water into a smooth paste.'},
+      {n:'II', text:'Fry the paste in hot oil for <strong>2 minutes</strong> until fragrant and the oil starts to separate — this bhuna step builds real flavour.'},
+      {n:'III', text:'Stir into <strong>250g</strong> simmering vegetables or meat.'},
+      {n:'IV', text:'Add a splash of water and cook through. Makes roughly 10 servings per jar.'}
     ]
   }
 };
@@ -328,9 +440,6 @@ const productKey = params.get('p') || 'latte';
 const P = PRODUCT_DETAILS[productKey] || PRODUCT_DETAILS.latte;
 
 document.title = `${P.name} | Wise King Enterprise`;
-  if (productKey === 'latte') {
-  document.getElementById('focusVideoSection').style.display = 'block';
-}
 document.documentElement.style.setProperty('--theme', P.theme);
 document.documentElement.style.setProperty('--theme-text', P.themeText);
 
@@ -339,7 +448,7 @@ function formatMoney(n){ return '$' + parseFloat(n).toFixed(2); }
 function renderHero(){
   const actionsHtml = P.soldOut ? `
     <span class="p-unavailable">Currently Unavailable</span>
-    <a href="mailto:piyush@wiseking.com.au?subject=${P.notifyEmailSubject}" class="p-whatsapp-btn">Notify Me When Back</a>
+    <a href="mailto:piyush@wiseking.com.au?subject=${P.notifyEmailSubject || 'Notify%20Me'}" class="p-whatsapp-btn">Notify Me When Back</a>
   ` : `
     <div class="p-qty-stepper">
       <button class="p-qty-btn" id="pQtyDec">−</button>
@@ -350,10 +459,15 @@ function renderHero(){
     <a href="https://wa.me/61470442705?text=${encodeURIComponent(P.whatsappText)}" class="p-whatsapp-btn">WhatsApp Order</a>
   `;
 
+  const mediaHtml = P.heroVideo
+    ? `<video autoplay muted loop playsinline poster="${P.heroImage}"><source src="${P.heroVideo}" type="video/mp4"></video>`
+    : `<img src="${P.heroImage}" alt="${P.name}">`;
+  const orientationClass = P.heroVideoOrientation === 'horizontal' ? 'horizontal' : 'vertical';
+
   document.getElementById('productHero').innerHTML = `
     <div class="p-hero">
       <div class="p-hero-inner">
-        <div class="p-hero-img-wrap"><img src="${P.heroImage}" alt="${P.name}"></div>
+        <div class="p-hero-img-wrap ${orientationClass}">${mediaHtml}</div>
         <div>
           <span class="p-badge">${P.badge}</span>
           <h1 class="p-name">${P.name}</h1>
@@ -438,7 +552,7 @@ const CART_FIELDS = `id checkoutUrl cost{subtotalAmount{amount currencyCode}} li
 
 const variantCache = {};
 async function resolveVariantId(productId){
-  if (!productId) return null;
+  if (!productId || productId.startsWith('REPLACE-')) return null;
   if (variantCache[productId]) return variantCache[productId];
   const q = `query($id:ID!){product(id:$id){variants(first:1){edges{node{id}}}}}`;
   const data = await shopifyFetch(q, {id:`gid://shopify/Product/${productId}`});
