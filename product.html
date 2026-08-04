@@ -27,7 +27,6 @@ body{font-family:'Inter',sans-serif;background:var(--ivory);color:var(--ink);ove
 img{max-width:100%;display:block;}
 a{text-decoration:none;color:inherit;}
 ::selection{background:var(--gold-pale);color:var(--ink);}
-
 .topbar{background:var(--ink);color:var(--gold-pale);text-align:center;font-size:11px;letter-spacing:0.1em;padding:9px 16px;font-weight:500;}
 nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
 .nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
@@ -42,7 +41,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .cart-toggle-btn svg{width:18px;height:18px;stroke:var(--ink);}
 .cart-count-badge{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--gold);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;}
 .cart-count-badge.hidden{display:none;}
-
 .cart-overlay{position:fixed;inset:0;background:rgba(42,33,24,0.5);opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:400;}
 .cart-overlay.open{opacity:1;pointer-events:auto;}
 .cart-drawer{position:fixed;top:0;right:0;height:100vh;width:420px;max-width:92vw;background:var(--paper);z-index:401;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(42,33,24,0.25);}
@@ -67,7 +65,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .cart-shipping-note{font-size:11.5px;color:var(--text-dim);margin-bottom:16px;}
 .cart-checkout-btn{width:100%;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px;border:none;border-radius:2px;cursor:pointer;}
 .cart-checkout-btn:disabled{opacity:0.5;cursor:not-allowed;}
-
 /* THEMED PRODUCT HERO */
 .p-hero{background:linear-gradient(135deg,var(--theme) 0%,var(--ink) 100%);padding:60px 24px;}
 .p-hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
@@ -97,13 +94,11 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .p-add-btn.added{background:#4a7c4a;color:#fff;}
 .p-whatsapp-btn{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;background:transparent;color:rgba(255,255,255,0.85);padding:14px 24px;border:1px solid rgba(255,255,255,0.35);border-radius:2px;}
 .p-unavailable{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.4);padding:14px 24px;border-radius:2px;}
-
 section{padding:80px 24px;}
 .sec-inner{max-width:1000px;margin:0 auto;}
 .sec-head{text-align:center;margin-bottom:48px;}
 .sec-eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--theme);margin-bottom:14px;}
 .sec-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,3.4vw,34px);color:var(--ink);}
-
 .ing-icons-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;}
 @media(max-width:900px){.ing-icons-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:520px){.ing-icons-grid{grid-template-columns:repeat(2,1fr);}}
@@ -111,32 +106,26 @@ section{padding:80px 24px;}
 .ing-icon-card img{width:100%;height:100px;object-fit:cover;}
 .ing-icon-name{font-family:'Cinzel',serif;font-size:12px;color:var(--ink);margin:12px 8px 6px;}
 .ing-icon-benefit{font-size:11px;color:var(--text-dim);line-height:1.5;padding:0 10px 16px;font-weight:300;}
-
 .ing-cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
 @media(max-width:700px){.ing-cards-grid{grid-template-columns:1fr;}}
 .ing-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px;}
 .ing-card-title{font-family:'Cinzel',serif;font-size:13.5px;color:var(--theme);margin-bottom:10px;font-weight:600;}
 .ing-card-text{font-size:13.5px;line-height:1.7;color:var(--ink-soft);font-weight:300;}
-
 .ritual-steps{max-width:640px;margin:0 auto;}
 .rt-step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);}
 .rt-step:last-child{border-bottom:none;}
 .rt-num{font-family:'Cinzel Decorative',serif;font-size:22px;color:var(--theme);min-width:36px;}
 .rt-text{font-size:14.5px;line-height:1.75;color:var(--ink-soft);padding-top:2px;}
 .rt-text strong{color:var(--ink);font-weight:600;}
-
 .back-to-shop{background:var(--cream);text-align:center;}
 .back-to-shop a{display:inline-block;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px 34px;border-radius:2px;}
 .back-to-shop a:hover{background:var(--gold);color:var(--ink);}
-
 footer{background:var(--ink);color:rgba(251,248,242,0.6);padding:40px 24px;text-align:center;font-size:12px;}
 footer a{color:var(--gold-pale);}
 </style>
 </head>
 <body>
-
 <div class="topbar">🇦🇺 BLENDED &amp; PACKED IN GEELONG, AUSTRALIA &nbsp;·&nbsp; NO FILLERS · NO SHORTCUTS</div>
-
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="brand-mark">
@@ -438,11 +427,9 @@ const PRODUCT_DETAILS = {
 const params = new URLSearchParams(window.location.search);
 const productKey = params.get('p') || 'latte';
 const P = PRODUCT_DETAILS[productKey] || PRODUCT_DETAILS.latte;
-
 document.title = `${P.name} | Wise King Enterprise`;
 document.documentElement.style.setProperty('--theme', P.theme);
 document.documentElement.style.setProperty('--theme-text', P.themeText);
-
 function formatMoney(n){ return '$' + parseFloat(n).toFixed(2); }
 
 function renderHero(){
@@ -459,15 +446,26 @@ function renderHero(){
     <a href="https://wa.me/61470442705?text=${encodeURIComponent(P.whatsappText)}" class="p-whatsapp-btn">WhatsApp Order</a>
   `;
 
-  const mediaHtml = P.heroVideo
-    ? `<video autoplay muted loop playsinline poster="${P.heroImage}"><source src="${P.heroVideo}" type="video/mp4"></video>`
-    : `<img src="${P.heroImage}" alt="${P.name}">`;
-  const orientationClass = P.heroVideoOrientation === 'horizontal' ? 'horizontal' : 'vertical';
+  // UPDATED VIDEO LOGIC — works for BOTH vertical and horizontal videos
+  let mediaHtml = '';
+  if (P.heroVideo) {
+    const orientationClass = P.heroVideoOrientation === 'horizontal' ? 'horizontal' : 'vertical';
+    mediaHtml = `
+      <div class="p-hero-img-wrap ${orientationClass}">
+        <video id="heroVideo" autoplay muted loop playsinline poster="${P.heroImage}">
+          <source src="${P.heroVideo}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    `;
+  } else {
+    mediaHtml = `<img src="${P.heroImage}" alt="${P.name}">`;
+  }
 
   document.getElementById('productHero').innerHTML = `
     <div class="p-hero">
       <div class="p-hero-inner">
-        <div class="p-hero-img-wrap ${orientationClass}">${mediaHtml}</div>
+        ${mediaHtml}
         <div>
           <span class="p-badge">${P.badge}</span>
           <h1 class="p-name">${P.name}</h1>
@@ -483,27 +481,37 @@ function renderHero(){
     </div>`;
 
   if (!P.soldOut) {
-    document.getElementById('pQtyInc').addEventListener('click', ()=>{
-      const el = document.getElementById('pQtyVal');
-      el.textContent = parseInt(el.textContent) + 1;
-    });
-    document.getElementById('pQtyDec').addEventListener('click', ()=>{
-      const el = document.getElementById('pQtyVal');
-      el.textContent = Math.max(1, parseInt(el.textContent) - 1);
-    });
-    document.getElementById('pAddBtn').addEventListener('click', async (e)=>{
-      const btn = e.target;
-      const qty = parseInt(document.getElementById('pQtyVal').textContent) || 1;
-      const original = btn.textContent;
-      btn.textContent = 'Adding…'; btn.disabled = true;
-      const variantId = await resolveVariantId(P.productId);
-      if (!variantId){ btn.textContent = 'Unavailable'; setTimeout(()=>{btn.textContent=original;btn.disabled=false;},1800); return; }
-      await addLineToCart(variantId, qty);
-      btn.textContent = 'Added ✓'; btn.classList.add('added');
-      document.getElementById('pQtyVal').textContent = '1';
-      setTimeout(()=>{btn.textContent=original;btn.classList.remove('added');btn.disabled=false;},1400);
-      openCart();
-    });
+    const incBtn = document.getElementById('pQtyInc');
+    const decBtn = document.getElementById('pQtyDec');
+    const valEl = document.getElementById('pQtyVal');
+    const addBtn = document.getElementById('pAddBtn');
+
+    if (incBtn) incBtn.addEventListener('click', ()=>{ valEl.textContent = parseInt(valEl.textContent) + 1; });
+    if (decBtn) decBtn.addEventListener('click', ()=>{ valEl.textContent = Math.max(1, parseInt(valEl.textContent) - 1); });
+
+    if (addBtn) {
+      addBtn.addEventListener('click', async (e)=>{
+        const btn = e.target;
+        const qty = parseInt(valEl.textContent) || 1;
+        const original = btn.textContent;
+        btn.textContent = 'Adding…'; btn.disabled = true;
+
+        const variantId = await resolveVariantId(P.productId);
+        if (!variantId){ btn.textContent = 'Unavailable'; setTimeout(()=>{btn.textContent=original;btn.disabled=false;},1800); return; }
+
+        await addLineToCart(variantId, qty);
+        btn.textContent = 'Added ✓'; btn.classList.add('added');
+        valEl.textContent = '1';
+
+        setTimeout(()=>{
+          btn.textContent = original;
+          btn.classList.remove('added');
+          btn.disabled = false;
+        }, 1400);
+
+        openCart();
+      });
+    }
   }
 }
 
@@ -534,6 +542,31 @@ function renderRitual(){
     </div>`).join('');
 }
 
+// ====================== VIDEO LOOP LOGIC (works for every product) ======================
+const video = document.getElementById('heroVideo');
+if (video) {
+  video.muted = true;
+  video.playsInline = true;
+  video.loop = true;
+  video.autoplay = true;
+
+  video.play().catch(() => {
+    // Fallback for Safari (rare now)
+    document.addEventListener('click', () => {
+      if (!video.paused && document.visibilityState === 'visible') video.play().catch(() => {});
+    }, { once: true });
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      video.pause();
+    } else {
+      video.play().catch(() => {});
+    }
+  });
+}
+
+// All the rest of your existing script (Shopify API, cart, etc.) remains unchanged
 const SHOP_DOMAIN = 'hmfrhb-nb.myshopify.com';
 const STOREFRONT_TOKEN = '3d4441b139fbd67f3300852feab77068';
 const API_VERSION = '2025-10';
@@ -549,7 +582,6 @@ async function shopifyFetch(query, variables) {
 }
 
 const CART_FIELDS = `id checkoutUrl cost{subtotalAmount{amount currencyCode}} lines(first:50){edges{node{id quantity merchandise{... on ProductVariant{id title price{amount currencyCode} image{url} product{title}}}}}}`;
-
 const variantCache = {};
 async function resolveVariantId(productId){
   if (!productId || productId.startsWith('REPLACE-')) return null;
@@ -560,11 +592,9 @@ async function resolveVariantId(productId){
   if (v) variantCache[productId] = v;
   return v;
 }
-
 let currentCart = null;
 function getSavedCartId(){ try{return localStorage.getItem('wke_cart_id');}catch(e){return null;} }
 function saveCartId(id){ try{localStorage.setItem('wke_cart_id', id);}catch(e){} }
-
 async function loadExistingCart(){
   const id = getSavedCartId();
   if (!id) return;
@@ -573,7 +603,6 @@ async function loadExistingCart(){
   if (data?.cart){ currentCart = data.cart; renderCart(); }
   else { try{localStorage.removeItem('wke_cart_id');}catch(e){} }
 }
-
 async function createCartWithLine(variantId, qty){
   const m = `mutation($lines:[CartLineInput!]){cartCreate(input:{lines:$lines}){cart{${CART_FIELDS}} userErrors{field message}}}`;
   const data = await shopifyFetch(m, {lines:[{merchandiseId:variantId,quantity:qty}]});
@@ -581,7 +610,6 @@ async function createCartWithLine(variantId, qty){
   if (r?.userErrors?.length){ console.error(r.userErrors); return; }
   if (r?.cart){ currentCart = r.cart; saveCartId(currentCart.id); renderCart(); }
 }
-
 async function addLineToCart(variantId, qty){
   if (!currentCart){ await createCartWithLine(variantId, qty); return; }
   const m = `mutation($cartId:ID!,$lines:[CartLineInput!]!){cartLinesAdd(cartId:$cartId,lines:$lines){cart{${CART_FIELDS}} userErrors{field message}}}`;
@@ -590,7 +618,6 @@ async function addLineToCart(variantId, qty){
   if (r?.userErrors?.length){ console.error(r.userErrors); return; }
   if (r?.cart){ currentCart = r.cart; renderCart(); }
 }
-
 async function updateLineQuantity(lineId, qty){
   if (!currentCart) return;
   if (qty <= 0){ await removeLine(lineId); return; }
@@ -599,7 +626,6 @@ async function updateLineQuantity(lineId, qty){
   const r = data?.cartLinesUpdate;
   if (r?.cart){ currentCart = r.cart; renderCart(); }
 }
-
 async function removeLine(lineId){
   if (!currentCart) return;
   const m = `mutation($cartId:ID!,$lineIds:[ID!]!){cartLinesRemove(cartId:$cartId,lineIds:$lineIds){cart{${CART_FIELDS}} userErrors{field message}}}`;
@@ -607,7 +633,6 @@ async function removeLine(lineId){
   const r = data?.cartLinesRemove;
   if (r?.cart){ currentCart = r.cart; renderCart(); }
 }
-
 function renderCart(){
   const linesEl = document.getElementById('cartLines');
   const subtotalEl = document.getElementById('cartSubtotal');
@@ -641,7 +666,6 @@ function renderCart(){
   subtotalEl.textContent = formatMoney(currentCart.cost.subtotalAmount.amount);
   countEl.textContent = totalQty; countEl.classList.remove('hidden'); checkoutBtn.disabled = false;
 }
-
 document.getElementById('cartLines').addEventListener('click', (e)=>{
   const btn = e.target.closest('[data-line-action]'); if (!btn) return;
   const lineId = btn.dataset.lineId, action = btn.dataset.lineAction;
@@ -649,7 +673,6 @@ document.getElementById('cartLines').addEventListener('click', (e)=>{
   if (action==='dec') updateLineQuantity(lineId, parseInt(btn.dataset.qty)-1);
   if (action==='remove') removeLine(lineId);
 });
-
 const cartDrawer = document.getElementById('cartDrawer');
 const cartOverlay = document.getElementById('cartOverlay');
 function openCart(){ cartDrawer.classList.add('open'); cartOverlay.classList.add('open'); cartDrawer.setAttribute('aria-hidden','false'); }
