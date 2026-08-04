@@ -7,16 +7,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1YXMYLHBH">
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1YXMYLHBH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-G1YXMYLHBH');
 </script>
-  <style>
+<style>
 :root{
   --ivory:#FBF8F2; --cream:#F4EEE0; --paper:#FFFFFF; --line:#E6DCC4;
   --ink:#2A2118; --ink-soft:#5C5142; --text-dim:#8A7D68;
@@ -47,7 +45,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .product-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:0 24px 50px;max-width:1000px;margin:0 auto;}
 .product-tab{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--line);border-radius:24px;cursor:pointer;background:var(--paper);color:var(--ink-soft);transition:all .25s ease;font-weight:600;}
 .product-tab.active{background:var(--theme);color:var(--theme-text);border-color:var(--theme);}
-.product-tab:disabled{opacity:0.45;cursor:not-allowed;}
 
 .recipes-wrap{max-width:900px;margin:0 auto;padding:0 24px 100px;}
 .recipe-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:28px;}
@@ -147,7 +144,7 @@ const RECIPES_CONFIG = [
           'Add <strong>4g</strong> of Golden Saffron Latte to your glass.',
           'Add a small splash of hot water and stir into a smooth paste — this step is non-negotiable, it\'s what unlocks the saffron and turmeric.',
           'Drop in <strong>4–5 ice cubes</strong> directly into the paste.',
-          'Froth your milk hot as normal, then pour it straight over the ice — the contrast is what makes this version work. The ice cracks and dilutes just enough as the hot froth hits it.',
+          'Froth your milk hot as normal, then pour it straight over the ice — the contrast is what makes this version work.',
           'Stir once, gently, top to bottom. Sweeten to taste and drink immediately while the froth is still holding.'
         ],
         note: 'This is the version we picked up from someone making it for us in Bali — paste and ice first, hot frothed milk poured last. Don\'t pre-cool the milk; the temperature clash is the whole trick.'
@@ -163,6 +160,49 @@ const RECIPES_CONFIG = [
         steps: [
           'Add <strong>4g</strong> to your cup.',
           'Add a splash of hot water. Stir into a smooth paste — essential for unlocking the saffron.',
+          'Pour <strong>230ml</strong> warm or frothed milk over the paste.',
+          'Sweeten with honey or maple syrup to taste. Enjoy immediately.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'rubybeet',
+    name: 'Ruby Beet Latte',
+    theme: '#7A1E3D',
+    themeText: '#F0D4DE',
+    available: true,
+    recipes: [
+      {
+        title: 'Iced Ruby Beet Latte — Bali Style',
+        badge: 'Signature',
+        ingredients: [
+          '<strong>3g</strong> Ruby Beet Latte (just under a level teaspoon)',
+          'A splash of hot water',
+          '<strong>4–5</strong> ice cubes',
+          '<strong>230ml</strong> milk, dairy or non-dairy, frothed hot',
+          'Honey or maple syrup, to taste'
+        ],
+        steps: [
+          'Add <strong>3g</strong> of Ruby Beet Latte to your glass.',
+          'Add a small splash of hot water and stir into a smooth, vivid paste.',
+          'Drop in <strong>4–5 ice cubes</strong> directly into the paste.',
+          'Froth your milk hot, then pour it straight over the ice — same hot-over-ice method as our Golden Latte.',
+          'Stir gently and drink immediately for the best colour and texture.'
+        ],
+        note: 'Same Bali-style method as the Golden Latte — paste and ice first, hot frothed milk poured last.'
+      },
+      {
+        title: 'Classic Hot Ruby Beet Latte',
+        ingredients: [
+          '<strong>3g</strong> Ruby Beet Latte (just under a level teaspoon)',
+          'A splash of hot water',
+          '<strong>230ml</strong> warm or frothed milk, dairy or non-dairy',
+          'Honey or maple syrup, to taste'
+        ],
+        steps: [
+          'Add <strong>3g</strong> to your cup.',
+          'Add a splash of hot water. Stir into a smooth paste.',
           'Pour <strong>230ml</strong> warm or frothed milk over the paste.',
           'Sweeten with honey or maple syrup to taste. Enjoy immediately.'
         ]
@@ -187,9 +227,9 @@ const RECIPES_CONFIG = [
         ],
         steps: [
           'Add <strong>6g</strong> of Café Mocha Blend to your glass.',
-          'Add a splash of hot water and stir into a smooth, glossy paste — this fully unlocks the dark cocoa before anything cold touches it.',
+          'Add a splash of hot water and stir into a smooth, glossy paste.',
           'Drop <strong>4–5 ice cubes</strong> straight into the paste.',
-          'Froth your milk hot, then pour it directly over the ice — same method as our Golden Latte. The hot-over-ice contrast gives it a café-crema texture cold-brew mocha usually can\'t.',
+          'Froth your milk hot, then pour it directly over the ice.',
           'Stir gently and drink right away.'
         ],
         note: 'Same Bali-style method as the Golden Latte — paste and ice first, hot frothed milk poured last.'
@@ -221,13 +261,13 @@ const RECIPES_CONFIG = [
         title: 'Traditional Usucha (Thin Tea)',
         badge: 'Signature',
         ingredients: [
-          '<strong>1.5–2g</strong> Ceremonial Matcha (sifted)',
+          '<strong>2–4g</strong> Ceremonial Matcha (sifted)',
           '<strong>60–70ml</strong> water, 70–80°C (not boiling)'
         ],
         steps: [
-          'Sift the matcha into a bowl to break up any clumps — this matters more than people expect.',
+          'Sift the matcha into a bowl to break up any clumps.',
           'Add the water at 70–80°C. Boiling water scorches the matcha and turns it bitter.',
-          'Whisk briskly in a tight \'W\' motion (not circular) until a fine, even froth forms across the surface.',
+          'Whisk briskly in a tight \'W\' motion (not circular) until a fine, even froth forms.',
           'Drink immediately, straight from the bowl.'
         ],
         note: 'This is the real ceremonial method — no milk, no sweetener. If your matcha still has grain or grit after whisking, it isn\'t ceremonial-grade.'
@@ -235,7 +275,7 @@ const RECIPES_CONFIG = [
       {
         title: 'Matcha Latte',
         ingredients: [
-          '<strong>2g</strong> Ceremonial Matcha (sifted)',
+          '<strong>2–4g</strong> Ceremonial Matcha (sifted)',
           'A splash of hot water',
           '<strong>200ml</strong> warm or frothed milk',
           'Honey, to taste'
@@ -250,7 +290,7 @@ const RECIPES_CONFIG = [
       {
         title: 'Iced Matcha Latte',
         ingredients: [
-          '<strong>2g</strong> Ceremonial Matcha (sifted)',
+          '<strong>2–4g</strong> Ceremonial Matcha (sifted)',
           'A splash of hot water',
           '<strong>4–5</strong> ice cubes',
           '<strong>200ml</strong> milk of choice'
@@ -275,14 +315,14 @@ const RECIPES_CONFIG = [
         title: 'Classic Steak &amp; Protein Rub',
         badge: 'Signature',
         ingredients: [
-          '<strong>250g</strong> steak, chicken, or firm fish',
+          '<strong>500g</strong> steak, chicken, or firm fish',
           '<strong>1 tbsp</strong> olive oil (or oil of choice)',
           '<strong>6g</strong> Curry Coast Rub (about 1.5 tsp)'
         ],
         steps: [
-          'Pat the protein dry, then rub a thin layer of oil over the surface — this helps the spices bind and stops them from burning.',
+          'Pat the protein dry, then rub a thin layer of oil over the surface.',
           'Apply <strong>6g</strong> of Curry Coast Rub evenly across all sides, pressing gently so it adheres.',
-          'Rest for <strong>10 minutes</strong> at room temperature before cooking — this is when the smoked paprika and Kashmiri chilli start to bind into a crust.',
+          'Rest for <strong>10 minutes</strong> at room temperature before cooking.',
           'Grill, pan-sear, or roast as normal. Rest again for a few minutes after cooking before slicing.'
         ]
       },
@@ -295,7 +335,7 @@ const RECIPES_CONFIG = [
         ],
         steps: [
           'Preheat oven to <strong>200°C</strong>. Cut vegetables into even, roast-sized pieces.',
-          'Toss with olive oil until lightly coated, then sprinkle over the Curry Coast Rub and toss again until evenly distributed.',
+          'Toss with olive oil until lightly coated, then sprinkle over the Curry Coast Rub and toss again.',
           'Spread in a single layer on a tray — don\'t overcrowd, or they\'ll steam instead of roast.',
           'Roast for <strong>30–35 minutes</strong>, turning once halfway, until edges are deeply caramelised.'
         ]
@@ -314,53 +354,205 @@ const RECIPES_CONFIG = [
           'Bring to room temperature for 15 minutes before cooking.',
           'Bake at <strong>200°C for 35–40 minutes</strong>, or grill until the skin is crisp and deeply coloured.'
         ]
+      }
+    ]
+  },
+  {
+    key: 'curryonthego',
+    name: 'The Curry (On The Go)',
+    theme: '#7A2E2E',
+    themeText: '#fff',
+    available: true,
+    recipes: [
+      {
+        title: 'The Naan Curry Chicken Wrap',
+        badge: 'Signature',
+        ingredients: [
+          '<strong>250g</strong> chicken breast, cut into strips',
+          '<strong>15g</strong> The Curry (On The Go) (one heaped tablespoon)',
+          '<strong>2 tbsp</strong> oil',
+          'A splash of water',
+          '<strong>2</strong> garlic naan (store-bought is fine)',
+          'A handful of fresh iceberg lettuce, shredded'
+        ],
+        steps: [
+          'Mix <strong>15g</strong> of The Curry (On The Go) with a splash of warm water into a smooth paste.',
+          'Fry the paste in hot oil for <strong>2 minutes</strong> until fragrant and the oil starts to separate — this bhuna step is what builds the flavour.',
+          'Add the chicken strips and cook through, stirring often, until fully cooked and coated in the spiced sauce.',
+          'Heat 2 garlic naan (a hot pan, oven, or toaster all work).',
+          'Spread fresh shredded lettuce over each naan, then pile the hot, steaming curry chicken straight on top. Roll or fold and eat immediately while the naan is still warm.'
+        ],
+        note: 'This is our own everyday version — Woolworths garlic naan, fresh lettuce for crunch, and the chicken served hot and steamy straight off the pan. Genuinely one of our favourite quick dinners.'
       },
       {
-        title: 'Curry Coast Curry Base',
+        title: 'Base Curry — Any Protein or Vegetable',
         ingredients: [
           '<strong>250g</strong> protein or vegetables of choice',
           '<strong>1</strong> onion, diced',
           '<strong>2 tbsp</strong> oil',
-          '<strong>10g</strong> Curry Coast Rub',
+          '<strong>15g</strong> The Curry (On The Go)',
           '<strong>400ml</strong> water or coconut milk'
         ],
         steps: [
           'Fry the diced onion in oil until softened and lightly golden.',
-          'Stir in the Curry Coast Rub and fry for <strong>1 minute</strong> until fragrant — this blooms the spices properly.',
-          'Add your protein or vegetables, stirring to coat in the spice mix.',
-          'Pour in water or coconut milk, bring to a simmer, and cook covered for <strong>15–20 minutes</strong> until everything is tender and the sauce has thickened slightly.'
+          'Mix the curry base with a splash of water into a paste, add to the pan, and fry for <strong>2 minutes</strong> until the oil separates.',
+          'Add your protein or vegetables, stirring to coat in the spiced base.',
+          'Pour in water or coconut milk, bring to a simmer, and cook covered for <strong>15–20 minutes</strong> until tender and the sauce has thickened.'
         ]
       },
       {
-        title: 'Slow-Cooked Gravy',
+        title: 'Simple Lentil Dal',
         ingredients: [
-          '<strong>500g</strong> protein for braising (beef, lamb, or chicken thigh)',
-          '<strong>1 tbsp</strong> oil',
-          '<strong>12g</strong> Curry Coast Rub',
-          '<strong>500ml</strong> stock'
+          '<strong>200g</strong> red lentils, rinsed',
+          '<strong>15g</strong> The Curry (On The Go)',
+          '<strong>1 tbsp</strong> oil or ghee',
+          '<strong>600ml</strong> water',
+          'Salt, to taste'
         ],
         steps: [
-          'Sear the protein in oil until browned on all sides, then remove from the pan.',
-          'Sprinkle the Curry Coast Rub into the same pan and stir for 30 seconds to toast the spices in the residual fat.',
-          'Return the protein to the pan, pour in the stock, and bring to a simmer.',
-          'Cover and cook low and slow for <strong>1.5–2 hours</strong> (stovetop or slow cooker) until the meat is fork-tender and the gravy has reduced and thickened.'
+          'Heat the oil or ghee and fry the curry base (mixed with a splash of water into a paste) for <strong>2 minutes</strong> until fragrant.',
+          'Add the rinsed lentils and stir to coat in the spiced oil.',
+          'Pour in <strong>600ml</strong> water, bring to a boil, then reduce to a simmer.',
+          'Cook <strong>20–25 minutes</strong>, stirring occasionally, until the lentils break down and the dal thickens. Season with salt to taste.'
         ]
       }
     ]
   },
   {
-    key: 'rubybeet',
-    name: 'Ruby Beet Latte',
-    theme: '#3A1A5C',
-    themeText: '#D4B8F0',
-    available: false
+    key: 'turmeric',
+    name: 'Organic Turmeric Powder',
+    theme: '#C9A24A',
+    themeText: '#2A2118',
+    available: true,
+    recipes: [
+      {
+        title: 'Golden Milk',
+        badge: 'Signature',
+        ingredients: [
+          '<strong>1 tsp</strong> Organic Turmeric Powder',
+          'A pinch of black pepper',
+          '<strong>230ml</strong> warm milk, dairy or non-dairy',
+          'Honey, to taste'
+        ],
+        steps: [
+          'Whisk the turmeric and a pinch of black pepper into a small splash of warm milk to form a paste.',
+          'Top up with the remaining warm milk, whisking to combine.',
+          'Warm gently on the stove if you\'d like it hotter — don\'t boil.',
+          'Sweeten with honey to taste and drink warm.'
+        ],
+        note: 'The black pepper isn\'t optional — it significantly increases how much curcumin your body actually absorbs.'
+      },
+      {
+        title: 'Smoothie Add-In',
+        ingredients: [
+          '<strong>&frac12; tsp</strong> Organic Turmeric Powder',
+          'Your usual smoothie ingredients (banana, mango, ginger, milk or yoghurt)'
+        ],
+        steps: [
+          'Add turmeric to your blender along with your usual smoothie ingredients.',
+          'Blend until smooth — a little goes a long way, so start with less if you\'re new to it.'
+        ]
+      },
+      {
+        title: 'Everyday Cooking Boost',
+        ingredients: [
+          '<strong>&frac12;–1 tsp</strong> Organic Turmeric Powder per dish',
+          'Rice, roasted vegetables, or curries'
+        ],
+        steps: [
+          'Add turmeric early in the cooking process — frying it briefly in oil helps release its flavour and colour.',
+          'Stir into rice while cooking for a golden colour, or toss with vegetables before roasting.'
+        ]
+      }
+    ]
   },
   {
-    key: 'currybase',
-    name: 'Curry Coast Base',
-    theme: '#7A2E2E',
-    themeText: '#fff',
-    available: false
+    key: 'spinach',
+    name: 'Organic Spinach Powder',
+    theme: '#2D4A2D',
+    themeText: '#C8E6C9',
+    available: true,
+    recipes: [
+      {
+        title: 'Green Smoothie Boost',
+        badge: 'Signature',
+        ingredients: [
+          '<strong>1 tsp</strong> Organic Spinach Powder',
+          'Your usual smoothie ingredients (banana, apple, milk or yoghurt)'
+        ],
+        steps: [
+          'Add spinach powder to your blender with your usual smoothie ingredients.',
+          'Blend until smooth — the flavour is mild, so it blends in easily.'
+        ]
+      },
+      {
+        title: 'Green Pasta or Roti Dough',
+        ingredients: [
+          '<strong>1–2 tsp</strong> Organic Spinach Powder per batch of dough',
+          'Your usual pasta or roti dough recipe'
+        ],
+        steps: [
+          'Mix the spinach powder into your flour before adding wet ingredients.',
+          'Knead as normal — the dough will take on a natural green tint.'
+        ]
+      },
+      {
+        title: 'Soup &amp; Sauce Stir-In',
+        ingredients: [
+          '<strong>1 tsp</strong> Organic Spinach Powder per serving',
+          'Soup, sauce, or curry of choice'
+        ],
+        steps: [
+          'Stir into soups or sauces near the end of cooking to preserve colour and nutrients.',
+          'Whisk well to avoid clumping.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'beetroot',
+    name: 'Organic Beetroot Powder',
+    theme: '#5C1420',
+    themeText: '#F0D4DE',
+    available: true,
+    recipes: [
+      {
+        title: 'Simple Beetroot Latte',
+        badge: 'Signature',
+        ingredients: [
+          '<strong>1 tsp</strong> Organic Beetroot Powder',
+          '<strong>230ml</strong> warm milk, dairy or non-dairy',
+          'Honey, to taste'
+        ],
+        steps: [
+          'Whisk the beetroot powder into a small splash of warm milk to form a smooth paste.',
+          'Top up with the remaining warm milk, whisking to combine.',
+          'Sweeten with honey to taste and drink warm.'
+        ]
+      },
+      {
+        title: 'Smoothie &amp; Juice Booster',
+        ingredients: [
+          '<strong>1 tsp</strong> Organic Beetroot Powder',
+          'Your usual smoothie or juice ingredients'
+        ],
+        steps: [
+          'Add beetroot powder to your blender or juice along with your usual ingredients.',
+          'Blend or stir well — the colour and earthy sweetness come through immediately.'
+        ]
+      },
+      {
+        title: 'Natural Food Colouring for Baking',
+        ingredients: [
+          '<strong>1–2 tsp</strong> Organic Beetroot Powder per batch',
+          'Your usual cake, brownie, or dough recipe'
+        ],
+        steps: [
+          'Sift the beetroot powder in with your dry ingredients before mixing.',
+          'Bake as normal — the powder adds natural colour without artificial dye.'
+        ]
+      }
+    ]
   }
 ];
 
@@ -378,7 +570,7 @@ function renderTabs(activeKey){
   });
 }
 
-function renderRecipeCard(r, theme, themeText){
+function renderRecipeCard(r){
   return `
     <div class="recipe-card">
       <div class="recipe-header">
@@ -418,7 +610,7 @@ function showProduct(key){
     return;
   }
 
-  containerEl.innerHTML = product.recipes.map(r => renderRecipeCard(r, product.theme, product.themeText)).join('');
+  containerEl.innerHTML = product.recipes.map(r => renderRecipeCard(r)).join('');
 }
 
 const params = new URLSearchParams(window.location.search);
