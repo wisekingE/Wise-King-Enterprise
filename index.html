@@ -64,6 +64,52 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .mobile-menu.open{display:flex;}
 @media(max-width:1020px){.nav-links{display:none;}.burger{display:flex;}}
 
+/* ── CART ── */
+.cart-icon-wrap{display:flex;align-items:center;margin-left:12px;}
+.cart-toggle-btn{position:relative;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--paper);cursor:pointer;transition:all .25s ease;}
+.cart-toggle-btn:hover{border-color:var(--gold);background:var(--cream);}
+.cart-toggle-btn svg{width:18px;height:18px;stroke:var(--ink);}
+.cart-count-badge{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--gold);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;}
+.cart-count-badge.hidden{display:none;}
+
+.cart-overlay{position:fixed;inset:0;background:rgba(42,33,24,0.5);opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:400;}
+.cart-overlay.open{opacity:1;pointer-events:auto;}
+
+.cart-drawer{position:fixed;top:0;right:0;height:100vh;width:420px;max-width:92vw;background:var(--paper);z-index:401;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(42,33,24,0.25);}
+.cart-drawer.open{transform:translateX(0);}
+.cart-drawer-header{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid var(--line);}
+.cart-drawer-title{font-family:'Cinzel Decorative',serif;font-size:18px;color:var(--ink);}
+.cart-close-btn{background:none;border:none;font-size:24px;line-height:1;color:var(--ink-soft);cursor:pointer;padding:4px 8px;}
+.cart-close-btn:hover{color:var(--gold);}
+.cart-lines{flex:1;overflow-y:auto;padding:12px 24px;}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--text-dim);font-size:14px;}
+.cart-line{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--line);}
+.cart-line-img{width:64px;height:64px;border-radius:6px;object-fit:cover;background:var(--cream);flex-shrink:0;}
+.cart-line-info{flex:1;display:flex;flex-direction:column;gap:6px;}
+.cart-line-title{font-family:'Cinzel',serif;font-size:13px;color:var(--ink);}
+.cart-line-price{font-size:12.5px;color:var(--gold);font-weight:600;}
+.cart-line-controls{display:flex;align-items:center;gap:10px;margin-top:2px;}
+.cart-qty-stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:20px;overflow:hidden;}
+.cart-qty-btn{width:26px;height:26px;background:var(--cream);border:none;cursor:pointer;font-size:14px;color:var(--ink);display:flex;align-items:center;justify-content:center;}
+.cart-qty-btn:hover{background:var(--gold-pale);}
+.cart-qty-num{width:28px;text-align:center;font-size:13px;color:var(--ink);}
+.cart-line-remove{background:none;border:none;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;text-decoration:underline;}
+.cart-line-remove:hover{color:#B52626;}
+.cart-drawer-footer{padding:22px 24px 26px;border-top:1px solid var(--line);background:var(--cream);}
+.cart-subtotal-row{display:flex;justify-content:space-between;align-items:center;font-family:'Cinzel',serif;font-size:15px;color:var(--ink);margin-bottom:8px;}
+.cart-shipping-note{font-size:11.5px;color:var(--text-dim);margin-bottom:16px;}
+.cart-checkout-btn{width:100%;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px;border:none;border-radius:2px;cursor:pointer;transition:all .25s ease;}
+.cart-checkout-btn:hover{background:var(--gold);color:var(--ink);}
+.cart-checkout-btn:disabled{opacity:0.5;cursor:not-allowed;}
+
+.pc-qty-add{display:flex;gap:10px;width:100%;flex-wrap:wrap;}
+.pc-qty-stepper{display:flex;align-items:center;border:1px solid rgba(201,162,74,0.4);border-radius:20px;overflow:hidden;background:rgba(251,248,242,0.06);}
+.pc-qty-btn{width:32px;height:32px;background:transparent;border:none;cursor:pointer;font-size:15px;color:var(--gold-pale);}
+.pc-qty-btn:hover{background:rgba(201,162,74,0.2);}
+.pc-qty-val{width:26px;text-align:center;font-size:13px;color:var(--gold-pale);}
+.pc-add-btn{flex:1;min-width:130px;border:none;cursor:pointer;}
+.pc-add-btn.added{background:#4a7c4a !important;color:#fff !important;}
+
 /* ── HERO V2 (Cinematic split) ── */
 .hero{background:radial-gradient(ellipse 120% 70% at 50% -10%,rgba(197,162,74,0.16),transparent 60%),linear-gradient(180deg,var(--cream) 0%,var(--ivory) 100%);padding:70px 24px 0;overflow:hidden;}
 .hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
@@ -148,6 +194,7 @@ section{padding:100px 24px;}
 .pc-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
 .product-card:hover .pc-photo img{transform:scale(1.04);}
 .pc-badge{position:absolute;top:14px;left:14px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:var(--gold-bright);padding:6px 14px;border-radius:20px;font-weight:600;z-index:2;}
+.pc-badge.scarce-badge{background:#B52626;color:#fff;}
 .pc-badge.sold-out-badge{background:var(--ink);color:var(--gold-pale);}
 .pc-weight-pill{position:absolute;top:14px;right:14px;font-family:'Cinzel',serif;font-size:11px;background:var(--ink);color:var(--gold-pale);padding:5px 13px;border-radius:14px;z-index:2;}
 .pc-ingredient-pill{position:absolute;bottom:14px;left:14px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.04em;background:rgba(42,33,24,0.78);backdrop-filter:blur(4px);color:var(--gold-pale);padding:6px 13px;border-radius:14px;z-index:2;}
@@ -409,6 +456,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <a href="#contact">Contact</a>
       <a href="https://wa.me/61470442705" class="nav-cta">Order Now</a>
     </div>
+    <div class="cart-icon-wrap">
+      <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-count-badge hidden" id="cartCount">0</span>
+      </button>
+    </div>
     <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
@@ -480,8 +533,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <div class="divider-seal"><span></span></div>
     </div>
     <div class="products-grid" id="productsGrid">
-      <!-- Rendered by JS from PRODUCTS_CONFIG near the bottom of this file.
-           To add a future product: add ONE object to PRODUCTS_CONFIG. -->
+      <!-- Rendered by JS from PRODUCTS_CONFIG near the bottom of this file. -->
     </div>
   </div>
 </section>
@@ -967,15 +1019,31 @@ revealEls.forEach(el=>obs.observe(el));
 </script>
 
 <!-- ══════════════════════════════════════════════════════════ -->
-<!-- WISE KING PRODUCT ENGINE — Square Payment Links.             -->
-<!-- Each product's "Buy Now" opens its own Square checkout page  -->
-<!-- in a new tab. To add a new product: add ONE object below.    -->
+<!-- WISE KING CART — real multi-item cart backed by Square via  -->
+<!-- our own Cloudflare Worker (secure, keeps Access Token safe). -->
 <!-- ══════════════════════════════════════════════════════════ -->
+<div id="cartOverlay" class="cart-overlay"></div>
+<aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+  <div class="cart-drawer-header">
+    <span class="cart-drawer-title">Your Cart</span>
+    <button id="cartCloseBtn" class="cart-close-btn" aria-label="Close cart">&times;</button>
+  </div>
+  <div id="cartLines" class="cart-lines">
+    <div class="cart-empty">Your cart is empty.</div>
+  </div>
+  <div class="cart-drawer-footer">
+    <div class="cart-subtotal-row"><span>Subtotal</span><span id="cartSubtotal">$0.00</span></div>
+    <p class="cart-shipping-note">Free shipping Australia-wide on orders over $49.99</p>
+    <button id="cartCheckoutBtn" class="cart-checkout-btn" disabled>Checkout</button>
+  </div>
+</aside>
+
 <script>
+const WORKER_URL = 'https://wise-king-checkout.mute-night-e7d4.workers.dev';
+
 const PRODUCTS_CONFIG = [
   {
     key: 'latte',
-    squareLink: 'https://square.link/u/QPeIS3B5',
     name: 'Golden Saffron Latte',
     tagline: '"Saffron inside — rarer than gold, in every batch."',
     price: 24.99,
@@ -987,12 +1055,10 @@ const PRODUCTS_CONFIG = [
     tags: ['No Caffeine', 'No Added Sugar', '6 Botanicals', 'Handmade'],
     cardClass: 'pc-latte',
     whatsappText: 'Hi Piyush, I want to order the Golden Saffron Latte please.',
-    ritualKey: 'latte',
     soldOut: false
   },
   {
     key: 'curry',
-    squareLink: 'https://square.link/u/nI9EEuG6',
     name: 'Curry Coast Rub',
     tagline: '"Twelve spices. Like the Twelve Apostles — each one essential."',
     price: 12.99,
@@ -1004,12 +1070,10 @@ const PRODUCTS_CONFIG = [
     tags: ['No Salt Added', '12 Spices', 'Handmade'],
     cardClass: 'pc-curry',
     whatsappText: 'Hi Piyush, I want to order the Curry Coast Rub please.',
-    ritualKey: 'curry',
     soldOut: false
   },
   {
     key: 'mocha',
-    squareLink: 'https://square.link/u/789Zzm23',
     name: 'Café Mocha Blend',
     tagline: '"Premium coffee meets dark cocoa — no sugar, no shortcuts."',
     price: 15.99,
@@ -1021,30 +1085,26 @@ const PRODUCTS_CONFIG = [
     tags: ['Contains Caffeine', 'No Sugar Added', 'Handmade'],
     cardClass: 'pc-mocha',
     whatsappText: 'Hi Piyush, I want to order the Cafe Mocha Blend please.',
-    ritualKey: 'mocha',
     soldOut: false
   },
   {
     key: 'matcha',
-    squareLink: 'https://square.link/u/IuYLeILH',
     name: 'Ceremonial Matcha',
     tagline: '"Stone-milled in Japan — the birthplace of matcha."',
     price: 39.99,
     weight: '30g',
     weightLabel: '/ 30g pouch',
     image: 'NewMatcha.jpg',
-    badge: 'Sold Out — Waitlist Open',
-    badgeClass: 'sold-out-badge',
+    badge: 'Only 1 Left',
+    badgeClass: 'scarce-badge',
     ingredientPill: '✦ Uji, Kyoto Matcha',
     tags: ['Uji, Kyoto', 'JAS Organic', 'Lab Tested', 'Vegan &amp; GF'],
-    cardClass: 'pc-matcha sold-out',
-    ritualKey: 'matcha',
-    soldOut: true,
-    notifyEmailSubject: 'Waitlist%20-%20Ceremonial%20Matcha'
+    cardClass: 'pc-matcha',
+    whatsappText: 'Hi Piyush, I want to order the Ceremonial Matcha please.',
+    soldOut: false
   },
   {
     key: 'rubybeet',
-    squareLink: 'https://square.link/u/ZYCcwU22',
     name: 'Ruby Beet Latte',
     tagline: '"Earth\'s ruby jewel — beetroot, warmed by ginger and cardamom."',
     price: 14.99,
@@ -1056,12 +1116,10 @@ const PRODUCTS_CONFIG = [
     tags: ['Plant-Based', 'No Added Sugar', 'Handmade'],
     cardClass: 'pc-rubybeet',
     whatsappText: 'Hi Piyush, I want to order the Ruby Beet Latte please.',
-    ritualKey: 'rubybeet',
     soldOut: false
   },
   {
     key: 'turmeric',
-    squareLink: 'https://square.link/u/RswrEFdS',
     name: 'Organic Turmeric Powder',
     tagline: '"Pure turmeric. Nothing else. Golden, earthy, unfiltered."',
     price: 11.99,
@@ -1073,12 +1131,10 @@ const PRODUCTS_CONFIG = [
     tags: ['Organic', 'No Fillers', 'Handmade'],
     cardClass: 'pc-turmeric',
     whatsappText: 'Hi Piyush, I want to order the Organic Turmeric Powder please.',
-    ritualKey: 'turmeric',
     soldOut: false
   },
   {
     key: 'spinach',
-    squareLink: 'https://square.link/u/jGgkRuBh',
     name: 'Organic Spinach Powder',
     tagline: '"Concentrated greens, stripped back to one ingredient."',
     price: 11.99,
@@ -1090,12 +1146,10 @@ const PRODUCTS_CONFIG = [
     tags: ['Organic', 'No Fillers', 'Handmade'],
     cardClass: 'pc-spinach',
     whatsappText: 'Hi Piyush, I want to order the Organic Spinach Powder please.',
-    ritualKey: 'spinach',
     soldOut: false
   },
   {
     key: 'beetroot',
-    squareLink: 'https://square.link/u/xUXpgzuJ',
     name: 'Organic Beetroot Powder',
     tagline: '"Vivid, earthy beetroot — nothing added, nothing hidden."',
     price: 11.99,
@@ -1107,12 +1161,10 @@ const PRODUCTS_CONFIG = [
     tags: ['Organic', 'No Fillers', 'Handmade'],
     cardClass: 'pc-beetroot',
     whatsappText: 'Hi Piyush, I want to order the Organic Beetroot Powder please.',
-    ritualKey: 'beetroot',
     soldOut: false
   },
   {
     key: 'curryonthego',
-    squareLink: 'https://square.link/u/HdjMZT2h',
     name: 'The Curry (On The Go)',
     tagline: '"One jar, every curry — just add water and fry."',
     price: 13.99,
@@ -1124,7 +1176,6 @@ const PRODUCTS_CONFIG = [
     tags: ['No Salt Added', '10 Spices', 'Handmade'],
     cardClass: 'pc-curryonthego',
     whatsappText: 'Hi Piyush, I want to order The Curry (On The Go) please.',
-    ritualKey: 'curryonthego',
     soldOut: false
   }
 ];
@@ -1133,37 +1184,122 @@ function formatMoney(amount) {
   return '$' + parseFloat(amount).toFixed(2);
 }
 
-function renderProductCard(p) {
-  if (p.soldOut) {
+/* ── CART STATE (kept in localStorage, no backend needed to store it) ── */
+let cart = [];
+function loadCart(){ try{ cart = JSON.parse(localStorage.getItem('wke_cart') || '[]'); }catch(e){ cart = []; } }
+function saveCart(){ try{ localStorage.setItem('wke_cart', JSON.stringify(cart)); }catch(e){} }
+
+function addToCart(key, qty){
+  const p = PRODUCTS_CONFIG.find(x => x.key === key);
+  if (!p) return;
+  const existing = cart.find(i => i.key === key);
+  if (existing) { existing.qty += qty; } else { cart.push({ key: p.key, name: p.name, price: p.price, image: p.image, qty }); }
+  saveCart(); renderCart(); openCart();
+}
+function updateQty(key, qty){
+  const item = cart.find(i => i.key === key);
+  if (!item) return;
+  if (qty <= 0) { cart = cart.filter(i => i.key !== key); } else { item.qty = qty; }
+  saveCart(); renderCart();
+}
+function removeItem(key){
+  cart = cart.filter(i => i.key !== key);
+  saveCart(); renderCart();
+}
+
+function renderCart(){
+  const linesEl = document.getElementById('cartLines');
+  const subtotalEl = document.getElementById('cartSubtotal');
+  const countEl = document.getElementById('cartCount');
+  const checkoutBtn = document.getElementById('cartCheckoutBtn');
+
+  if (!cart.length) {
+    linesEl.innerHTML = '<div class="cart-empty">Your cart is empty.</div>';
+    subtotalEl.textContent = formatMoney(0);
+    countEl.textContent = '0'; countEl.classList.add('hidden');
+    checkoutBtn.disabled = true;
+    return;
+  }
+
+  let totalQty = 0, subtotal = 0;
+  linesEl.innerHTML = cart.map(item => {
+    totalQty += item.qty; subtotal += item.qty * item.price;
     return `
-      <div class="product-card ${p.cardClass} reveal">
-        <div class="pc-photo">
-          <img src="${p.image}" alt="Wise King ${p.name} — real product">
-          <span class="pc-badge ${p.badgeClass || ''}">${p.badge}</span>
-          <span class="pc-weight-pill">${p.weight}</span>
-          <span class="pc-ingredient-pill">${p.ingredientPill}</span>
-        </div>
-        <div class="pc-info">
-          <div class="pc-name">${p.name}</div>
-          <div class="pc-tagline">${p.tagline}</div>
-          <div class="pc-price-row">
-            <span class="pc-price">${formatMoney(p.price)}</span>
-            <span class="pc-weight-label">${p.weightLabel}</span>
-          </div>
-          <div class="pc-tags">${p.tags.map(t => `<span class="pc-tag">${t}</span>`).join('')}</div>
-          <div class="pc-actions">
-            <span class="pc-btn-disabled">Currently Unavailable</span>
-            <a href="mailto:piyush@wiseking.com.au?subject=${p.notifyEmailSubject || 'Notify%20Me'}" class="pc-btn pc-btn-outline">Join Waitlist</a>
-            <a href="product.html?p=${p.key}" class="pc-btn pc-btn-outline">Ingredients &amp; Ritual</a>
+      <div class="cart-line" data-key="${item.key}">
+        <img class="cart-line-img" src="${item.image}" alt="${item.name}">
+        <div class="cart-line-info">
+          <div class="cart-line-title">${item.name}</div>
+          <div class="cart-line-price">${formatMoney(item.price)}</div>
+          <div class="cart-line-controls">
+            <div class="cart-qty-stepper">
+              <button class="cart-qty-btn" data-line-action="dec" data-key="${item.key}" data-qty="${item.qty}">−</button>
+              <span class="cart-qty-num">${item.qty}</span>
+              <button class="cart-qty-btn" data-line-action="inc" data-key="${item.key}" data-qty="${item.qty}">+</button>
+            </div>
+            <button class="cart-line-remove" data-line-action="remove" data-key="${item.key}">Remove</button>
           </div>
         </div>
       </div>`;
+  }).join('');
+
+  subtotalEl.textContent = formatMoney(subtotal);
+  countEl.textContent = totalQty; countEl.classList.remove('hidden');
+  checkoutBtn.disabled = false;
+}
+
+document.getElementById('cartLines').addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-line-action]');
+  if (!btn) return;
+  const key = btn.dataset.key;
+  const action = btn.dataset.lineAction;
+  if (action === 'inc') updateQty(key, parseInt(btn.dataset.qty) + 1);
+  if (action === 'dec') updateQty(key, parseInt(btn.dataset.qty) - 1);
+  if (action === 'remove') removeItem(key);
+});
+
+/* ── CART DRAWER OPEN/CLOSE ── */
+const cartDrawer = document.getElementById('cartDrawer');
+const cartOverlay = document.getElementById('cartOverlay');
+function openCart(){ cartDrawer.classList.add('open'); cartOverlay.classList.add('open'); }
+function closeCart(){ cartDrawer.classList.remove('open'); cartOverlay.classList.remove('open'); }
+document.getElementById('cartToggleBtn').addEventListener('click', openCart);
+document.getElementById('cartCloseBtn').addEventListener('click', closeCart);
+cartOverlay.addEventListener('click', closeCart);
+
+/* ── CHECKOUT — sends the whole cart to our Cloudflare Worker,
+   which talks to Square securely and returns one combined
+   checkout link for every item in the cart ── */
+document.getElementById('cartCheckoutBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('cartCheckoutBtn');
+  const original = btn.textContent;
+  btn.textContent = 'Preparing checkout…'; btn.disabled = true;
+  try {
+    const res = await fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: cart.map(i => ({ name: i.name, price: i.price, qty: i.qty })) })
+    });
+    const data = await res.json();
+    if (data.url) {
+      localStorage.removeItem('wke_cart');
+      window.location.href = data.url;
+    } else {
+      alert('Something went wrong creating checkout. Please try again or message us on WhatsApp.');
+      btn.textContent = original; btn.disabled = false;
+    }
+  } catch (err) {
+    alert('Something went wrong. Please try again or message us on WhatsApp.');
+    btn.textContent = original; btn.disabled = false;
   }
+});
+
+/* ── PRODUCT CARD RENDERING ── */
+function renderProductCard(p) {
   return `
     <div class="product-card ${p.cardClass} reveal">
       <div class="pc-photo">
         <img src="${p.image}" alt="Wise King ${p.name} — real product">
-        <span class="pc-badge">${p.badge}</span>
+        <span class="pc-badge ${p.badgeClass || ''}">${p.badge}</span>
         <span class="pc-weight-pill">${p.weight}</span>
         <span class="pc-ingredient-pill">${p.ingredientPill}</span>
       </div>
@@ -1176,7 +1312,14 @@ function renderProductCard(p) {
         </div>
         <div class="pc-tags">${p.tags.map(t => `<span class="pc-tag">${t}</span>`).join('')}</div>
         <div class="pc-actions">
-          <a href="${p.squareLink}" target="_blank" rel="noopener" class="pc-btn pc-btn-fill">Buy Now</a>
+          <div class="pc-qty-add">
+            <div class="pc-qty-stepper">
+              <button class="pc-qty-btn" data-qty-action="dec" data-key="${p.key}">−</button>
+              <span class="pc-qty-val" id="qty-${p.key}">1</span>
+              <button class="pc-qty-btn" data-qty-action="inc" data-key="${p.key}">+</button>
+            </div>
+            <button class="pc-btn pc-btn-fill pc-add-btn" data-add-key="${p.key}">Add to Cart</button>
+          </div>
           <a href="https://wa.me/61470442705?text=${encodeURIComponent(p.whatsappText)}" class="pc-btn pc-btn-outline">WhatsApp Order</a>
           <a href="product.html?p=${p.key}" class="pc-btn pc-btn-outline">Ingredients &amp; Ritual</a>
         </div>
@@ -1188,6 +1331,29 @@ function renderAllProductCards() {
   const grid = document.getElementById('productsGrid');
   grid.innerHTML = PRODUCTS_CONFIG.map(renderProductCard).join('');
   document.querySelectorAll('#productsGrid .reveal').forEach(el => revealObserver.observe(el));
+
+  grid.querySelectorAll('[data-qty-action]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.key;
+      const valEl = document.getElementById(`qty-${key}`);
+      let val = parseInt(valEl.textContent);
+      if (btn.dataset.qtyAction === 'inc') val += 1;
+      if (btn.dataset.qtyAction === 'dec') val = Math.max(1, val - 1);
+      valEl.textContent = val;
+    });
+  });
+
+  grid.querySelectorAll('[data-add-key]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.addKey;
+      const qty = parseInt(document.getElementById(`qty-${key}`).textContent) || 1;
+      addToCart(key, qty);
+      document.getElementById(`qty-${key}`).textContent = '1';
+      const originalText = btn.textContent;
+      btn.textContent = 'Added ✓'; btn.classList.add('added');
+      setTimeout(() => { btn.textContent = originalText; btn.classList.remove('added'); }, 1200);
+    });
+  });
 }
 
 const revealObserver = new IntersectionObserver(entries => {
@@ -1195,6 +1361,8 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 
 renderAllProductCards();
+loadCart();
+renderCart();
 </script>
 
 </body>
