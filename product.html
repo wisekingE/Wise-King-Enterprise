@@ -27,6 +27,7 @@ body{font-family:'Inter',sans-serif;background:var(--ivory);color:var(--ink);ove
 img{max-width:100%;display:block;}
 a{text-decoration:none;color:inherit;}
 ::selection{background:var(--gold-pale);color:var(--ink);}
+
 .topbar{background:var(--ink);color:var(--gold-pale);text-align:center;font-size:11px;letter-spacing:0.1em;padding:9px 16px;font-weight:500;}
 nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
 .nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
@@ -35,12 +36,12 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .brand-name{font-family:'Cinzel',serif;font-size:15px;letter-spacing:0.12em;font-weight:600;}
 .back-link{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;}
 .back-link:hover{color:var(--gold);}
-#shopify-cart-container{display:flex;align-items:center;}
 .cart-toggle-btn{position:relative;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--paper);cursor:pointer;transition:all .25s ease;}
 .cart-toggle-btn:hover{border-color:var(--gold);background:var(--cream);}
 .cart-toggle-btn svg{width:18px;height:18px;stroke:var(--ink);}
 .cart-count-badge{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--gold);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;}
 .cart-count-badge.hidden{display:none;}
+
 .cart-overlay{position:fixed;inset:0;background:rgba(42,33,24,0.5);opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:400;}
 .cart-overlay.open{opacity:1;pointer-events:auto;}
 .cart-drawer{position:fixed;top:0;right:0;height:100vh;width:420px;max-width:92vw;background:var(--paper);z-index:401;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(42,33,24,0.25);}
@@ -65,7 +66,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .cart-shipping-note{font-size:11.5px;color:var(--text-dim);margin-bottom:16px;}
 .cart-checkout-btn{width:100%;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px;border:none;border-radius:2px;cursor:pointer;}
 .cart-checkout-btn:disabled{opacity:0.5;cursor:not-allowed;}
-/* THEMED PRODUCT HERO */
+
 .p-hero{background:linear-gradient(135deg,var(--theme) 0%,var(--ink) 100%);padding:60px 24px;}
 .p-hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
 @media(max-width:860px){.p-hero-inner{grid-template-columns:1fr;text-align:center;}}
@@ -83,7 +84,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .p-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;}
 @media(max-width:860px){.p-tags{justify-content:center;}}
 .p-tag{font-size:10px;letter-spacing:0.05em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.25);padding:5px 12px;border-radius:14px;color:rgba(255,255,255,0.75);}
-.p-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.p-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
 @media(max-width:860px){.p-actions{justify-content:center;}}
 .p-qty-stepper{display:flex;align-items:center;border:1px solid rgba(255,255,255,0.3);border-radius:20px;overflow:hidden;}
 .p-qty-btn{width:36px;height:44px;background:transparent;border:none;cursor:pointer;font-size:16px;color:#fff;}
@@ -93,12 +94,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .p-add-btn:hover{background:#fff;}
 .p-add-btn.added{background:#4a7c4a;color:#fff;}
 .p-whatsapp-btn{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;background:transparent;color:rgba(255,255,255,0.85);padding:14px 24px;border:1px solid rgba(255,255,255,0.35);border-radius:2px;}
-.p-unavailable{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.4);padding:14px 24px;border-radius:2px;}
+
 section{padding:80px 24px;}
 .sec-inner{max-width:1000px;margin:0 auto;}
 .sec-head{text-align:center;margin-bottom:48px;}
 .sec-eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--theme);margin-bottom:14px;}
 .sec-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,3.4vw,34px);color:var(--ink);}
+
 .ing-icons-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;}
 @media(max-width:900px){.ing-icons-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:520px){.ing-icons-grid{grid-template-columns:repeat(2,1fr);}}
@@ -106,26 +108,26 @@ section{padding:80px 24px;}
 .ing-icon-card img{width:100%;height:100px;object-fit:cover;}
 .ing-icon-name{font-family:'Cinzel',serif;font-size:12px;color:var(--ink);margin:12px 8px 6px;}
 .ing-icon-benefit{font-size:11px;color:var(--text-dim);line-height:1.5;padding:0 10px 16px;font-weight:300;}
-.ing-cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
-@media(max-width:700px){.ing-cards-grid{grid-template-columns:1fr;}}
-.ing-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px;}
-.ing-card-title{font-family:'Cinzel',serif;font-size:13.5px;color:var(--theme);margin-bottom:10px;font-weight:600;}
-.ing-card-text{font-size:13.5px;line-height:1.7;color:var(--ink-soft);font-weight:300;}
+
+.back-to-shop{background:var(--cream);text-align:center;}
+.back-to-shop a{display:inline-block;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px 34px;border-radius:2px;}
+.back-to-shop a:hover{background:var(--gold);color:var(--ink);}
+
 .ritual-steps{max-width:640px;margin:0 auto;}
 .rt-step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);}
 .rt-step:last-child{border-bottom:none;}
 .rt-num{font-family:'Cinzel Decorative',serif;font-size:22px;color:var(--theme);min-width:36px;}
 .rt-text{font-size:14.5px;line-height:1.75;color:var(--ink-soft);padding-top:2px;}
 .rt-text strong{color:var(--ink);font-weight:600;}
-.back-to-shop{background:var(--cream);text-align:center;}
-.back-to-shop a{display:inline-block;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px 34px;border-radius:2px;}
-.back-to-shop a:hover{background:var(--gold);color:var(--ink);}
+
 footer{background:var(--ink);color:rgba(251,248,242,0.6);padding:40px 24px;text-align:center;font-size:12px;}
 footer a{color:var(--gold-pale);}
 </style>
 </head>
 <body>
+
 <div class="topbar">🇦🇺 BLENDED &amp; PACKED IN GEELONG, AUSTRALIA &nbsp;·&nbsp; NO FILLERS · NO SHORTCUTS</div>
+
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="brand-mark">
@@ -134,12 +136,10 @@ footer a{color:var(--gold-pale);}
     </a>
     <div style="display:flex;align-items:center;gap:20px;">
       <a href="index.html" class="back-link">← Back to Shop</a>
-      <div id="shopify-cart-container">
-        <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Open cart">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-          <span class="cart-count-badge hidden" id="cartCount">0</span>
-        </button>
-      </div>
+      <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-count-badge hidden" id="cartCount">0</span>
+      </button>
     </div>
   </div>
 </nav>
@@ -190,9 +190,10 @@ footer a{color:var(--gold-pale);}
 </aside>
 
 <script>
+const WORKER_URL = 'https://wise-king-checkout.mute-night-e7d4.workers.dev';
+
 const PRODUCT_DETAILS = {
   latte: {
-    productId: '10491198406837',
     name: 'Golden Saffron Latte',
     tagline: '"Saffron inside — rarer than gold, in every batch."',
     price: 24.99, weight: '50g', weightLabel: '/ 50g pouch',
@@ -202,14 +203,12 @@ const PRODUCT_DETAILS = {
     tags: ['No Caffeine','No Added Sugar','6 Botanicals','Handmade'],
     theme: '#8B5E1A', themeText: '#E8D9B5',
     whatsappText: 'Hi Piyush, I want to order the Golden Saffron Latte please.',
-    soldOut: false,
-    insideMode: 'icons',
     ingredientIcons: [
-      {img:'turmeric.jpg.JPG', name:'Turmeric', benefit:'Rich in curcumin — the golden base of the entire blend.'},
-      {img:'ginger.jpg.JPG', name:'Ginger', benefit:'Warms the body and aids digestion.'},
-      {img:'clove.jpg.JPG', name:'Clove', benefit:'A natural antioxidant powerhouse.'},
-      {img:'cardamom.jpg.JPG', name:'Green Cardamom', benefit:'Sweet, aromatic depth — no sugar needed.'},
-      {img:'black-pepper.jpg.JPG', name:'Black Pepper', benefit:'Multiplies turmeric absorption by up to 2,000%.'},
+      {img:'turmeric.jpg.JPG', name:'Turmeric', benefit:'The golden base of the entire blend, giving it colour and depth.'},
+      {img:'ginger.jpg.JPG', name:'Ginger', benefit:'Adds a gentle, warming spice to every cup.'},
+      {img:'clove.jpg.JPG', name:'Clove', benefit:'A warm, aromatic note in the background of the blend.'},
+      {img:'cardamom.jpg.JPG', name:'Green Cardamom', benefit:'Sweet, floral aroma — no sugar needed.'},
+      {img:'black-pepper.jpg.JPG', name:'Black Pepper', benefit:'A traditional pairing with turmeric, adding subtle heat.'},
       {img:'saffron.jpg.JPG', name:'Saffron', benefit:'The world\'s most expensive spice, hand-harvested.'}
     ],
     ritualSteps: [
@@ -219,9 +218,7 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Sweeten with honey or maple syrup to taste. Enjoy immediately.'}
     ]
   },
-
   curry: {
-    productId: '10491200110773',
     name: 'Curry Coast Rub',
     tagline: '"Twelve spices. Like the Twelve Apostles — each one essential."',
     price: 12.99, weight: '100g', weightLabel: '/ 100g pouch',
@@ -230,8 +227,6 @@ const PRODUCT_DETAILS = {
     tags: ['No Salt Added','12 Spices','Handmade'],
     theme: '#8B1A1A', themeText: '#fff',
     whatsappText: 'Hi Piyush, I want to order the Curry Coast Rub please.',
-    soldOut: false,
-    insideMode: 'icons',
     ingredientIcons: [
       {img:'Paprika.PNG', name:'Smoked Paprika', benefit:'Deep smoky base that carries the whole rub.'},
       {img:'Kashmiri.PNG', name:'Kashmiri Chilli', benefit:'Mild heat with rich red colour.'},
@@ -253,9 +248,7 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Also excellent stirred into curries or gravies — adjust to taste.'}
     ]
   },
-
   mocha: {
-    productId: '10491203256501',
     name: 'Café Mocha Blend',
     tagline: '"Premium coffee meets dark cocoa — no sugar, no shortcuts."',
     price: 15.99, weight: '100g', weightLabel: '/ 100g pouch',
@@ -265,8 +258,6 @@ const PRODUCT_DETAILS = {
     tags: ['Contains Caffeine','No Sugar Added','Handmade'],
     theme: '#3D2208', themeText: '#E8D9B5',
     whatsappText: 'Hi Piyush, I want to order the Cafe Mocha Blend please.',
-    soldOut: false,
-    insideMode: 'icons',
     ingredientIcons: [
       {img:'Coffee.PNG', name:'Premium Instant Coffee', benefit:'Clean, bold coffee base — 50% of the blend.'},
       {img:'Cocoa.PNG', name:'Dutch-Process Cocoa', benefit:'Smooth, deep chocolate flavour with no bitterness.'}
@@ -278,22 +269,18 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Sweeten to taste. Also delicious served over ice.'}
     ]
   },
-
   matcha: {
-    productId: 'REPLACE-WITH-SHOPIFY-MATCHA-ID',
     name: 'Ceremonial Matcha',
     tagline: '"Stone-milled in Japan — the birthplace of matcha."',
     price: 39.99, weight: '30g', weightLabel: '/ 30g pouch',
     heroImage: 'ilovematcha.JPG',
     heroVideo: 'matchapvideo.MP4', heroVideoOrientation: 'vertical',
-    badge: 'Back in Stock',
+    badge: 'Only 1 Left',
     tags: ['Uji, Kyoto','JAS Organic','Lab Tested','Vegan & GF'],
     theme: '#2D4A2D', themeText: '#C8E6C9',
     whatsappText: 'Hi Piyush, I want to order the Ceremonial Matcha please.',
-    soldOut: false,
-    insideMode: 'icons',
     ingredientIcons: [
-      {img:'Matcha.PNG', name:'Ceremonial Matcha', benefit:'Stone-milled in Uji, Kyoto. Pure, vibrant, and lab-tested clean.'}
+      {img:'Matcha.PNG', name:'Ceremonial Matcha', benefit:'Stone-milled in Uji, Kyoto. Vibrant, and lab-tested clean.'}
     ],
     ritualSteps: [
       {n:'I', text:'Sift <strong>2–4g</strong> into a bowl to remove any clumps.'},
@@ -302,37 +289,31 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Sweeten with honey if desired.'}
     ]
   },
-
   rubybeet: {
-    productId: 'REPLACE-WITH-SHOPIFY-RUBYBEET-ID',
     name: 'Ruby Beet Latte',
     tagline: '"Earth\'s ruby jewel — beetroot, warmed by ginger and cardamom."',
-    price: 14.99, weight: '45g', weightLabel: '/ 45g jar',
+    price: 14.99, weight: '45g', weightLabel: '/ 45g jar, 15 serves',
     heroImage: 'rblattep.png',
     heroVideo: 'rblattepvideo.MP4', heroVideoOrientation: 'horizontal',
     badge: 'New',
-    tags: ['No Caffeine','No Added Sugar','Handmade'],
+    tags: ['Plant-Based','No Added Sugar','Handmade'],
     theme: '#7A1E3D', themeText: '#F0D4DE',
     whatsappText: 'Hi Piyush, I want to order the Ruby Beet Latte please.',
-    soldOut: false,
-    insideMode: 'icons',
     ingredientIcons: [
       {img:'Beetroot.PNG', name:'Beetroot', benefit:'Vivid natural colour and earthy sweetness — the heart of the blend.'},
       {img:'ginger.jpg.JPG', name:'Ginger', benefit:'Gentle warmth that balances the beetroot.'},
       {img:'cardamom.jpg.JPG', name:'Green Cardamom', benefit:'Floral aromatic lift — no sugar needed.'},
-      {img:'black-pepper.jpg.JPG', name:'Black Pepper', benefit:'Rounds the flavour and aids absorption.'},
+      {img:'black-pepper.jpg.JPG', name:'Black Pepper', benefit:'Rounds out the flavour with a subtle finish.'},
       {img:'Cinnamon.PNG', name:'Cinnamon', benefit:'Soft spiced finish that lingers.'}
     ],
     ritualSteps: [
-      {n:'I', text:'Add <strong>3g</strong> (one level teaspoon) to your cup.'},
+      {n:'I', text:'Add <strong>3g</strong> (just under a level teaspoon) to your cup — <strong>15 serves per 45g jar</strong>.'},
       {n:'II', text:'Add a splash of hot water. Stir into a smooth paste.'},
-      {n:'III', text:'Pour <strong>230ml</strong> warm or frothed milk over the paste.'},
+      {n:'III', text:'Pour <strong>230ml</strong> warm or frothed milk, dairy or non-dairy, over the paste.'},
       {n:'IV', text:'Sweeten with honey or maple syrup to taste. Enjoy immediately.'}
     ]
   },
-
   turmeric: {
-    productId: 'REPLACE-WITH-SHOPIFY-TURMERIC-ID',
     name: 'Organic Turmeric Powder',
     tagline: '"Pure turmeric. Nothing else. Golden, earthy, unfiltered."',
     price: 11.99, weight: '75g', weightLabel: '/ 75g pouch',
@@ -341,10 +322,8 @@ const PRODUCT_DETAILS = {
     tags: ['Organic','No Fillers','Handmade'],
     theme: '#C9A24A', themeText: '#2A2118',
     whatsappText: 'Hi Piyush, I want to order the Organic Turmeric Powder please.',
-    soldOut: false,
-    insideMode: 'icons',
     ingredientIcons: [
-      {img:'turmeric.jpg.JPG', name:'Organic Turmeric', benefit:'100% pure root — rich in curcumin, nothing added.'}
+      {img:'turmeric.jpg.JPG', name:'Organic Turmeric', benefit:'100% pure root, nothing added — golden colour and classic depth.'}
     ],
     ritualSteps: [
       {n:'I', text:'For golden milk: whisk <strong>1 tsp</strong> into warm milk with a pinch of black pepper and honey to taste.'},
@@ -353,9 +332,7 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Store in a cool, dry place, sealed tightly after each use.'}
     ]
   },
-
   spinach: {
-    productId: 'REPLACE-WITH-SHOPIFY-SPINACH-ID',
     name: 'Organic Spinach Powder',
     tagline: '"Concentrated greens, stripped back to one ingredient."',
     price: 11.99, weight: '60g', weightLabel: '/ 60g pouch',
@@ -364,21 +341,17 @@ const PRODUCT_DETAILS = {
     tags: ['Organic','No Fillers','Handmade'],
     theme: '#2D4A2D', themeText: '#C8E6C9',
     whatsappText: 'Hi Piyush, I want to order the Organic Spinach Powder please.',
-    soldOut: false,
-    insideMode: 'icons',
     ingredientIcons: [
-      {img:'Spinach.PNG', name:'Organic Spinach', benefit:'Dehydrated and ground — pure concentrated greens, nothing else.'}
+      {img:'Spinach.PNG', name:'Organic Spinach', benefit:'Dehydrated and ground — concentrated greens, nothing else added.'}
     ],
     ritualSteps: [
-      {n:'I', text:'Blend <strong>1 tsp</strong> into smoothies for an easy greens boost.'},
-      {n:'II', text:'Stir into soups, sauces, or curries near the end of cooking to preserve colour and nutrients.'},
+      {n:'I', text:'Blend <strong>1 tsp</strong> into smoothies for an easy addition of greens.'},
+      {n:'II', text:'Stir into soups, sauces, or curries near the end of cooking to preserve colour.'},
       {n:'III', text:'Mix into dough or batter for naturally green pasta, roti, or baked goods.'},
       {n:'IV', text:'Store in a cool, dry place, sealed tightly after each use.'}
     ]
   },
-
   beetroot: {
-    productId: 'REPLACE-WITH-SHOPIFY-BEETROOT-ID',
     name: 'Organic Beetroot Powder',
     tagline: '"Vivid, earthy beetroot — nothing added, nothing hidden."',
     price: 11.99, weight: '75g', weightLabel: '/ 75g pouch',
@@ -387,8 +360,6 @@ const PRODUCT_DETAILS = {
     tags: ['Organic','No Fillers','Handmade'],
     theme: '#5C1420', themeText: '#F0D4DE',
     whatsappText: 'Hi Piyush, I want to order the Organic Beetroot Powder please.',
-    soldOut: false,
-    insideMode: 'icons',
     ingredientIcons: [
       {img:'Beetroot.PNG', name:'Organic Beetroot', benefit:'100% pure dehydrated root — natural colour and earthy sweetness.'}
     ],
@@ -399,9 +370,7 @@ const PRODUCT_DETAILS = {
       {n:'IV', text:'Store in a cool, dry place, sealed tightly after each use.'}
     ]
   },
-
   curryonthego: {
-    productId: 'REPLACE-WITH-SHOPIFY-CURRYONTHEGO-ID',
     name: 'The Curry (On The Go)',
     tagline: '"One jar, every curry — just add water and fry."',
     price: 13.99, weight: '120g', weightLabel: '/ 120g bag',
@@ -411,19 +380,19 @@ const PRODUCT_DETAILS = {
     tags: ['No Salt Added','12 Spices','Handmade'],
     theme: '#7A2E2E', themeText: '#fff',
     whatsappText: 'Hi Piyush, I want to order The Curry (On The Go) please.',
-    soldOut: false,
-    insideMode: 'icons',
     ingredientIcons: [
+      {img:'Coriander.PNG', name:'Ground Coriander', benefit:'Bright, citrusy backbone of every good curry.'},
       {img:'Onion.PNG', name:'Onion Powder', benefit:'Sweet savoury base that builds the curry foundation.'},
       {img:'Tomato.PNG', name:'Tomato Powder', benefit:'Natural acidity and body without fresh tomatoes.'},
-      {img:'Coriander.PNG', name:'Coriander', benefit:'Bright, citrusy backbone of every good curry.'},
-      {img:'Garlic.PNG', name:'Garlic Powder', benefit:'Deep savoury note in every spoonful.'},
-      {img:'ginger.jpg.JPG', name:'Ginger Powder', benefit:'Warmth and digestive lift.'},
       {img:'Cumin.PNG', name:'Cumin', benefit:'Earthy warmth that defines the blend.'},
+      {img:'Garlic.PNG', name:'Garlic Powder', benefit:'Deep savoury note in every spoonful.'},
+      {img:'ginger.jpg.JPG', name:'Ginger Powder', benefit:'Adds warmth and a gentle kick.'},
       {img:'Kashmiri.PNG', name:'Kashmiri Chilli', benefit:'Mild heat and rich red colour.'},
+      {img:'Carrot.PNG', name:'Carrot Powder', benefit:'Natural sweetness that rounds out the base.'},
       {img:'turmeric.jpg.JPG', name:'Turmeric', benefit:'Golden colour and classic curry depth.'},
       {img:'Cinnamon.PNG', name:'Cinnamon', benefit:'Subtle sweetness and warmth.'},
-      {img:'clove.jpg.JPG', name:'Clove', benefit:'Intense aromatic finish.'}
+      {img:'clove.jpg.JPG', name:'Clove', benefit:'Intense aromatic finish.'},
+      {img:'Nutmeg.PNG', name:'Nutmeg', benefit:'A whisper of warmth to round out the twelve.'}
     ],
     ritualSteps: [
       {n:'I', text:'Mix <strong>15g</strong> (one heaped tablespoon) with a splash of warm water into a smooth paste.'},
@@ -437,44 +406,23 @@ const PRODUCT_DETAILS = {
 const params = new URLSearchParams(window.location.search);
 const productKey = params.get('p') || 'latte';
 const P = PRODUCT_DETAILS[productKey] || PRODUCT_DETAILS.latte;
+
 document.title = `${P.name} | Wise King Enterprise`;
 document.documentElement.style.setProperty('--theme', P.theme);
 document.documentElement.style.setProperty('--theme-text', P.themeText);
+
 function formatMoney(n){ return '$' + parseFloat(n).toFixed(2); }
 
 function renderHero(){
-  const actionsHtml = P.soldOut ? `
-    <span class="p-unavailable">Currently Unavailable</span>
-    <a href="mailto:piyush@wiseking.com.au?subject=${P.notifyEmailSubject || 'Notify%20Me'}" class="p-whatsapp-btn">Notify Me When Back</a>
-  ` : `
-    <div class="p-qty-stepper">
-      <button class="p-qty-btn" id="pQtyDec">−</button>
-      <span class="p-qty-val" id="pQtyVal">1</span>
-      <button class="p-qty-btn" id="pQtyInc">+</button>
-    </div>
-    <button class="p-add-btn" id="pAddBtn">Add to Cart</button>
-    <a href="https://wa.me/61470442705?text=${encodeURIComponent(P.whatsappText)}" class="p-whatsapp-btn">WhatsApp Order</a>
-  `;
-
-  let mediaHtml = '';
-  if (P.heroVideo) {
-    const orientationClass = P.heroVideoOrientation === 'horizontal' ? 'horizontal' : 'vertical';
-    mediaHtml = `
-      <div class="p-hero-img-wrap ${orientationClass}">
-        <video id="heroVideo" autoplay muted loop playsinline poster="${P.heroImage}">
-          <source src="${P.heroVideo}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    `;
-  } else {
-    mediaHtml = `<div class="p-hero-img-wrap vertical"><img src="${P.heroImage}" alt="${P.name}"></div>`;
-  }
+  const mediaHtml = P.heroVideo
+    ? `<video autoplay muted loop playsinline poster="${P.heroImage}"><source src="${P.heroVideo}" type="video/mp4"></video>`
+    : `<img src="${P.heroImage}" alt="${P.name}">`;
+  const orientationClass = P.heroVideoOrientation === 'horizontal' ? 'horizontal' : 'vertical';
 
   document.getElementById('productHero').innerHTML = `
     <div class="p-hero">
       <div class="p-hero-inner">
-        ${mediaHtml}
+        <div class="p-hero-img-wrap ${orientationClass}">${mediaHtml}</div>
         <div>
           <span class="p-badge">${P.badge}</span>
           <h1 class="p-name">${P.name}</h1>
@@ -484,63 +432,47 @@ function renderHero(){
             <span class="p-weight">${P.weightLabel}</span>
           </div>
           <div class="p-tags">${P.tags.map(t=>`<span class="p-tag">${t}</span>`).join('')}</div>
-          <div class="p-actions">${actionsHtml}</div>
+          <div class="p-actions">
+            <div class="p-qty-stepper">
+              <button class="p-qty-btn" id="pQtyDec">−</button>
+              <span class="p-qty-val" id="pQtyVal">1</span>
+              <button class="p-qty-btn" id="pQtyInc">+</button>
+            </div>
+            <button class="p-add-btn" id="pAddBtn">Add to Cart</button>
+            <a href="https://wa.me/61470442705?text=${encodeURIComponent(P.whatsappText)}" class="p-whatsapp-btn">WhatsApp Order</a>
+          </div>
         </div>
       </div>
     </div>`;
 
-  if (!P.soldOut) {
-    const incBtn = document.getElementById('pQtyInc');
-    const decBtn = document.getElementById('pQtyDec');
-    const valEl = document.getElementById('pQtyVal');
-    const addBtn = document.getElementById('pAddBtn');
-
-    if (incBtn) incBtn.addEventListener('click', ()=>{ valEl.textContent = parseInt(valEl.textContent) + 1; });
-    if (decBtn) decBtn.addEventListener('click', ()=>{ valEl.textContent = Math.max(1, parseInt(valEl.textContent) - 1); });
-
-    if (addBtn) {
-      addBtn.addEventListener('click', async (e)=>{
-        const btn = e.target;
-        const qty = parseInt(valEl.textContent) || 1;
-        const original = btn.textContent;
-        btn.textContent = 'Adding…'; btn.disabled = true;
-
-        const variantId = await resolveVariantId(P.productId);
-        if (!variantId){ btn.textContent = 'Unavailable'; setTimeout(()=>{btn.textContent=original;btn.disabled=false;},1800); return; }
-
-        await addLineToCart(variantId, qty);
-        btn.textContent = 'Added ✓'; btn.classList.add('added');
-        valEl.textContent = '1';
-
-        setTimeout(()=>{
-          btn.textContent = original;
-          btn.classList.remove('added');
-          btn.disabled = false;
-        }, 1400);
-
-        openCart();
-      });
-    }
-  }
+  document.getElementById('pQtyInc').addEventListener('click', ()=>{
+    const el = document.getElementById('pQtyVal');
+    el.textContent = parseInt(el.textContent) + 1;
+  });
+  document.getElementById('pQtyDec').addEventListener('click', ()=>{
+    const el = document.getElementById('pQtyVal');
+    el.textContent = Math.max(1, parseInt(el.textContent) - 1);
+  });
+  document.getElementById('pAddBtn').addEventListener('click', ()=>{
+    const btn = document.getElementById('pAddBtn');
+    const qty = parseInt(document.getElementById('pQtyVal').textContent) || 1;
+    addToCart(productKey, P.name, P.price, P.heroImage, qty);
+    document.getElementById('pQtyVal').textContent = '1';
+    const original = btn.textContent;
+    btn.textContent = 'Added ✓'; btn.classList.add('added');
+    setTimeout(()=>{btn.textContent=original;btn.classList.remove('added');},1200);
+    openCart();
+  });
 }
 
 function renderInside(){
   document.getElementById('insideTitle').textContent = `Inside the ${P.name}`;
-  const container = document.getElementById('insideContent');
-  if (P.insideMode === 'icons'){
-    container.innerHTML = `<div class="ing-icons-grid">${P.ingredientIcons.map(i=>`
-      <div class="ing-icon-card">
-        <img src="${i.img}" alt="${i.name}">
-        <div class="ing-icon-name">${i.name}</div>
-        <div class="ing-icon-benefit">${i.benefit}</div>
-      </div>`).join('')}</div>`;
-  } else {
-    container.innerHTML = `<div class="ing-cards-grid">${P.ingredientCards.map(c=>`
-      <div class="ing-card">
-        <div class="ing-card-title">${c.title}</div>
-        <div class="ing-card-text">${c.text}</div>
-      </div>`).join('')}</div>`;
-  }
+  document.getElementById('insideContent').innerHTML = `<div class="ing-icons-grid">${P.ingredientIcons.map(i=>`
+    <div class="ing-icon-card">
+      <img src="${i.img}" alt="${i.name}">
+      <div class="ing-icon-name">${i.name}</div>
+      <div class="ing-icon-benefit">${i.benefit}</div>
+    </div>`).join('')}</div>`;
 }
 
 function renderRitual(){
@@ -551,126 +483,115 @@ function renderRitual(){
     </div>`).join('');
 }
 
-const SHOP_DOMAIN = 'hmfrhb-nb.myshopify.com';
-const STOREFRONT_TOKEN = '3d4441b139fbd67f3300852feab77068';
-const API_VERSION = '2025-10';
-const GRAPHQL_URL = `https://${SHOP_DOMAIN}/api/${API_VERSION}/graphql.json`;
+/* ── SHARED CART (same localStorage key as index.html) ── */
+let cart = [];
+function loadCart(){ try{ cart = JSON.parse(localStorage.getItem('wke_cart') || '[]'); }catch(e){ cart = []; } }
+function saveCart(){ try{ localStorage.setItem('wke_cart', JSON.stringify(cart)); }catch(e){} }
 
-async function shopifyFetch(query, variables) {
-  try {
-    const res = await fetch(GRAPHQL_URL, { method:'POST', headers:{'Content-Type':'application/json','X-Shopify-Storefront-Access-Token':STOREFRONT_TOKEN}, body: JSON.stringify({query,variables}) });
-    const json = await res.json();
-    if (json.errors){ console.error(json.errors); return null; }
-    return json.data;
-  } catch(err){ console.error(err); return null; }
+function addToCart(key, name, price, image, qty){
+  const existing = cart.find(i => i.key === key);
+  if (existing) { existing.qty += qty; } else { cart.push({ key, name, price, image, qty }); }
+  saveCart(); renderCart();
+}
+function updateQty(key, qty){
+  const item = cart.find(i => i.key === key);
+  if (!item) return;
+  if (qty <= 0) { cart = cart.filter(i => i.key !== key); } else { item.qty = qty; }
+  saveCart(); renderCart();
+}
+function removeItem(key){
+  cart = cart.filter(i => i.key !== key);
+  saveCart(); renderCart();
 }
 
-const CART_FIELDS = `id checkoutUrl cost{subtotalAmount{amount currencyCode}} lines(first:50){edges{node{id quantity merchandise{... on ProductVariant{id title price{amount currencyCode} image{url} product{title}}}}}}`;
-const variantCache = {};
-async function resolveVariantId(productId){
-  if (!productId || productId.startsWith('REPLACE-')) return null;
-  if (variantCache[productId]) return variantCache[productId];
-  const q = `query($id:ID!){product(id:$id){variants(first:1){edges{node{id}}}}}`;
-  const data = await shopifyFetch(q, {id:`gid://shopify/Product/${productId}`});
-  const v = data?.product?.variants?.edges?.[0]?.node?.id || null;
-  if (v) variantCache[productId] = v;
-  return v;
-}
-let currentCart = null;
-function getSavedCartId(){ try{return localStorage.getItem('wke_cart_id');}catch(e){return null;} }
-function saveCartId(id){ try{localStorage.setItem('wke_cart_id', id);}catch(e){} }
-async function loadExistingCart(){
-  const id = getSavedCartId();
-  if (!id) return;
-  const q = `query($id:ID!){cart(id:$id){${CART_FIELDS}}}`;
-  const data = await shopifyFetch(q, {id});
-  if (data?.cart){ currentCart = data.cart; renderCart(); }
-  else { try{localStorage.removeItem('wke_cart_id');}catch(e){} }
-}
-async function createCartWithLine(variantId, qty){
-  const m = `mutation($lines:[CartLineInput!]){cartCreate(input:{lines:$lines}){cart{${CART_FIELDS}} userErrors{field message}}}`;
-  const data = await shopifyFetch(m, {lines:[{merchandiseId:variantId,quantity:qty}]});
-  const r = data?.cartCreate;
-  if (r?.userErrors?.length){ console.error(r.userErrors); return; }
-  if (r?.cart){ currentCart = r.cart; saveCartId(currentCart.id); renderCart(); }
-}
-async function addLineToCart(variantId, qty){
-  if (!currentCart){ await createCartWithLine(variantId, qty); return; }
-  const m = `mutation($cartId:ID!,$lines:[CartLineInput!]!){cartLinesAdd(cartId:$cartId,lines:$lines){cart{${CART_FIELDS}} userErrors{field message}}}`;
-  const data = await shopifyFetch(m, {cartId:currentCart.id, lines:[{merchandiseId:variantId,quantity:qty}]});
-  const r = data?.cartLinesAdd;
-  if (r?.userErrors?.length){ console.error(r.userErrors); return; }
-  if (r?.cart){ currentCart = r.cart; renderCart(); }
-}
-async function updateLineQuantity(lineId, qty){
-  if (!currentCart) return;
-  if (qty <= 0){ await removeLine(lineId); return; }
-  const m = `mutation($cartId:ID!,$lines:[CartLineUpdateInput!]!){cartLinesUpdate(cartId:$cartId,lines:$lines){cart{${CART_FIELDS}} userErrors{field message}}}`;
-  const data = await shopifyFetch(m, {cartId:currentCart.id, lines:[{id:lineId,quantity:qty}]});
-  const r = data?.cartLinesUpdate;
-  if (r?.cart){ currentCart = r.cart; renderCart(); }
-}
-async function removeLine(lineId){
-  if (!currentCart) return;
-  const m = `mutation($cartId:ID!,$lineIds:[ID!]!){cartLinesRemove(cartId:$cartId,lineIds:$lineIds){cart{${CART_FIELDS}} userErrors{field message}}}`;
-  const data = await shopifyFetch(m, {cartId:currentCart.id, lineIds:[lineId]});
-  const r = data?.cartLinesRemove;
-  if (r?.cart){ currentCart = r.cart; renderCart(); }
-}
 function renderCart(){
   const linesEl = document.getElementById('cartLines');
   const subtotalEl = document.getElementById('cartSubtotal');
   const countEl = document.getElementById('cartCount');
   const checkoutBtn = document.getElementById('cartCheckoutBtn');
-  const edges = currentCart?.lines?.edges || [];
-  if (!currentCart || edges.length === 0){
+
+  if (!cart.length) {
     linesEl.innerHTML = '<div class="cart-empty">Your cart is empty.</div>';
-    subtotalEl.textContent = formatMoney(0); countEl.textContent='0'; countEl.classList.add('hidden'); checkoutBtn.disabled = true;
+    subtotalEl.textContent = formatMoney(0);
+    countEl.textContent = '0'; countEl.classList.add('hidden');
+    checkoutBtn.disabled = true;
     return;
   }
-  let totalQty = 0;
-  linesEl.innerHTML = edges.map(({node})=>{
-    totalQty += node.quantity;
-    const m = node.merchandise; const img = m.image?.url || '';
-    return `<div class="cart-line" data-line-id="${node.id}">
-      ${img?`<img class="cart-line-img" src="${img}" alt="${m.product.title}">`:`<div class="cart-line-img"></div>`}
-      <div class="cart-line-info">
-        <div class="cart-line-title">${m.product.title}</div>
-        <div class="cart-line-price">${formatMoney(m.price.amount)}</div>
-        <div class="cart-line-controls">
-          <div class="cart-qty-stepper">
-            <button class="cart-qty-btn" data-line-action="dec" data-line-id="${node.id}" data-qty="${node.quantity}">−</button>
-            <span class="cart-qty-num">${node.quantity}</span>
-            <button class="cart-qty-btn" data-line-action="inc" data-line-id="${node.id}" data-qty="${node.quantity}">+</button>
+
+  let totalQty = 0, subtotal = 0;
+  linesEl.innerHTML = cart.map(item => {
+    totalQty += item.qty; subtotal += item.qty * item.price;
+    return `
+      <div class="cart-line" data-key="${item.key}">
+        <img class="cart-line-img" src="${item.image}" alt="${item.name}">
+        <div class="cart-line-info">
+          <div class="cart-line-title">${item.name}</div>
+          <div class="cart-line-price">${formatMoney(item.price)}</div>
+          <div class="cart-line-controls">
+            <div class="cart-qty-stepper">
+              <button class="cart-qty-btn" data-line-action="dec" data-key="${item.key}" data-qty="${item.qty}">−</button>
+              <span class="cart-qty-num">${item.qty}</span>
+              <button class="cart-qty-btn" data-line-action="inc" data-key="${item.key}" data-qty="${item.qty}">+</button>
+            </div>
+            <button class="cart-line-remove" data-line-action="remove" data-key="${item.key}">Remove</button>
           </div>
-          <button class="cart-line-remove" data-line-action="remove" data-line-id="${node.id}">Remove</button>
         </div>
-      </div></div>`;
+      </div>`;
   }).join('');
-  subtotalEl.textContent = formatMoney(currentCart.cost.subtotalAmount.amount);
-  countEl.textContent = totalQty; countEl.classList.remove('hidden'); checkoutBtn.disabled = false;
+
+  subtotalEl.textContent = formatMoney(subtotal);
+  countEl.textContent = totalQty; countEl.classList.remove('hidden');
+  checkoutBtn.disabled = false;
 }
-document.getElementById('cartLines').addEventListener('click', (e)=>{
-  const btn = e.target.closest('[data-line-action]'); if (!btn) return;
-  const lineId = btn.dataset.lineId, action = btn.dataset.lineAction;
-  if (action==='inc') updateLineQuantity(lineId, parseInt(btn.dataset.qty)+1);
-  if (action==='dec') updateLineQuantity(lineId, parseInt(btn.dataset.qty)-1);
-  if (action==='remove') removeLine(lineId);
+
+document.getElementById('cartLines').addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-line-action]');
+  if (!btn) return;
+  const key = btn.dataset.key;
+  const action = btn.dataset.lineAction;
+  if (action === 'inc') updateQty(key, parseInt(btn.dataset.qty) + 1);
+  if (action === 'dec') updateQty(key, parseInt(btn.dataset.qty) - 1);
+  if (action === 'remove') removeItem(key);
 });
+
 const cartDrawer = document.getElementById('cartDrawer');
 const cartOverlay = document.getElementById('cartOverlay');
-function openCart(){ cartDrawer.classList.add('open'); cartOverlay.classList.add('open'); cartDrawer.setAttribute('aria-hidden','false'); }
-function closeCart(){ cartDrawer.classList.remove('open'); cartOverlay.classList.remove('open'); cartDrawer.setAttribute('aria-hidden','true'); }
+function openCart(){ cartDrawer.classList.add('open'); cartOverlay.classList.add('open'); }
+function closeCart(){ cartDrawer.classList.remove('open'); cartOverlay.classList.remove('open'); }
 document.getElementById('cartToggleBtn').addEventListener('click', openCart);
 document.getElementById('cartCloseBtn').addEventListener('click', closeCart);
 cartOverlay.addEventListener('click', closeCart);
-document.getElementById('cartCheckoutBtn').addEventListener('click', ()=>{ if (currentCart?.checkoutUrl) window.location.href = currentCart.checkoutUrl; });
 
-(async function init(){
+document.getElementById('cartCheckoutBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('cartCheckoutBtn');
+  const original = btn.textContent;
+  btn.textContent = 'Preparing checkout…'; btn.disabled = true;
+  try {
+    const res = await fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: cart.map(i => ({ name: i.name, price: i.price, qty: i.qty })) })
+    });
+    const data = await res.json();
+    if (data.url) {
+      localStorage.removeItem('wke_cart');
+      window.location.href = data.url;
+    } else {
+      alert('Something went wrong creating checkout. Please try again or message us on WhatsApp.');
+      btn.textContent = original; btn.disabled = false;
+    }
+  } catch (err) {
+    alert('Something went wrong. Please try again or message us on WhatsApp.');
+    btn.textContent = original; btn.disabled = false;
+  }
+});
+
+(function init(){
   renderHero();
   renderInside();
   renderRitual();
-  await loadExistingCart();
+  loadCart();
+  renderCart();
 })();
 </script>
 </body>
