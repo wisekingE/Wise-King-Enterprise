@@ -64,52 +64,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 .mobile-menu.open{display:flex;}
 @media(max-width:1020px){.nav-links{display:none;}.burger{display:flex;}}
 
-/* ── CUSTOM CART (Shopify Storefront Cart API — no third-party embed) ── */
-.cart-icon-wrap{display:flex;align-items:center;margin-left:12px;}
-.cart-toggle-btn{position:relative;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--paper);cursor:pointer;transition:all .25s ease;}
-.cart-toggle-btn:hover{border-color:var(--gold);background:var(--cream);}
-.cart-toggle-btn svg{width:18px;height:18px;stroke:var(--ink);}
-.cart-count-badge{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--gold);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;}
-.cart-count-badge.hidden{display:none;}
-
-.cart-overlay{position:fixed;inset:0;background:rgba(42,33,24,0.5);opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:400;}
-.cart-overlay.open{opacity:1;pointer-events:auto;}
-
-.cart-drawer{position:fixed;top:0;right:0;height:100vh;width:420px;max-width:92vw;background:var(--paper);z-index:401;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(42,33,24,0.25);}
-.cart-drawer.open{transform:translateX(0);}
-.cart-drawer-header{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid var(--line);}
-.cart-drawer-title{font-family:'Cinzel Decorative',serif;font-size:18px;color:var(--ink);}
-.cart-close-btn{background:none;border:none;font-size:24px;line-height:1;color:var(--ink-soft);cursor:pointer;padding:4px 8px;}
-.cart-close-btn:hover{color:var(--gold);}
-.cart-lines{flex:1;overflow-y:auto;padding:12px 24px;}
-.cart-empty{text-align:center;padding:60px 20px;color:var(--text-dim);font-size:14px;}
-.cart-line{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--line);}
-.cart-line-img{width:64px;height:64px;border-radius:6px;object-fit:cover;background:var(--cream);flex-shrink:0;}
-.cart-line-info{flex:1;display:flex;flex-direction:column;gap:6px;}
-.cart-line-title{font-family:'Cinzel',serif;font-size:13px;color:var(--ink);}
-.cart-line-price{font-size:12.5px;color:var(--gold);font-weight:600;}
-.cart-line-controls{display:flex;align-items:center;gap:10px;margin-top:2px;}
-.cart-qty-stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:20px;overflow:hidden;}
-.cart-qty-btn{width:26px;height:26px;background:var(--cream);border:none;cursor:pointer;font-size:14px;color:var(--ink);display:flex;align-items:center;justify-content:center;}
-.cart-qty-btn:hover{background:var(--gold-pale);}
-.cart-qty-num{width:28px;text-align:center;font-size:13px;color:var(--ink);}
-.cart-line-remove{background:none;border:none;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;text-decoration:underline;}
-.cart-line-remove:hover{color:#B52626;}
-.cart-drawer-footer{padding:22px 24px 26px;border-top:1px solid var(--line);background:var(--cream);}
-.cart-subtotal-row{display:flex;justify-content:space-between;align-items:center;font-family:'Cinzel',serif;font-size:15px;color:var(--ink);margin-bottom:8px;}
-.cart-shipping-note{font-size:11.5px;color:var(--text-dim);margin-bottom:16px;}
-.cart-checkout-btn{width:100%;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px;border:none;border-radius:2px;cursor:pointer;transition:all .25s ease;}
-.cart-checkout-btn:hover{background:var(--gold);color:var(--ink);}
-.cart-checkout-btn:disabled{opacity:0.5;cursor:not-allowed;}
-
-.pc-qty-add{display:flex;gap:10px;width:100%;flex-wrap:wrap;}
-.pc-qty-stepper{display:flex;align-items:center;border:1px solid rgba(201,162,74,0.4);border-radius:20px;overflow:hidden;background:rgba(251,248,242,0.06);}
-.pc-qty-btn{width:32px;height:32px;background:transparent;border:none;cursor:pointer;font-size:15px;color:var(--gold-pale);}
-.pc-qty-btn:hover{background:rgba(201,162,74,0.2);}
-.pc-qty-val{width:26px;text-align:center;font-size:13px;color:var(--gold-pale);}
-.pc-add-btn{flex:1;min-width:130px;border:none;cursor:pointer;}
-.pc-add-btn.added{background:#4a7c4a !important;color:#fff !important;}
-
 /* ── HERO V2 (Cinematic split) ── */
 .hero{background:radial-gradient(ellipse 120% 70% at 50% -10%,rgba(197,162,74,0.16),transparent 60%),linear-gradient(180deg,var(--cream) 0%,var(--ivory) 100%);padding:70px 24px 0;overflow:hidden;}
 .hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
@@ -216,8 +170,6 @@ section{padding:100px 24px;}
 .pc-mocha .pc-btn-fill:hover{background:#6B3A14;color:#fff;}
 .pc-matcha .pc-btn-fill{background:#2D4A2D;color:#C8E6C9;}
 .pc-matcha .pc-btn-fill:hover{background:#3E6B3E;color:#fff;}
-.pc-velvet .pc-btn-fill{background:#3A1A5C;color:#D4B8F0;}
-.pc-velvet .pc-btn-fill:hover{background:#5C2A8A;color:#fff;}
 .pc-rubybeet .pc-btn-fill{background:#7A1E3D;color:#F0D4DE;}
 .pc-rubybeet .pc-btn-fill:hover{background:#A32A52;color:#fff;}
 .pc-turmeric .pc-btn-fill{background:#C9A24A;color:#2A2118;}
@@ -231,9 +183,6 @@ section{padding:100px 24px;}
 .pc-btn-outline{background:transparent;color:rgba(232,217,181,0.75);border:1px solid rgba(201,162,74,0.4);}
 .pc-btn-outline:hover{border-color:var(--gold-bright);color:var(--gold-bright);}
 .pc-btn-disabled{background:rgba(232,217,181,0.08);color:rgba(232,217,181,0.35);border:1px solid rgba(201,162,74,0.15);cursor:not-allowed;flex:1;text-align:center;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;padding:13px 18px;border-radius:2px;min-width:120px;}
-.pc-velvet{grid-column:1/-1;}
-.pc-velvet .pc-photo{aspect-ratio:16/7;}
-.pc-buybutton-wrap{flex:1;min-width:140px;}
 
 /* ── TRUST / SOCIAL PROOF ── */
 .trust-section{background:var(--cream);}
@@ -460,12 +409,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <a href="#contact">Contact</a>
       <a href="https://wa.me/61470442705" class="nav-cta">Order Now</a>
     </div>
-    <div class="cart-icon-wrap">
-      <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Open cart">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-        <span class="cart-count-badge hidden" id="cartCount">0</span>
-      </button>
-    </div>
     <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
@@ -602,9 +545,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     </div>
     <div class="lore-panel active" id="lorepanel-latte">
       <div class="lore-cards">
-        <div class="lore-card"><div class="lore-card-title">The 60-Second Ritual</div><div class="lore-card-text">If your Golden Latte completely dissolves, you aren&rsquo;t drinking real spices — you are drinking chemical extracts. Because Wise King uses <strong>100% raw, unadulterated botanicals</strong>, they naturally settle after a minute or two. This is not a flaw, it is a feature. Those 60 seconds are when the heat of the milk unlocks the active curcumin and draws out the raw power of pure saffron threads.</div></div>
+        <div class="lore-card"><div class="lore-card-title">The 60-Second Ritual</div><div class="lore-card-text">If your Golden Latte completely dissolves, you aren&rsquo;t drinking real spices — you are drinking chemical extracts. Because Wise King uses <strong>100% raw, unadulterated botanicals</strong>, they naturally settle after a minute or two. This is not a flaw, it is a feature. Those 60 seconds are when the heat of the milk draws out the full colour and aroma of the turmeric and pure saffron threads. Give your cup a slow, gentle swirl as you drink.</div></div>
         <div class="lore-card"><div class="lore-card-title">Saffron Inside — Rarer Than Gold</div><div class="lore-card-text">Look closely and you&rsquo;ll see the physical, deep-crimson threads of <strong>real saffron</strong> — the world&rsquo;s most expensive spice, hand-harvested from the heart of the Crocus flower. We leave the threads whole so you can witness the raw luxury swirling in your cup, infusing every sip with gold.</div></div>
-        <div class="lore-card"><div class="lore-card-title">The Queen of Spices Meets the Double-Benefit Catalyst</div><div class="lore-card-text">At its heart is vibrant turmeric, paired deliberately with cracked black pepper — because a pinch of black pepper <strong>multiplies your body&rsquo;s ability to absorb turmeric&rsquo;s benefits by up to 2,000%</strong>. We wrap this in the aromatic luxury of green cardamom for a sweet, warm depth without a single gram of sugar.</div></div>
+        <div class="lore-card"><div class="lore-card-title">A Traditional Pairing</div><div class="lore-card-text">At its heart is vibrant turmeric, paired deliberately with cracked black pepper — a combination rooted in generations of South Asian cooking. We wrap this in the aromatic luxury of green cardamom for a sweet, warm depth without a single gram of sugar.</div></div>
         <div class="lore-card"><div class="lore-card-title">No Shortcuts, No Fillers</div><div class="lore-card-text">Six hand-selected botanicals. Nothing else. No maltodextrin, no anti-caking agents, no artificial colour to fake the gold you should be tasting. Every gram of every batch is weighed, blended, and packed <strong>entirely by hand</strong> in Geelong — to a standard that simply does not bend.</div></div>
       </div>
     </div>
@@ -628,11 +571,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <div class="lore-cards">
         <div class="lore-card">
           <div class="lore-card-title">The Friction Test</div>
-          <div class="lore-card-text">Rub a pinch of our matcha between your fingers. It will <strong>completely disappear into your skin like silk</strong>, leaving no grain behind. That is the texture of true stone-milled luxury, and it is the fastest way to tell real ceremonial matcha from the rest. Most powders leave grit. Ours leaves nothing but vivid green.</div>
+          <div class="lore-card-text">Rub a pinch of our matcha between your fingers. It will <strong>completely disappear into your skin like silk</strong>, leaving no grain behind. That is the texture of true stone-milled quality, and it is the fastest way to tell real ceremonial matcha from the rest. Most powders leave grit. Ours leaves nothing but vivid green.</div>
         </div>
         <div class="lore-card">
-          <div class="lore-card-title">Uji, Kyoto — 350 Years of Mastery</div>
-          <div class="lore-card-text">Our matcha comes from <strong>Yamasan Co., Uji City, Kyoto</strong> — the most prestigious matcha-growing region in Japan, with over 800 years of cultivation history. Produced in collaboration with local tea masters on a <strong>350-year-old protected tea plantation</strong>, blessed with the ideal climate, soil, and altitude for ceremonial-grade tea. Not just Japanese matcha. Uji matcha — the origin that defines the standard.</div>
+          <div class="lore-card-title">Uji, Kyoto — 350 Years of Cultivation</div>
+          <div class="lore-card-text">Our matcha comes from <strong>Yamasan Co., Uji City, Kyoto</strong> — the most prestigious matcha-growing region in Japan, with over 800 years of cultivation history. Produced on a <strong>350-year-old protected tea plantation</strong>, blessed with the ideal climate, soil, and altitude for ceremonial-grade tea. Not just Japanese matcha. Uji matcha — the origin that defines the standard.</div>
         </div>
         <div class="lore-card">
           <div class="lore-card-title">Lab-Tested. Certified Clean.</div>
@@ -1024,36 +967,15 @@ revealEls.forEach(el=>obs.observe(el));
 </script>
 
 <!-- ══════════════════════════════════════════════════════════ -->
-<!-- WISE KING ENGINE — Products + Cart, built on Shopify's      -->
-<!-- current, supported Storefront Cart API.                     -->
-<!--                                                                -->
-<!-- TO ADD A NEW PRODUCT: add ONE object to PRODUCTS_CONFIG below. -->
+<!-- WISE KING PRODUCT ENGINE — Square Payment Links.             -->
+<!-- Each product's "Buy Now" opens its own Square checkout page  -->
+<!-- in a new tab. To add a new product: add ONE object below.    -->
 <!-- ══════════════════════════════════════════════════════════ -->
-<div id="cartOverlay" class="cart-overlay"></div>
-<aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
-  <div class="cart-drawer-header">
-    <span class="cart-drawer-title">Your Cart</span>
-    <button id="cartCloseBtn" class="cart-close-btn" aria-label="Close cart">&times;</button>
-  </div>
-  <div id="cartLines" class="cart-lines">
-    <div class="cart-empty">Your cart is empty.</div>
-  </div>
-  <div class="cart-drawer-footer">
-    <div class="cart-subtotal-row"><span>Subtotal</span><span id="cartSubtotal">$0.00</span></div>
-    <p class="cart-shipping-note">Free shipping Australia-wide on orders over $49.99</p>
-    <button id="cartCheckoutBtn" class="cart-checkout-btn" disabled>Checkout</button>
-  </div>
-</aside>
-
 <script>
-/* ─────────────────────────────────────────────
-   1. PRODUCT CATALOGUE — single source of truth.
-   Add / edit products here only.
-───────────────────────────────────────────── */
 const PRODUCTS_CONFIG = [
   {
     key: 'latte',
-    productId: '10491198406837',
+    squareLink: 'https://square.link/u/QPeIS3B5',
     name: 'Golden Saffron Latte',
     tagline: '"Saffron inside — rarer than gold, in every batch."',
     price: 24.99,
@@ -1070,7 +992,7 @@ const PRODUCTS_CONFIG = [
   },
   {
     key: 'curry',
-    productId: '10491200110773',
+    squareLink: 'https://square.link/u/nI9EEuG6',
     name: 'Curry Coast Rub',
     tagline: '"Twelve spices. Like the Twelve Apostles — each one essential."',
     price: 12.99,
@@ -1087,7 +1009,7 @@ const PRODUCTS_CONFIG = [
   },
   {
     key: 'mocha',
-    productId: '10491203256501',
+    squareLink: 'https://square.link/u/789Zzm23',
     name: 'Café Mocha Blend',
     tagline: '"Premium coffee meets dark cocoa — no sugar, no shortcuts."',
     price: 15.99,
@@ -1104,33 +1026,34 @@ const PRODUCTS_CONFIG = [
   },
   {
     key: 'matcha',
-    productId: 'REPLACE-WITH-SHOPIFY-MATCHA-ID',
+    squareLink: 'https://square.link/u/IuYLeILH',
     name: 'Ceremonial Matcha',
     tagline: '"Stone-milled in Japan — the birthplace of matcha."',
     price: 39.99,
     weight: '30g',
     weightLabel: '/ 30g pouch',
     image: 'NewMatcha.jpg',
-    badge: 'Back in Stock',
+    badge: 'Sold Out — Waitlist Open',
+    badgeClass: 'sold-out-badge',
     ingredientPill: '✦ Uji, Kyoto Matcha',
     tags: ['Uji, Kyoto', 'JAS Organic', 'Lab Tested', 'Vegan &amp; GF'],
-    cardClass: 'pc-matcha',
-    whatsappText: 'Hi Piyush, I want to order the Ceremonial Matcha please.',
+    cardClass: 'pc-matcha sold-out',
     ritualKey: 'matcha',
-    soldOut: false
+    soldOut: true,
+    notifyEmailSubject: 'Waitlist%20-%20Ceremonial%20Matcha'
   },
   {
     key: 'rubybeet',
-    productId: 'REPLACE-WITH-SHOPIFY-RUBYBEET-ID',
+    squareLink: 'https://square.link/u/ZYCcwU22',
     name: 'Ruby Beet Latte',
     tagline: '"Earth\'s ruby jewel — beetroot, warmed by ginger and cardamom."',
     price: 14.99,
-    weight: '45g',
-    weightLabel: '/ 45g jar',
+    weight: '50g',
+    weightLabel: '/ 50g pouch',
     image: 'rblattep.png',
     badge: 'New',
     ingredientPill: '✦ Real Beetroot',
-    tags: ['No Caffeine', 'No Added Sugar', 'Handmade'],
+    tags: ['Plant-Based', 'No Added Sugar', 'Handmade'],
     cardClass: 'pc-rubybeet',
     whatsappText: 'Hi Piyush, I want to order the Ruby Beet Latte please.',
     ritualKey: 'rubybeet',
@@ -1138,7 +1061,7 @@ const PRODUCTS_CONFIG = [
   },
   {
     key: 'turmeric',
-    productId: 'REPLACE-WITH-SHOPIFY-TURMERIC-ID',
+    squareLink: 'https://square.link/u/RswrEFdS',
     name: 'Organic Turmeric Powder',
     tagline: '"Pure turmeric. Nothing else. Golden, earthy, unfiltered."',
     price: 11.99,
@@ -1155,7 +1078,7 @@ const PRODUCTS_CONFIG = [
   },
   {
     key: 'spinach',
-    productId: 'REPLACE-WITH-SHOPIFY-SPINACH-ID',
+    squareLink: 'https://square.link/u/jGgkRuBh',
     name: 'Organic Spinach Powder',
     tagline: '"Concentrated greens, stripped back to one ingredient."',
     price: 11.99,
@@ -1172,7 +1095,7 @@ const PRODUCTS_CONFIG = [
   },
   {
     key: 'beetroot',
-    productId: 'REPLACE-WITH-SHOPIFY-BEETROOT-ID',
+    squareLink: 'https://square.link/u/xUXpgzuJ',
     name: 'Organic Beetroot Powder',
     tagline: '"Vivid, earthy beetroot — nothing added, nothing hidden."',
     price: 11.99,
@@ -1189,7 +1112,7 @@ const PRODUCTS_CONFIG = [
   },
   {
     key: 'curryonthego',
-    productId: 'REPLACE-WITH-SHOPIFY-CURRYONTHEGO-ID',
+    squareLink: 'https://square.link/u/HdjMZT2h',
     name: 'The Curry (On The Go)',
     tagline: '"One jar, every curry — just add water and fry."',
     price: 13.99,
@@ -1197,8 +1120,8 @@ const PRODUCTS_CONFIG = [
     weightLabel: '/ 120g bag',
     image: 'thecurryp.JPG',
     badge: 'New',
-    ingredientPill: '✦ 12 Whole Spices',
-    tags: ['No Salt Added', '12 Spices', 'Handmade'],
+    ingredientPill: '✦ 10 Whole Spices',
+    tags: ['No Salt Added', '10 Spices', 'Handmade'],
     cardClass: 'pc-curryonthego',
     whatsappText: 'Hi Piyush, I want to order The Curry (On The Go) please.',
     ritualKey: 'curryonthego',
@@ -1206,266 +1129,17 @@ const PRODUCTS_CONFIG = [
   }
 ];
 
-/* ─────────────────────────────────────────────
-   2. SHOPIFY STOREFRONT CART API CONFIG
-───────────────────────────────────────────── */
-const SHOP_DOMAIN = 'hmfrhb-nb.myshopify.com';
-const STOREFRONT_TOKEN = '3d4441b139fbd67f3300852feab77068';
-const API_VERSION = '2025-10';
-const GRAPHQL_URL = `https://${SHOP_DOMAIN}/api/${API_VERSION}/graphql.json`;
-
-async function shopifyFetch(query, variables) {
-  try {
-    const res = await fetch(GRAPHQL_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Shopify-Storefront-Access-Token': STOREFRONT_TOKEN
-      },
-      body: JSON.stringify({ query, variables })
-    });
-    const json = await res.json();
-    if (json.errors) { console.error('Shopify GraphQL error:', json.errors); return null; }
-    return json.data;
-  } catch (err) {
-    console.error('Shopify fetch failed:', err);
-    return null;
-  }
-}
-
-const CART_FIELDS = `
-  id
-  checkoutUrl
-  cost { subtotalAmount { amount currencyCode } }
-  lines(first: 50) {
-    edges {
-      node {
-        id
-        quantity
-        merchandise {
-          ... on ProductVariant {
-            id
-            title
-            price { amount currencyCode }
-            image { url }
-            product { title }
-          }
-        }
-      }
-    }
-  }
-`;
-
-/* ─────────────────────────────────────────────
-   3. VARIANT RESOLUTION
-───────────────────────────────────────────── */
-const variantCache = {};
-
-async function resolveVariantId(productId) {
-  if (!productId || productId.startsWith('REPLACE-')) return null;
-  if (variantCache[productId]) return variantCache[productId];
-  const query = `
-    query getVariant($id: ID!) {
-      product(id: $id) {
-        variants(first: 1) { edges { node { id } } }
-      }
-    }`;
-  const data = await shopifyFetch(query, { id: `gid://shopify/Product/${productId}` });
-  const variantId = data?.product?.variants?.edges?.[0]?.node?.id || null;
-  if (variantId) variantCache[productId] = variantId;
-  return variantId;
-}
-
-async function prefetchAllVariants() {
-  await Promise.all(
-    PRODUCTS_CONFIG.filter(p => !p.soldOut && p.productId).map(p => resolveVariantId(p.productId))
-  );
-}
-
-/* ─────────────────────────────────────────────
-   4. CART STATE
-───────────────────────────────────────────── */
-let currentCart = null;
-
-function getSavedCartId() {
-  try { return localStorage.getItem('wke_cart_id'); } catch (e) { return null; }
-}
-function saveCartId(id) {
-  try { localStorage.setItem('wke_cart_id', id); } catch (e) {}
-}
-
-async function loadExistingCart() {
-  const cartId = getSavedCartId();
-  if (!cartId) return;
-  const query = `query getCart($id: ID!) { cart(id: $id) { ${CART_FIELDS} } }`;
-  const data = await shopifyFetch(query, { id: cartId });
-  if (data?.cart) {
-    currentCart = data.cart;
-    renderCart();
-  } else {
-    try { localStorage.removeItem('wke_cart_id'); } catch (e) {}
-  }
-}
-
-async function createCartWithLine(variantId, quantity) {
-  const mutation = `
-    mutation cartCreate($lines: [CartLineInput!]) {
-      cartCreate(input: { lines: $lines }) {
-        cart { ${CART_FIELDS} }
-        userErrors { field message }
-      }
-    }`;
-  const data = await shopifyFetch(mutation, { lines: [{ merchandiseId: variantId, quantity }] });
-  const result = data?.cartCreate;
-  if (result?.userErrors?.length) { console.error(result.userErrors); return; }
-  if (result?.cart) {
-    currentCart = result.cart;
-    saveCartId(currentCart.id);
-    renderCart();
-  }
-}
-
-async function addLineToCart(variantId, quantity) {
-  if (!currentCart) { await createCartWithLine(variantId, quantity); return; }
-  const mutation = `
-    mutation cartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!) {
-      cartLinesAdd(cartId: $cartId, lines: $lines) {
-        cart { ${CART_FIELDS} }
-        userErrors { field message }
-      }
-    }`;
-  const data = await shopifyFetch(mutation, { cartId: currentCart.id, lines: [{ merchandiseId: variantId, quantity }] });
-  const result = data?.cartLinesAdd;
-  if (result?.userErrors?.length) { console.error(result.userErrors); return; }
-  if (result?.cart) { currentCart = result.cart; renderCart(); }
-}
-
-async function updateLineQuantity(lineId, quantity) {
-  if (!currentCart) return;
-  if (quantity <= 0) { await removeLine(lineId); return; }
-  const mutation = `
-    mutation cartLinesUpdate($cartId: ID!, $lines: [CartLineUpdateInput!]!) {
-      cartLinesUpdate(cartId: $cartId, lines: $lines) {
-        cart { ${CART_FIELDS} }
-        userErrors { field message }
-      }
-    }`;
-  const data = await shopifyFetch(mutation, { cartId: currentCart.id, lines: [{ id: lineId, quantity }] });
-  const result = data?.cartLinesUpdate;
-  if (result?.userErrors?.length) { console.error(result.userErrors); return; }
-  if (result?.cart) { currentCart = result.cart; renderCart(); }
-}
-
-async function removeLine(lineId) {
-  if (!currentCart) return;
-  const mutation = `
-    mutation cartLinesRemove($cartId: ID!, $lineIds: [ID!]!) {
-      cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
-        cart { ${CART_FIELDS} }
-        userErrors { field message }
-      }
-    }`;
-  const data = await shopifyFetch(mutation, { cartId: currentCart.id, lineIds: [lineId] });
-  const result = data?.cartLinesRemove;
-  if (result?.userErrors?.length) { console.error(result.userErrors); return; }
-  if (result?.cart) { currentCart = result.cart; renderCart(); }
-}
-
-/* ─────────────────────────────────────────────
-   5. RENDERING — cart drawer + nav badge
-───────────────────────────────────────────── */
 function formatMoney(amount) {
   return '$' + parseFloat(amount).toFixed(2);
 }
 
-function renderCart() {
-  const linesEl = document.getElementById('cartLines');
-  const subtotalEl = document.getElementById('cartSubtotal');
-  const countEl = document.getElementById('cartCount');
-  const checkoutBtn = document.getElementById('cartCheckoutBtn');
-  const edges = currentCart?.lines?.edges || [];
-
-  if (!currentCart || edges.length === 0) {
-    linesEl.innerHTML = '<div class="cart-empty">Your cart is empty.</div>';
-    subtotalEl.textContent = formatMoney(0);
-    countEl.textContent = '0';
-    countEl.classList.add('hidden');
-    checkoutBtn.disabled = true;
-    return;
-  }
-
-  let totalQty = 0;
-  linesEl.innerHTML = edges.map(({ node }) => {
-    totalQty += node.quantity;
-    const m = node.merchandise;
-    const img = m.image?.url || '';
-    return `
-      <div class="cart-line" data-line-id="${node.id}">
-        ${img ? `<img class="cart-line-img" src="${img}" alt="${m.product.title}">` : `<div class="cart-line-img"></div>`}
-        <div class="cart-line-info">
-          <div class="cart-line-title">${m.product.title}</div>
-          <div class="cart-line-price">${formatMoney(m.price.amount)}</div>
-          <div class="cart-line-controls">
-            <div class="cart-qty-stepper">
-              <button class="cart-qty-btn" data-line-action="dec" data-line-id="${node.id}" data-qty="${node.quantity}">−</button>
-              <span class="cart-qty-num">${node.quantity}</span>
-              <button class="cart-qty-btn" data-line-action="inc" data-line-id="${node.id}" data-qty="${node.quantity}">+</button>
-            </div>
-            <button class="cart-line-remove" data-line-action="remove" data-line-id="${node.id}">Remove</button>
-          </div>
-        </div>
-      </div>`;
-  }).join('');
-
-  subtotalEl.textContent = formatMoney(currentCart.cost.subtotalAmount.amount);
-  countEl.textContent = totalQty;
-  countEl.classList.remove('hidden');
-  checkoutBtn.disabled = false;
-}
-
-document.getElementById('cartLines').addEventListener('click', (e) => {
-  const btn = e.target.closest('[data-line-action]');
-  if (!btn) return;
-  const lineId = btn.dataset.lineId;
-  const action = btn.dataset.lineAction;
-  if (action === 'inc') updateLineQuantity(lineId, parseInt(btn.dataset.qty) + 1);
-  if (action === 'dec') updateLineQuantity(lineId, parseInt(btn.dataset.qty) - 1);
-  if (action === 'remove') removeLine(lineId);
-});
-
-/* ─────────────────────────────────────────────
-   6. CART DRAWER OPEN / CLOSE
-───────────────────────────────────────────── */
-const cartDrawer = document.getElementById('cartDrawer');
-const cartOverlay = document.getElementById('cartOverlay');
-
-function openCart() {
-  cartDrawer.classList.add('open');
-  cartOverlay.classList.add('open');
-  cartDrawer.setAttribute('aria-hidden', 'false');
-}
-function closeCart() {
-  cartDrawer.classList.remove('open');
-  cartOverlay.classList.remove('open');
-  cartDrawer.setAttribute('aria-hidden', 'true');
-}
-document.getElementById('cartToggleBtn').addEventListener('click', openCart);
-document.getElementById('cartCloseBtn').addEventListener('click', closeCart);
-cartOverlay.addEventListener('click', closeCart);
-document.getElementById('cartCheckoutBtn').addEventListener('click', () => {
-  if (currentCart?.checkoutUrl) window.location.href = currentCart.checkoutUrl;
-});
-
-/* ─────────────────────────────────────────────
-   7. PRODUCT CARD RENDERING (data-driven)
-───────────────────────────────────────────── */
 function renderProductCard(p) {
   if (p.soldOut) {
     return `
-      <div class="product-card ${p.cardClass} sold-out reveal">
+      <div class="product-card ${p.cardClass} reveal">
         <div class="pc-photo">
           <img src="${p.image}" alt="Wise King ${p.name} — real product">
-          <span class="pc-badge sold-out-badge">${p.badge}</span>
+          <span class="pc-badge ${p.badgeClass || ''}">${p.badge}</span>
           <span class="pc-weight-pill">${p.weight}</span>
           <span class="pc-ingredient-pill">${p.ingredientPill}</span>
         </div>
@@ -1479,7 +1153,7 @@ function renderProductCard(p) {
           <div class="pc-tags">${p.tags.map(t => `<span class="pc-tag">${t}</span>`).join('')}</div>
           <div class="pc-actions">
             <span class="pc-btn-disabled">Currently Unavailable</span>
-            <a href="mailto:piyush@wiseking.com.au?subject=${p.notifyEmailSubject || 'Notify%20Me'}" class="pc-btn pc-btn-outline">Notify Me When Back</a>
+            <a href="mailto:piyush@wiseking.com.au?subject=${p.notifyEmailSubject || 'Notify%20Me'}" class="pc-btn pc-btn-outline">Join Waitlist</a>
             <a href="product.html?p=${p.key}" class="pc-btn pc-btn-outline">Ingredients &amp; Ritual</a>
           </div>
         </div>
@@ -1502,14 +1176,7 @@ function renderProductCard(p) {
         </div>
         <div class="pc-tags">${p.tags.map(t => `<span class="pc-tag">${t}</span>`).join('')}</div>
         <div class="pc-actions">
-          <div class="pc-qty-add">
-            <div class="pc-qty-stepper">
-              <button class="pc-qty-btn" data-qty-action="dec" data-key="${p.key}">−</button>
-              <span class="pc-qty-val" id="qty-${p.key}">1</span>
-              <button class="pc-qty-btn" data-qty-action="inc" data-key="${p.key}">+</button>
-            </div>
-            <button class="pc-btn pc-btn-fill pc-add-btn" data-add-key="${p.key}">Add to Cart</button>
-          </div>
+          <a href="${p.squareLink}" target="_blank" rel="noopener" class="pc-btn pc-btn-fill">Buy Now</a>
           <a href="https://wa.me/61470442705?text=${encodeURIComponent(p.whatsappText)}" class="pc-btn pc-btn-outline">WhatsApp Order</a>
           <a href="product.html?p=${p.key}" class="pc-btn pc-btn-outline">Ingredients &amp; Ritual</a>
         </div>
@@ -1520,60 +1187,14 @@ function renderProductCard(p) {
 function renderAllProductCards() {
   const grid = document.getElementById('productsGrid');
   grid.innerHTML = PRODUCTS_CONFIG.map(renderProductCard).join('');
-
   document.querySelectorAll('#productsGrid .reveal').forEach(el => revealObserver.observe(el));
-
-  grid.querySelectorAll('[data-qty-action]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const key = btn.dataset.key;
-      const valEl = document.getElementById(`qty-${key}`);
-      let val = parseInt(valEl.textContent);
-      if (btn.dataset.qtyAction === 'inc') val += 1;
-      if (btn.dataset.qtyAction === 'dec') val = Math.max(1, val - 1);
-      valEl.textContent = val;
-    });
-  });
-
-  grid.querySelectorAll('[data-add-key]').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const key = btn.dataset.addKey;
-      const product = PRODUCTS_CONFIG.find(p => p.key === key);
-      if (!product) return;
-      const qty = parseInt(document.getElementById(`qty-${key}`).textContent) || 1;
-      const originalText = btn.textContent;
-      btn.textContent = 'Adding…';
-      btn.disabled = true;
-      const variantId = await resolveVariantId(product.productId);
-      if (!variantId) {
-        btn.textContent = 'Unavailable';
-        setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 1800);
-        return;
-      }
-      await addLineToCart(variantId, qty);
-      btn.textContent = 'Added ✓';
-      btn.classList.add('added');
-      document.getElementById(`qty-${key}`).textContent = '1';
-      setTimeout(() => { btn.textContent = originalText; btn.classList.remove('added'); btn.disabled = false; }, 1400);
-      openCart();
-    });
-  });
 }
 
-/* ─────────────────────────────────────────────
-   8. REVEAL-ON-SCROLL OBSERVER
-───────────────────────────────────────────── */
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
 }, { threshold: 0.12 });
 
-/* ─────────────────────────────────────────────
-   9. INIT
-───────────────────────────────────────────── */
-(async function initWiseKingEngine() {
-  renderAllProductCards();
-  prefetchAllVariants();
-  await loadExistingCart();
-})();
+renderAllProductCards();
 </script>
 
 </body>
