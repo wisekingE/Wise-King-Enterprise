@@ -430,6 +430,27 @@ footer{background:var(--ink);color:rgba(251,248,242,0.6);padding:64px 24px 28px;
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.in{opacity:1;transform:translateY(0);}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+/* ── COMPACT MOBILE PRODUCT CARDS — see 2-3 products per screen ── */
+@media(max-width:640px){
+  .product-card{flex-direction:row;}
+  .pc-photo{width:110px;min-width:110px;aspect-ratio:1/1;}
+  .pc-tagline{display:none;}
+  .pc-tags{display:none;}
+  .pc-ingredient-pill{display:none;}
+  .pc-info{padding:12px 14px;}
+  .pc-name{font-size:14px;margin-bottom:2px;line-height:1.15;}
+  .pc-price-row{margin-bottom:8px;gap:8px;}
+  .pc-price{font-size:17px;}
+  .pc-weight-label{font-size:9.5px;}
+  .pc-weight-pill{top:8px;right:8px;font-size:9px;padding:3px 8px;}
+  .pc-badge{top:8px;left:8px;font-size:8.5px;padding:3px 8px;}
+  .pc-actions{gap:6px;}
+  .pc-qty-add{gap:6px;}
+  .pc-qty-stepper{transform:scale(0.88);transform-origin:left center;}
+  .pc-add-btn{font-size:10px;padding:8px 10px;min-width:0;}
+  .pc-actions > a.pc-btn-outline{flex:none;padding:4px 2px;font-size:9px;border:none;text-decoration:underline;background:transparent;color:var(--gold-pale);min-width:0;}
+}
 </style>
 </head>
 <body>
@@ -1108,8 +1129,8 @@ const PRODUCTS_CONFIG = [
     name: 'Ruby Beet Latte',
     tagline: '"Earth\'s ruby jewel — beetroot, warmed by ginger and cardamom."',
     price: 14.99,
-    weight: '50g',
-    weightLabel: '/ 50g pouch',
+    weight: '45g',
+    weightLabel: '/ 45g jar, 15 serves',
     image: 'rblattep.png',
     badge: 'New',
     ingredientPill: '✦ Real Beetroot',
@@ -1172,8 +1193,8 @@ const PRODUCTS_CONFIG = [
     weightLabel: '/ 120g bag',
     image: 'thecurryp.JPG',
     badge: 'New',
-    ingredientPill: '✦ 10 Whole Spices',
-    tags: ['No Salt Added', '10 Spices', 'Handmade'],
+    ingredientPill: '✦ 12 Whole Spices',
+    tags: ['No Salt Added', '12 Spices', 'Handmade'],
     cardClass: 'pc-curryonthego',
     whatsappText: 'Hi Piyush, I want to order The Curry (On The Go) please.',
     soldOut: false
