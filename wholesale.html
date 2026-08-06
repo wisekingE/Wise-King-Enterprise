@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wholesale | Wise King Enterprise</title>
-  <meta name="description" content="Stock Wise King Enterprise — bulk 1kg bags, shelf-ready labels, flexible minimums for cafés, health food stores, and specialty grocers.">
+<meta name="description" content="Stock Wise King Enterprise — bulk 1kg bags, shelf-ready labels, flexible minimums for cafés, health food stores, and specialty grocers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- Google tag (gtag.js) -->
@@ -103,15 +103,24 @@ section{padding:90px 24px;}
 .why-title{font-family:'Cinzel',serif;font-size:13.5px;color:var(--ink);margin-bottom:10px;font-weight:600;}
 .why-text{font-size:12.5px;color:var(--text-dim);line-height:1.7;}
 
-/* FINAL CTA */
-.final-cta{background:linear-gradient(165deg,var(--gold-pale) 0%,var(--cream) 100%);text-align:center;}
-.final-cta-box{max-width:640px;margin:0 auto;border:1px solid var(--gold);border-radius:10px;padding:56px 40px;background:var(--paper);}
-.final-cta-title{font-family:'Cinzel Decorative',serif;font-size:clamp(22px,3vw,30px);color:var(--ink);margin-bottom:16px;}
-.final-cta-text{font-size:14.5px;color:var(--ink-soft);line-height:1.8;margin-bottom:30px;font-weight:300;}
-.final-cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-.final-btn-fill{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px 30px;border-radius:2px;}
-.final-btn-fill:hover{background:var(--gold);color:var(--ink);}
-.final-btn-outline{font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:transparent;color:var(--ink-soft);border:1px solid var(--ink-soft);padding:16px 30px;border-radius:2px;}
+/* ENQUIRY FORM */
+.form-section{background:var(--cream);}
+.enquiry-box{max-width:640px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:44px;}
+.form-group{margin-bottom:20px;}
+.form-group label{display:block;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;font-weight:600;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:4px;font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);background:var(--paper);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:2px solid var(--gold-pale);border-color:var(--gold);}
+.form-group textarea{resize:vertical;min-height:100px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:560px){.form-row{grid-template-columns:1fr;}}
+.form-submit-btn{width:100%;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px;border:none;border-radius:2px;cursor:pointer;transition:all .25s ease;}
+.form-submit-btn:hover{background:var(--gold);color:var(--ink);}
+.form-note{font-size:12px;color:var(--text-dim);text-align:center;margin-top:16px;}
+.form-success{display:none;text-align:center;padding:40px 20px;}
+.form-success.show{display:block;}
+.form-success .ico{font-size:36px;margin-bottom:14px;}
+.form-success h4{font-family:'Cinzel',serif;font-size:16px;color:var(--ink);margin-bottom:8px;}
+.form-success p{font-size:13px;color:var(--text-dim);}
 
 .back-to-shop{background:var(--ivory);text-align:center;padding:50px 24px;}
 .back-to-shop a{display:inline-block;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);}
@@ -129,4 +138,224 @@ footer a{color:var(--gold-pale);}
   <div class="nav-inner">
     <a href="index.html" class="brand-mark">
       <img src="crown.png.PNG" alt="Wise King Enterprise crest" class="logo-img">
-      <span
+      <span class="brand-name">WISE KING</span>
+    </a>
+    <a href="index.html" class="back-link">← Back to Shop</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="ws-hero">
+  <div class="ws-hero-inner">
+    <div class="ws-hero-text">
+      <div class="ws-eyebrow">For Retailers &amp; Stockists</div>
+      <h1 class="ws-title">Stock the Full Collection</h1>
+      <p class="ws-sub">Cafés, health food stores, gift retailers, and specialty grocers — we supply direct, in bulk, with shelf-ready presentation. Real ingredients, honest pricing, no minimum you can't work with.</p>
+      <div class="ws-cta-row">
+        <a href="#enquiry" class="ws-btn-fill">Submit an Enquiry</a>
+        <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27m%20interested%20in%20stocking%20Wise%20King%20products." class="ws-btn-outline">WhatsApp Instead</a>
+      </div>
+    </div>
+    <div class="ws-hero-img">
+      <img src="wholesale logo.JPG" alt="Wise King Enterprise full product range">
+    </div>
+  </div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="ws-trust">
+  <div class="ws-trust-row">
+    <div class="ws-trust-item"><span class="tick">✓</span> Registered Class 3 Food Business</div>
+    <div class="ws-trust-item"><span class="tick">✓</span> HACCP-Sourced Ingredients</div>
+    <div class="ws-trust-item"><span class="tick">✓</span> Compliant Labels &amp; Best-Before Dating</div>
+    <div class="ws-trust-item"><span class="tick">✓</span> Hand-Blended, Small-Batch Quality</div>
+  </div>
+</div>
+
+<!-- BULK PRODUCTS -->
+<section class="bulk-section">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Bulk Wholesale</div>
+    <h2 class="sec-title">1kg Bags — For Cafés &amp; Foodservice</h2>
+    <p class="sec-sub">Priced for volume use behind the counter. These are unbranded bulk bags, not individually barcoded retail units — ideal for cafés and kitchens using the blend as an ingredient rather than reselling the pouch itself. Wholesale pricing is quoted directly — tap below and we'll send it straight to you.</p>
+    <div class="bulk-grid">
+      <div class="bulk-card">
+        <div class="bulk-photo"><img src="wslatte.JPG" alt="Golden Saffron Latte bulk"></div>
+        <div class="bulk-body">
+          <div class="bulk-name">Golden Saffron Latte</div>
+          <div class="bulk-size">1kg Bulk Bag</div>
+          <div class="bulk-note">Real saffron threads, six botanicals. Ideal for café latte programs.</div>
+          <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27d%20like%20wholesale%20pricing%20for%20the%20Golden%20Saffron%20Latte%20(1kg%20bag)." class="bulk-price-btn">See Wholesale Price</a>
+        </div>
+      </div>
+      <div class="bulk-card">
+        <div class="bulk-photo"><img src="wscurry.JPG" alt="Curry Coast Rub bulk"></div>
+        <div class="bulk-body">
+          <div class="bulk-name">Curry Coast Rub</div>
+          <div class="bulk-size">1kg Bulk Bag</div>
+          <div class="bulk-note">Twelve whole spices, no salt added. Built for kitchen use at scale.</div>
+          <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27d%20like%20wholesale%20pricing%20for%20the%20Curry%20Coast%20Rub%20(1kg%20bag)." class="bulk-price-btn">See Wholesale Price</a>
+        </div>
+      </div>
+      <div class="bulk-card">
+        <div class="bulk-photo"><img src="wsmocha.JPG" alt="Café Mocha Blend bulk"></div>
+        <div class="bulk-body">
+          <div class="bulk-name">Café Mocha Blend</div>
+          <div class="bulk-size">1kg Bulk Bag</div>
+          <div class="bulk-note">50% coffee, 50% Dutch-process cocoa. No sugar, no fillers.</div>
+          <a href="https://wa.me/61470442705?text=Hi%20Piyush%2C%20I%27d%20like%20wholesale%20pricing%20for%20the%20Cafe%20Mocha%20Blend%20(1kg%20bag)." class="bulk-price-btn">See Wholesale Price</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE PROOF -->
+<section class="sample-section">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Shelf-Ready, From Day One</div>
+    <h2 class="sec-title">Every Order Arrives Ready to Sell</h2>
+    <p class="sec-sub">Compliant labels, best-before dating, and clean presentation on every pouch — no repackaging or relabelling needed on your end.</p>
+    <div class="sample-grid">
+      <div class="sample-photo"><img src="wssample1.JPG" alt="Wise King sample pouch"></div>
+      <div class="sample-photo"><img src="wssample2.JPG" alt="Wise King sample pouch detail"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT BOX -->
+<section style="background:var(--paper);padding-top:0;">
+  <div class="sec-inner">
+    <div class="giftbox-banner">
+      <p>👑 Coming Soon: The Wise King Trove — Wholesale Gift Boxes</p>
+      <p>All blends in one presentation box — ideal for gift retailers and seasonal stockists. Ask us for early access when it launches.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY WHOLESALE -->
+<section class="why-section">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Why Stock With Us</div>
+    <h2 class="sec-title">Built for Small Retailers, Not Big Distributors</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">📦</div>
+        <div class="why-title">Flexible Minimums</div>
+        <div class="why-text">No minimum order that shuts out a first-time stockist. Tell us your volume and we'll work with it.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔄</div>
+        <div class="why-title">Reliable Restocking</div>
+        <div class="why-text">Small-batch production means consistent restocks — no supply gaps larger manufacturers often have.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💬</div>
+        <div class="why-title">A Real Person Replies</div>
+        <div class="why-text">Every enquiry gets answered directly by us — no call centre, no account manager rotation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHOLESALE ENQUIRY FORM -->
+<section class="form-section" id="enquiry">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Ready to Stock Wise King?</div>
+    <h2 class="sec-title">Submit a Wholesale Enquiry</h2>
+    <p class="sec-sub">Tell us about your business and what you're after — we'll reply with pricing and next steps, usually within a day.</p>
+    <div class="enquiry-box">
+      <div id="wholesaleFormVisible">
+        <form id="wholesaleForm" action="https://formspree.io/f/xwvzzzeg" method="POST">
+          <input type="hidden" name="form_type" value="Wholesale Enquiry">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ws-business">Business / Store Name</label>
+              <input type="text" id="ws-business" name="business_name" required>
+            </div>
+            <div class="form-group">
+              <label for="ws-contact">Your Name</label>
+              <input type="text" id="ws-contact" name="contact_name" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ws-email">Email</label>
+              <input type="email" id="ws-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="ws-phone">Phone</label>
+              <input type="tel" id="ws-phone" name="phone" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ws-type">Type of Business</label>
+            <select id="ws-type" name="business_type" required>
+              <option value="">Select an option</option>
+              <option>Café</option>
+              <option>Health Food Store</option>
+              <option>Gift Retailer</option>
+              <option>Specialty Grocer</option>
+              <option>Restaurant / Foodservice</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ws-products">Products Interested In</label>
+            <select id="ws-products" name="products_interested" required>
+              <option value="">Select an option</option>
+              <option>1kg Bulk Bags</option>
+              <option>Individually Barcoded Retail Pouches</option>
+              <option>Both</option>
+              <option>Not Sure Yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ws-volume">Estimated Monthly Volume (Optional)</label>
+            <input type="text" id="ws-volume" name="estimated_volume" placeholder="e.g. 5-10kg per month">
+          </div>
+          <div class="form-group">
+            <label for="ws-message">Tell Us More</label>
+            <textarea id="ws-message" name="message" placeholder="Anything else we should know — timeline, specific products, questions..."></textarea>
+          </div>
+          <button type="submit" class="form-submit-btn">Submit Enquiry</button>
+        </form>
+        <p class="form-note">Prefer to talk directly? <a href="https://wa.me/61470442705" style="color:var(--gold);font-weight:600;">Message us on WhatsApp</a> instead.</p>
+      </div>
+      <div class="form-success" id="wholesaleFormSuccess">
+        <div class="ico">👑</div>
+        <h4>Enquiry Received</h4>
+        <p>Thank you — we'll be in touch with pricing and next steps shortly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="back-to-shop">
+  <a href="index.html">← Back to Wise King</a>
+</div>
+
+<footer>
+  Wise King Enterprise &nbsp;·&nbsp; Geelong, Victoria &nbsp;·&nbsp;
+  <a href="https://wa.me/61470442705">WhatsApp Us</a>
+</footer>
+
+<script>
+const wholesaleForm = document.getElementById('wholesaleForm');
+wholesaleForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = new FormData(wholesaleForm);
+  fetch(wholesaleForm.action, { method:'POST', body:data, headers:{'Accept':'application/json'} })
+  .then(r=>{
+    if(r.ok){
+      document.getElementById('wholesaleFormVisible').style.display = 'none';
+      document.getElementById('wholesaleFormSuccess').classList.add('show');
+    } else {
+      alert('Something went wrong. Please try again or message us on WhatsApp.');
+    }
+  }).catch(()=>alert('Something went wrong. Please try again or message us on WhatsApp.'));
+});
+</script>
+
+</body>
+</html>
