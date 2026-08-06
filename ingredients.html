@@ -4,25 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wise King Enterprise | Ingredient Deep-Dives</title>
-  <meta name="description" content="The story and sourcing behind every ingredient in the Wise King collection — real photos, real spices, no filler descriptions.">
+<meta name="description" content="The story and sourcing behind every ingredient in the Wise King collection — real photos, real spices, no filler descriptions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1YXMYLHBH">
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1YXMYLHBH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-G1YXMYLHBH');
 </script>
-  <style>
+<style>
 :root{
   --ivory:#FBF8F2; --cream:#F4EEE0; --paper:#FFFFFF; --line:#E6DCC4;
   --ink:#2A2118; --ink-soft:#5C5142; --text-dim:#8A7D68;
   --gold:#B5893A; --gold-bright:#C9A24A; --gold-pale:#E8D9B5;
-  --theme:#8B5E1A; --theme-text:#E8D9B5;
+  --theme:#8B5E1A;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -47,32 +45,18 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,248,242,0.96);backdrop
 
 .product-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:0 24px 50px;max-width:1000px;margin:0 auto;}
 .product-tab{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--line);border-radius:24px;cursor:pointer;background:var(--paper);color:var(--ink-soft);transition:all .25s ease;font-weight:600;}
-.product-tab.active{background:var(--theme);color:var(--theme-text);border-color:var(--theme);}
+.product-tab.active{background:var(--theme);color:#fff;border-color:var(--theme);}
 
-.ing-wrap{max-width:1000px;margin:0 auto;padding:0 24px 100px;}
+.ing-wrap{max-width:1080px;margin:0 auto;padding:0 24px 100px;}
 
-/* PHOTO-CARD LAYOUT (used when the product has individual ingredient photos) */
-.photo-ing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-@media(max-width:760px){.photo-ing-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){.photo-ing-grid{grid-template-columns:1fr;}}
+.photo-ing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+@media(max-width:900px){.photo-ing-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:640px){.photo-ing-grid{grid-template-columns:repeat(2,1fr);}}
 .photo-ing-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
 .photo-ing-card img{width:100%;aspect-ratio:4/3;object-fit:cover;}
-.photo-ing-body{padding:20px;}
-.photo-ing-name{font-family:'Cinzel Decorative',serif;font-size:16px;color:var(--theme);margin-bottom:10px;}
-.photo-ing-text{font-size:13px;line-height:1.7;color:var(--ink-soft);font-weight:300;}
-
-/* STORY-CARD LAYOUT (used when the product's story is written but no individual photos yet) */
-.story-ing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
-@media(max-width:700px){.story-ing-grid{grid-template-columns:1fr;}}
-.story-ing-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:28px;}
-.story-ing-title{font-family:'Cinzel',serif;font-size:14px;color:var(--theme);margin-bottom:12px;font-weight:600;}
-.story-ing-text{font-size:13.5px;line-height:1.8;color:var(--ink-soft);font-weight:300;}
-.story-ing-text strong{color:var(--ink);font-weight:600;}
-
-.coming-soon-panel{text-align:center;padding:70px 24px;background:var(--paper);border:1px dashed var(--gold-pale);border-radius:12px;}
-.coming-soon-panel .cs-icon{font-size:28px;margin-bottom:16px;}
-.coming-soon-panel h3{font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--ink);margin-bottom:10px;}
-.coming-soon-panel p{font-size:13.5px;color:var(--text-dim);max-width:420px;margin:0 auto;}
+.photo-ing-body{padding:18px;}
+.photo-ing-name{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--theme);margin-bottom:8px;}
+.photo-ing-text{font-size:12.5px;line-height:1.65;color:var(--ink-soft);font-weight:300;}
 
 .back-to-shop{background:var(--cream);text-align:center;padding:60px 24px;}
 .back-to-shop a{display:inline-block;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;background:var(--ink);color:var(--gold-pale);padding:16px 34px;border-radius:2px;}
@@ -99,7 +83,7 @@ footer a{color:var(--gold-pale);}
 <div class="ig-hero">
   <div class="ig-eyebrow">The Royal Journal</div>
   <h1 class="ig-title">Ingredient Deep-Dives</h1>
-  <p class="ig-sub">The story and sourcing behind every ingredient in the collection — why we chose it, and why it matters.</p>
+  <p class="ig-sub">Every ingredient in the collection, shown exactly as it goes into the jar — no stock photos, no filler descriptions.</p>
 </div>
 
 <div class="product-tabs" id="productTabs"></div>
@@ -121,73 +105,105 @@ const INGREDIENTS_CONFIG = [
     key: 'latte',
     name: 'Golden Saffron Latte',
     theme: '#8B5E1A',
-    themeText: '#E8D9B5',
-    available: true,
-    mode: 'photo',
     items: [
-      {img:'turmeric.jpg.JPG', name:'Turmeric', text:'Rich in curcumin — supports joint health and is the golden base of the entire blend.'},
-      {img:'ginger.jpg.JPG', name:'Ginger', text:'Warms the body and aids digestion — the spice that gives the latte its gentle kick.'},
-      {img:'clove.jpg.JPG', name:'Clove', text:'A natural antioxidant powerhouse, adding warmth and a subtle depth to every cup.'},
-      {img:'cardamom.jpg.JPG', name:'Green Cardamom', text:'The Queen of Spices — brings a sweet, aromatic depth without a single gram of sugar.'},
-      {img:'black-pepper.jpg.JPG', name:'Black Pepper', text:'Multiplies turmeric\'s absorption by up to 2,000% — the catalyst that makes the blend work.'},
-      {img:'saffron.jpg.JPG', name:'Saffron', text:'The world\'s most expensive spice, hand-harvested — supports mood, focus, and a luxurious finish.'}
+      {img:'turmeric.jpg.JPG', name:'Turmeric', text:'The golden base of the entire blend, giving it colour and depth.'},
+      {img:'ginger.jpg.JPG', name:'Ginger', text:'Adds a gentle, warming spice to every cup.'},
+      {img:'clove.jpg.JPG', name:'Clove', text:'A warm, aromatic note in the background of the blend.'},
+      {img:'cardamom.jpg.JPG', name:'Green Cardamom', text:'Sweet, floral aroma — no sugar needed.'},
+      {img:'black-pepper.jpg.JPG', name:'Black Pepper', text:'A traditional pairing with turmeric, adding subtle heat.'},
+      {img:'saffron.jpg.JPG', name:'Saffron', text:'The world\'s most expensive spice, hand-harvested.'}
     ]
   },
   {
     key: 'curry',
     name: 'Curry Coast Rub',
     theme: '#8B1A1A',
-    themeText: '#fff',
-    available: true,
-    mode: 'story',
     items: [
-      {title:'Twelve Spices, Zero Compromise', text:'Most spice rubs are mostly salt and filler. Curry Coast Rub is the opposite: <strong>twelve whole spices, hand-balanced in even measure</strong>, with no salt added at all. Every spice earns its place — there is no padding, only flavour built layer by layer.'},
-      {title:'The Twelve Apostles Standard', text:'Named for the Twelve Apostles on the Great Ocean Road — twelve limestone stacks, each one essential, none replaceable. Our rub follows the same principle: <strong>twelve spices, each one essential</strong>. Remove one and the whole blend loses its shape.'},
-      {title:'Rest Before You Cook', text:'Rub generously into meat or vegetables, then rest for 10 minutes before grilling or roasting. In that resting time, the smoked paprika, Kashmiri chilli, and warm cardamom begin to bind to the surface — <strong>the difference between a coating and a crust</strong>.'},
-      {title:'Built for the Whole Kitchen', text:'This is not a one-trick blend. Curry Coast Rub works as a dry rub on the grill, stirred through a slow-cooked curry, or folded into a gravy. Twelve premium spices, <strong>hand-blended in Geelong</strong>, with no salt and no fillers.'}
+      {img:'Paprika.PNG', name:'Smoked Paprika', text:'Deep smoky base that carries the whole rub.'},
+      {img:'Kashmiri.PNG', name:'Kashmiri Chilli', text:'Mild heat with rich red colour.'},
+      {img:'Coriander.PNG', name:'Coriander', text:'Citrusy lift and classic curry backbone.'},
+      {img:'Garlic.PNG', name:'Garlic', text:'Savoury depth in every pinch.'},
+      {img:'Cumin.PNG', name:'Cumin', text:'Earthy warmth that defines the blend.'},
+      {img:'Onion.PNG', name:'Onion', text:'Sweet base note that rounds everything out.'},
+      {img:'black-pepper.jpg.JPG', name:'Black Pepper', text:'Sharp finish and aroma.'},
+      {img:'Oregano.PNG', name:'Oregano', text:'Herbaceous lift unique to this rub.'},
+      {img:'Cinnamon.PNG', name:'Cinnamon', text:'Warm sweetness without sugar.'},
+      {img:'cardamom.jpg.JPG', name:'Green Cardamom', text:'Floral aromatic complexity.'},
+      {img:'clove.jpg.JPG', name:'Clove', text:'Intense, slightly sweet spice note.'},
+      {img:'Nutmeg.PNG', name:'Nutmeg', text:'Subtle warmth that finishes the twelve.'}
     ]
   },
   {
     key: 'mocha',
     name: 'Café Mocha Blend',
     theme: '#3D2208',
-    themeText: '#E8D9B5',
-    available: true,
-    mode: 'story',
     items: [
-      {title:'Two Ingredients. No Argument.', text:'Most café mocha mixes are mostly sugar. Ours is the reverse: <strong>50% premium instant coffee, 50% dark Dutch-process cocoa</strong>. Nothing else. No sugar, no creamer powder, no flavour fillers pretending to be chocolate.'},
-      {title:'The Paste-First Method', text:'Real cocoa and real instant coffee don\'t dissolve instantly into cold milk. That\'s why the ritual matters: <strong>a splash of hot water first, stirred into a smooth paste</strong>, fully unlocks the dark cocoa before the milk goes in.'},
-      {title:'Dutch-Process, Deliberately', text:'We chose Dutch-process cocoa specifically for its <strong>smoother, less acidic, deeper flavour</strong>. Paired with a premium instant coffee, the result is closer to a café-bought mocha than anything you\'ll find in a supermarket sachet.'},
-      {title:'Hot or Iced — Built for Both', text:'A rich, warming mocha in winter, or stirred into cold milk and poured over ice in summer. <strong>One blend, year-round</strong> — sweetened only as much as you choose, never by us.'}
+      {img:'Coffee.PNG', name:'Premium Instant Coffee', text:'Clean, bold coffee base — 50% of the blend.'},
+      {img:'Cocoa.PNG', name:'Dutch-Process Cocoa', text:'Smooth, deep chocolate flavour with no bitterness.'}
     ]
   },
   {
     key: 'matcha',
     name: 'Ceremonial Matcha',
     theme: '#2D4A2D',
-    themeText: '#C8E6C9',
-    available: true,
-    mode: 'story',
     items: [
-      {title:'The Friction Test', text:'Rub a pinch of our matcha between your fingers. It will <strong>completely disappear into your skin like silk</strong>, leaving no grain behind. That is the texture of true stone-milled luxury.'},
-      {title:'Uji, Kyoto — 350 Years of Mastery', text:'Our matcha comes from <strong>Yamasan Co., Uji City, Kyoto</strong> — the most prestigious matcha-growing region in Japan, with over 800 years of cultivation history. Produced on a <strong>350-year-old protected tea plantation</strong>.'},
-      {title:'Lab-Tested. Certified Clean.', text:'Every batch is backed by a <strong>Certificate of Analysis</strong> from Yamasan\'s Overseas Division: heavy metals not detected, pesticide residue not detected, E. coli negative, coliform negative.'},
-      {title:'JAS Organic Certified', text:'Yamasan holds <strong>JAS Organic Certification (No. 17C-004)</strong> issued by the Hyogo Prefectural Organic Agriculture Society, certified since 2018 and annually inspected. <strong>Vegan. Gluten free. 100% pure.</strong>'}
+      {img:'Matcha.PNG', name:'Ceremonial Matcha', text:'Stone-milled in Uji, Kyoto. Vibrant, and lab-tested clean.'}
     ]
   },
   {
     key: 'rubybeet',
     name: 'Ruby Beet Latte',
-    theme: '#3A1A5C',
-    themeText: '#D4B8F0',
-    available: false
+    theme: '#7A1E3D',
+    items: [
+      {img:'Beetroot.PNG', name:'Beetroot', text:'Vivid natural colour and earthy sweetness — the heart of the blend.'},
+      {img:'ginger.jpg.JPG', name:'Ginger', text:'Gentle warmth that balances the beetroot.'},
+      {img:'cardamom.jpg.JPG', name:'Green Cardamom', text:'Floral aromatic lift — no sugar needed.'},
+      {img:'black-pepper.jpg.JPG', name:'Black Pepper', text:'Rounds out the flavour with a subtle finish.'},
+      {img:'Cinnamon.PNG', name:'Cinnamon', text:'Soft spiced finish that lingers.'}
+    ]
   },
   {
-    key: 'currybase',
-    name: 'Curry Coast Base',
+    key: 'turmeric',
+    name: 'Organic Turmeric Powder',
+    theme: '#C9A24A',
+    items: [
+      {img:'turmeric.jpg.JPG', name:'Organic Turmeric', text:'100% pure root, nothing added — golden colour and classic depth.'}
+    ]
+  },
+  {
+    key: 'spinach',
+    name: 'Organic Spinach Powder',
+    theme: '#2D4A2D',
+    items: [
+      {img:'Spinach.PNG', name:'Organic Spinach', text:'Dehydrated and ground — concentrated greens, nothing else added.'}
+    ]
+  },
+  {
+    key: 'beetroot',
+    name: 'Organic Beetroot Powder',
+    theme: '#5C1420',
+    items: [
+      {img:'Beetroot.PNG', name:'Organic Beetroot', text:'100% pure dehydrated root — natural colour and earthy sweetness.'}
+    ]
+  },
+  {
+    key: 'curryonthego',
+    name: 'The Curry (On The Go)',
     theme: '#7A2E2E',
-    themeText: '#fff',
-    available: false
+    items: [
+      {img:'Coriander.PNG', name:'Ground Coriander', text:'Bright, citrusy backbone of every good curry.'},
+      {img:'Onion.PNG', name:'Onion Powder', text:'Sweet savoury base that builds the curry foundation.'},
+      {img:'Tomato.PNG', name:'Tomato Powder', text:'Natural acidity and body without fresh tomatoes.'},
+      {img:'Cumin.PNG', name:'Cumin', text:'Earthy warmth that defines the blend.'},
+      {img:'Garlic.PNG', name:'Garlic Powder', text:'Deep savoury note in every spoonful.'},
+      {img:'ginger.jpg.JPG', name:'Ginger Powder', text:'Adds warmth and a gentle kick.'},
+      {img:'Kashmiri.PNG', name:'Kashmiri Chilli', text:'Mild heat and rich red colour.'},
+      {img:'Carrot.PNG', name:'Carrot Powder', text:'Natural sweetness that rounds out the base.'},
+      {img:'turmeric.jpg.JPG', name:'Turmeric', text:'Golden colour and classic curry depth.'},
+      {img:'Cinnamon.PNG', name:'Cinnamon', text:'Subtle sweetness and warmth.'},
+      {img:'clove.jpg.JPG', name:'Clove', text:'Intense aromatic finish.'},
+      {img:'Nutmeg.PNG', name:'Nutmeg', text:'A whisper of warmth to round out the twelve.'}
+    ]
   }
 ];
 
@@ -210,36 +226,16 @@ function showProduct(key){
   if (!product) return;
 
   document.documentElement.style.setProperty('--theme', product.theme);
-  document.documentElement.style.setProperty('--theme-text', product.themeText);
-
   renderTabs(key);
 
-  if (!product.available) {
-    containerEl.innerHTML = `
-      <div class="coming-soon-panel">
-        <div class="cs-icon">👑</div>
-        <h3>${product.name} — Coming Soon</h3>
-        <p>We're developing this blend before we develop its ingredient story. Check back once it's launched.</p>
-      </div>`;
-    return;
-  }
-
-  if (product.mode === 'photo') {
-    containerEl.innerHTML = `<div class="photo-ing-grid">${product.items.map(i => `
-      <div class="photo-ing-card">
-        <img src="${i.img}" alt="${i.name}">
-        <div class="photo-ing-body">
-          <div class="photo-ing-name">${i.name}</div>
-          <div class="photo-ing-text">${i.text}</div>
-        </div>
-      </div>`).join('')}</div>`;
-  } else {
-    containerEl.innerHTML = `<div class="story-ing-grid">${product.items.map(i => `
-      <div class="story-ing-card">
-        <div class="story-ing-title">${i.title}</div>
-        <div class="story-ing-text">${i.text}</div>
-      </div>`).join('')}</div>`;
-  }
+  containerEl.innerHTML = `<div class="photo-ing-grid">${product.items.map(i => `
+    <div class="photo-ing-card">
+      <img src="${i.img}" alt="${i.name}">
+      <div class="photo-ing-body">
+        <div class="photo-ing-name">${i.name}</div>
+        <div class="photo-ing-text">${i.text}</div>
+      </div>
+    </div>`).join('')}</div>`;
 }
 
 const params = new URLSearchParams(window.location.search);
